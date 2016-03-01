@@ -27,4 +27,8 @@
     Private Sub ConceptosDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConceptosDePagoToolStripMenuItem.Click
         frmConceptoPago.Show()
     End Sub
+
+    Private Sub GruposDeSeguridadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GruposDeSeguridadToolStripMenuItem.Click
+        frmGrupoSeguridad.Show()
+    End Sub
 End Class

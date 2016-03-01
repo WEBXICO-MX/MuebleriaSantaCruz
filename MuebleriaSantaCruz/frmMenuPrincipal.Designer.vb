@@ -28,6 +28,8 @@ Partial Class frmMenuPrincipal
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LineasDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClasificacionesDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClasificacionesDeContratoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConceptosDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasDeAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,8 +47,7 @@ Partial Class frmMenuPrincipal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClasificacionesDeContratoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConceptosDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GruposDeSeguridadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,7 +62,7 @@ Partial Class frmMenuPrincipal
         '
         'CatálogosToolStripMenuItem1
         '
-        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem})
+        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem, Me.GruposDeSeguridadToolStripMenuItem})
         Me.CatálogosToolStripMenuItem1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
         Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -89,6 +90,18 @@ Partial Class frmMenuPrincipal
         Me.ClasificacionesDeClientesToolStripMenuItem.Name = "ClasificacionesDeClientesToolStripMenuItem"
         Me.ClasificacionesDeClientesToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
         Me.ClasificacionesDeClientesToolStripMenuItem.Text = "Clasificaciones de clientes"
+        '
+        'ClasificacionesDeContratoToolStripMenuItem
+        '
+        Me.ClasificacionesDeContratoToolStripMenuItem.Name = "ClasificacionesDeContratoToolStripMenuItem"
+        Me.ClasificacionesDeContratoToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
+        Me.ClasificacionesDeContratoToolStripMenuItem.Text = "Clasificaciones de contrato"
+        '
+        'ConceptosDePagoToolStripMenuItem
+        '
+        Me.ConceptosDePagoToolStripMenuItem.Name = "ConceptosDePagoToolStripMenuItem"
+        Me.ConceptosDePagoToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
+        Me.ConceptosDePagoToolStripMenuItem.Text = "Conceptos de pago"
         '
         'InventariosToolStripMenuItem
         '
@@ -201,17 +214,11 @@ Partial Class frmMenuPrincipal
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
-        'ClasificacionesDeContratoToolStripMenuItem
+        'GruposDeSeguridadToolStripMenuItem
         '
-        Me.ClasificacionesDeContratoToolStripMenuItem.Name = "ClasificacionesDeContratoToolStripMenuItem"
-        Me.ClasificacionesDeContratoToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
-        Me.ClasificacionesDeContratoToolStripMenuItem.Text = "Clasificaciones de contrato"
-        '
-        'ConceptosDePagoToolStripMenuItem
-        '
-        Me.ConceptosDePagoToolStripMenuItem.Name = "ConceptosDePagoToolStripMenuItem"
-        Me.ConceptosDePagoToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
-        Me.ConceptosDePagoToolStripMenuItem.Text = "Conceptos de pago"
+        Me.GruposDeSeguridadToolStripMenuItem.Name = "GruposDeSeguridadToolStripMenuItem"
+        Me.GruposDeSeguridadToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
+        Me.GruposDeSeguridadToolStripMenuItem.Text = "Grupos de seguridad"
         '
         'frmMenuPrincipal
         '
@@ -256,4 +263,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents ClasificacionesDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClasificacionesDeContratoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConceptosDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GruposDeSeguridadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
