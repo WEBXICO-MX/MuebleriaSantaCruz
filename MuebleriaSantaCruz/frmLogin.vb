@@ -3,9 +3,9 @@ Imports System.Data
 Imports System.Data.SqlClient
 
 Public Class frmLogin
-    Private conexion As Conexion
-    Private Orden As SqlCommand
-    Private Lector As SqlDataReader
+    Private cmd As SqlCommand
+    Private objcon As New Conexion
+    Private lector As SqlDataReader
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
@@ -17,30 +17,26 @@ Public Class frmLogin
         Catch ex As Exception
             MsgBox("Error: " + ex.Message)
         Finally
-            Conexion.cerrarConexion()
+            If (objcon.con.State = ConnectionState.Open) Then objcon.con.Close()
         End Try
     End Sub
 
     Public Sub login()
 
-        If (txtUsuario.Text = "") Then
+        If (txtUsuario.Text = "" Or txtContrasena.Text = "") Then
             Exit Sub
         End If
 
-        If (txtContrasena.Text = "") Then
-            Exit Sub
-        End If
-
-        conexion = New Conexion
+        If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "SELECT * FROM usuarios WHERE activo=1 AND login = '" & txtUsuario.Text & "' AND password = '" & txtContrasena.Text & "'"
+        Dim sql As String = "SELECT * FROM usuarios WHERE activo=1 AND login = '" & txtUsuario.Text & "' AND password = '" & txtContrasena.Text & "'"
 
-        Orden = New SqlCommand(Consulta, conexion.getConexion)
+        cmd = New SqlCommand(sql, objcon.con)
 
         'ExecuteReader hace la consulta y devuelve un SqlDataReader
-        Lector = Orden.ExecuteReader()
-        Lector.Read()
+        lector = cmd.ExecuteReader()
+        lector.Read()
 
         If (Lector.HasRows = False) Then
             MessageBox.Show("El nombre de usuario o contraseña es incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -48,11 +44,9 @@ Public Class frmLogin
             txtContrasena.Clear()
             txtUsuario.Focus()
         Else
-            conexion.cerrarConexion()
+            objcon.con.Close()
             Me.Hide()
-
             frmMenuPrincipal.Show()
-
         End If
     End Sub
 End Class
