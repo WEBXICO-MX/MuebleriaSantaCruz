@@ -19,4 +19,8 @@
     Private Sub ClasificacionesDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClasificacionesDeClientesToolStripMenuItem.Click
         frmClasificacionCliente.Show()
     End Sub
+
+    Private Sub ClasificacionesDeContratoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClasificacionesDeContratoToolStripMenuItem.Click
+        frmClasificacionesContrato.Show()
+    End Sub
 End Class
