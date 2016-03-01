@@ -31,4 +31,8 @@
     Private Sub GruposDeSeguridadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GruposDeSeguridadToolStripMenuItem.Click
         frmGrupoSeguridad.Show()
     End Sub
+
+    Private Sub ModulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModulosToolStripMenuItem.Click
+        frmModulo.Show()
+    End Sub
 End Class
