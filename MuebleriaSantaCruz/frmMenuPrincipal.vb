@@ -15,4 +15,8 @@
     Private Sub LineasDeProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LineasDeProductosToolStripMenuItem.Click
         frmLineaProducto.Show()
     End Sub
+
+    Private Sub ClasificacionesDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClasificacionesDeClientesToolStripMenuItem.Click
+        frmClasificacionCliente.Show()
+    End Sub
 End Class

@@ -26,6 +26,7 @@ Partial Class frmMenuPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CatálogosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LineasDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasDeAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +44,7 @@ Partial Class frmMenuPrincipal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LineasDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClasificacionesDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,7 +59,7 @@ Partial Class frmMenuPrincipal
         '
         'CatálogosToolStripMenuItem1
         '
-        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem})
+        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem})
         Me.CatálogosToolStripMenuItem1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
         Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -72,8 +73,14 @@ Partial Class frmMenuPrincipal
         Me.UsuariosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.user_group_icon
         Me.UsuariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(264, 54)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(313, 54)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'LineasDeProductosToolStripMenuItem
+        '
+        Me.LineasDeProductosToolStripMenuItem.Name = "LineasDeProductosToolStripMenuItem"
+        Me.LineasDeProductosToolStripMenuItem.Size = New System.Drawing.Size(313, 54)
+        Me.LineasDeProductosToolStripMenuItem.Text = "Lineas de productos"
         '
         'InventariosToolStripMenuItem
         '
@@ -186,11 +193,11 @@ Partial Class frmMenuPrincipal
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
-        'LineasDeProductosToolStripMenuItem
+        'ClasificacionesDeClientesToolStripMenuItem
         '
-        Me.LineasDeProductosToolStripMenuItem.Name = "LineasDeProductosToolStripMenuItem"
-        Me.LineasDeProductosToolStripMenuItem.Size = New System.Drawing.Size(264, 54)
-        Me.LineasDeProductosToolStripMenuItem.Text = "Lineas de productos"
+        Me.ClasificacionesDeClientesToolStripMenuItem.Name = "ClasificacionesDeClientesToolStripMenuItem"
+        Me.ClasificacionesDeClientesToolStripMenuItem.Size = New System.Drawing.Size(313, 54)
+        Me.ClasificacionesDeClientesToolStripMenuItem.Text = "Clasificaciones de clientes"
         '
         'frmMenuPrincipal
         '
@@ -232,4 +239,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents DevolucionesDeProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LineasDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClasificacionesDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
