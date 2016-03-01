@@ -24,23 +24,155 @@ Partial Class frmMenuPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenuPrincipal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CatálogosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EntradasDeAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TraspasoDeOtraSucursalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DevolucionesDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalidasDeAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TraspasosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DevolucionesDeProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CambiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesYCuentasPorCobrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LineasDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem1, Me.InventariosToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ClientesYCuentasPorCobrarToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1350, 56)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'CatálogosToolStripMenuItem1
+        '
+        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem})
+        Me.CatálogosToolStripMenuItem1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
+        Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.CatálogosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.CatálogosToolStripMenuItem1.Name = "CatálogosToolStripMenuItem1"
+        Me.CatálogosToolStripMenuItem1.Size = New System.Drawing.Size(148, 52)
+        Me.CatálogosToolStripMenuItem1.Text = "Catálogos"
+        '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.user_group_icon
+        Me.UsuariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(264, 54)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'InventariosToolStripMenuItem
+        '
+        Me.InventariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.EntradasDeAlmacenToolStripMenuItem, Me.SalidasDeAlmacenToolStripMenuItem, Me.CambiosToolStripMenuItem})
+        Me.InventariosToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InventariosToolStripMenuItem.Name = "InventariosToolStripMenuItem"
+        Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(104, 52)
+        Me.InventariosToolStripMenuItem.Text = "Inventarios"
+        '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(245, 24)
+        Me.ProductosToolStripMenuItem.Text = "Artículos"
+        '
+        'EntradasDeAlmacenToolStripMenuItem
+        '
+        Me.EntradasDeAlmacenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComprasToolStripMenuItem, Me.TraspasoDeOtraSucursalToolStripMenuItem, Me.DevolucionesDeClientesToolStripMenuItem})
+        Me.EntradasDeAlmacenToolStripMenuItem.Name = "EntradasDeAlmacenToolStripMenuItem"
+        Me.EntradasDeAlmacenToolStripMenuItem.Size = New System.Drawing.Size(245, 24)
+        Me.EntradasDeAlmacenToolStripMenuItem.Text = "Entradas de almacen"
+        '
+        'ComprasToolStripMenuItem
+        '
+        Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(374, 24)
+        Me.ComprasToolStripMenuItem.Text = "Compras"
+        '
+        'TraspasoDeOtraSucursalToolStripMenuItem
+        '
+        Me.TraspasoDeOtraSucursalToolStripMenuItem.Name = "TraspasoDeOtraSucursalToolStripMenuItem"
+        Me.TraspasoDeOtraSucursalToolStripMenuItem.Size = New System.Drawing.Size(374, 24)
+        Me.TraspasoDeOtraSucursalToolStripMenuItem.Text = "Traspaso de otro centro de distribución"
+        '
+        'DevolucionesDeClientesToolStripMenuItem
+        '
+        Me.DevolucionesDeClientesToolStripMenuItem.Name = "DevolucionesDeClientesToolStripMenuItem"
+        Me.DevolucionesDeClientesToolStripMenuItem.Size = New System.Drawing.Size(374, 24)
+        Me.DevolucionesDeClientesToolStripMenuItem.Text = "Devoluciones de clientes"
+        '
+        'SalidasDeAlmacenToolStripMenuItem
+        '
+        Me.SalidasDeAlmacenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TraspasosToolStripMenuItem, Me.DevolucionesDeProveedoresToolStripMenuItem})
+        Me.SalidasDeAlmacenToolStripMenuItem.Name = "SalidasDeAlmacenToolStripMenuItem"
+        Me.SalidasDeAlmacenToolStripMenuItem.Size = New System.Drawing.Size(245, 24)
+        Me.SalidasDeAlmacenToolStripMenuItem.Text = "Salidas de almacen"
+        '
+        'TraspasosToolStripMenuItem
+        '
+        Me.TraspasosToolStripMenuItem.Name = "TraspasosToolStripMenuItem"
+        Me.TraspasosToolStripMenuItem.Size = New System.Drawing.Size(382, 24)
+        Me.TraspasosToolStripMenuItem.Text = "Traspasos a otros centros de distribución"
+        '
+        'DevolucionesDeProveedoresToolStripMenuItem
+        '
+        Me.DevolucionesDeProveedoresToolStripMenuItem.Name = "DevolucionesDeProveedoresToolStripMenuItem"
+        Me.DevolucionesDeProveedoresToolStripMenuItem.Size = New System.Drawing.Size(382, 24)
+        Me.DevolucionesDeProveedoresToolStripMenuItem.Text = "Devoluciones de proveedores"
+        '
+        'CambiosToolStripMenuItem
+        '
+        Me.CambiosToolStripMenuItem.Name = "CambiosToolStripMenuItem"
+        Me.CambiosToolStripMenuItem.Size = New System.Drawing.Size(245, 24)
+        Me.CambiosToolStripMenuItem.Text = "Cambios"
+        '
+        'VentasToolStripMenuItem
+        '
+        Me.VentasToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(73, 52)
+        Me.VentasToolStripMenuItem.Text = "Ventas"
+        '
+        'ClientesYCuentasPorCobrarToolStripMenuItem
+        '
+        Me.ClientesYCuentasPorCobrarToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClientesYCuentasPorCobrarToolStripMenuItem.Name = "ClientesYCuentasPorCobrarToolStripMenuItem"
+        Me.ClientesYCuentasPorCobrarToolStripMenuItem.Size = New System.Drawing.Size(247, 52)
+        Me.ClientesYCuentasPorCobrarToolStripMenuItem.Text = "Clientes y Cuentas por cobrar"
+        '
+        'ConfiguraciónToolStripMenuItem
+        '
+        Me.ConfiguraciónToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
+        Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(132, 52)
+        Me.ConfiguraciónToolStripMenuItem.Text = "Configuración"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(86, 52)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(53, 52)
+        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ToolStripMenuItem1
         '
@@ -54,41 +186,18 @@ Partial Class frmMenuPrincipal
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
-        'PictureBox1
+        'LineasDeProductosToolStripMenuItem
         '
-        Me.PictureBox1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(426, 335)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(569, 357)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'CatálogosToolStripMenuItem1
-        '
-        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem})
-        Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
-        Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.CatálogosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.CatálogosToolStripMenuItem1.Name = "CatálogosToolStripMenuItem1"
-        Me.CatálogosToolStripMenuItem1.Size = New System.Drawing.Size(120, 52)
-        Me.CatálogosToolStripMenuItem1.Text = "Catálogos"
-        '
-        'UsuariosToolStripMenuItem
-        '
-        Me.UsuariosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.user_group_icon
-        Me.UsuariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(184, 54)
-        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        Me.LineasDeProductosToolStripMenuItem.Name = "LineasDeProductosToolStripMenuItem"
+        Me.LineasDeProductosToolStripMenuItem.Size = New System.Drawing.Size(264, 54)
+        Me.LineasDeProductosToolStripMenuItem.Text = "Lineas de productos"
         '
         'frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Cyan
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1350, 730)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -98,7 +207,6 @@ Partial Class frmMenuPrincipal
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -106,7 +214,22 @@ Partial Class frmMenuPrincipal
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CatálogosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents CatálogosToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InventariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClientesYCuentasPorCobrarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConfiguraciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EntradasDeAlmacenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ComprasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TraspasoDeOtraSucursalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DevolucionesDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SalidasDeAlmacenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TraspasosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CambiosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DevolucionesDeProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LineasDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
