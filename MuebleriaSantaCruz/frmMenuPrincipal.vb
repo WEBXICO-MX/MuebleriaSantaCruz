@@ -44,4 +44,8 @@
     Private Sub PuestoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PuestoToolStripMenuItem.Click
         frmPuesto.Show()
     End Sub
+
+    Private Sub TiposDeMedioDeComunicaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeMedioDeComunicaciónToolStripMenuItem.Click
+        frmTipoMedioComunicacion.Show()
+    End Sub
 End Class
