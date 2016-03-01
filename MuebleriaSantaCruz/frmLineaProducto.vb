@@ -5,7 +5,7 @@ Public Class frmLineaProducto
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
 
-    Public Sub EstatusNuevo()
+    Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
@@ -34,10 +34,7 @@ Public Class frmLineaProducto
         End Try
     End Sub
 
-    Public Sub InsertaNuevoEstatus()
-        MsgBox("Entre a InsertaNuevoEstatus()")
-
-
+    Public Sub InsertaNuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
@@ -83,9 +80,9 @@ Public Class frmLineaProducto
         End Try
     End Sub
 
-    Public Sub EditarEstatus()
+    Public Sub Editar()
         'Crear la conexión con la base de datos
-         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
+        If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
         Dim Consulta As String = "UPDATE lineas_productos SET nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
@@ -153,7 +150,7 @@ Public Class frmLineaProducto
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = Lineas_productosDataGridView.Rows(F).Cells(0).Value
         txtNombre.Text = Lineas_productosDataGridView.Rows(F).Cells(1).Value
-        cbxActivo.Text = Lineas_productosDataGridView.Rows(F).Cells(2).Value
+        cbxActivo.Checked = Lineas_productosDataGridView.Rows(F).Cells(2).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
@@ -186,7 +183,7 @@ Public Class frmLineaProducto
         EstadoCajasdeTexto(True)
         Lineas_productosDataGridView.Enabled = False
         DesactivarErroresCajasdeTexto()
-        EstatusNuevo()
+        Nuevo()
     End Sub
 
     Private Sub btguardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btguardar.Click
@@ -200,9 +197,9 @@ Public Class frmLineaProducto
         DesactivarErroresCajasdeTexto()
 
         If (lbtipoestado.Text = "Nuevo") Then
-            InsertaNuevoEstatus()
+            InsertaNuevo()
         Else
-            EditarEstatus()
+            Editar()
         End If
     End Sub
 
@@ -246,14 +243,14 @@ Public Class frmLineaProducto
         End If
     End Sub
 
-    Private Sub Estatusfrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmLineaProducto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetLineaProducto.lineas_productos' Puede moverla o quitarla según sea necesario.
         Me.Lineas_productosTableAdapter.Fill(Me.DataSetLineaProducto.lineas_productos)
         Me.Top = 85
 
     End Sub
 
-    Private Sub Estatusfrm_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+    Private Sub frmLineaProducto_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
         LimpiarCajasdeTexto()
 
