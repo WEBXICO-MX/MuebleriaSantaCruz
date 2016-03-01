@@ -46,6 +46,7 @@ Partial Class frmMenuPrincipal
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClasificacionesDeContratoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConceptosDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -60,7 +61,7 @@ Partial Class frmMenuPrincipal
         '
         'CatálogosToolStripMenuItem1
         '
-        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem})
+        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem})
         Me.CatálogosToolStripMenuItem1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
         Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -206,6 +207,12 @@ Partial Class frmMenuPrincipal
         Me.ClasificacionesDeContratoToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
         Me.ClasificacionesDeContratoToolStripMenuItem.Text = "Clasificaciones de contrato"
         '
+        'ConceptosDePagoToolStripMenuItem
+        '
+        Me.ConceptosDePagoToolStripMenuItem.Name = "ConceptosDePagoToolStripMenuItem"
+        Me.ConceptosDePagoToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
+        Me.ConceptosDePagoToolStripMenuItem.Text = "Conceptos de pago"
+        '
         'frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -248,4 +255,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents LineasDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClasificacionesDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClasificacionesDeContratoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConceptosDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

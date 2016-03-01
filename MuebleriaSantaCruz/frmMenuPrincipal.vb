@@ -23,4 +23,8 @@
     Private Sub ClasificacionesDeContratoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClasificacionesDeContratoToolStripMenuItem.Click
         frmClasificacionesContrato.Show()
     End Sub
+
+    Private Sub ConceptosDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConceptosDePagoToolStripMenuItem.Click
+        frmConceptoPago.Show()
+    End Sub
 End Class
