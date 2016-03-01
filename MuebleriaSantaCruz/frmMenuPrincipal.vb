@@ -35,4 +35,9 @@
     Private Sub ModulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModulosToolStripMenuItem.Click
         frmModulo.Show()
     End Sub
+
+    Private Sub OcupacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OcupacionesToolStripMenuItem.Click
+        frmOcupacion.Show()
+
+    End Sub
 End Class
