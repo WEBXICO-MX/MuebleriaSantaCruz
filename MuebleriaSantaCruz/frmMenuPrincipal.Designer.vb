@@ -32,6 +32,7 @@ Partial Class frmMenuPrincipal
         Me.ConceptosDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GruposDeSeguridadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OcupacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasDeAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,7 +50,7 @@ Partial Class frmMenuPrincipal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OcupacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PuestoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,7 +65,7 @@ Partial Class frmMenuPrincipal
         '
         'CatálogosToolStripMenuItem1
         '
-        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem, Me.GruposDeSeguridadToolStripMenuItem, Me.ModulosToolStripMenuItem, Me.OcupacionesToolStripMenuItem})
+        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem, Me.GruposDeSeguridadToolStripMenuItem, Me.ModulosToolStripMenuItem, Me.OcupacionesToolStripMenuItem, Me.PuestoToolStripMenuItem})
         Me.CatálogosToolStripMenuItem1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
         Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -116,6 +117,12 @@ Partial Class frmMenuPrincipal
         Me.ModulosToolStripMenuItem.Name = "ModulosToolStripMenuItem"
         Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
         Me.ModulosToolStripMenuItem.Text = "Módulos"
+        '
+        'OcupacionesToolStripMenuItem
+        '
+        Me.OcupacionesToolStripMenuItem.Name = "OcupacionesToolStripMenuItem"
+        Me.OcupacionesToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
+        Me.OcupacionesToolStripMenuItem.Text = "Ocupaciones"
         '
         'InventariosToolStripMenuItem
         '
@@ -228,11 +235,11 @@ Partial Class frmMenuPrincipal
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
-        'OcupacionesToolStripMenuItem
+        'PuestoToolStripMenuItem
         '
-        Me.OcupacionesToolStripMenuItem.Name = "OcupacionesToolStripMenuItem"
-        Me.OcupacionesToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
-        Me.OcupacionesToolStripMenuItem.Text = "Ocupaciones"
+        Me.PuestoToolStripMenuItem.Name = "PuestoToolStripMenuItem"
+        Me.PuestoToolStripMenuItem.Size = New System.Drawing.Size(319, 54)
+        Me.PuestoToolStripMenuItem.Text = "Puestos"
         '
         'frmMenuPrincipal
         '
@@ -280,4 +287,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents GruposDeSeguridadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModulosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OcupacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PuestoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -40,4 +40,8 @@
         frmOcupacion.Show()
 
     End Sub
+
+    Private Sub PuestoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PuestoToolStripMenuItem.Click
+        frmPuesto.Show()
+    End Sub
 End Class
