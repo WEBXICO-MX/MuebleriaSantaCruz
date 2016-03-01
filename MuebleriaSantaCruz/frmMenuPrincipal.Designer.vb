@@ -34,6 +34,7 @@ Partial Class frmMenuPrincipal
         Me.ModulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OcupacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PuestoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TiposDeMedioDeComunicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasDeAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,7 +52,7 @@ Partial Class frmMenuPrincipal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TiposDeMedioDeComunicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SucursaleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,7 +67,7 @@ Partial Class frmMenuPrincipal
         '
         'CatálogosToolStripMenuItem1
         '
-        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem, Me.GruposDeSeguridadToolStripMenuItem, Me.ModulosToolStripMenuItem, Me.OcupacionesToolStripMenuItem, Me.PuestoToolStripMenuItem, Me.TiposDeMedioDeComunicaciónToolStripMenuItem})
+        Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.LineasDeProductosToolStripMenuItem, Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem, Me.GruposDeSeguridadToolStripMenuItem, Me.ModulosToolStripMenuItem, Me.OcupacionesToolStripMenuItem, Me.PuestoToolStripMenuItem, Me.TiposDeMedioDeComunicaciónToolStripMenuItem, Me.SucursaleToolStripMenuItem})
         Me.CatálogosToolStripMenuItem1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
         Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -130,6 +131,12 @@ Partial Class frmMenuPrincipal
         Me.PuestoToolStripMenuItem.Name = "PuestoToolStripMenuItem"
         Me.PuestoToolStripMenuItem.Size = New System.Drawing.Size(372, 54)
         Me.PuestoToolStripMenuItem.Text = "Puestos"
+        '
+        'TiposDeMedioDeComunicaciónToolStripMenuItem
+        '
+        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Name = "TiposDeMedioDeComunicaciónToolStripMenuItem"
+        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Size = New System.Drawing.Size(372, 54)
+        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Text = "Tipos de medio de comunicación"
         '
         'InventariosToolStripMenuItem
         '
@@ -242,11 +249,11 @@ Partial Class frmMenuPrincipal
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
-        'TiposDeMedioDeComunicaciónToolStripMenuItem
+        'SucursaleToolStripMenuItem
         '
-        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Name = "TiposDeMedioDeComunicaciónToolStripMenuItem"
-        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Size = New System.Drawing.Size(372, 54)
-        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Text = "Tipos de medio de comunicación"
+        Me.SucursaleToolStripMenuItem.Name = "SucursaleToolStripMenuItem"
+        Me.SucursaleToolStripMenuItem.Size = New System.Drawing.Size(372, 54)
+        Me.SucursaleToolStripMenuItem.Text = "Sucursales"
         '
         'frmMenuPrincipal
         '
@@ -296,4 +303,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents OcupacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PuestoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TiposDeMedioDeComunicaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SucursaleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

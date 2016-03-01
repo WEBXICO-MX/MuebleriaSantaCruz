@@ -48,4 +48,8 @@
     Private Sub TiposDeMedioDeComunicaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeMedioDeComunicaciónToolStripMenuItem.Click
         frmTipoMedioComunicacion.Show()
     End Sub
+
+    Private Sub SucursaleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SucursaleToolStripMenuItem.Click
+        frmSucursal.Show()
+    End Sub
 End Class
