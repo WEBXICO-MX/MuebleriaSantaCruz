@@ -38,7 +38,7 @@ Public Class frmLogin
         lector = cmd.ExecuteReader()
         lector.Read()
 
-        If (Lector.HasRows = False) Then
+        If (lector.HasRows = False) Then
             MessageBox.Show("El nombre de usuario o contraseña es incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtUsuario.Clear()
             txtContrasena.Clear()
