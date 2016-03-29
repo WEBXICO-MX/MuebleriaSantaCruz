@@ -114,6 +114,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetLineaProducto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetLineaProductoCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLineaProductoCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetModulo.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,6 +143,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTipoProducto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoProducto.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetUsuario.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -504,6 +514,17 @@
     <None Include="DataSetLineaProducto.xss">
       <DependentUpon>DataSetLineaProducto.xsd</DependentUpon>
     </None>
+    <None Include="DataSetLineaProductoCombo.xsc">
+      <DependentUpon>DataSetLineaProductoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetLineaProductoCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLineaProductoCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetLineaProductoCombo.xss">
+      <DependentUpon>DataSetLineaProductoCombo.xsd</DependentUpon>
+    </None>
     <None Include="DataSetModulo.xsc">
       <DependentUpon>DataSetModulo.xsd</DependentUpon>
     </None>
@@ -558,6 +579,17 @@
     </None>
     <None Include="DataSetTipoMedioComunicacion.xss">
       <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoProducto.xsc">
+      <DependentUpon>DataSetTipoProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoProducto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoProducto.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoProducto.xss">
+      <DependentUpon>DataSetTipoProducto.xsd</DependentUpon>
     </None>
     <None Include="DataSetUsuario.xsc">
       <DependentUpon>DataSetUsuario.xsd</DependentUpon>
