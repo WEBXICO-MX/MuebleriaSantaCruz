@@ -108,4 +108,8 @@
     Private Sub TiposDeIdentificaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeIdentificaciónToolStripMenuItem.Click
         frmTipoIdentificacion.Show()
     End Sub
+
+    Private Sub RutasMenuItem_Click(sender As Object, e As EventArgs) Handles RutasMenuItem.Click
+        frmRuta.Show()
+    End Sub
 End Class

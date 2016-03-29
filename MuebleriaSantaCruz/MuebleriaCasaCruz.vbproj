@@ -140,10 +140,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPuesto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetRuta.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRuta.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetSucursal.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSucursal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSucursalCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSucursalCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetTipoIdentificacion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -585,6 +595,17 @@
     <None Include="DataSetPuesto.xss">
       <DependentUpon>DataSetPuesto.xsd</DependentUpon>
     </None>
+    <None Include="DataSetRuta.xsc">
+      <DependentUpon>DataSetRuta.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRuta.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRuta.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRuta.xss">
+      <DependentUpon>DataSetRuta.xsd</DependentUpon>
+    </None>
     <None Include="DataSetSucursal.xsc">
       <DependentUpon>DataSetSucursal.xsd</DependentUpon>
     </None>
@@ -595,6 +616,17 @@
     </None>
     <None Include="DataSetSucursal.xss">
       <DependentUpon>DataSetSucursal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSucursalCombo.xsc">
+      <DependentUpon>DataSetSucursalCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSucursalCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSucursalCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetSucursalCombo.xss">
+      <DependentUpon>DataSetSucursalCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetTipoIdentificacion.xsc">
       <DependentUpon>DataSetTipoIdentificacion.xsd</DependentUpon>
