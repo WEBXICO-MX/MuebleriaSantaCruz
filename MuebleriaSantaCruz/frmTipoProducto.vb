@@ -245,7 +245,7 @@ Public Class frmTipoProducto
         End If
     End Sub
 
-    Private Sub frmTipoMedioComunicacion_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+    Private Sub frmTipoProducto_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
         LimpiarCajasdeTexto()
 
