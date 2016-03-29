@@ -135,6 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProducto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetProveedor.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProveedor.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetPuesto.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -583,6 +588,17 @@
     </None>
     <None Include="DataSetProducto.xss">
       <DependentUpon>DataSetProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProveedor.xsc">
+      <DependentUpon>DataSetProveedor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProveedor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProveedor.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetProveedor.xss">
+      <DependentUpon>DataSetProveedor.xsd</DependentUpon>
     </None>
     <None Include="DataSetPuesto.xsc">
       <DependentUpon>DataSetPuesto.xsd</DependentUpon>

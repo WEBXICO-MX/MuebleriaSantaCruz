@@ -112,4 +112,8 @@
     Private Sub RutasMenuItem_Click(sender As Object, e As EventArgs) Handles RutasMenuItem.Click
         frmRuta.Show()
     End Sub
+
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        frmProveedor.Show()
+    End Sub
 End Class
