@@ -105,6 +105,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetEmpleado.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetGrupoSeguridad.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,6 +149,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPuesto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPuestoCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPuestoCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetRuta.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -523,6 +533,17 @@
     <None Include="DataSetConceptoPago.xss">
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
     </None>
+    <None Include="DataSetEmpleado.xsc">
+      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetEmpleado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEmpleado.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetEmpleado.xss">
+      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </None>
     <None Include="DataSetGrupoSeguridad.xsc">
       <DependentUpon>DataSetGrupoSeguridad.xsd</DependentUpon>
     </None>
@@ -610,6 +631,17 @@
     </None>
     <None Include="DataSetPuesto.xss">
       <DependentUpon>DataSetPuesto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPuestoCombo.xsc">
+      <DependentUpon>DataSetPuestoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPuestoCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPuestoCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetPuestoCombo.xss">
+      <DependentUpon>DataSetPuestoCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetRuta.xsc">
       <DependentUpon>DataSetRuta.xsd</DependentUpon>
