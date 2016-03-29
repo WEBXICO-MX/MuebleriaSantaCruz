@@ -81,7 +81,7 @@ Partial Class frmMenuPrincipal
         '
         Me.CatálogosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.ProductosMenuItem, Me.ClientesMenuItem, Me.PersonalMenuItem, Me.VentasMenuItem, Me.OtrosMenuItem})
         Me.CatálogosToolStripMenuItem1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.catalog_icon
+        Me.CatálogosToolStripMenuItem1.Image = Global.MuebleriaCasaCruz.My.Resources.Resources.catalog_icon
         Me.CatálogosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.CatálogosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CatálogosToolStripMenuItem1.Name = "CatálogosToolStripMenuItem1"
@@ -91,7 +91,7 @@ Partial Class frmMenuPrincipal
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GruposDeSeguridadToolStripMenuItem, Me.ModulosToolStripMenuItem, Me.UsuariosToolStripMenuItem2})
-        Me.UsuariosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.user_group_icon
+        Me.UsuariosToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources.user_group_icon
         Me.UsuariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(200, 70)
@@ -99,7 +99,7 @@ Partial Class frmMenuPrincipal
         '
         'GruposDeSeguridadToolStripMenuItem
         '
-        Me.GruposDeSeguridadToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456961922_globe_safety_shield
+        Me.GruposDeSeguridadToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456961922_globe_safety_shield
         Me.GruposDeSeguridadToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.GruposDeSeguridadToolStripMenuItem.Name = "GruposDeSeguridadToolStripMenuItem"
         Me.GruposDeSeguridadToolStripMenuItem.Size = New System.Drawing.Size(263, 70)
@@ -107,7 +107,7 @@ Partial Class frmMenuPrincipal
         '
         'ModulosToolStripMenuItem
         '
-        Me.ModulosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456961999_blockdevice
+        Me.ModulosToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456961999_blockdevice
         Me.ModulosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ModulosToolStripMenuItem.Name = "ModulosToolStripMenuItem"
         Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(263, 70)
@@ -115,7 +115,7 @@ Partial Class frmMenuPrincipal
         '
         'UsuariosToolStripMenuItem2
         '
-        Me.UsuariosToolStripMenuItem2.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.user_group_icon
+        Me.UsuariosToolStripMenuItem2.Image = Global.MuebleriaCasaCruz.My.Resources.Resources.user_group_icon
         Me.UsuariosToolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.UsuariosToolStripMenuItem2.Name = "UsuariosToolStripMenuItem2"
         Me.UsuariosToolStripMenuItem2.Size = New System.Drawing.Size(263, 70)
@@ -124,7 +124,7 @@ Partial Class frmMenuPrincipal
         'ProductosMenuItem
         '
         Me.ProductosMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LineasDeProductosToolStripMenuItem, Me.TiposDeProductosToolStripMenuItem, Me.ProductosMenuItem2})
-        Me.ProductosMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456962719_office_13
+        Me.ProductosMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456962719_office_13
         Me.ProductosMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ProductosMenuItem.Name = "ProductosMenuItem"
         Me.ProductosMenuItem.Size = New System.Drawing.Size(200, 70)
@@ -132,7 +132,7 @@ Partial Class frmMenuPrincipal
         '
         'LineasDeProductosToolStripMenuItem
         '
-        Me.LineasDeProductosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456960794_Product_documentation
+        Me.LineasDeProductosToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456960794_Product_documentation
         Me.LineasDeProductosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.LineasDeProductosToolStripMenuItem.Name = "LineasDeProductosToolStripMenuItem"
         Me.LineasDeProductosToolStripMenuItem.Size = New System.Drawing.Size(255, 70)
@@ -146,7 +146,7 @@ Partial Class frmMenuPrincipal
         '
         'ProductosMenuItem2
         '
-        Me.ProductosMenuItem2.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456962719_office_13
+        Me.ProductosMenuItem2.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456962719_office_13
         Me.ProductosMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ProductosMenuItem2.Name = "ProductosMenuItem2"
         Me.ProductosMenuItem2.Size = New System.Drawing.Size(255, 70)
@@ -161,7 +161,7 @@ Partial Class frmMenuPrincipal
         '
         'ClasificacionesDeClientesToolStripMenuItem
         '
-        Me.ClasificacionesDeClientesToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456960979_clients
+        Me.ClasificacionesDeClientesToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456960979_clients
         Me.ClasificacionesDeClientesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ClasificacionesDeClientesToolStripMenuItem.Name = "ClasificacionesDeClientesToolStripMenuItem"
         Me.ClasificacionesDeClientesToolStripMenuItem.Size = New System.Drawing.Size(341, 70)
@@ -169,7 +169,7 @@ Partial Class frmMenuPrincipal
         '
         'OcupacionesToolStripMenuItem
         '
-        Me.OcupacionesToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456962370_gear_user
+        Me.OcupacionesToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456962370_gear_user
         Me.OcupacionesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.OcupacionesToolStripMenuItem.Name = "OcupacionesToolStripMenuItem"
         Me.OcupacionesToolStripMenuItem.Size = New System.Drawing.Size(341, 70)
@@ -177,7 +177,7 @@ Partial Class frmMenuPrincipal
         '
         'TiposDeMedioDeComunicaciónToolStripMenuItem
         '
-        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456962104_office__37
+        Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456962104_office__37
         Me.TiposDeMedioDeComunicaciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Name = "TiposDeMedioDeComunicaciónToolStripMenuItem"
         Me.TiposDeMedioDeComunicaciónToolStripMenuItem.Size = New System.Drawing.Size(341, 70)
@@ -198,7 +198,7 @@ Partial Class frmMenuPrincipal
         '
         'PuestoToolStripMenuItem
         '
-        Me.PuestoToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456962263_testimonials
+        Me.PuestoToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456962263_testimonials
         Me.PuestoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PuestoToolStripMenuItem.Name = "PuestoToolStripMenuItem"
         Me.PuestoToolStripMenuItem.Size = New System.Drawing.Size(179, 70)
@@ -220,7 +220,7 @@ Partial Class frmMenuPrincipal
         '
         'ClasificacionesDeContratoToolStripMenuItem
         '
-        Me.ClasificacionesDeContratoToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456961357_contracto
+        Me.ClasificacionesDeContratoToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456961357_contracto
         Me.ClasificacionesDeContratoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ClasificacionesDeContratoToolStripMenuItem.Name = "ClasificacionesDeContratoToolStripMenuItem"
         Me.ClasificacionesDeContratoToolStripMenuItem.Size = New System.Drawing.Size(303, 70)
@@ -228,7 +228,7 @@ Partial Class frmMenuPrincipal
         '
         'ConceptosDePagoToolStripMenuItem
         '
-        Me.ConceptosDePagoToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456961832_dollar_bills
+        Me.ConceptosDePagoToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456961832_dollar_bills
         Me.ConceptosDePagoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ConceptosDePagoToolStripMenuItem.Name = "ConceptosDePagoToolStripMenuItem"
         Me.ConceptosDePagoToolStripMenuItem.Size = New System.Drawing.Size(303, 70)
@@ -243,7 +243,7 @@ Partial Class frmMenuPrincipal
         '
         'SucursalesToolStripMenuItem
         '
-        Me.SucursalesToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456964377_companies
+        Me.SucursalesToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456964377_companies
         Me.SucursalesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SucursalesToolStripMenuItem.Name = "SucursalesToolStripMenuItem"
         Me.SucursalesToolStripMenuItem.Size = New System.Drawing.Size(177, 54)
@@ -253,7 +253,7 @@ Partial Class frmMenuPrincipal
         '
         Me.InventariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradasDeAlmacenToolStripMenuItem, Me.SalidasDeAlmacenToolStripMenuItem, Me.CambiosToolStripMenuItem})
         Me.InventariosToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InventariosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456963046_kthememgr
+        Me.InventariosToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963046_kthememgr
         Me.InventariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.InventariosToolStripMenuItem.Name = "InventariosToolStripMenuItem"
         Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(155, 68)
@@ -262,7 +262,7 @@ Partial Class frmMenuPrincipal
         'EntradasDeAlmacenToolStripMenuItem
         '
         Me.EntradasDeAlmacenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComprasToolStripMenuItem, Me.TraspasoDeOtraSucursalToolStripMenuItem, Me.DevolucionesDeClientesToolStripMenuItem})
-        Me.EntradasDeAlmacenToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456963141_shop_08
+        Me.EntradasDeAlmacenToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963141_shop_08
         Me.EntradasDeAlmacenToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.EntradasDeAlmacenToolStripMenuItem.Name = "EntradasDeAlmacenToolStripMenuItem"
         Me.EntradasDeAlmacenToolStripMenuItem.Size = New System.Drawing.Size(248, 54)
@@ -289,7 +289,7 @@ Partial Class frmMenuPrincipal
         'SalidasDeAlmacenToolStripMenuItem
         '
         Me.SalidasDeAlmacenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TraspasosToolStripMenuItem, Me.DevolucionesDeProveedoresToolStripMenuItem})
-        Me.SalidasDeAlmacenToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456963141_shop_081
+        Me.SalidasDeAlmacenToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963141_shop_081
         Me.SalidasDeAlmacenToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SalidasDeAlmacenToolStripMenuItem.Name = "SalidasDeAlmacenToolStripMenuItem"
         Me.SalidasDeAlmacenToolStripMenuItem.Size = New System.Drawing.Size(248, 54)
@@ -309,7 +309,7 @@ Partial Class frmMenuPrincipal
         '
         'CambiosToolStripMenuItem
         '
-        Me.CambiosToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456964050_free_38
+        Me.CambiosToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456964050_free_38
         Me.CambiosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CambiosToolStripMenuItem.Name = "CambiosToolStripMenuItem"
         Me.CambiosToolStripMenuItem.Size = New System.Drawing.Size(248, 54)
@@ -318,7 +318,7 @@ Partial Class frmMenuPrincipal
         'VentasToolStripMenuItem
         '
         Me.VentasToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VentasToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456963909_icon_68
+        Me.VentasToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963909_icon_68
         Me.VentasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
         Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(112, 68)
@@ -327,7 +327,7 @@ Partial Class frmMenuPrincipal
         'ClientesYCuentasPorCobrarToolStripMenuItem
         '
         Me.ClientesYCuentasPorCobrarToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ClientesYCuentasPorCobrarToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456963396_finance_68
+        Me.ClientesYCuentasPorCobrarToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963396_finance_68
         Me.ClientesYCuentasPorCobrarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ClientesYCuentasPorCobrarToolStripMenuItem.Name = "ClientesYCuentasPorCobrarToolStripMenuItem"
         Me.ClientesYCuentasPorCobrarToolStripMenuItem.Size = New System.Drawing.Size(263, 68)
@@ -336,7 +336,7 @@ Partial Class frmMenuPrincipal
         'ConfiguraciónToolStripMenuItem
         '
         Me.ConfiguraciónToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ConfiguraciónToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456962669_window_tools
+        Me.ConfiguraciónToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456962669_window_tools
         Me.ConfiguraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
         Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(177, 68)
@@ -345,7 +345,7 @@ Partial Class frmMenuPrincipal
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReportesToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456963448_Report
+        Me.ReportesToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963448_Report
         Me.ReportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(124, 68)
@@ -354,7 +354,7 @@ Partial Class frmMenuPrincipal
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SalirToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456963487_Cancel
+        Me.SalirToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963487_Cancel
         Me.SalirToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(97, 68)
@@ -374,7 +374,7 @@ Partial Class frmMenuPrincipal
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.MuebleriaSantaCruz.My.Resources.Resources.logo1
+        Me.PictureBox1.Image = Global.MuebleriaCasaCruz.My.Resources.Resources.logo1
         Me.PictureBox1.Location = New System.Drawing.Point(344, 279)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(520, 290)

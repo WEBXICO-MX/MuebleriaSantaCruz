@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MuebleriaCASACRUZConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuebleriaCASACRUZConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuebleriaSantaCruz.My.MySettings.GlobalReference.Default.MuebleriaCASACRUZConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MuebleriaCASACRUZConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuebleriaCASACRUZConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuebleriaCasaCruz.My.MySettings.GlobalReference.Default.MuebleriaCASACRUZConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="grupos_seguridadTableAdapter" GeneratorDataComponentClassName="grupos_seguridadTableAdapter" Name="grupos_seguridad" UserDataComponentName="grupos_seguridadTableAdapter">
@@ -35,7 +35,7 @@
   <xs:element name="DataSetGrupoSeguridad" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetGrupoSeguridad" msprop:Generator_UserDSName="DataSetGrupoSeguridad">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="grupos_seguridad" msprop:Generator_TableClassName="grupos_seguridadDataTable" msprop:Generator_TableVarName="tablegrupos_seguridad" msprop:Generator_RowChangedName="grupos_seguridadRowChanged" msprop:Generator_TablePropName="grupos_seguridad" msprop:Generator_RowDeletingName="grupos_seguridadRowDeleting" msprop:Generator_RowChangingName="grupos_seguridadRowChanging" msprop:Generator_RowEvHandlerName="grupos_seguridadRowChangeEventHandler" msprop:Generator_RowDeletedName="grupos_seguridadRowDeleted" msprop:Generator_RowClassName="grupos_seguridadRow" msprop:Generator_UserTableName="grupos_seguridad" msprop:Generator_RowEvArgName="grupos_seguridadRowChangeEvent">
+        <xs:element name="grupos_seguridad" msprop:Generator_TableClassName="grupos_seguridadDataTable" msprop:Generator_TableVarName="tablegrupos_seguridad" msprop:Generator_TablePropName="grupos_seguridad" msprop:Generator_RowDeletingName="grupos_seguridadRowDeleting" msprop:Generator_RowChangingName="grupos_seguridadRowChanging" msprop:Generator_RowEvHandlerName="grupos_seguridadRowChangeEventHandler" msprop:Generator_RowDeletedName="grupos_seguridadRowDeleted" msprop:Generator_UserTableName="grupos_seguridad" msprop:Generator_RowChangedName="grupos_seguridadRowChanged" msprop:Generator_RowEvArgName="grupos_seguridadRowChangeEvent" msprop:Generator_RowClassName="grupos_seguridadRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

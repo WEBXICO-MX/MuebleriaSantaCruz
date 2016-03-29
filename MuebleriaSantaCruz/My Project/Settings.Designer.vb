@@ -75,9 +75,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
-        Friend ReadOnly Property Settings() As Global.MuebleriaSantaCruz.My.MySettings
+        Friend ReadOnly Property Settings() As Global.MuebleriaCasaCruz.My.MySettings
             Get
-                Return Global.MuebleriaSantaCruz.My.MySettings.Default
+                Return Global.MuebleriaCasaCruz.My.MySettings.Default
             End Get
         End Property
     End Module

@@ -38,10 +38,10 @@ Partial Class frmConceptoPago
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetConceptoPago = New MuebleriaSantaCruz.DataSetConceptoPago()
+        Me.DataSetConceptoPago = New MuebleriaCasaCruz.DataSetConceptoPago()
         Me.Conceptos_pagoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Conceptos_pagoTableAdapter = New MuebleriaSantaCruz.DataSetConceptoPagoTableAdapters.conceptos_pagoTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetConceptoPagoTableAdapters.TableAdapterManager()
+        Me.Conceptos_pagoTableAdapter = New MuebleriaCasaCruz.DataSetConceptoPagoTableAdapters.conceptos_pagoTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetConceptoPagoTableAdapters.TableAdapterManager()
         Me.Conceptos_pagoDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmConceptoPago
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetConceptoPagoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetConceptoPagoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Conceptos_pagoDataGridView
         '
@@ -297,10 +297,10 @@ Partial Class frmConceptoPago
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetConceptoPago As MuebleriaSantaCruz.DataSetConceptoPago
+    Friend WithEvents DataSetConceptoPago As MuebleriaCasaCruz.DataSetConceptoPago
     Friend WithEvents Conceptos_pagoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Conceptos_pagoTableAdapter As MuebleriaSantaCruz.DataSetConceptoPagoTableAdapters.conceptos_pagoTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetConceptoPagoTableAdapters.TableAdapterManager
+    Friend WithEvents Conceptos_pagoTableAdapter As MuebleriaCasaCruz.DataSetConceptoPagoTableAdapters.conceptos_pagoTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetConceptoPagoTableAdapters.TableAdapterManager
     Friend WithEvents Conceptos_pagoDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

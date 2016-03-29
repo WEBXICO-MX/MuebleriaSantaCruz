@@ -38,10 +38,10 @@ Partial Class frmLineaProducto
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetLineaProducto = New MuebleriaSantaCruz.DataSetLineaProducto()
+        Me.DataSetLineaProducto = New MuebleriaCasaCruz.DataSetLineaProducto()
         Me.Lineas_productosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Lineas_productosTableAdapter = New MuebleriaSantaCruz.DataSetLineaProductoTableAdapters.lineas_productosTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetLineaProductoTableAdapters.TableAdapterManager()
+        Me.Lineas_productosTableAdapter = New MuebleriaCasaCruz.DataSetLineaProductoTableAdapters.lineas_productosTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetLineaProductoTableAdapters.TableAdapterManager()
         Me.Lineas_productosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmLineaProducto
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetLineaProductoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetLineaProductoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Lineas_productosDataGridView
         '
@@ -297,10 +297,10 @@ Partial Class frmLineaProducto
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetLineaProducto As MuebleriaSantaCruz.DataSetLineaProducto
+    Friend WithEvents DataSetLineaProducto As MuebleriaCasaCruz.DataSetLineaProducto
     Friend WithEvents Lineas_productosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Lineas_productosTableAdapter As MuebleriaSantaCruz.DataSetLineaProductoTableAdapters.lineas_productosTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetLineaProductoTableAdapters.TableAdapterManager
+    Friend WithEvents Lineas_productosTableAdapter As MuebleriaCasaCruz.DataSetLineaProductoTableAdapters.lineas_productosTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetLineaProductoTableAdapters.TableAdapterManager
     Friend WithEvents Lineas_productosDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

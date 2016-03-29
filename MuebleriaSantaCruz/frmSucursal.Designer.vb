@@ -38,10 +38,10 @@ Partial Class frmSucursal
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetSucursal = New MuebleriaSantaCruz.DataSetSucursal()
+        Me.DataSetSucursal = New MuebleriaCasaCruz.DataSetSucursal()
         Me.SucursalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SucursalesTableAdapter = New MuebleriaSantaCruz.DataSetSucursalTableAdapters.sucursalesTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetSucursalTableAdapters.TableAdapterManager()
+        Me.SucursalesTableAdapter = New MuebleriaCasaCruz.DataSetSucursalTableAdapters.sucursalesTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetSucursalTableAdapters.TableAdapterManager()
         Me.SucursalesDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmSucursal
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetSucursalTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetSucursalTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'SucursalesDataGridView
         '
@@ -297,10 +297,10 @@ Partial Class frmSucursal
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetSucursal As MuebleriaSantaCruz.DataSetSucursal
+    Friend WithEvents DataSetSucursal As MuebleriaCasaCruz.DataSetSucursal
     Friend WithEvents SucursalesBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents SucursalesTableAdapter As MuebleriaSantaCruz.DataSetSucursalTableAdapters.sucursalesTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetSucursalTableAdapters.TableAdapterManager
+    Friend WithEvents SucursalesTableAdapter As MuebleriaCasaCruz.DataSetSucursalTableAdapters.sucursalesTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetSucursalTableAdapters.TableAdapterManager
     Friend WithEvents SucursalesDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -38,10 +38,10 @@ Partial Class frmPuesto
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetPuesto = New MuebleriaSantaCruz.DataSetPuesto()
+        Me.DataSetPuesto = New MuebleriaCasaCruz.DataSetPuesto()
         Me.PuestosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PuestosTableAdapter = New MuebleriaSantaCruz.DataSetPuestoTableAdapters.puestosTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetPuestoTableAdapters.TableAdapterManager()
+        Me.PuestosTableAdapter = New MuebleriaCasaCruz.DataSetPuestoTableAdapters.puestosTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetPuestoTableAdapters.TableAdapterManager()
         Me.PuestosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmPuesto
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetPuestoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetPuestoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'PuestosDataGridView
         '
@@ -297,10 +297,10 @@ Partial Class frmPuesto
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetPuesto As MuebleriaSantaCruz.DataSetPuesto
+    Friend WithEvents DataSetPuesto As MuebleriaCasaCruz.DataSetPuesto
     Friend WithEvents PuestosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents PuestosTableAdapter As MuebleriaSantaCruz.DataSetPuestoTableAdapters.puestosTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetPuestoTableAdapters.TableAdapterManager
+    Friend WithEvents PuestosTableAdapter As MuebleriaCasaCruz.DataSetPuestoTableAdapters.puestosTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetPuestoTableAdapters.TableAdapterManager
     Friend WithEvents PuestosDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

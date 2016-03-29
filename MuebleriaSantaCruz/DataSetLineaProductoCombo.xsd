@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MuebleriaCASACRUZConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuebleriaCASACRUZConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuebleriaSantaCruz.My.MySettings.GlobalReference.Default.MuebleriaCASACRUZConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MuebleriaCASACRUZConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuebleriaCASACRUZConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuebleriaCasaCruz.My.MySettings.GlobalReference.Default.MuebleriaCASACRUZConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="lineas_productosTableAdapter" GeneratorDataComponentClassName="lineas_productosTableAdapter" Name="lineas_productos" UserDataComponentName="lineas_productosTableAdapter">
@@ -33,7 +33,7 @@
   <xs:element name="DataSetLineaProductoCombo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetLineaProductoCombo" msprop:Generator_UserDSName="DataSetLineaProductoCombo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="lineas_productos" msprop:Generator_TableClassName="lineas_productosDataTable" msprop:Generator_TableVarName="tablelineas_productos" msprop:Generator_RowChangedName="lineas_productosRowChanged" msprop:Generator_TablePropName="lineas_productos" msprop:Generator_RowDeletingName="lineas_productosRowDeleting" msprop:Generator_RowChangingName="lineas_productosRowChanging" msprop:Generator_RowEvHandlerName="lineas_productosRowChangeEventHandler" msprop:Generator_RowDeletedName="lineas_productosRowDeleted" msprop:Generator_RowClassName="lineas_productosRow" msprop:Generator_UserTableName="lineas_productos" msprop:Generator_RowEvArgName="lineas_productosRowChangeEvent">
+        <xs:element name="lineas_productos" msprop:Generator_TableClassName="lineas_productosDataTable" msprop:Generator_TableVarName="tablelineas_productos" msprop:Generator_TablePropName="lineas_productos" msprop:Generator_RowDeletingName="lineas_productosRowDeleting" msprop:Generator_RowChangingName="lineas_productosRowChanging" msprop:Generator_RowEvHandlerName="lineas_productosRowChangeEventHandler" msprop:Generator_RowDeletedName="lineas_productosRowDeleted" msprop:Generator_UserTableName="lineas_productos" msprop:Generator_RowChangedName="lineas_productosRowChanged" msprop:Generator_RowEvArgName="lineas_productosRowChangeEvent" msprop:Generator_RowClassName="lineas_productosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

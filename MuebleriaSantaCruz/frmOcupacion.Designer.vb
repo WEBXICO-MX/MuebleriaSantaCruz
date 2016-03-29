@@ -38,10 +38,10 @@ Partial Class frmOcupacion
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetOcupacion = New MuebleriaSantaCruz.DataSetOcupacion()
+        Me.DataSetOcupacion = New MuebleriaCasaCruz.DataSetOcupacion()
         Me.OcupacionesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.OcupacionesTableAdapter = New MuebleriaSantaCruz.DataSetOcupacionTableAdapters.ocupacionesTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetOcupacionTableAdapters.TableAdapterManager()
+        Me.OcupacionesTableAdapter = New MuebleriaCasaCruz.DataSetOcupacionTableAdapters.ocupacionesTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetOcupacionTableAdapters.TableAdapterManager()
         Me.OcupacionesDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmOcupacion
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetOcupacionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetOcupacionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'OcupacionesDataGridView
         '
@@ -297,10 +297,10 @@ Partial Class frmOcupacion
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetOcupacion As MuebleriaSantaCruz.DataSetOcupacion
+    Friend WithEvents DataSetOcupacion As MuebleriaCasaCruz.DataSetOcupacion
     Friend WithEvents OcupacionesBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents OcupacionesTableAdapter As MuebleriaSantaCruz.DataSetOcupacionTableAdapters.ocupacionesTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetOcupacionTableAdapters.TableAdapterManager
+    Friend WithEvents OcupacionesTableAdapter As MuebleriaCasaCruz.DataSetOcupacionTableAdapters.ocupacionesTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetOcupacionTableAdapters.TableAdapterManager
     Friend WithEvents OcupacionesDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

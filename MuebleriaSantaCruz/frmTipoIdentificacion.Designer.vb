@@ -38,10 +38,10 @@ Partial Class frmTipoIdentificacion
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetTipoIdentificacion = New MuebleriaSantaCruz.DataSetTipoIdentificacion()
+        Me.DataSetTipoIdentificacion = New MuebleriaCasaCruz.DataSetTipoIdentificacion()
         Me.Tipos_identificacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Tipos_identificacionTableAdapter = New MuebleriaSantaCruz.DataSetTipoIdentificacionTableAdapters.tipos_identificacionTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetTipoIdentificacionTableAdapters.TableAdapterManager()
+        Me.Tipos_identificacionTableAdapter = New MuebleriaCasaCruz.DataSetTipoIdentificacionTableAdapters.tipos_identificacionTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetTipoIdentificacionTableAdapters.TableAdapterManager()
         Me.Tipos_identificacionDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmTipoIdentificacion
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetTipoIdentificacionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetTipoIdentificacionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Tipos_identificacionDataGridView
         '
@@ -303,10 +303,10 @@ Partial Class frmTipoIdentificacion
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetTipoIdentificacion As MuebleriaSantaCruz.DataSetTipoIdentificacion
+    Friend WithEvents DataSetTipoIdentificacion As MuebleriaCasaCruz.DataSetTipoIdentificacion
     Friend WithEvents Tipos_identificacionBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Tipos_identificacionTableAdapter As MuebleriaSantaCruz.DataSetTipoIdentificacionTableAdapters.tipos_identificacionTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetTipoIdentificacionTableAdapters.TableAdapterManager
+    Friend WithEvents Tipos_identificacionTableAdapter As MuebleriaCasaCruz.DataSetTipoIdentificacionTableAdapters.tipos_identificacionTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetTipoIdentificacionTableAdapters.TableAdapterManager
     Friend WithEvents Tipos_identificacionDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

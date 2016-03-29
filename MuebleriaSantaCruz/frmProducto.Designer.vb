@@ -33,7 +33,7 @@ Partial Class frmProducto
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Tipos_productosComboBox = New System.Windows.Forms.ComboBox()
         Me.Tipos_productosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetTipoProductoCombo = New MuebleriaSantaCruz.DataSetTipoProductoCombo()
+        Me.DataSetTipoProductoCombo = New MuebleriaCasaCruz.DataSetTipoProductoCombo()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbxActivo = New System.Windows.Forms.CheckBox()
         Me.lbtipoestado = New System.Windows.Forms.Label()
@@ -42,18 +42,18 @@ Partial Class frmProducto
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetProducto = New MuebleriaSantaCruz.DataSetProducto()
+        Me.DataSetProducto = New MuebleriaCasaCruz.DataSetProducto()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ProductosTableAdapter = New MuebleriaSantaCruz.DataSetProductoTableAdapters.productosTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetProductoTableAdapters.TableAdapterManager()
+        Me.ProductosTableAdapter = New MuebleriaCasaCruz.DataSetProductoTableAdapters.productosTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProductoTableAdapters.TableAdapterManager()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Tipos_productosTableAdapter = New MuebleriaSantaCruz.DataSetTipoProductoComboTableAdapters.tipos_productosTableAdapter()
-        Me.TableAdapterManager1 = New MuebleriaSantaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager()
+        Me.Tipos_productosTableAdapter = New MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.tipos_productosTableAdapter()
+        Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -266,7 +266,7 @@ Partial Class frmProducto
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetProductoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetProductoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'ProductosDataGridView
         '
@@ -326,7 +326,7 @@ Partial Class frmProducto
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager1.Connection = Nothing
-        Me.TableAdapterManager1.UpdateOrder = MuebleriaSantaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.UpdateOrder = MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'ErrorProvider1
         '
@@ -374,15 +374,15 @@ Partial Class frmProducto
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetProducto As MuebleriaSantaCruz.DataSetProducto
+    Friend WithEvents DataSetProducto As MuebleriaCasaCruz.DataSetProducto
     Friend WithEvents ProductosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents ProductosTableAdapter As MuebleriaSantaCruz.DataSetProductoTableAdapters.productosTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetProductoTableAdapters.TableAdapterManager
+    Friend WithEvents ProductosTableAdapter As MuebleriaCasaCruz.DataSetProductoTableAdapters.productosTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetProductoTableAdapters.TableAdapterManager
     Friend WithEvents ProductosDataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents DataSetTipoProductoCombo As MuebleriaSantaCruz.DataSetTipoProductoCombo
+    Friend WithEvents DataSetTipoProductoCombo As MuebleriaCasaCruz.DataSetTipoProductoCombo
     Friend WithEvents Tipos_productosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Tipos_productosTableAdapter As MuebleriaSantaCruz.DataSetTipoProductoComboTableAdapters.tipos_productosTableAdapter
-    Friend WithEvents TableAdapterManager1 As MuebleriaSantaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager
+    Friend WithEvents Tipos_productosTableAdapter As MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.tipos_productosTableAdapter
+    Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager
     Friend WithEvents Tipos_productosComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn

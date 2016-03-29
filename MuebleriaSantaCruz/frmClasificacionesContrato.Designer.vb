@@ -38,10 +38,10 @@ Partial Class frmClasificacionesContrato
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetClasificacionContrato = New MuebleriaSantaCruz.DataSetClasificacionContrato()
+        Me.DataSetClasificacionContrato = New MuebleriaCasaCruz.DataSetClasificacionContrato()
         Me.Clasificaciones_contratoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Clasificaciones_contratoTableAdapter = New MuebleriaSantaCruz.DataSetClasificacionContratoTableAdapters.clasificaciones_contratoTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetClasificacionContratoTableAdapters.TableAdapterManager()
+        Me.Clasificaciones_contratoTableAdapter = New MuebleriaCasaCruz.DataSetClasificacionContratoTableAdapters.clasificaciones_contratoTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetClasificacionContratoTableAdapters.TableAdapterManager()
         Me.Clasificaciones_contratoDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmClasificacionesContrato
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetClasificacionContratoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetClasificacionContratoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Clasificaciones_contratoDataGridView
         '
@@ -297,10 +297,10 @@ Partial Class frmClasificacionesContrato
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetClasificacionContrato As MuebleriaSantaCruz.DataSetClasificacionContrato
+    Friend WithEvents DataSetClasificacionContrato As MuebleriaCasaCruz.DataSetClasificacionContrato
     Friend WithEvents Clasificaciones_contratoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Clasificaciones_contratoTableAdapter As MuebleriaSantaCruz.DataSetClasificacionContratoTableAdapters.clasificaciones_contratoTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetClasificacionContratoTableAdapters.TableAdapterManager
+    Friend WithEvents Clasificaciones_contratoTableAdapter As MuebleriaCasaCruz.DataSetClasificacionContratoTableAdapters.clasificaciones_contratoTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetClasificacionContratoTableAdapters.TableAdapterManager
     Friend WithEvents Clasificaciones_contratoDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

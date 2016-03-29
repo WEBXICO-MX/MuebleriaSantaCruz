@@ -38,10 +38,10 @@ Partial Class frmTipoMedioComunicacion
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetTipoMedioComunicacion = New MuebleriaSantaCruz.DataSetTipoMedioComunicacion()
+        Me.DataSetTipoMedioComunicacion = New MuebleriaCasaCruz.DataSetTipoMedioComunicacion()
         Me.Tipos_medios_comunicacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Tipos_medios_comunicacionTableAdapter = New MuebleriaSantaCruz.DataSetTipoMedioComunicacionTableAdapters.tipos_medios_comunicacionTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetTipoMedioComunicacionTableAdapters.TableAdapterManager()
+        Me.Tipos_medios_comunicacionTableAdapter = New MuebleriaCasaCruz.DataSetTipoMedioComunicacionTableAdapters.tipos_medios_comunicacionTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetTipoMedioComunicacionTableAdapters.TableAdapterManager()
         Me.Tipos_medios_comunicacionDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -223,7 +223,7 @@ Partial Class frmTipoMedioComunicacion
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetTipoMedioComunicacionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetTipoMedioComunicacionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Tipos_medios_comunicacionDataGridView
         '
@@ -297,10 +297,10 @@ Partial Class frmTipoMedioComunicacion
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetTipoMedioComunicacion As MuebleriaSantaCruz.DataSetTipoMedioComunicacion
+    Friend WithEvents DataSetTipoMedioComunicacion As MuebleriaCasaCruz.DataSetTipoMedioComunicacion
     Friend WithEvents Tipos_medios_comunicacionBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Tipos_medios_comunicacionTableAdapter As MuebleriaSantaCruz.DataSetTipoMedioComunicacionTableAdapters.tipos_medios_comunicacionTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetTipoMedioComunicacionTableAdapters.TableAdapterManager
+    Friend WithEvents Tipos_medios_comunicacionTableAdapter As MuebleriaCasaCruz.DataSetTipoMedioComunicacionTableAdapters.tipos_medios_comunicacionTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetTipoMedioComunicacionTableAdapters.TableAdapterManager
     Friend WithEvents Tipos_medios_comunicacionDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

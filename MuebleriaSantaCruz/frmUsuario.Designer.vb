@@ -30,10 +30,10 @@ Partial Class frmUsuario
         Me.btdeshacer = New System.Windows.Forms.ToolStripButton()
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
-        Me.DataSetUsuario = New MuebleriaSantaCruz.DataSetUsuario()
+        Me.DataSetUsuario = New MuebleriaCasaCruz.DataSetUsuario()
         Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.UsuariosTableAdapter = New MuebleriaSantaCruz.DataSetUsuarioTableAdapters.usuariosTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetUsuarioTableAdapters.TableAdapterManager()
+        Me.UsuariosTableAdapter = New MuebleriaCasaCruz.DataSetUsuarioTableAdapters.usuariosTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetUsuarioTableAdapters.TableAdapterManager()
         Me.UsuariosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -142,7 +142,7 @@ Partial Class frmUsuario
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetUsuarioTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetUsuarioTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'UsuariosDataGridView
         '
@@ -368,10 +368,10 @@ Partial Class frmUsuario
     Friend WithEvents btdeshacer As System.Windows.Forms.ToolStripButton
     Friend WithEvents bteditar As System.Windows.Forms.ToolStripButton
     Friend WithEvents btbuscar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents DataSetUsuario As MuebleriaSantaCruz.DataSetUsuario
+    Friend WithEvents DataSetUsuario As MuebleriaCasaCruz.DataSetUsuario
     Friend WithEvents UsuariosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents UsuariosTableAdapter As MuebleriaSantaCruz.DataSetUsuarioTableAdapters.usuariosTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetUsuarioTableAdapters.TableAdapterManager
+    Friend WithEvents UsuariosTableAdapter As MuebleriaCasaCruz.DataSetUsuarioTableAdapters.usuariosTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetUsuarioTableAdapters.TableAdapterManager
     Friend WithEvents UsuariosDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

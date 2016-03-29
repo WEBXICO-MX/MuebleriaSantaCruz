@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MuebleriaCASACRUZConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuebleriaCASACRUZConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuebleriaSantaCruz.My.MySettings.GlobalReference.Default.MuebleriaCASACRUZConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MuebleriaCASACRUZConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuebleriaCASACRUZConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuebleriaCasaCruz.My.MySettings.GlobalReference.Default.MuebleriaCASACRUZConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="modulosTableAdapter" GeneratorDataComponentClassName="modulosTableAdapter" Name="modulos" UserDataComponentName="modulosTableAdapter">
@@ -35,7 +35,7 @@
   <xs:element name="DataSetModulo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetModulo" msprop:Generator_UserDSName="DataSetModulo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="modulos" msprop:Generator_TableClassName="modulosDataTable" msprop:Generator_TableVarName="tablemodulos" msprop:Generator_RowChangedName="modulosRowChanged" msprop:Generator_TablePropName="modulos" msprop:Generator_RowDeletingName="modulosRowDeleting" msprop:Generator_RowChangingName="modulosRowChanging" msprop:Generator_RowEvHandlerName="modulosRowChangeEventHandler" msprop:Generator_RowDeletedName="modulosRowDeleted" msprop:Generator_RowClassName="modulosRow" msprop:Generator_UserTableName="modulos" msprop:Generator_RowEvArgName="modulosRowChangeEvent">
+        <xs:element name="modulos" msprop:Generator_TableClassName="modulosDataTable" msprop:Generator_TableVarName="tablemodulos" msprop:Generator_TablePropName="modulos" msprop:Generator_RowDeletingName="modulosRowDeleting" msprop:Generator_RowChangingName="modulosRowChanging" msprop:Generator_RowEvHandlerName="modulosRowChangeEventHandler" msprop:Generator_RowDeletedName="modulosRowDeleted" msprop:Generator_UserTableName="modulos" msprop:Generator_RowChangedName="modulosRowChanged" msprop:Generator_RowEvArgName="modulosRowChangeEvent" msprop:Generator_RowClassName="modulosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

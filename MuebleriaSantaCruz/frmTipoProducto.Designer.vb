@@ -34,7 +34,7 @@ Partial Class frmTipoProducto
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Lineas_productosComboBox = New System.Windows.Forms.ComboBox()
         Me.Lineas_productosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetLineaProductoCombo = New MuebleriaSantaCruz.DataSetLineaProductoCombo()
+        Me.DataSetLineaProductoCombo = New MuebleriaCasaCruz.DataSetLineaProductoCombo()
         Me.cbxActivo = New System.Windows.Forms.CheckBox()
         Me.lbtipoestado = New System.Windows.Forms.Label()
         Me.lbestado = New System.Windows.Forms.Label()
@@ -42,10 +42,10 @@ Partial Class frmTipoProducto
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetTipoProducto = New MuebleriaSantaCruz.DataSetTipoProducto()
+        Me.DataSetTipoProducto = New MuebleriaCasaCruz.DataSetTipoProducto()
         Me.Tipos_productosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Tipos_productosTableAdapter = New MuebleriaSantaCruz.DataSetTipoProductoTableAdapters.tipos_productosTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetTipoProductoTableAdapters.TableAdapterManager()
+        Me.Tipos_productosTableAdapter = New MuebleriaCasaCruz.DataSetTipoProductoTableAdapters.tipos_productosTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetTipoProductoTableAdapters.TableAdapterManager()
         Me.Tipos_productosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.linea_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,8 +54,8 @@ Partial Class frmTipoProducto
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Lineas_productosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Lineas_productosTableAdapter = New MuebleriaSantaCruz.DataSetLineaProductoComboTableAdapters.lineas_productosTableAdapter()
-        Me.TableAdapterManager1 = New MuebleriaSantaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager()
+        Me.Lineas_productosTableAdapter = New MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.lineas_productosTableAdapter()
+        Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Lineas_productosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -268,7 +268,7 @@ Partial Class frmTipoProducto
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetTipoProductoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetTipoProductoTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Tipos_productosDataGridView
         '
@@ -337,7 +337,7 @@ Partial Class frmTipoProducto
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager1.Connection = Nothing
-        Me.TableAdapterManager1.UpdateOrder = MuebleriaSantaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.UpdateOrder = MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'frmTipoProducto
         '
@@ -381,16 +381,16 @@ Partial Class frmTipoProducto
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetTipoProducto As MuebleriaSantaCruz.DataSetTipoProducto
+    Friend WithEvents DataSetTipoProducto As MuebleriaCasaCruz.DataSetTipoProducto
     Friend WithEvents Tipos_productosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Tipos_productosTableAdapter As MuebleriaSantaCruz.DataSetTipoProductoTableAdapters.tipos_productosTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetTipoProductoTableAdapters.TableAdapterManager
+    Friend WithEvents Tipos_productosTableAdapter As MuebleriaCasaCruz.DataSetTipoProductoTableAdapters.tipos_productosTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetTipoProductoTableAdapters.TableAdapterManager
     Friend WithEvents Tipos_productosDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-    Friend WithEvents DataSetLineaProductoCombo As MuebleriaSantaCruz.DataSetLineaProductoCombo
+    Friend WithEvents DataSetLineaProductoCombo As MuebleriaCasaCruz.DataSetLineaProductoCombo
     Friend WithEvents Lineas_productosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Lineas_productosTableAdapter As MuebleriaSantaCruz.DataSetLineaProductoComboTableAdapters.lineas_productosTableAdapter
-    Friend WithEvents TableAdapterManager1 As MuebleriaSantaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager
+    Friend WithEvents Lineas_productosTableAdapter As MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.lineas_productosTableAdapter
+    Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Lineas_productosComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Lineas_productosBindingSource1 As System.Windows.Forms.BindingSource

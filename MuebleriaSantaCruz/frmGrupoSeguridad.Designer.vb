@@ -38,10 +38,10 @@ Partial Class frmGrupoSeguridad
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetGrupoSeguridad = New MuebleriaSantaCruz.DataSetGrupoSeguridad()
+        Me.DataSetGrupoSeguridad = New MuebleriaCasaCruz.DataSetGrupoSeguridad()
         Me.Grupos_seguridadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Grupos_seguridadTableAdapter = New MuebleriaSantaCruz.DataSetGrupoSeguridadTableAdapters.grupos_seguridadTableAdapter()
-        Me.TableAdapterManager = New MuebleriaSantaCruz.DataSetGrupoSeguridadTableAdapters.TableAdapterManager()
+        Me.Grupos_seguridadTableAdapter = New MuebleriaCasaCruz.DataSetGrupoSeguridadTableAdapters.grupos_seguridadTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetGrupoSeguridadTableAdapters.TableAdapterManager()
         Me.Grupos_seguridadDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -225,7 +225,7 @@ Partial Class frmGrupoSeguridad
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.UpdateOrder = MuebleriaSantaCruz.DataSetGrupoSeguridadTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetGrupoSeguridadTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Grupos_seguridadDataGridView
         '
@@ -311,10 +311,10 @@ Partial Class frmGrupoSeguridad
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataSetGrupoSeguridad As MuebleriaSantaCruz.DataSetGrupoSeguridad
+    Friend WithEvents DataSetGrupoSeguridad As MuebleriaCasaCruz.DataSetGrupoSeguridad
     Friend WithEvents Grupos_seguridadBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Grupos_seguridadTableAdapter As MuebleriaSantaCruz.DataSetGrupoSeguridadTableAdapters.grupos_seguridadTableAdapter
-    Friend WithEvents TableAdapterManager As MuebleriaSantaCruz.DataSetGrupoSeguridadTableAdapters.TableAdapterManager
+    Friend WithEvents Grupos_seguridadTableAdapter As MuebleriaCasaCruz.DataSetGrupoSeguridadTableAdapters.grupos_seguridadTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetGrupoSeguridadTableAdapters.TableAdapterManager
     Friend WithEvents Grupos_seguridadDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
