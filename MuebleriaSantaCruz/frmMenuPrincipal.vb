@@ -104,4 +104,8 @@
     Private Sub PersonalMenuItem2_Click(sender As Object, e As EventArgs) Handles PersonalMenuItem2.Click
         frmEmpleado.Show()
     End Sub
+
+    Private Sub TiposDeIdentificaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeIdentificaciónToolStripMenuItem.Click
+        frmTipoIdentificacion.Show()
+    End Sub
 End Class

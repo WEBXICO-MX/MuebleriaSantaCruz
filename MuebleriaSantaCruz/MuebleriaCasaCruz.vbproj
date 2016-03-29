@@ -144,6 +144,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSucursal.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetTipoIdentificacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoIdentificacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetTipoMedioComunicacion.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -589,6 +594,17 @@
     </None>
     <None Include="DataSetSucursal.xss">
       <DependentUpon>DataSetSucursal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoIdentificacion.xsc">
+      <DependentUpon>DataSetTipoIdentificacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoIdentificacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoIdentificacion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoIdentificacion.xss">
+      <DependentUpon>DataSetTipoIdentificacion.xsd</DependentUpon>
     </None>
     <None Include="DataSetTipoMedioComunicacion.xsc">
       <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>

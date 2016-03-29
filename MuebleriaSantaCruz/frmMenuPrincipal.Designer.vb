@@ -63,6 +63,7 @@ Partial Class frmMenuPrincipal
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TiposDeIdentificaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -153,7 +154,7 @@ Partial Class frmMenuPrincipal
         '
         'ClientesMenuItem
         '
-        Me.ClientesMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClasificacionesDeClientesToolStripMenuItem, Me.OcupacionesToolStripMenuItem, Me.TiposDeMedioDeComunicaciónToolStripMenuItem, Me.ClientesMenuItem2})
+        Me.ClientesMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClientesMenuItem2, Me.OcupacionesToolStripMenuItem, Me.TiposDeMedioDeComunicaciónToolStripMenuItem, Me.TiposDeIdentificaciónToolStripMenuItem})
         Me.ClientesMenuItem.Name = "ClientesMenuItem"
         Me.ClientesMenuItem.Size = New System.Drawing.Size(200, 70)
         Me.ClientesMenuItem.Text = "Clientes"
@@ -200,13 +201,13 @@ Partial Class frmMenuPrincipal
         Me.PuestoToolStripMenuItem.Image = Global.MuebleriaSantaCruz.My.Resources.Resources._1456962263_testimonials
         Me.PuestoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PuestoToolStripMenuItem.Name = "PuestoToolStripMenuItem"
-        Me.PuestoToolStripMenuItem.Size = New System.Drawing.Size(200, 70)
+        Me.PuestoToolStripMenuItem.Size = New System.Drawing.Size(179, 70)
         Me.PuestoToolStripMenuItem.Text = "Puestos"
         '
         'PersonalMenuItem2
         '
         Me.PersonalMenuItem2.Name = "PersonalMenuItem2"
-        Me.PersonalMenuItem2.Size = New System.Drawing.Size(200, 70)
+        Me.PersonalMenuItem2.Size = New System.Drawing.Size(179, 70)
         Me.PersonalMenuItem2.Text = "Personal"
         '
         'VentasMenuItem
@@ -381,6 +382,12 @@ Partial Class frmMenuPrincipal
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
+        'TiposDeIdentificaciónToolStripMenuItem
+        '
+        Me.TiposDeIdentificaciónToolStripMenuItem.Name = "TiposDeIdentificaciónToolStripMenuItem"
+        Me.TiposDeIdentificaciónToolStripMenuItem.Size = New System.Drawing.Size(341, 70)
+        Me.TiposDeIdentificaciónToolStripMenuItem.Text = "Tipos de identificación"
+        '
         'frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -442,4 +449,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents ProductosMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClientesMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PersonalMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TiposDeIdentificaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
