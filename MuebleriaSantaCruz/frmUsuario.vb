@@ -133,6 +133,8 @@ Public Class frmUsuario
     Private Sub LimpiarCajasdeTexto()
         txtID.Text = ""
         txtNombre.Text = ""
+        txtLogin.Text = ""
+        txtPassword.Text = ""
         cbxActivo.Checked = True
     End Sub
 
@@ -152,7 +154,9 @@ Public Class frmUsuario
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = UsuariosDataGridView.Rows(F).Cells(0).Value
         txtNombre.Text = UsuariosDataGridView.Rows(F).Cells(1).Value
-        cbxActivo.Checked = UsuariosDataGridView.Rows(F).Cells(2).Value
+        txtLogin.Text = UsuariosDataGridView.Rows(F).Cells(2).Value
+        txtPassword.Text = UsuariosDataGridView.Rows(F).Cells(3).Value
+        cbxActivo.Checked = UsuariosDataGridView.Rows(F).Cells(6).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()

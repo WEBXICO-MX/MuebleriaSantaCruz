@@ -150,7 +150,7 @@ Partial Class frmUsuario
         Me.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsuariosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewCheckBoxColumn1})
         Me.UsuariosDataGridView.DataSource = Me.UsuariosBindingSource
-        Me.UsuariosDataGridView.Location = New System.Drawing.Point(324, 53)
+        Me.UsuariosDataGridView.Location = New System.Drawing.Point(335, 53)
         Me.UsuariosDataGridView.Margin = New System.Windows.Forms.Padding(2)
         Me.UsuariosDataGridView.Name = "UsuariosDataGridView"
         Me.UsuariosDataGridView.Size = New System.Drawing.Size(478, 260)
