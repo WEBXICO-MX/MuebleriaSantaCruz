@@ -100,6 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetClasificacionContrato.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetCliente.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetConceptoPago.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +139,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetOcupacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetOcupacionCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOcupacionCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetProducto.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -174,6 +184,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTipoIdentificacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTipoIdentificacionCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoIdentificacionCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetTipoMedioComunicacion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -522,6 +537,17 @@
     <None Include="DataSetClasificacionContrato.xss">
       <DependentUpon>DataSetClasificacionContrato.xsd</DependentUpon>
     </None>
+    <None Include="DataSetCliente.xsc">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCliente.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCliente.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetCliente.xss">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </None>
     <None Include="DataSetConceptoPago.xsc">
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
     </None>
@@ -598,6 +624,17 @@
     </None>
     <None Include="DataSetOcupacion.xss">
       <DependentUpon>DataSetOcupacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOcupacionCombo.xsc">
+      <DependentUpon>DataSetOcupacionCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOcupacionCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOcupacionCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetOcupacionCombo.xss">
+      <DependentUpon>DataSetOcupacionCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetProducto.xsc">
       <DependentUpon>DataSetProducto.xsd</DependentUpon>
@@ -686,6 +723,17 @@
     </None>
     <None Include="DataSetTipoIdentificacion.xss">
       <DependentUpon>DataSetTipoIdentificacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoIdentificacionCombo.xsc">
+      <DependentUpon>DataSetTipoIdentificacionCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoIdentificacionCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoIdentificacionCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoIdentificacionCombo.xss">
+      <DependentUpon>DataSetTipoIdentificacionCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetTipoMedioComunicacion.xsc">
       <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>

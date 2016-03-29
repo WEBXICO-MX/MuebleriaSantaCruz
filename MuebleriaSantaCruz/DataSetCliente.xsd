@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetCliente" targetNamespace="http://tempuri.org/DataSetCliente.xsd" xmlns:mstns="http://tempuri.org/DataSetCliente.xsd" xmlns="http://tempuri.org/DataSetCliente.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MuebleriaCASACRUZConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuebleriaCASACRUZConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuebleriaCasaCruz.My.MySettings.GlobalReference.Default.MuebleriaCASACRUZConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="clientesTableAdapter" GeneratorDataComponentClassName="clientesTableAdapter" Name="clientes" UserDataComponentName="clientesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MuebleriaCASACRUZConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT c.persona_id, o.nombre AS ocupacion, ti.nombre AS tipo_identificacion,p.nombre, p. ap_paterno, p.ap_materno, p.fecha_nacimiento, p.sexo,c.ocupacion_id, c.tipo_identificacion_id, c.fecha_registro, c.activo 
+FROM dbo.clientes AS c
+INNER JOIN dbo.personas AS p ON p.id = c.persona_id
+INNER JOIN dbo.ocupaciones AS o ON o.id = c.ocupacion_id
+INNER JOIN dbo.tipos_identificacion AS ti ON ti.id = c.tipo_identificacion_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="persona_id" DataSetColumn="persona_id" />
+              <Mapping SourceColumn="ocupacion_id" DataSetColumn="ocupacion_id" />
+              <Mapping SourceColumn="tipo_identificacion_id" DataSetColumn="tipo_identificacion_id" />
+              <Mapping SourceColumn="fecha_registro" DataSetColumn="fecha_registro" />
+              <Mapping SourceColumn="activo" DataSetColumn="activo" />
+              <Mapping SourceColumn="ocupacion" DataSetColumn="ocupacion" />
+              <Mapping SourceColumn="tipo_identificacion" DataSetColumn="tipo_identificacion" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="ap_paterno" DataSetColumn="ap_paterno" />
+              <Mapping SourceColumn="ap_materno" DataSetColumn="ap_materno" />
+              <Mapping SourceColumn="fecha_nacimiento" DataSetColumn="fecha_nacimiento" />
+              <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetCliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetCliente" msprop:Generator_UserDSName="DataSetCliente">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="clientes" msprop:Generator_TableClassName="clientesDataTable" msprop:Generator_TableVarName="tableclientes" msprop:Generator_TablePropName="clientes" msprop:Generator_RowDeletingName="clientesRowDeleting" msprop:Generator_RowChangingName="clientesRowChanging" msprop:Generator_RowEvHandlerName="clientesRowChangeEventHandler" msprop:Generator_RowDeletedName="clientesRowDeleted" msprop:Generator_UserTableName="clientes" msprop:Generator_RowChangedName="clientesRowChanged" msprop:Generator_RowEvArgName="clientesRowChangeEvent" msprop:Generator_RowClassName="clientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="persona_id" msprop:Generator_ColumnVarNameInTable="columnpersona_id" msprop:Generator_ColumnPropNameInRow="persona_id" msprop:Generator_ColumnPropNameInTable="persona_idColumn" msprop:Generator_UserColumnName="persona_id" type="xs:int" />
+              <xs:element name="ocupacion_id" msprop:Generator_ColumnVarNameInTable="columnocupacion_id" msprop:Generator_ColumnPropNameInRow="ocupacion_id" msprop:Generator_ColumnPropNameInTable="ocupacion_idColumn" msprop:Generator_UserColumnName="ocupacion_id" type="xs:int" minOccurs="0" />
+              <xs:element name="tipo_identificacion_id" msprop:Generator_ColumnVarNameInTable="columntipo_identificacion_id" msprop:Generator_ColumnPropNameInRow="tipo_identificacion_id" msprop:Generator_ColumnPropNameInTable="tipo_identificacion_idColumn" msprop:Generator_UserColumnName="tipo_identificacion_id" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_registro" msprop:Generator_ColumnVarNameInTable="columnfecha_registro" msprop:Generator_ColumnPropNameInRow="fecha_registro" msprop:Generator_ColumnPropNameInTable="fecha_registroColumn" msprop:Generator_UserColumnName="fecha_registro" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="activo" msprop:Generator_ColumnVarNameInTable="columnactivo" msprop:Generator_ColumnPropNameInRow="activo" msprop:Generator_ColumnPropNameInTable="activoColumn" msprop:Generator_UserColumnName="activo" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ocupacion" msprop:Generator_ColumnVarNameInTable="columnocupacion" msprop:Generator_ColumnPropNameInRow="ocupacion" msprop:Generator_ColumnPropNameInTable="ocupacionColumn" msprop:Generator_UserColumnName="ocupacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo_identificacion" msprop:Generator_ColumnVarNameInTable="columntipo_identificacion" msprop:Generator_ColumnPropNameInRow="tipo_identificacion" msprop:Generator_ColumnPropNameInTable="tipo_identificacionColumn" msprop:Generator_UserColumnName="tipo_identificacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_paterno" msprop:Generator_ColumnVarNameInTable="columnap_paterno" msprop:Generator_ColumnPropNameInRow="ap_paterno" msprop:Generator_ColumnPropNameInTable="ap_paternoColumn" msprop:Generator_UserColumnName="ap_paterno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_materno" msprop:Generator_ColumnVarNameInTable="columnap_materno" msprop:Generator_ColumnPropNameInRow="ap_materno" msprop:Generator_ColumnPropNameInTable="ap_maternoColumn" msprop:Generator_UserColumnName="ap_materno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_nacimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_nacimiento" msprop:Generator_ColumnPropNameInRow="fecha_nacimiento" msprop:Generator_ColumnPropNameInTable="fecha_nacimientoColumn" msprop:Generator_UserColumnName="fecha_nacimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="sexo" msprop:Generator_ColumnVarNameInTable="columnsexo" msprop:Generator_ColumnPropNameInRow="sexo" msprop:Generator_ColumnPropNameInTable="sexoColumn" msprop:Generator_UserColumnName="sexo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:clientes" />
+      <xs:field xpath="mstns:persona_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
