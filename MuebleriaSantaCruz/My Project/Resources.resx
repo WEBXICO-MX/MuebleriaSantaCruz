@@ -118,19 +118,109 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="catalog-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\catalog-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1456962616_Report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962616_Report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456963448_Report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456963448_Report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456961922_globe-safety-shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456961922_globe-safety-shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456961999_blockdevice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456961999_blockdevice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456964951_photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456964951_photo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456962370_gear-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962370_gear-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Windows-Close-Program-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Windows-Close-Program-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1456960979_clients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456960979_clients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456963141_shop-081" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456963141_shop-081.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456963046_kthememgr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456963046_kthememgr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456963396_finance-68" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456963396_finance-68.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456962496_Close_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962496_Close_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456961832_dollar-bills" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456961832_dollar-bills.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456961357_contracto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456961357_contracto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456962719_office-13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962719_office-13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456963487_Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456963487_Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button-Ok-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button-Ok-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1456963909_icon-68" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456963909_icon-68.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user-group-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-group-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456962466_Close_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962466_Close_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456960794_Product-documentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456960794_Product-documentation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456963141_shop-08" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456963141_shop-08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456964714_Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456964714_Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456960658_Product-documentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456960658_Product-documentation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456962104_office_-37" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962104_office_-37.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456964917_ok-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456964917_ok-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456964377_companies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456964377_companies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="catalog-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\catalog-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456964050_free-38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456964050_free-38.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456962263_testimonials" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962263_testimonials.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456962669_window-tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456962669_window-tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456964650_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456964650_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1456965038_Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1456965038_Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

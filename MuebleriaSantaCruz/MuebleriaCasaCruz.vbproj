@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,6 +60,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -71,6 +89,151 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
+    <Compile Include="DataSetClasificacionCliente.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClasificacionCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetClasificacionContrato.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClasificacionContrato.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetConceptoPago.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetGrupoSeguridad.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGrupoSeguridad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetLineaProducto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLineaProducto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetModulo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetModulo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetOcupacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOcupacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPuesto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPuesto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSucursal.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSucursal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTipoMedioComunicacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetUsuario.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducto.Designer.vb">
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambio.Designer.vb">
+      <DependentUpon>frmCambio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoProducto.Designer.vb">
+      <DependentUpon>frmTipoProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClasificacionCliente.Designer.vb">
+      <DependentUpon>frmClasificacionCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClasificacionCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClasificacionesContrato.Designer.vb">
+      <DependentUpon>frmClasificacionesContrato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClasificacionesContrato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCliente.Designer.vb">
+      <DependentUpon>frmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompra.Designer.vb">
+      <DependentUpon>frmCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConceptoPago.Designer.vb">
+      <DependentUpon>frmConceptoPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConceptoPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevolucionCliente.Designer.vb">
+      <DependentUpon>frmDevolucionCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDevolucionCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevolucionProveedor.Designer.vb">
+      <DependentUpon>frmDevolucionProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDevolucionProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpleado.Designer.vb">
+      <DependentUpon>frmEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrupoSeguridad.Designer.vb">
+      <DependentUpon>frmGrupoSeguridad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrupoSeguridad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrupoSeguridadModulo.Designer.vb">
+      <DependentUpon>frmGrupoSeguridadModulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrupoSeguridadModulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrupoSeguridadUsuario.Designer.vb">
+      <DependentUpon>frmGrupoSeguridadUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrupoSeguridadUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLineaProducto.Designer.vb">
+      <DependentUpon>frmLineaProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLineaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -78,10 +241,94 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMedioComunicacion.Designer.vb">
+      <DependentUpon>frmMedioComunicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedioComunicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMenuPrincipal.Designer.vb">
       <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMenuPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModulo.Designer.vb">
+      <DependentUpon>frmModulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOcupacion.Designer.vb">
+      <DependentUpon>frmOcupacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOcupacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersona.Designer.vb">
+      <DependentUpon>frmPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedor.Designer.vb">
+      <DependentUpon>frmProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPuesto.Designer.vb">
+      <DependentUpon>frmPuesto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRuta.Designer.vb">
+      <DependentUpon>frmRuta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRuta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSucursal.Designer.vb">
+      <DependentUpon>frmSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoIdentificacion.Designer.vb">
+      <DependentUpon>frmTipoIdentificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoIdentificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoMedioComunicacion.Designer.vb">
+      <DependentUpon>frmTipoMedioComunicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoMedioComunicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoPersona.Designer.vb">
+      <DependentUpon>frmTipoPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraspasoDeOtroCentroDistribución.Designer.vb">
+      <DependentUpon>frmTraspasoDeOtroCentroDistribución.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraspasoDeOtroCentroDistribución.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuario.Designer.vb">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVenta.Designer.vb">
+      <DependentUpon>frmVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -101,11 +348,98 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmProducto.resx">
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambio.resx">
+      <DependentUpon>frmCambio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoProducto.resx">
+      <DependentUpon>frmTipoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClasificacionCliente.resx">
+      <DependentUpon>frmClasificacionCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClasificacionesContrato.resx">
+      <DependentUpon>frmClasificacionesContrato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCliente.resx">
+      <DependentUpon>frmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompra.resx">
+      <DependentUpon>frmCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConceptoPago.resx">
+      <DependentUpon>frmConceptoPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevolucionCliente.resx">
+      <DependentUpon>frmDevolucionCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevolucionProveedor.resx">
+      <DependentUpon>frmDevolucionProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrupoSeguridad.resx">
+      <DependentUpon>frmGrupoSeguridad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrupoSeguridadModulo.resx">
+      <DependentUpon>frmGrupoSeguridadModulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrupoSeguridadUsuario.resx">
+      <DependentUpon>frmGrupoSeguridadUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLineaProducto.resx">
+      <DependentUpon>frmLineaProducto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMedioComunicacion.resx">
+      <DependentUpon>frmMedioComunicacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModulo.resx">
+      <DependentUpon>frmModulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOcupacion.resx">
+      <DependentUpon>frmOcupacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersona.resx">
+      <DependentUpon>frmPersona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedor.resx">
+      <DependentUpon>frmProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPuesto.resx">
+      <DependentUpon>frmPuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRuta.resx">
+      <DependentUpon>frmRuta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSucursal.resx">
+      <DependentUpon>frmSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoIdentificacion.resx">
+      <DependentUpon>frmTipoIdentificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoMedioComunicacion.resx">
+      <DependentUpon>frmTipoMedioComunicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoPersona.resx">
+      <DependentUpon>frmTipoPersona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraspasoDeOtroCentroDistribución.resx">
+      <DependentUpon>frmTraspasoDeOtroCentroDistribución.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVenta.resx">
+      <DependentUpon>frmVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -115,6 +449,128 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSetClasificacionCliente.xsc">
+      <DependentUpon>DataSetClasificacionCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetClasificacionCliente.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClasificacionCliente.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetClasificacionCliente.xss">
+      <DependentUpon>DataSetClasificacionCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetClasificacionContrato.xsc">
+      <DependentUpon>DataSetClasificacionContrato.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetClasificacionContrato.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClasificacionContrato.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetClasificacionContrato.xss">
+      <DependentUpon>DataSetClasificacionContrato.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetConceptoPago.xsc">
+      <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetConceptoPago.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetConceptoPago.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetConceptoPago.xss">
+      <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGrupoSeguridad.xsc">
+      <DependentUpon>DataSetGrupoSeguridad.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGrupoSeguridad.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGrupoSeguridad.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetGrupoSeguridad.xss">
+      <DependentUpon>DataSetGrupoSeguridad.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetLineaProducto.xsc">
+      <DependentUpon>DataSetLineaProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetLineaProducto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLineaProducto.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetLineaProducto.xss">
+      <DependentUpon>DataSetLineaProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetModulo.xsc">
+      <DependentUpon>DataSetModulo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetModulo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetModulo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetModulo.xss">
+      <DependentUpon>DataSetModulo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOcupacion.xsc">
+      <DependentUpon>DataSetOcupacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOcupacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOcupacion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetOcupacion.xss">
+      <DependentUpon>DataSetOcupacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPuesto.xsc">
+      <DependentUpon>DataSetPuesto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPuesto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPuesto.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetPuesto.xss">
+      <DependentUpon>DataSetPuesto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSucursal.xsc">
+      <DependentUpon>DataSetSucursal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSucursal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSucursal.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetSucursal.xss">
+      <DependentUpon>DataSetSucursal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoMedioComunicacion.xsc">
+      <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoMedioComunicacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoMedioComunicacion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoMedioComunicacion.xss">
+      <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUsuario.xsc">
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUsuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsuario.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetUsuario.xss">
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -143,6 +599,113 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-group-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456960658_Product-documentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456960794_Product-documentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456960979_clients.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456961357_contracto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456961832_dollar-bills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456961922_globe-safety-shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456961999_blockdevice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962104_office_-37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962263_testimonials.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962370_gear-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962466_Close_Box_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962496_Close_Box_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962616_Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962669_window-tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456962719_office-13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456963046_kthememgr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456963141_shop-08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456963141_shop-081.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456963396_finance-68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456963448_Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456963487_Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456963909_icon-68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456964050_free-38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456964377_companies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456964650_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456964714_Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456964917_ok-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456964951_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1456965038_Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
