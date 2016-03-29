@@ -259,6 +259,6 @@ Public Class frmTipoIdentificacion
     Private Sub frmTipoIdentificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetTipoIdentificacion.tipos_identificacion' Puede moverla o quitarla según sea necesario.
         Me.Tipos_identificacionTableAdapter.Fill(Me.DataSetTipoIdentificacion.tipos_identificacion)
-
+        Me.Top = 85
     End Sub
 End Class
