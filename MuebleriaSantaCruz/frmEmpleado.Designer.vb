@@ -31,6 +31,9 @@ Partial Class frmEmpleado
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Estados_civilesComboBox = New System.Windows.Forms.ComboBox()
+        Me.Estados_civilesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetEstadoCivilCombo = New MuebleriaCasaCruz.DataSetEstadoCivilCombo()
         Me.rbFemenino = New System.Windows.Forms.RadioButton()
         Me.rbMasculino = New System.Windows.Forms.RadioButton()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -43,6 +46,8 @@ Partial Class frmEmpleado
         Me.lbestado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtApMaterno = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -58,18 +63,24 @@ Partial Class frmEmpleado
         Me.EmpleadosTableAdapter = New MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.empleadosTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.TableAdapterManager()
         Me.EmpleadosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
+        Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_materno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_nacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sexo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado_civil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado_civil_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.Estados_civilesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetEstadoCivilCombo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PuestosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetPuestoCombo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,6 +152,7 @@ Partial Class frmEmpleado
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Estados_civilesComboBox)
         Me.GroupBox1.Controls.Add(Me.rbFemenino)
         Me.GroupBox1.Controls.Add(Me.rbMasculino)
         Me.GroupBox1.Controls.Add(Me.dtpFechaNacimiento)
@@ -151,6 +163,8 @@ Partial Class frmEmpleado
         Me.GroupBox1.Controls.Add(Me.lbestado)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtID)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtApMaterno)
         Me.GroupBox1.Controls.Add(Me.Label5)
@@ -160,9 +174,30 @@ Partial Class frmEmpleado
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 54)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(451, 302)
+        Me.GroupBox1.Size = New System.Drawing.Size(451, 359)
         Me.GroupBox1.TabIndex = 38
         Me.GroupBox1.TabStop = False
+        '
+        'Estados_civilesComboBox
+        '
+        Me.Estados_civilesComboBox.DataSource = Me.Estados_civilesBindingSource
+        Me.Estados_civilesComboBox.DisplayMember = "nombre"
+        Me.Estados_civilesComboBox.FormattingEnabled = True
+        Me.Estados_civilesComboBox.Location = New System.Drawing.Point(123, 272)
+        Me.Estados_civilesComboBox.Name = "Estados_civilesComboBox"
+        Me.Estados_civilesComboBox.Size = New System.Drawing.Size(300, 21)
+        Me.Estados_civilesComboBox.TabIndex = 18
+        Me.Estados_civilesComboBox.ValueMember = "id"
+        '
+        'Estados_civilesBindingSource
+        '
+        Me.Estados_civilesBindingSource.DataMember = "estados_civiles"
+        Me.Estados_civilesBindingSource.DataSource = Me.DataSetEstadoCivilCombo
+        '
+        'DataSetEstadoCivilCombo
+        '
+        Me.DataSetEstadoCivilCombo.DataSetName = "DataSetEstadoCivilCombo"
+        Me.DataSetEstadoCivilCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'rbFemenino
         '
@@ -229,7 +264,7 @@ Partial Class frmEmpleado
         Me.cbxActivo.AutoSize = True
         Me.cbxActivo.Checked = True
         Me.cbxActivo.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbxActivo.Location = New System.Drawing.Point(11, 269)
+        Me.cbxActivo.Location = New System.Drawing.Point(11, 319)
         Me.cbxActivo.Name = "cbxActivo"
         Me.cbxActivo.Size = New System.Drawing.Size(56, 17)
         Me.cbxActivo.TabIndex = 9
@@ -277,6 +312,26 @@ Partial Class frmEmpleado
         Me.txtID.Size = New System.Drawing.Size(54, 20)
         Me.txtID.TabIndex = 1
         Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(8, 238)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(34, 13)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Sexo:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(6, 272)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(64, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Estado civil:"
         '
         'Label6
         '
@@ -388,13 +443,23 @@ Partial Class frmEmpleado
         Me.EmpleadosDataGridView.AllowUserToDeleteRows = False
         Me.EmpleadosDataGridView.AutoGenerateColumns = False
         Me.EmpleadosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmpleadosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.puesto, Me.nombre, Me.ap_paterno, Me.ap_materno, Me.fecha_nacimiento, Me.sexo, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
+        Me.EmpleadosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.nombre, Me.ap_paterno, Me.ap_materno, Me.fecha_nacimiento, Me.sexo, Me.estado_civil, Me.puesto, Me.estado_civil_id, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
         Me.EmpleadosDataGridView.DataSource = Me.EmpleadosBindingSource
         Me.EmpleadosDataGridView.Location = New System.Drawing.Point(469, 64)
         Me.EmpleadosDataGridView.Name = "EmpleadosDataGridView"
         Me.EmpleadosDataGridView.ReadOnly = True
-        Me.EmpleadosDataGridView.Size = New System.Drawing.Size(372, 292)
+        Me.EmpleadosDataGridView.Size = New System.Drawing.Size(372, 349)
         Me.EmpleadosDataGridView.TabIndex = 38
+        '
+        'Estados_civilesTableAdapter
+        '
+        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager2
+        '
+        Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager2.Connection = Nothing
+        Me.TableAdapterManager2.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'DataGridViewTextBoxColumn1
         '
@@ -402,13 +467,6 @@ Partial Class frmEmpleado
         Me.DataGridViewTextBoxColumn1.HeaderText = "persona_id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'puesto
-        '
-        Me.puesto.DataPropertyName = "puesto"
-        Me.puesto.HeaderText = "puesto"
-        Me.puesto.Name = "puesto"
-        Me.puesto.ReadOnly = True
         '
         'nombre
         '
@@ -445,6 +503,28 @@ Partial Class frmEmpleado
         Me.sexo.Name = "sexo"
         Me.sexo.ReadOnly = True
         '
+        'estado_civil
+        '
+        Me.estado_civil.DataPropertyName = "estado_civil"
+        Me.estado_civil.HeaderText = "estado_civil"
+        Me.estado_civil.Name = "estado_civil"
+        Me.estado_civil.ReadOnly = True
+        '
+        'puesto
+        '
+        Me.puesto.DataPropertyName = "puesto"
+        Me.puesto.HeaderText = "puesto"
+        Me.puesto.Name = "puesto"
+        Me.puesto.ReadOnly = True
+        '
+        'estado_civil_id
+        '
+        Me.estado_civil_id.DataPropertyName = "estado_civil_id"
+        Me.estado_civil_id.HeaderText = "estado_civil_id"
+        Me.estado_civil_id.Name = "estado_civil_id"
+        Me.estado_civil_id.ReadOnly = True
+        Me.estado_civil_id.Visible = False
+        '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "puesto_id"
@@ -471,7 +551,7 @@ Partial Class frmEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(859, 378)
+        Me.ClientSize = New System.Drawing.Size(859, 435)
         Me.Controls.Add(Me.EmpleadosDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
@@ -484,6 +564,8 @@ Partial Class frmEmpleado
         Me.BarraHerramientas.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.Estados_civilesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetEstadoCivilCombo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PuestosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetPuestoCombo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -528,13 +610,22 @@ Partial Class frmEmpleado
     Friend WithEvents EmpleadosTableAdapter As MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.empleadosTableAdapter
     Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.TableAdapterManager
     Friend WithEvents EmpleadosDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents DataSetEstadoCivilCombo As MuebleriaCasaCruz.DataSetEstadoCivilCombo
+    Friend WithEvents Estados_civilesBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Estados_civilesTableAdapter As MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter
+    Friend WithEvents TableAdapterManager2 As MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager
+    Friend WithEvents Estados_civilesComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents puesto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ap_paterno As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ap_materno As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents fecha_nacimiento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents sexo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents estado_civil As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents puesto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents estado_civil_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn

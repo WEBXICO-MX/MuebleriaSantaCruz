@@ -37,7 +37,7 @@ Public Class frmCliente
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO clientes (id, linea_producto_id, nombre,activo) VALUES (" & txtID.Text & "," & (OcupacionesComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo) VALUES (@id,@nombre,@ap_paterno,@ap_materno,@fecha_nacimiento,@sexo)"
+        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo,estado_civil_id) VALUES (@id,@nombre,@ap_paterno,@ap_materno,@fecha_nacimiento,@sexo,@estado_civil_id)"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
@@ -45,6 +45,7 @@ Public Class frmCliente
         Orden.Parameters.Add("@ap_materno", SqlDbType.VarChar).Value = txtApMaterno.Text
         Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
         Orden.Parameters.Add("@sexo", SqlDbType.VarChar).Value = If(rbMasculino.Checked, "M", If(rbFemenino.Checked, "F", "X"))
+        Orden.Parameters.Add("@estado_civil_id", SqlDbType.Int).Value = Estados_civilesComboBox.SelectedValue
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
@@ -67,7 +68,7 @@ Public Class frmCliente
             EstadoCajasdeTexto(False)
 
             For Fila = 0 To clientesDataGridView.Rows.Count - 1
-                If (ClientesDataGridView.Item(3, Fila).Value = txtNombre.Text And ClientesDataGridView.Item(4, Fila).Value = txtApPaterno.Text And ClientesDataGridView.Item(5, Fila).Value = txtApMaterno.Text) Then
+                If (ClientesDataGridView.Item(1, Fila).Value = txtNombre.Text And ClientesDataGridView.Item(2, Fila).Value = txtApPaterno.Text And ClientesDataGridView.Item(3, Fila).Value = txtApMaterno.Text) Then
                     ClientesDataGridView.Item(0, Fila).Selected = True
                     Exit For
                 End If
@@ -100,13 +101,14 @@ Public Class frmCliente
 
         'Crear una consulta
         'Dim Consulta As String = "UPDATE clientes SET linea_producto_id = " & (OcupacionesComboBox.SelectedValue) & ", nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
-        Dim Consulta As String = "UPDATE personas SET nombre = @nombre, ap_paterno = @ap_paterno, ap_materno = @ap_materno, fecha_nacimiento = @fecha_nacimiento, sexo = @sexo WHERE id = @id"
+        Dim Consulta As String = "UPDATE personas SET nombre = @nombre, ap_paterno = @ap_paterno, ap_materno = @ap_materno, fecha_nacimiento = @fecha_nacimiento, sexo = @sexo, estado_civil_id = @estado_civil_id WHERE id = @id"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
         Orden.Parameters.Add("@ap_paterno", SqlDbType.VarChar).Value = txtApPaterno.Text
         Orden.Parameters.Add("@ap_materno", SqlDbType.VarChar).Value = txtApMaterno.Text
         Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
         Orden.Parameters.Add("@sexo", SqlDbType.VarChar).Value = If(rbMasculino.Checked, "M", If(rbFemenino.Checked, "F", "X"))
+        Orden.Parameters.Add("@estado_civil_id", SqlDbType.Int).Value = Estados_civilesComboBox.SelectedValue
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
 
         Try
@@ -181,6 +183,7 @@ Public Class frmCliente
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
         OcupacionesComboBox.Enabled = nombre_status
         Tipos_identificacionComboBox.Enabled = nombre_status
+        Estados_civilesComboBox.Enabled = nombre_status
         txtNombre.Enabled = nombre_status
         txtApPaterno.Enabled = nombre_status
         txtApMaterno.Enabled = nombre_status
@@ -192,20 +195,21 @@ Public Class frmCliente
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = clientesDataGridView.Rows(F).Cells(0).Value
-        OcupacionesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(8).Value
-        Tipos_identificacionComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(9).Value
-        txtNombre.Text = ClientesDataGridView.Rows(F).Cells(3).Value
-        txtApPaterno.Text = ClientesDataGridView.Rows(F).Cells(4).Value
-        txtApMaterno.Text = ClientesDataGridView.Rows(F).Cells(5).Value
-        If (ClientesDataGridView.Rows(F).Cells(7).Value = "M") Then
+        OcupacionesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(10).Value
+        Tipos_identificacionComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(11).Value
+        txtNombre.Text = ClientesDataGridView.Rows(F).Cells(1).Value
+        txtApPaterno.Text = ClientesDataGridView.Rows(F).Cells(2).Value
+        txtApMaterno.Text = ClientesDataGridView.Rows(F).Cells(3).Value
+        If (ClientesDataGridView.Rows(F).Cells(5).Value = "M") Then
             rbMasculino.Checked = True
             rbFemenino.Checked = False
         Else
             rbFemenino.Checked = True
             rbMasculino.Checked = False
         End If
-        dtpFechaNacimiento.Text = ClientesDataGridView.Rows(F).Cells(6).Value
-        cbxActivo.Checked = ClientesDataGridView.Rows(F).Cells(11).Value
+        Estados_civilesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(9).Value
+        dtpFechaNacimiento.Text = ClientesDataGridView.Rows(F).Cells(4).Value
+        cbxActivo.Checked = ClientesDataGridView.Rows(F).Cells(13).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
@@ -368,6 +372,8 @@ Public Class frmCliente
     End Sub
 
     Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetEstadoCivilCombo.estados_civiles' Puede moverla o quitarla según sea necesario.
+        Me.Estados_civilesTableAdapter.Fill(Me.DataSetEstadoCivilCombo.estados_civiles)
         'TODO: esta línea de código carga datos en la tabla 'DataSetCliente.clientes' Puede moverla o quitarla según sea necesario.
         Me.ClientesTableAdapter.Fill(Me.DataSetCliente.clientes)
         'TODO: esta línea de código carga datos en la tabla 'DataSetTipoIdentificacionCombo.tipos_identificacion' Puede moverla o quitarla según sea necesario.

@@ -307,6 +307,10 @@ Partial Public Class DataSetCliente
 
         Private columnsexo As Global.System.Data.DataColumn
 
+        Private columnestado_civil As Global.System.Data.DataColumn
+
+        Private columnestado_civil_id As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -439,6 +443,22 @@ Partial Public Class DataSetCliente
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property estado_civilColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnestado_civil
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property estado_civil_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnestado_civil_id
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -475,9 +495,9 @@ Partial Public Class DataSetCliente
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddclientesRow(ByVal persona_id As Integer, ByVal ocupacion_id As Integer, ByVal tipo_identificacion_id As Integer, ByVal fecha_registro As Date, ByVal activo As Boolean, ByVal ocupacion As String, ByVal tipo_identificacion As String, ByVal nombre As String, ByVal ap_paterno As String, ByVal ap_materno As String, ByVal fecha_nacimiento As Date, ByVal sexo As String) As clientesRow
+        Public Overloads Function AddclientesRow(ByVal persona_id As Integer, ByVal ocupacion_id As Integer, ByVal tipo_identificacion_id As Integer, ByVal fecha_registro As Date, ByVal activo As Boolean, ByVal ocupacion As String, ByVal tipo_identificacion As String, ByVal nombre As String, ByVal ap_paterno As String, ByVal ap_materno As String, ByVal fecha_nacimiento As Date, ByVal sexo As String, ByVal estado_civil As String, ByVal estado_civil_id As Integer) As clientesRow
             Dim rowclientesRow As clientesRow = CType(Me.NewRow, clientesRow)
-            Dim columnValuesArray() As Object = New Object() {persona_id, ocupacion_id, tipo_identificacion_id, fecha_registro, activo, ocupacion, tipo_identificacion, nombre, ap_paterno, ap_materno, fecha_nacimiento, sexo}
+            Dim columnValuesArray() As Object = New Object() {persona_id, ocupacion_id, tipo_identificacion_id, fecha_registro, activo, ocupacion, tipo_identificacion, nombre, ap_paterno, ap_materno, fecha_nacimiento, sexo, estado_civil, estado_civil_id}
             rowclientesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowclientesRow)
             Return rowclientesRow
@@ -518,6 +538,8 @@ Partial Public Class DataSetCliente
             Me.columnap_materno = MyBase.Columns("ap_materno")
             Me.columnfecha_nacimiento = MyBase.Columns("fecha_nacimiento")
             Me.columnsexo = MyBase.Columns("sexo")
+            Me.columnestado_civil = MyBase.Columns("estado_civil")
+            Me.columnestado_civil_id = MyBase.Columns("estado_civil_id")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -547,6 +569,10 @@ Partial Public Class DataSetCliente
             MyBase.Columns.Add(Me.columnfecha_nacimiento)
             Me.columnsexo = New Global.System.Data.DataColumn("sexo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsexo)
+            Me.columnestado_civil = New Global.System.Data.DataColumn("estado_civil", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnestado_civil)
+            Me.columnestado_civil_id = New Global.System.Data.DataColumn("estado_civil_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnestado_civil_id)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpersona_id}, True))
             Me.columnpersona_id.AllowDBNull = False
             Me.columnpersona_id.Unique = True
@@ -556,6 +582,7 @@ Partial Public Class DataSetCliente
             Me.columnap_paterno.MaxLength = 50
             Me.columnap_materno.MaxLength = 50
             Me.columnsexo.MaxLength = 1
+            Me.columnestado_civil.MaxLength = 30
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -879,6 +906,36 @@ Partial Public Class DataSetCliente
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property estado_civil() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableclientes.estado_civilColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'estado_civil' de la tabla 'clientes' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableclientes.estado_civilColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property estado_civil_id() As Integer
+            Get
+                Try
+                    Return CType(Me(Me.tableclientes.estado_civil_idColumn), Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'estado_civil_id' de la tabla 'clientes' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Integer)
+                Me(Me.tableclientes.estado_civil_idColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function Isocupacion_idNull() As Boolean
             Return Me.IsNull(Me.tableclientes.ocupacion_idColumn)
         End Function
@@ -1007,6 +1064,30 @@ Partial Public Class DataSetCliente
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetsexoNull()
             Me(Me.tableclientes.sexoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isestado_civilNull() As Boolean
+            Return Me.IsNull(Me.tableclientes.estado_civilColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setestado_civilNull()
+            Me(Me.tableclientes.estado_civilColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isestado_civil_idNull() As Boolean
+            Return Me.IsNull(Me.tableclientes.estado_civil_idColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setestado_civil_idNull()
+            Me(Me.tableclientes.estado_civil_idColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -1188,6 +1269,8 @@ Namespace DataSetClienteTableAdapters
             tableMapping.ColumnMappings.Add("ap_materno", "ap_materno")
             tableMapping.ColumnMappings.Add("fecha_nacimiento", "fecha_nacimiento")
             tableMapping.ColumnMappings.Add("sexo", "sexo")
+            tableMapping.ColumnMappings.Add("estado_civil", "estado_civil")
+            tableMapping.ColumnMappings.Add("estado_civil_id", "estado_civil_id")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
 
@@ -1204,12 +1287,13 @@ Namespace DataSetClienteTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT c.persona_id, o.nombre AS ocupacion, ti.nombre AS tipo_identificacion,p.no" & _
-                "mbre, p. ap_paterno, p.ap_materno, p.fecha_nacimiento, p.sexo,c.ocupacion_id, c." & _
-                "tipo_identificacion_id, c.fecha_registro, c.activo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM dbo.clientes AS c" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INN" & _
-                "ER JOIN dbo.personas AS p ON p.id = c.persona_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.ocupaciones AS " & _
-                "o ON o.id = c.ocupacion_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.tipos_identificacion AS ti ON ti.id =" & _
-                " c.tipo_identificacion_id"
+            Me._commandCollection(0).CommandText = "SELECT " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "c.persona_id, o.nombre AS ocupacion, ti.nombre AS tipo_identificacion,p." & _
+                "nombre, p. ap_paterno, p.ap_materno, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "p.fecha_nacimiento, p.sexo, ec.nombre AS " & _
+                "estado_civil,p.estado_civil_id,c.ocupacion_id, c.tipo_identificacion_id, c.fecha" & _
+                "_registro, c.activo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM dbo.clientes AS c" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.personas AS p ON p." & _
+                "id = c.persona_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.estados_civiles AS ec ON ec.id = p.estado_civi" & _
+                "l_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.ocupaciones AS o ON o.id = c.ocupacion_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.t" & _
+                "ipos_identificacion AS ti ON ti.id = c.tipo_identificacion_id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
 

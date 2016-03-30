@@ -12,9 +12,11 @@
               <DbSource ConnectionRef="MuebleriaCASACRUZConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT e.persona_id,pu.nombre AS puesto, p.nombre, p. ap_paterno, p.ap_materno, p.fecha_nacimiento, p.sexo,e.puesto_id, e.fecha_registro, e.activo 
+                    <CommandText>SELECT e.persona_id,pu.nombre AS puesto, p.nombre, p. ap_paterno, p.ap_materno, 
+p.fecha_nacimiento, p.sexo,ec.nombre AS estado_civil,p.estado_civil_id,e.puesto_id, e.fecha_registro, e.activo 
 FROM dbo.empleados AS e
 INNER JOIN dbo.personas AS p ON p.id = e.persona_id
+INNER JOIN dbo.estados_civiles AS ec ON ec.id = p.estado_civil_id
 INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -32,6 +34,8 @@ INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id</CommandText>
               <Mapping SourceColumn="ap_materno" DataSetColumn="ap_materno" />
               <Mapping SourceColumn="fecha_nacimiento" DataSetColumn="fecha_nacimiento" />
               <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
+              <Mapping SourceColumn="estado_civil" DataSetColumn="estado_civil" />
+              <Mapping SourceColumn="estado_civil_id" DataSetColumn="estado_civil_id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -43,7 +47,7 @@ INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id</CommandText>
   <xs:element name="DataSetEmpleado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetEmpleado" msprop:Generator_UserDSName="DataSetEmpleado">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="empleados" msprop:Generator_TableClassName="empleadosDataTable" msprop:Generator_TableVarName="tableempleados" msprop:Generator_TablePropName="empleados" msprop:Generator_RowDeletingName="empleadosRowDeleting" msprop:Generator_RowChangingName="empleadosRowChanging" msprop:Generator_RowEvHandlerName="empleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="empleadosRowDeleted" msprop:Generator_UserTableName="empleados" msprop:Generator_RowChangedName="empleadosRowChanged" msprop:Generator_RowEvArgName="empleadosRowChangeEvent" msprop:Generator_RowClassName="empleadosRow">
+        <xs:element name="empleados" msprop:Generator_TableClassName="empleadosDataTable" msprop:Generator_TableVarName="tableempleados" msprop:Generator_RowChangedName="empleadosRowChanged" msprop:Generator_TablePropName="empleados" msprop:Generator_RowDeletingName="empleadosRowDeleting" msprop:Generator_RowChangingName="empleadosRowChanging" msprop:Generator_RowEvHandlerName="empleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="empleadosRowDeleted" msprop:Generator_RowClassName="empleadosRow" msprop:Generator_UserTableName="empleados" msprop:Generator_RowEvArgName="empleadosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="persona_id" msprop:Generator_ColumnVarNameInTable="columnpersona_id" msprop:Generator_ColumnPropNameInRow="persona_id" msprop:Generator_ColumnPropNameInTable="persona_idColumn" msprop:Generator_UserColumnName="persona_id" type="xs:int" />
@@ -86,6 +90,14 @@ INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="estado_civil" msprop:Generator_ColumnVarNameInTable="columnestado_civil" msprop:Generator_ColumnPropNameInRow="estado_civil" msprop:Generator_ColumnPropNameInTable="estado_civilColumn" msprop:Generator_UserColumnName="estado_civil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado_civil_id" msprop:Generator_ColumnVarNameInTable="columnestado_civil_id" msprop:Generator_ColumnPropNameInRow="estado_civil_id" msprop:Generator_ColumnPropNameInTable="estado_civil_idColumn" msprop:Generator_UserColumnName="estado_civil_id" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
