@@ -181,17 +181,17 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btbuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -212,18 +212,6 @@
   <metadata name="Estados_civilesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 134</value>
   </metadata>
-  <metadata name="Tipos_identificacionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>248, 56</value>
-  </metadata>
-  <metadata name="OcupacionesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>363, 17</value>
-  </metadata>
-  <metadata name="Estados_civilesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
-  </metadata>
-  <metadata name="DataSetEstadoCivilCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>800, 95</value>
-  </metadata>
   <metadata name="DataSetEstadoCivilCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>800, 95</value>
   </metadata>
@@ -233,14 +221,8 @@
   <metadata name="DataSetTipoIdentificacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
-  <metadata name="DataSetTipoIdentificacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <metadata name="OcupacionesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>363, 17</value>
-  </metadata>
-  <metadata name="DataSetOcupacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>170, 17</value>
   </metadata>
   <metadata name="DataSetOcupacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>170, 17</value>
@@ -380,32 +362,5 @@
   </metadata>
   <metadata name="TableAdapterManager3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>431, 134</value>
-  </metadata>
-  <metadata name="nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ap_paterno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ap_materno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="fecha_nacimiento.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="sexo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="estado_civil.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ocupacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tipo_identificacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="estado_civil_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
   </metadata>
 </root>

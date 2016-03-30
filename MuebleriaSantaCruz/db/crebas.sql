@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     01/03/2016 12:50:31                          */
+/* Created on:     30/03/2016 15:03:07                          */
 /*==============================================================*/
 
 
@@ -37,6 +37,20 @@ if exists (select 1
    where r.fkeyid = object_id('clientes') and o.name = 'FK_CLIENTES_REFERENCE_TIPOS_ID')
 alter table clientes
    drop constraint FK_CLIENTES_REFERENCE_TIPOS_ID
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('domicilios') and o.name = 'FK_DOMICILI_REFERENCE_PERSONAS')
+alter table domicilios
+   drop constraint FK_DOMICILI_REFERENCE_PERSONAS
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('domicilios') and o.name = 'FK_DOMICILI_REFERENCE_ASENTAMI')
+alter table domicilios
+   drop constraint FK_DOMICILI_REFERENCE_ASENTAMI
 go
 
 if exists (select 1
@@ -83,9 +97,9 @@ go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('medios_comunicacion') and o.name = 'FK_MEDIOS_C_REFERENCE_CLIENTES')
+   where r.fkeyid = object_id('medios_comunicacion') and o.name = 'FK_MEDIOS_C_REFERENCE_PERSONAS')
 alter table medios_comunicacion
-   drop constraint FK_MEDIOS_C_REFERENCE_CLIENTES
+   drop constraint FK_MEDIOS_C_REFERENCE_PERSONAS
 go
 
 if exists (select 1
@@ -100,6 +114,13 @@ if exists (select 1
    where r.fkeyid = object_id('municipios') and o.name = 'FK_MUNICIPI_REFERENCE_ESTADOS')
 alter table municipios
    drop constraint FK_MUNICIPI_REFERENCE_ESTADOS
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('personas') and o.name = 'FK_PERSONAS_REFERENCE_ESTADOS_')
+alter table personas
+   drop constraint FK_PERSONAS_REFERENCE_ESTADOS_
 go
 
 if exists (select 1
@@ -214,6 +235,40 @@ go
 
 if exists (select 1
             from  sysindexes
+           where  id    = object_id('domicilios')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index domicilios.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('domicilios')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index domicilios.index_2
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('domicilios')
+            and   name  = 'index_3'
+            and   indid > 0
+            and   indid < 255)
+   drop index domicilios.index_3
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('domicilios')
+            and   type = 'U')
+   drop table domicilios
+go
+
+if exists (select 1
+            from  sysindexes
            where  id    = object_id('empleados')
             and   name  = 'index_1'
             and   indid > 0
@@ -242,6 +297,22 @@ if exists (select 1
            where  id = object_id('estados')
             and   type = 'U')
    drop table estados
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('estados_civiles')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index estados_civiles.index_1
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('estados_civiles')
+            and   type = 'U')
+   drop table estados_civiles
 go
 
 if exists (select 1
@@ -315,15 +386,6 @@ if exists (select 1
             and   indid > 0
             and   indid < 255)
    drop index medios_comunicacion.index_1
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('medios_comunicacion')
-            and   name  = 'index_2'
-            and   indid > 0
-            and   indid < 255)
-   drop index medios_comunicacion.index_2
 go
 
 if exists (select 1
@@ -765,6 +827,47 @@ id ASC
 go
 
 /*==============================================================*/
+/* Table: domicilios                                            */
+/*==============================================================*/
+create table domicilios (
+   id                   int                  not null,
+   persona_id           int                  null,
+   asentamiento_id      int                  null,
+   calle                varchar(100)         null,
+   numero_interior      varchar(50)          null,
+   numero_exterior      varchar(50)          null,
+   referencias          varchar(100)         null,
+   fecha_registro       datetime             null,
+   activo               bit                  null,
+   constraint PK_DOMICILIOS primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_3                                               */
+/*==============================================================*/
+create index index_3 on domicilios (
+asentamiento_id ASC
+)
+go
+
+/*==============================================================*/
+/* Index: index_2                                               */
+/*==============================================================*/
+create index index_2 on domicilios (
+persona_id ASC
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on domicilios (
+id ASC
+)
+go
+
+/*==============================================================*/
 /* Table: empleados                                             */
 /*==============================================================*/
 create table empleados (
@@ -799,6 +902,25 @@ go
 /* Index: index_1                                               */
 /*==============================================================*/
 create index index_1 on estados (
+id ASC
+)
+go
+
+/*==============================================================*/
+/* Table: estados_civiles                                       */
+/*==============================================================*/
+create table estados_civiles (
+   id                   int                  not null,
+   nombre               varchar(30)          null,
+   activo               bit                  null,
+   constraint PK_ESTADOS_CIVILES primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on estados_civiles (
 id ASC
 )
 go
@@ -893,18 +1015,10 @@ go
 create table medios_comunicacion (
    id                   int                  not null,
    tipo_medio_comunicacion_id int                  null,
-   cliente_id           int                  null,
+   persona_id           int                  null,
    valor                varchar(50)          null,
    activo               bit                  null,
    constraint PK_MEDIOS_COMUNICACION primary key (id)
-)
-go
-
-/*==============================================================*/
-/* Index: index_2                                               */
-/*==============================================================*/
-create index index_2 on medios_comunicacion (
-cliente_id ASC
 )
 go
 
@@ -994,6 +1108,7 @@ create table personas (
    ap_materno           varchar(50)          null,
    fecha_nacimiento     date                 null,
    sexo                 varchar(1)           null,
+   estado_civil_id      int                  null,
    constraint PK_PERSONAS primary key (id)
 )
 go
@@ -1312,6 +1427,16 @@ alter table clientes
       references tipos_identificacion (id)
 go
 
+alter table domicilios
+   add constraint FK_DOMICILI_REFERENCE_PERSONAS foreign key (persona_id)
+      references personas (id)
+go
+
+alter table domicilios
+   add constraint FK_DOMICILI_REFERENCE_ASENTAMI foreign key (asentamiento_id)
+      references asentamientos (id)
+go
+
 alter table empleados
    add constraint FK_EMPLEADO_REFERENCE_PUESTOS foreign key (puesto_id)
       references puestos (id)
@@ -1343,8 +1468,8 @@ alter table grupos_seguridad_usuarios
 go
 
 alter table medios_comunicacion
-   add constraint FK_MEDIOS_C_REFERENCE_CLIENTES foreign key (cliente_id)
-      references clientes (persona_id)
+   add constraint FK_MEDIOS_C_REFERENCE_PERSONAS foreign key (persona_id)
+      references personas (id)
 go
 
 alter table medios_comunicacion
@@ -1355,6 +1480,11 @@ go
 alter table municipios
    add constraint FK_MUNICIPI_REFERENCE_ESTADOS foreign key (estado_id)
       references estados (id)
+go
+
+alter table personas
+   add constraint FK_PERSONAS_REFERENCE_ESTADOS_ foreign key (estado_civil_id)
+      references estados_civiles (id)
 go
 
 alter table productos

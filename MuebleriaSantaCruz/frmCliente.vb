@@ -67,7 +67,7 @@ Public Class frmCliente
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
-            For Fila = 0 To clientesDataGridView.Rows.Count - 1
+            For Fila = 0 To ClientesDataGridView.Rows.Count - 1
                 If (ClientesDataGridView.Item(1, Fila).Value = txtNombre.Text And ClientesDataGridView.Item(2, Fila).Value = txtApPaterno.Text And ClientesDataGridView.Item(3, Fila).Value = txtApMaterno.Text) Then
                     ClientesDataGridView.Item(0, Fila).Selected = True
                     Exit For
@@ -81,7 +81,7 @@ Public Class frmCliente
 
             LimpiarCajasdeTexto()
             lbtipoestado.Visible = False
-            clientesDataGridView.Enabled = True
+            ClientesDataGridView.Enabled = True
         Catch ex As SqlException
             If (ex.Number = 2601) Then
                 MessageBox.Show("El cliente ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -139,7 +139,7 @@ Public Class frmCliente
 
             LimpiarCajasdeTexto()
             lbtipoestado.Visible = False
-            clientesDataGridView.Enabled = True
+            ClientesDataGridView.Enabled = True
         Catch ex As SqlException
             If (ex.Number = 2601) Then
                 MessageBox.Show("El cliente ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -194,7 +194,7 @@ Public Class frmCliente
     End Sub
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
-        txtID.Text = clientesDataGridView.Rows(F).Cells(0).Value
+        txtID.Text = ClientesDataGridView.Rows(F).Cells(0).Value
         OcupacionesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(10).Value
         Tipos_identificacionComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(11).Value
         txtNombre.Text = ClientesDataGridView.Rows(F).Cells(1).Value
@@ -217,7 +217,7 @@ Public Class frmCliente
     End Sub
 
     Private Sub clientesDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ClientesDataGridView.CellClick
-        If (clientesDataGridView.Enabled = True) Then
+        If (ClientesDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
                 EstadoBotones(True, False, True, True, True)
@@ -226,7 +226,7 @@ Public Class frmCliente
     End Sub
 
     Private Sub clientesDataGridView_RowEnter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ClientesDataGridView.RowEnter
-        If (clientesDataGridView.Enabled = True) Then
+        If (ClientesDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
                 EstadoBotones(True, False, True, True, True)
@@ -240,7 +240,7 @@ Public Class frmCliente
         EstadoBotones(False, True, True, False, False)
         LimpiarCajasdeTexto()
         EstadoCajasdeTexto(True)
-        clientesDataGridView.Enabled = False
+        ClientesDataGridView.Enabled = False
         DesactivarErroresCajasdeTexto()
         Nuevo()
     End Sub
@@ -287,13 +287,13 @@ Public Class frmCliente
         LimpiarCajasdeTexto()
         EstadoCajasdeTexto(False)
         EstadoBotones(True, False, False, False, True)
-        clientesDataGridView.Enabled = True
+        ClientesDataGridView.Enabled = True
         DesactivarErroresCajasdeTexto()
     End Sub
 
     Private Sub bteditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bteditar.Click
         If (txtID.Text <> "") Then
-            Dim F As Integer = clientesDataGridView.CurrentCellAddress.Y
+            Dim F As Integer = ClientesDataGridView.CurrentCellAddress.Y
 
             lbtipoestado.Visible = True
             lbtipoestado.Text = "Editar"
@@ -302,7 +302,7 @@ Public Class frmCliente
             EstadoCajasdeTexto(True)
             txtNombre.Focus()
             EstadoBotones(False, True, True, False, False)
-            clientesDataGridView.Enabled = False
+            ClientesDataGridView.Enabled = False
         Else
             MessageBox.Show("Seleccione un empleado para editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -362,13 +362,13 @@ Public Class frmCliente
         LimpiarCajasdeTexto()
 
         'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
-        If (clientesBindingSource.Count = 0) Then
+        If (ClientesBindingSource.Count = 0) Then
             EstadoBotones(True, False, False, False, False)
         Else
             EstadoBotones(True, False, False, False, True)
         End If
 
-        clientesDataGridView.ClearSelection()
+        ClientesDataGridView.ClearSelection()
     End Sub
 
     Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -381,5 +381,22 @@ Public Class frmCliente
         'TODO: esta línea de código carga datos en la tabla 'DataSetOcupacionCombo.ocupaciones' Puede moverla o quitarla según sea necesario.
         Me.OcupacionesTableAdapter.Fill(Me.DataSetOcupacionCombo.ocupaciones)
 
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        If (txtID.Text <> "") Then
+
+            frmMedioComunicacion.persona_id = Convert.ToInt32(txtID.Text)
+            frmMedioComunicacion.nombre_completo = (txtNombre.Text & " " & txtApPaterno.Text & " " & txtApMaterno.Text)
+            frmMedioComunicacion.Show()
+
+        Else
+            MsgBox("Debe cargar previamente a un cliente para entrar s esta opción")
+        End If
+
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        frmDomicilio.Show()
     End Sub
 End Class

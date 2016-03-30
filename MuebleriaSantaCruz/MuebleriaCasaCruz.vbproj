@@ -135,6 +135,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetLineaProductoCombo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetMedioDeComunicacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMedioDeComunicacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMedioDeComunicacion.vb">
+      <DependentUpon>DataSetMedioDeComunicacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetModulo.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,6 +208,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetTipoMedioComunicacionCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoMedioComunicacionCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetTipoProducto.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +227,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmDomicilio.Designer.vb">
+      <DependentUpon>frmDomicilio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDomicilio.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProducto.Designer.vb">
       <DependentUpon>frmProducto.vb</DependentUpon>
@@ -419,6 +438,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDomicilio.resx">
+      <DependentUpon>frmDomicilio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProducto.resx">
       <DependentUpon>frmProducto.vb</DependentUpon>
     </EmbeddedResource>
@@ -619,6 +641,17 @@
     <None Include="DataSetLineaProductoCombo.xss">
       <DependentUpon>DataSetLineaProductoCombo.xsd</DependentUpon>
     </None>
+    <None Include="DataSetMedioDeComunicacion.xsc">
+      <DependentUpon>DataSetMedioDeComunicacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMedioDeComunicacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMedioDeComunicacion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetMedioDeComunicacion.xss">
+      <DependentUpon>DataSetMedioDeComunicacion.xsd</DependentUpon>
+    </None>
     <None Include="DataSetModulo.xsc">
       <DependentUpon>DataSetModulo.xsd</DependentUpon>
     </None>
@@ -761,6 +794,17 @@
     </None>
     <None Include="DataSetTipoMedioComunicacion.xss">
       <DependentUpon>DataSetTipoMedioComunicacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoMedioComunicacionCombo.xsc">
+      <DependentUpon>DataSetTipoMedioComunicacionCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoMedioComunicacionCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoMedioComunicacionCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoMedioComunicacionCombo.xss">
+      <DependentUpon>DataSetTipoMedioComunicacionCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetTipoProducto.xsc">
       <DependentUpon>DataSetTipoProducto.xsd</DependentUpon>

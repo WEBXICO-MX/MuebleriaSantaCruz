@@ -31,6 +31,9 @@ Partial Class frmCliente
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Estados_civilesComboBox = New System.Windows.Forms.ComboBox()
         Me.Estados_civilesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetEstadoCivilCombo = New MuebleriaCasaCruz.DataSetEstadoCivilCombo()
@@ -67,9 +70,6 @@ Partial Class frmCliente
         Me.ClientesTableAdapter = New MuebleriaCasaCruz.DataSetClienteTableAdapters.clientesTableAdapter()
         Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetClienteTableAdapters.TableAdapterManager()
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
-        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -84,7 +84,9 @@ Partial Class frmCliente
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
+        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Estados_civilesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -162,6 +164,8 @@ Partial Class frmCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LinkLabel2)
+        Me.GroupBox1.Controls.Add(Me.LinkLabel1)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Estados_civilesComboBox)
         Me.GroupBox1.Controls.Add(Me.Tipos_identificacionComboBox)
@@ -186,9 +190,39 @@ Partial Class frmCliente
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 50)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(384, 363)
+        Me.GroupBox1.Size = New System.Drawing.Size(384, 373)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Location = New System.Drawing.Point(161, 347)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(54, 13)
+        Me.LinkLabel2.TabIndex = 21
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Domicilios"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(8, 347)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(125, 13)
+        Me.LinkLabel1.TabIndex = 20
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Medios de comunicación"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(8, 261)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(34, 13)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Sexo:"
         '
         'Estados_civilesComboBox
         '
@@ -487,22 +521,8 @@ Partial Class frmCliente
         Me.ClientesDataGridView.Location = New System.Drawing.Point(417, 59)
         Me.ClientesDataGridView.Name = "ClientesDataGridView"
         Me.ClientesDataGridView.ReadOnly = True
-        Me.ClientesDataGridView.Size = New System.Drawing.Size(430, 354)
+        Me.ClientesDataGridView.Size = New System.Drawing.Size(430, 364)
         Me.ClientesDataGridView.TabIndex = 39
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'Estados_civilesTableAdapter
-        '
-        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager3
-        '
-        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager3.Connection = Nothing
-        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'DataGridViewTextBoxColumn1
         '
@@ -605,15 +625,19 @@ Partial Class frmCliente
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         '
-        'Label9
+        'ErrorProvider1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(8, 261)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(34, 13)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Sexo:"
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'Estados_civilesTableAdapter
+        '
+        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager3
+        '
+        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager3.Connection = Nothing
+        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'frmCliente
         '
@@ -707,4 +731,6 @@ Partial Class frmCliente
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 End Class
