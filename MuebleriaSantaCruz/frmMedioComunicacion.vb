@@ -53,7 +53,7 @@ Public Class frmMedioComunicacion
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             Orden.ExecuteNonQuery()
 
-            Me.Medios_comunicacionTableAdapter.Fill(Me.DataSetMedioDeComunicacion.medios_comunicacion)
+            Me.Medios_comunicacionTableAdapter.FillBy(Me.DataSetMedioDeComunicacion.medios_comunicacion, persona_id)
 
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
@@ -103,7 +103,7 @@ Public Class frmMedioComunicacion
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             Orden.ExecuteNonQuery()
 
-            Me.Medios_comunicacionTableAdapter.Fill(Me.DataSetMedioDeComunicacion.medios_comunicacion)
+            Me.Medios_comunicacionTableAdapter.FillBy(Me.DataSetMedioDeComunicacion.medios_comunicacion, persona_id)
 
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
