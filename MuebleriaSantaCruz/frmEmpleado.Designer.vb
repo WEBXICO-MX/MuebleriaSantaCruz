@@ -63,8 +63,6 @@ Partial Class frmEmpleado
         Me.EmpleadosTableAdapter = New MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.empleadosTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.TableAdapterManager()
         Me.EmpleadosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
-        Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -77,6 +75,10 @@ Partial Class frmEmpleado
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
+        Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Estados_civilesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,6 +154,8 @@ Partial Class frmEmpleado
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LinkLabel2)
+        Me.GroupBox1.Controls.Add(Me.LinkLabel1)
         Me.GroupBox1.Controls.Add(Me.Estados_civilesComboBox)
         Me.GroupBox1.Controls.Add(Me.rbFemenino)
         Me.GroupBox1.Controls.Add(Me.rbMasculino)
@@ -174,7 +178,7 @@ Partial Class frmEmpleado
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 54)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(451, 359)
+        Me.GroupBox1.Size = New System.Drawing.Size(451, 384)
         Me.GroupBox1.TabIndex = 38
         Me.GroupBox1.TabStop = False
         '
@@ -448,18 +452,8 @@ Partial Class frmEmpleado
         Me.EmpleadosDataGridView.Location = New System.Drawing.Point(469, 64)
         Me.EmpleadosDataGridView.Name = "EmpleadosDataGridView"
         Me.EmpleadosDataGridView.ReadOnly = True
-        Me.EmpleadosDataGridView.Size = New System.Drawing.Size(372, 349)
+        Me.EmpleadosDataGridView.Size = New System.Drawing.Size(372, 374)
         Me.EmpleadosDataGridView.TabIndex = 38
-        '
-        'Estados_civilesTableAdapter
-        '
-        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager2
-        '
-        Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager2.Connection = Nothing
-        Me.TableAdapterManager2.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'DataGridViewTextBoxColumn1
         '
@@ -547,11 +541,41 @@ Partial Class frmEmpleado
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         '
+        'Estados_civilesTableAdapter
+        '
+        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager2
+        '
+        Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager2.Connection = Nothing
+        Me.TableAdapterManager2.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(11, 354)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(125, 13)
+        Me.LinkLabel1.TabIndex = 19
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Medios de comunicación"
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Location = New System.Drawing.Point(162, 354)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(54, 13)
+        Me.LinkLabel2.TabIndex = 20
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Domicilios"
+        '
         'frmEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(859, 435)
+        Me.ClientSize = New System.Drawing.Size(859, 450)
         Me.Controls.Add(Me.EmpleadosDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
@@ -629,4 +653,6 @@ Partial Class frmEmpleado
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 End Class

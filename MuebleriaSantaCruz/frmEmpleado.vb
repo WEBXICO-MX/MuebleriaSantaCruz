@@ -379,4 +379,19 @@ Public Class frmEmpleado
     End Sub
 
 
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        If (txtID.Text <> "") Then
+
+            frmMedioComunicacion.persona_id = Convert.ToInt32(txtID.Text)
+            frmMedioComunicacion.nombre_completo = (txtNombre.Text & " " & txtApPaterno.Text & " " & txtApMaterno.Text)
+            frmMedioComunicacion.Show()
+
+        Else
+            MsgBox("Debe cargar previamente a un cliente para entrar s esta opción")
+        End If
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        frmDomicilio.Show()
+    End Sub
 End Class
