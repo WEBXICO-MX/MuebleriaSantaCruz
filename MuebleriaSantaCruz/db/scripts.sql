@@ -1,0 +1,7 @@
+--INSERT INTO usuarios VALUES(1,'Roberto Eder Weiss Juárez','eder.weiss87','M@rvel87',1,GETDATE(),NULL)
+--INSERT INTO usuarios VALUES(2,'Alfredo Ovando Arévalo','iscalfredo81','iscalfredo81',1,GETDATE(),NULL)
+--INSERT INTO usuarios VALUES(3,'ADMIN Muebleria CASA CRUZ','casacruz','casacruz',1,GETDATE(),NULL)
+--INSERT INTO grupos_seguridad VALUES(1,'Super Administradores',1,GETDATE(),NULL)
+--INSERT INTO grupos_seguridad VALUES(2,'Administradores',1,GETDATE(),NULL)
+--SELECT * FROM usuarios
+--SELECT * FROM grupos_seguridad

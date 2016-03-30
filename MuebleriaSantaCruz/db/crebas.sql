@@ -1,856 +1,1374 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     22/02/2016 15:01:18                          */
+/* Created on:     01/03/2016 12:50:31                          */
 /*==============================================================*/
 
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('ARTICULOS') and o.name = 'FK_ARTICULO_REFERENCE_CATEGORI')
-alter table ARTICULOS
-   drop constraint FK_ARTICULO_REFERENCE_CATEGORI
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('ASENTAMIENTOS') and o.name = 'FK_ASENTAMI_REFERENCE_MUNICIPI')
-alter table ASENTAMIENTOS
+   where r.fkeyid = object_id('asentamientos') and o.name = 'FK_ASENTAMI_REFERENCE_MUNICIPI')
+alter table asentamientos
    drop constraint FK_ASENTAMI_REFERENCE_MUNICIPI
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('ASENTAMIENTOS') and o.name = 'FK_ASENTAMI_REFERENCE_TIPOS_AS')
-alter table ASENTAMIENTOS
+   where r.fkeyid = object_id('asentamientos') and o.name = 'FK_ASENTAMI_REFERENCE_TIPOS_AS')
+alter table asentamientos
    drop constraint FK_ASENTAMI_REFERENCE_TIPOS_AS
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('GRUPOS_SEGURIDAD_MODULOS') and o.name = 'FK_GRUPOS_S_REFERENCE_GRUPOS_S2')
-alter table GRUPOS_SEGURIDAD_MODULOS
-   drop constraint FK_GRUPOS_S_REFERENCE_GRUPOS_S2
+   where r.fkeyid = object_id('clientes') and o.name = 'FK_CLIENTES_REFERENCE_PERSONAS')
+alter table clientes
+   drop constraint FK_CLIENTES_REFERENCE_PERSONAS
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('GRUPOS_SEGURIDAD_MODULOS') and o.name = 'FK_GRUPOS_S_REFERENCE_MODULOS')
-alter table GRUPOS_SEGURIDAD_MODULOS
+   where r.fkeyid = object_id('clientes') and o.name = 'FK_CLIENTES_REFERENCE_OCUPACIO')
+alter table clientes
+   drop constraint FK_CLIENTES_REFERENCE_OCUPACIO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('clientes') and o.name = 'FK_CLIENTES_REFERENCE_TIPOS_ID')
+alter table clientes
+   drop constraint FK_CLIENTES_REFERENCE_TIPOS_ID
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('empleados') and o.name = 'FK_EMPLEADO_REFERENCE_PUESTOS')
+alter table empleados
+   drop constraint FK_EMPLEADO_REFERENCE_PUESTOS
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('empleados') and o.name = 'FK_EMPLEADO_REFERENCE_PERSONAS')
+alter table empleados
+   drop constraint FK_EMPLEADO_REFERENCE_PERSONAS
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('grupos_seguridad_modulos') and o.name = 'FK_GRUPOS_S_MODULOS_REFERENCE_GRUPOS_SEGURIDAD')
+alter table grupos_seguridad_modulos
+   drop constraint FK_GRUPOS_S_MODULOS_REFERENCE_GRUPOS_SEGURIDAD
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('grupos_seguridad_modulos') and o.name = 'FK_GRUPOS_S_REFERENCE_MODULOS')
+alter table grupos_seguridad_modulos
    drop constraint FK_GRUPOS_S_REFERENCE_MODULOS
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('GRUPOS_SEGURIDAD_USUARIOS') and o.name = 'FK_GRUPOS_S_REFERENCE_USUARIOS')
-alter table GRUPOS_SEGURIDAD_USUARIOS
+   where r.fkeyid = object_id('grupos_seguridad_usuarios') and o.name = 'FK_GRUPOS_S_REFERENCE_USUARIOS')
+alter table grupos_seguridad_usuarios
    drop constraint FK_GRUPOS_S_REFERENCE_USUARIOS
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('GRUPOS_SEGURIDAD_USUARIOS') and o.name = 'FK_GRUPOS_S_REFERENCE_GRUPOS_S1')
-alter table GRUPOS_SEGURIDAD_USUARIOS
-   drop constraint FK_GRUPOS_S_REFERENCE_GRUPOS_S1
+   where r.fkeyid = object_id('grupos_seguridad_usuarios') and o.name = 'FK_GRUPOS_S_USUARIOS_REFERENCE_GRUPOS_SEGURIDAD')
+alter table grupos_seguridad_usuarios
+   drop constraint FK_GRUPOS_S_USUARIOS_REFERENCE_GRUPOS_SEGURIDAD
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('MEDIOS_COMUNICACION') and o.name = 'FK_MEDIOS_C_REFERENCE_TIPOS_ME')
-alter table MEDIOS_COMUNICACION
+   where r.fkeyid = object_id('medios_comunicacion') and o.name = 'FK_MEDIOS_C_REFERENCE_CLIENTES')
+alter table medios_comunicacion
+   drop constraint FK_MEDIOS_C_REFERENCE_CLIENTES
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('medios_comunicacion') and o.name = 'FK_MEDIOS_C_REFERENCE_TIPOS_ME')
+alter table medios_comunicacion
    drop constraint FK_MEDIOS_C_REFERENCE_TIPOS_ME
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('MEDIOS_COMUNICACION') and o.name = 'FK_MEDIOS_C_REFERENCE_PERSONAS')
-alter table MEDIOS_COMUNICACION
-   drop constraint FK_MEDIOS_C_REFERENCE_PERSONAS
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('MUNICIPIOS') and o.name = 'FK_MUNICIPI_REFERENCE_ESTADOS')
-alter table MUNICIPIOS
+   where r.fkeyid = object_id('municipios') and o.name = 'FK_MUNICIPI_REFERENCE_ESTADOS')
+alter table municipios
    drop constraint FK_MUNICIPI_REFERENCE_ESTADOS
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('PERSONAS') and o.name = 'FK_PERSONAS_REFERENCE_ASENTAMI')
-alter table PERSONAS
-   drop constraint FK_PERSONAS_REFERENCE_ASENTAMI
+   where r.fkeyid = object_id('productos') and o.name = 'FK_PRODUCTO_REFERENCE_TIPOS_PR')
+alter table productos
+   drop constraint FK_PRODUCTO_REFERENCE_TIPOS_PR
 go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('RUTAS') and o.name = 'FK_RUTAS_REFERENCE_SUCURSAL')
-alter table RUTAS
+   where r.fkeyid = object_id('rutas') and o.name = 'FK_RUTAS_REFERENCE_SUCURSAL')
+alter table rutas
    drop constraint FK_RUTAS_REFERENCE_SUCURSAL
 go
 
 if exists (select 1
-            from  sysindexes
-           where  id    = object_id('ARTICULOS')
-            and   name  = 'INDEX_1'
-            and   indid > 0
-            and   indid < 255)
-   drop index ARTICULOS.INDEX_1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('tipos_productos') and o.name = 'FK_TIPOS_PR_REFERENCE_LINEAS_P')
+alter table tipos_productos
+   drop constraint FK_TIPOS_PR_REFERENCE_LINEAS_P
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('ARTICULOS')
-            and   name  = 'INDEX_2'
+           where  id    = object_id('asentamientos')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index ARTICULOS.INDEX_2
+   drop index asentamientos.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('asentamientos')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index asentamientos.index_2
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('ARTICULOS')
+           where  id = object_id('asentamientos')
             and   type = 'U')
-   drop table ARTICULOS
+   drop table asentamientos
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('ASENTAMIENTOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('clasificaciones_clientes')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index ASENTAMIENTOS.INDEX_1
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('ASENTAMIENTOS')
-            and   name  = 'INDEX_2'
-            and   indid > 0
-            and   indid < 255)
-   drop index ASENTAMIENTOS.INDEX_2
+   drop index clasificaciones_clientes.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('ASENTAMIENTOS')
+           where  id = object_id('clasificaciones_clientes')
             and   type = 'U')
-   drop table ASENTAMIENTOS
+   drop table clasificaciones_clientes
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('CATEGORIAS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('clasificaciones_contrato')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index CATEGORIAS.INDEX_1
+   drop index clasificaciones_contrato.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('CATEGORIAS')
+           where  id = object_id('clasificaciones_contrato')
             and   type = 'U')
-   drop table CATEGORIAS
+   drop table clasificaciones_contrato
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('ESTADOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('clientes')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index ESTADOS.INDEX_1
+   drop index clientes.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('ESTADOS')
+           where  id = object_id('clientes')
             and   type = 'U')
-   drop table ESTADOS
+   drop table clientes
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('GRUPOS_SEGURIDAD')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('conceptos_pago')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index GRUPOS_SEGURIDAD.INDEX_1
+   drop index conceptos_pago.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('GRUPOS_SEGURIDAD')
+           where  id = object_id('conceptos_pago')
             and   type = 'U')
-   drop table GRUPOS_SEGURIDAD
+   drop table conceptos_pago
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('GRUPOS_SEGURIDAD_MODULOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('empleados')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index GRUPOS_SEGURIDAD_MODULOS.INDEX_1
+   drop index empleados.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('GRUPOS_SEGURIDAD_MODULOS')
+           where  id = object_id('empleados')
             and   type = 'U')
-   drop table GRUPOS_SEGURIDAD_MODULOS
+   drop table empleados
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('GRUPOS_SEGURIDAD_USUARIOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('estados')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index GRUPOS_SEGURIDAD_USUARIOS.INDEX_1
+   drop index estados.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('GRUPOS_SEGURIDAD_USUARIOS')
+           where  id = object_id('estados')
             and   type = 'U')
-   drop table GRUPOS_SEGURIDAD_USUARIOS
+   drop table estados
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('MEDIOS_COMUNICACION')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('grupos_seguridad')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index MEDIOS_COMUNICACION.INDEX_1
+   drop index grupos_seguridad.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('MEDIOS_COMUNICACION')
+           where  id = object_id('grupos_seguridad')
             and   type = 'U')
-   drop table MEDIOS_COMUNICACION
+   drop table grupos_seguridad
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('MODULOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('grupos_seguridad_modulos')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index MODULOS.INDEX_1
+   drop index grupos_seguridad_modulos.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('MODULOS')
+           where  id = object_id('grupos_seguridad_modulos')
             and   type = 'U')
-   drop table MODULOS
+   drop table grupos_seguridad_modulos
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('MUNICIPIOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('grupos_seguridad_usuarios')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index MUNICIPIOS.INDEX_1
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('MUNICIPIOS')
-            and   name  = 'INDEX_2'
-            and   indid > 0
-            and   indid < 255)
-   drop index MUNICIPIOS.INDEX_2
+   drop index grupos_seguridad_usuarios.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('MUNICIPIOS')
+           where  id = object_id('grupos_seguridad_usuarios')
             and   type = 'U')
-   drop table MUNICIPIOS
+   drop table grupos_seguridad_usuarios
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('PERSONAS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('lineas_productos')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index PERSONAS.INDEX_1
+   drop index lineas_productos.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('PERSONAS')
+           where  id = object_id('lineas_productos')
             and   type = 'U')
-   drop table PERSONAS
+   drop table lineas_productos
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('RUTAS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('medios_comunicacion')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index RUTAS.INDEX_1
+   drop index medios_comunicacion.index_1
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('RUTAS')
-            and   name  = 'INDEX_2'
+           where  id    = object_id('medios_comunicacion')
+            and   name  = 'index_2'
             and   indid > 0
             and   indid < 255)
-   drop index RUTAS.INDEX_2
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('RUTAS')
-            and   name  = 'INDEX_3'
-            and   indid > 0
-            and   indid < 255)
-   drop index RUTAS.INDEX_3
+   drop index medios_comunicacion.index_2
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('RUTAS')
+           where  id = object_id('medios_comunicacion')
             and   type = 'U')
-   drop table RUTAS
+   drop table medios_comunicacion
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('SUCURSALES')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('modulos')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index SUCURSALES.INDEX_1
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('SUCURSALES')
-            and   name  = 'INDEX_2'
-            and   indid > 0
-            and   indid < 255)
-   drop index SUCURSALES.INDEX_2
+   drop index modulos.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('SUCURSALES')
+           where  id = object_id('modulos')
             and   type = 'U')
-   drop table SUCURSALES
+   drop table modulos
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('TIPOS_ASENTAMIENTOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('municipios')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index TIPOS_ASENTAMIENTOS.INDEX_1
+   drop index municipios.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('municipios')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index municipios.index_2
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('TIPOS_ASENTAMIENTOS')
+           where  id = object_id('municipios')
             and   type = 'U')
-   drop table TIPOS_ASENTAMIENTOS
+   drop table municipios
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('TIPOS_MEDIOS_COMUNICACION')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('ocupaciones')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index TIPOS_MEDIOS_COMUNICACION.INDEX_1
+   drop index ocupaciones.index_1
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('TIPOS_MEDIOS_COMUNICACION')
+           where  id = object_id('ocupaciones')
             and   type = 'U')
-   drop table TIPOS_MEDIOS_COMUNICACION
+   drop table ocupaciones
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('USUARIOS')
-            and   name  = 'INDEX_1'
+           where  id    = object_id('personas')
+            and   name  = 'index_1'
             and   indid > 0
             and   indid < 255)
-   drop index USUARIOS.INDEX_1
+   drop index personas.index_1
 go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('USUARIOS')
-            and   name  = 'INDEX_2'
+           where  id    = object_id('personas')
+            and   name  = 'index_2'
             and   indid > 0
             and   indid < 255)
-   drop index USUARIOS.INDEX_2
+   drop index personas.index_2
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('USUARIOS')
+           where  id = object_id('personas')
             and   type = 'U')
-   drop table USUARIOS
+   drop table personas
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('productos')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index productos.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('productos')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index productos.index_2
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('productos')
+            and   name  = 'index_3'
+            and   indid > 0
+            and   indid < 255)
+   drop index productos.index_3
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('productos')
+            and   type = 'U')
+   drop table productos
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('proveedores')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index proveedores.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('proveedores')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index proveedores.index_2
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('proveedores')
+            and   name  = 'index_3'
+            and   indid > 0
+            and   indid < 255)
+   drop index proveedores.index_3
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('proveedores')
+            and   type = 'U')
+   drop table proveedores
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('puestos')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index puestos.index_1
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('puestos')
+            and   type = 'U')
+   drop table puestos
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('rutas')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index rutas.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('rutas')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index rutas.index_2
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('rutas')
+            and   name  = 'index_3'
+            and   indid > 0
+            and   indid < 255)
+   drop index rutas.index_3
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('rutas')
+            and   type = 'U')
+   drop table rutas
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('sucursales')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index sucursales.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('sucursales')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index sucursales.index_2
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('sucursales')
+            and   type = 'U')
+   drop table sucursales
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('tipos_asentamientos')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index tipos_asentamientos.index_1
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('tipos_asentamientos')
+            and   type = 'U')
+   drop table tipos_asentamientos
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('tipos_identificacion')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index tipos_identificacion.index_1
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('tipos_identificacion')
+            and   type = 'U')
+   drop table tipos_identificacion
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('tipos_medios_comunicacion')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index tipos_medios_comunicacion.index_1
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('tipos_medios_comunicacion')
+            and   type = 'U')
+   drop table tipos_medios_comunicacion
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('tipos_productos')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index tipos_productos.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('tipos_productos')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index tipos_productos.index_2
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('tipos_productos')
+            and   type = 'U')
+   drop table tipos_productos
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('usuarios')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index usuarios.index_1
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('usuarios')
+            and   name  = 'index_2'
+            and   indid > 0
+            and   indid < 255)
+   drop index usuarios.index_2
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('usuarios')
+            and   type = 'U')
+   drop table usuarios
 go
 
 /*==============================================================*/
-/* Table: ARTICULOS                                             */
+/* Table: asentamientos                                         */
 /*==============================================================*/
-create table ARTICULOS (
-   ID                   int                  not null,
-   CATEGORIA_ID         int                  null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_ARTICULOS primary key (ID)
+create table asentamientos (
+   id                   int                  not null,
+   tipo_asentamiento_id int                  null,
+   municipio_id         int                  null,
+   nombre               varchar(50)          null,
+   cp                   varchar(5)           null,
+   activo               bit                  null,
+   constraint PK_ASENTAMIENTOS primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_2                                               */
+/* Index: index_2                                               */
 /*==============================================================*/
-create index INDEX_2 on ARTICULOS (
-NOMBRE ASC
+create index index_2 on asentamientos (
+nombre ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create index INDEX_1 on ARTICULOS (
-ID ASC
+create index index_1 on asentamientos (
+cp ASC
 )
 go
 
 /*==============================================================*/
-/* Table: ASENTAMIENTOS                                         */
+/* Table: clasificaciones_clientes                              */
 /*==============================================================*/
-create table ASENTAMIENTOS (
-   ID                   int                  not null,
-   TIPO_ASENTAMIENTO_ID int                  null,
-   MUNICIPIO_ID         int                  null,
-   NOMBRE               varchar(50)          null,
-   CP                   varchar(5)           null,
-   ACTIVO               bit                  null,
-   constraint PK_ASENTAMIENTOS primary key (ID)
+create table clasificaciones_clientes (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_CLASIFICACIONES_CLIENTES primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_2                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create index INDEX_2 on ASENTAMIENTOS (
-NOMBRE ASC
+create index index_1 on clasificaciones_clientes (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: clasificaciones_contrato                              */
 /*==============================================================*/
-create index INDEX_1 on ASENTAMIENTOS (
-CP ASC
+create table clasificaciones_contrato (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_CLASIFICACIONES_CONTRATO primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Table: CATEGORIAS                                            */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table CATEGORIAS (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_CATEGORIAS primary key (ID)
+create index index_1 on clasificaciones_contrato (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: clientes                                              */
 /*==============================================================*/
-create index INDEX_1 on CATEGORIAS (
-ID ASC
+create table clientes (
+   persona_id           int                  not null,
+   ocupacion_id         int                  null,
+   tipo_identificacion_id int                  null,
+   fecha_registro       datetime             null,
+   activo               bit                  null,
+   constraint PK_CLIENTES primary key (persona_id)
 )
 go
 
 /*==============================================================*/
-/* Table: ESTADOS                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table ESTADOS (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_ESTADOS primary key (ID)
+create index index_1 on clientes (
+persona_id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: conceptos_pago                                        */
 /*==============================================================*/
-create index INDEX_1 on ESTADOS (
-ID ASC
+create table conceptos_pago (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_CONCEPTOS_PAGO primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Table: GRUPOS_SEGURIDAD                                      */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table GRUPOS_SEGURIDAD (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   FECHA_REG            datetime             null,
-   FECHA_MOD            datetime             null,
-   constraint PK_GRUPOS_SEGURIDAD primary key (ID)
+create index index_1 on conceptos_pago (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: empleados                                             */
 /*==============================================================*/
-create index INDEX_1 on GRUPOS_SEGURIDAD (
-ID ASC
+create table empleados (
+   persona_id           int                  not null,
+   puesto_id            int                  null,
+   fecha_registro       datetime             null,
+   activo               bit                  null,
+   constraint PK_EMPLEADOS primary key (persona_id)
 )
 go
 
 /*==============================================================*/
-/* Table: GRUPOS_SEGURIDAD_MODULOS                              */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table GRUPOS_SEGURIDAD_MODULOS (
-   GRUPO_SEGURIDAD_ID   int                  null,
-   MODULOS_ID           int                  null,
-   FECHA_REG            datetime             null,
-   FECHA_MOD            datetime             null,
-   constraint AK_KEY_1_2_GRUPOS_S unique (GRUPO_SEGURIDAD_ID, MODULOS_ID)
+create index index_1 on empleados (
+persona_id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: estados                                               */
 /*==============================================================*/
-create index INDEX_1 on GRUPOS_SEGURIDAD_MODULOS (
-GRUPO_SEGURIDAD_ID ASC,
-MODULOS_ID ASC
+create table estados (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_ESTADOS primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Table: GRUPOS_SEGURIDAD_USUARIOS                             */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table GRUPOS_SEGURIDAD_USUARIOS (
-   GRUPO_SEGURIDAD_ID   int                  null,
-   USUARIO_ID           int                  null,
-   FECHA_REG            datetime             null,
-   FECHA_MOD            datetime             null,
-   constraint AK_KEY_1_1_GRUPOS_S unique (GRUPO_SEGURIDAD_ID, USUARIO_ID)
+create index index_1 on estados (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: grupos_seguridad                                      */
 /*==============================================================*/
-create index INDEX_1 on GRUPOS_SEGURIDAD_USUARIOS (
-GRUPO_SEGURIDAD_ID ASC,
-USUARIO_ID ASC
+create table grupos_seguridad (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   fecha_reg            datetime             null,
+   fecha_mod            datetime             null,
+   activo               bit                  null,
+   constraint PK_GRUPOS_SEGURIDAD primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Table: MEDIOS_COMUNICACION                                   */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table MEDIOS_COMUNICACION (
-   ID                   int                  not null,
-   TIPO_MEDIO_COMUNICACION_ID int                  null,
-   PERSONA_ID           int                  null,
-   VALOR                varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_MEDIOS_COMUNICACION primary key (ID)
+create index index_1 on grupos_seguridad (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: grupos_seguridad_modulos                              */
 /*==============================================================*/
-create index INDEX_1 on MEDIOS_COMUNICACION (
-ID ASC
+create table grupos_seguridad_modulos (
+   grupo_seguridad_id   int                  not null,
+   modulo_id            int                  not null,
+   fecha_reg            datetime             null,
+   fecha_mod            datetime             null,
+   activo               bit                  null,
+   constraint PK_GRUPOS_SEGURIDAD_MODULOS primary key (grupo_seguridad_id, modulo_id)
 )
 go
 
 /*==============================================================*/
-/* Table: MODULOS                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table MODULOS (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   FECHA_REG            datetime             null,
-   FECHA_MOD            datetime             null,
-   constraint PK_MODULOS primary key (ID)
+create index index_1 on grupos_seguridad_modulos (
+grupo_seguridad_id ASC,
+modulo_id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: grupos_seguridad_usuarios                             */
 /*==============================================================*/
-create index INDEX_1 on MODULOS (
-ID ASC
+create table grupos_seguridad_usuarios (
+   grupo_seguridad_id   int                  not null,
+   usuario_id           int                  not null,
+   fecha_reg            datetime             null,
+   fecha_mod            datetime             null,
+   activo               bit                  null,
+   constraint PK_GRUPOS_SEGURIDAD_USUARIOS primary key (grupo_seguridad_id, usuario_id)
 )
 go
 
 /*==============================================================*/
-/* Table: MUNICIPIOS                                            */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table MUNICIPIOS (
-   ID                   int                  not null,
-   ESTADO_ID            int                  null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_MUNICIPIOS primary key (ID)
+create index index_1 on grupos_seguridad_usuarios (
+grupo_seguridad_id ASC,
+usuario_id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_2                                               */
+/* Table: lineas_productos                                      */
 /*==============================================================*/
-create index INDEX_2 on MUNICIPIOS (
-ESTADO_ID ASC
+create table lineas_productos (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_LINEAS_PRODUCTOS primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create index INDEX_1 on MUNICIPIOS (
-ID ASC
+create index index_1 on lineas_productos (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Table: PERSONAS                                              */
+/* Table: medios_comunicacion                                   */
 /*==============================================================*/
-create table PERSONAS (
-   ID                   int                  not null,
-   ASENTAMIENTO_ID      int                  null,
-   NOMBRE               varchar(50)          null,
-   AP_PATERNO           varchar(50)          null,
-   AP_MATERNO           varchar(50)          null,
-   FECHA_NACIMIENTO     date                 null,
-   SEXO                 varchar(1)           null,
-   constraint PK_PERSONAS primary key (ID)
+create table medios_comunicacion (
+   id                   int                  not null,
+   tipo_medio_comunicacion_id int                  null,
+   cliente_id           int                  null,
+   valor                varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_MEDIOS_COMUNICACION primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Index: index_2                                               */
 /*==============================================================*/
-create index INDEX_1 on PERSONAS (
-NOMBRE ASC,
-AP_PATERNO ASC,
-AP_MATERNO ASC
+create index index_2 on medios_comunicacion (
+cliente_id ASC
 )
 go
 
 /*==============================================================*/
-/* Table: RUTAS                                                 */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table RUTAS (
-   ID                   int                  not null,
-   SUCURSAL_ID          int                  null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_RUTAS primary key (ID)
+create index index_1 on medios_comunicacion (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_3                                               */
+/* Table: modulos                                               */
 /*==============================================================*/
-create index INDEX_3 on RUTAS (
-NOMBRE ASC
+create table modulos (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   fecha_reg            datetime             null,
+   fecha_mod            datetime             null,
+   activo               bit                  null,
+   constraint PK_MODULOS primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_2                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create index INDEX_2 on RUTAS (
-SUCURSAL_ID ASC
+create index index_1 on modulos (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: municipios                                            */
 /*==============================================================*/
-create index INDEX_1 on RUTAS (
-ID ASC
+create table municipios (
+   id                   int                  not null,
+   estado_id            int                  null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_MUNICIPIOS primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Table: SUCURSALES                                            */
+/* Index: index_2                                               */
 /*==============================================================*/
-create table SUCURSALES (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_SUCURSALES primary key (ID)
+create index index_2 on municipios (
+estado_id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_2                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create index INDEX_2 on SUCURSALES (
-NOMBRE ASC
+create index index_1 on municipios (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: ocupaciones                                           */
 /*==============================================================*/
-create index INDEX_1 on SUCURSALES (
-ID ASC
+create table ocupaciones (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_OCUPACIONES primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Table: TIPOS_ASENTAMIENTOS                                   */
+/* Index: index_1                                               */
 /*==============================================================*/
-create table TIPOS_ASENTAMIENTOS (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_TIPOS_ASENTAMIENTOS primary key (ID)
+create index index_1 on ocupaciones (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Table: personas                                              */
 /*==============================================================*/
-create index INDEX_1 on TIPOS_ASENTAMIENTOS (
-ID ASC
+create table personas (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   ap_paterno           varchar(50)          null,
+   ap_materno           varchar(50)          null,
+   fecha_nacimiento     date                 null,
+   sexo                 varchar(1)           null,
+   constraint PK_PERSONAS primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Table: TIPOS_MEDIOS_COMUNICACION                             */
+/* Index: index_2                                               */
 /*==============================================================*/
-create table TIPOS_MEDIOS_COMUNICACION (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   ACTIVO               bit                  null,
-   constraint PK_TIPOS_MEDIOS_COMUNICACION primary key (ID)
+create index index_2 on personas (
+id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Index: index_1                                               */
 /*==============================================================*/
-create index INDEX_1 on TIPOS_MEDIOS_COMUNICACION (
-ID ASC
+create index index_1 on personas (
+nombre ASC,
+ap_paterno ASC,
+ap_materno ASC
 )
 go
 
 /*==============================================================*/
-/* Table: USUARIOS                                              */
+/* Table: productos                                             */
 /*==============================================================*/
-create table USUARIOS (
-   ID                   int                  not null,
-   NOMBRE               varchar(50)          null,
-   LOGIN                varchar(15)          null,
-   PASSWORD             varchar(15)          null,
-   ACTIVO               bit                  null,
-   FECHA_REG            datetime             null,
-   FECHA_MOD            datetime             null,
-   constraint PK_USUARIOS primary key (ID)
+create table productos (
+   id                   int                  not null,
+   tipo_producto_id     int                  null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_PRODUCTOS primary key (id)
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_2                                               */
+/* Index: index_3                                               */
 /*==============================================================*/
-create index INDEX_2 on USUARIOS (
-LOGIN ASC,
-PASSWORD ASC
+create index index_3 on productos (
+tipo_producto_id ASC
 )
 go
 
 /*==============================================================*/
-/* Index: INDEX_1                                               */
+/* Index: index_2                                               */
 /*==============================================================*/
-create index INDEX_1 on USUARIOS (
-ID ASC
+create index index_2 on productos (
+nombre ASC
 )
 go
 
-alter table ARTICULOS
-   add constraint FK_ARTICULO_REFERENCE_CATEGORI foreign key (CATEGORIA_ID)
-      references CATEGORIAS (ID)
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on productos (
+id ASC
+)
 go
 
-alter table ASENTAMIENTOS
-   add constraint FK_ASENTAMI_REFERENCE_MUNICIPI foreign key (MUNICIPIO_ID)
-      references MUNICIPIOS (ID)
+/*==============================================================*/
+/* Table: proveedores                                           */
+/*==============================================================*/
+create table proveedores (
+   id                   int                  not null,
+   nombre_comercial     varchar(100)         null,
+   razon_social         varchar(100)         null,
+   activo               bit                  null,
+   constraint PK_PROVEEDORES primary key (id)
+)
 go
 
-alter table ASENTAMIENTOS
-   add constraint FK_ASENTAMI_REFERENCE_TIPOS_AS foreign key (TIPO_ASENTAMIENTO_ID)
-      references TIPOS_ASENTAMIENTOS (ID)
+/*==============================================================*/
+/* Index: index_3                                               */
+/*==============================================================*/
+create index index_3 on proveedores (
+razon_social ASC
+)
 go
 
-alter table GRUPOS_SEGURIDAD_MODULOS
-   add constraint FK_GRUPOS_S_REFERENCE_GRUPOS_S2 foreign key (GRUPO_SEGURIDAD_ID)
-      references GRUPOS_SEGURIDAD (ID)
+/*==============================================================*/
+/* Index: index_2                                               */
+/*==============================================================*/
+create index index_2 on proveedores (
+nombre_comercial ASC
+)
 go
 
-alter table GRUPOS_SEGURIDAD_MODULOS
-   add constraint FK_GRUPOS_S_REFERENCE_MODULOS foreign key (MODULOS_ID)
-      references MODULOS (ID)
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on proveedores (
+id ASC
+)
 go
 
-alter table GRUPOS_SEGURIDAD_USUARIOS
-   add constraint FK_GRUPOS_S_REFERENCE_USUARIOS foreign key (USUARIO_ID)
-      references USUARIOS (ID)
+/*==============================================================*/
+/* Table: puestos                                               */
+/*==============================================================*/
+create table puestos (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_PUESTOS primary key (id)
+)
 go
 
-alter table GRUPOS_SEGURIDAD_USUARIOS
-   add constraint FK_GRUPOS_S_REFERENCE_GRUPOS_S1 foreign key (GRUPO_SEGURIDAD_ID)
-      references GRUPOS_SEGURIDAD (ID)
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on puestos (
+id ASC
+)
 go
 
-alter table MEDIOS_COMUNICACION
-   add constraint FK_MEDIOS_C_REFERENCE_TIPOS_ME foreign key (TIPO_MEDIO_COMUNICACION_ID)
-      references TIPOS_MEDIOS_COMUNICACION (ID)
+/*==============================================================*/
+/* Table: rutas                                                 */
+/*==============================================================*/
+create table rutas (
+   id                   int                  not null,
+   sucursal_id          int                  null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_RUTAS primary key (id)
+)
 go
 
-alter table MEDIOS_COMUNICACION
-   add constraint FK_MEDIOS_C_REFERENCE_PERSONAS foreign key (PERSONA_ID)
-      references PERSONAS (ID)
+/*==============================================================*/
+/* Index: index_3                                               */
+/*==============================================================*/
+create index index_3 on rutas (
+nombre ASC
+)
 go
 
-alter table MUNICIPIOS
-   add constraint FK_MUNICIPI_REFERENCE_ESTADOS foreign key (ESTADO_ID)
-      references ESTADOS (ID)
+/*==============================================================*/
+/* Index: index_2                                               */
+/*==============================================================*/
+create index index_2 on rutas (
+sucursal_id ASC
+)
 go
 
-alter table PERSONAS
-   add constraint FK_PERSONAS_REFERENCE_ASENTAMI foreign key (ASENTAMIENTO_ID)
-      references ASENTAMIENTOS (ID)
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on rutas (
+id ASC
+)
 go
 
-alter table RUTAS
-   add constraint FK_RUTAS_REFERENCE_SUCURSAL foreign key (SUCURSAL_ID)
-      references SUCURSALES (ID)
+/*==============================================================*/
+/* Table: sucursales                                            */
+/*==============================================================*/
+create table sucursales (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_SUCURSALES primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_2                                               */
+/*==============================================================*/
+create index index_2 on sucursales (
+nombre ASC
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on sucursales (
+id ASC
+)
+go
+
+/*==============================================================*/
+/* Table: tipos_asentamientos                                   */
+/*==============================================================*/
+create table tipos_asentamientos (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_TIPOS_ASENTAMIENTOS primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on tipos_asentamientos (
+id ASC
+)
+go
+
+/*==============================================================*/
+/* Table: tipos_identificacion                                  */
+/*==============================================================*/
+create table tipos_identificacion (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_TIPOS_IDENTIFICACION primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on tipos_identificacion (
+id ASC
+)
+go
+
+/*==============================================================*/
+/* Table: tipos_medios_comunicacion                             */
+/*==============================================================*/
+create table tipos_medios_comunicacion (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_TIPOS_MEDIOS_COMUNICACION primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on tipos_medios_comunicacion (
+id ASC
+)
+go
+
+/*==============================================================*/
+/* Table: tipos_productos                                       */
+/*==============================================================*/
+create table tipos_productos (
+   id                   int                  not null,
+   linea_producto_id    int                  null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_TIPOS_PRODUCTOS primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_2                                               */
+/*==============================================================*/
+create index index_2 on tipos_productos (
+linea_producto_id ASC
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on tipos_productos (
+id ASC
+)
+go
+
+/*==============================================================*/
+/* Table: usuarios                                              */
+/*==============================================================*/
+create table usuarios (
+   id                   int                  not null,
+   nombre_completo      varchar(50)          null,
+   login                varchar(15)          null,
+   password             varchar(15)          null,
+   fecha_reg            datetime             null,
+   fecha_mod            datetime             null,
+   activo               bit                  null,
+   constraint PK_USUARIOS primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_2                                               */
+/*==============================================================*/
+create index index_2 on usuarios (
+login ASC,
+password ASC
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on usuarios (
+id ASC
+)
+go
+
+alter table asentamientos
+   add constraint FK_ASENTAMI_REFERENCE_MUNICIPI foreign key (municipio_id)
+      references municipios (id)
+go
+
+alter table asentamientos
+   add constraint FK_ASENTAMI_REFERENCE_TIPOS_AS foreign key (tipo_asentamiento_id)
+      references tipos_asentamientos (id)
+go
+
+alter table clientes
+   add constraint FK_CLIENTES_REFERENCE_PERSONAS foreign key (persona_id)
+      references personas (id)
+go
+
+alter table clientes
+   add constraint FK_CLIENTES_REFERENCE_OCUPACIO foreign key (ocupacion_id)
+      references ocupaciones (id)
+go
+
+alter table clientes
+   add constraint FK_CLIENTES_REFERENCE_TIPOS_ID foreign key (tipo_identificacion_id)
+      references tipos_identificacion (id)
+go
+
+alter table empleados
+   add constraint FK_EMPLEADO_REFERENCE_PUESTOS foreign key (puesto_id)
+      references puestos (id)
+go
+
+alter table empleados
+   add constraint FK_EMPLEADO_REFERENCE_PERSONAS foreign key (persona_id)
+      references personas (id)
+go
+
+alter table grupos_seguridad_modulos
+   add constraint FK_GRUPOS_S_MODULOS_REFERENCE_GRUPOS_SEGURIDAD foreign key (grupo_seguridad_id)
+      references grupos_seguridad (id)
+go
+
+alter table grupos_seguridad_modulos
+   add constraint FK_GRUPOS_S_REFERENCE_MODULOS foreign key (modulo_id)
+      references modulos (id)
+go
+
+alter table grupos_seguridad_usuarios
+   add constraint FK_GRUPOS_S_REFERENCE_USUARIOS foreign key (usuario_id)
+      references usuarios (id)
+go
+
+alter table grupos_seguridad_usuarios
+   add constraint FK_GRUPOS_S_USUARIOS_REFERENCE_GRUPOS_SEGURIDAD foreign key (grupo_seguridad_id)
+      references grupos_seguridad (id)
+go
+
+alter table medios_comunicacion
+   add constraint FK_MEDIOS_C_REFERENCE_CLIENTES foreign key (cliente_id)
+      references clientes (persona_id)
+go
+
+alter table medios_comunicacion
+   add constraint FK_MEDIOS_C_REFERENCE_TIPOS_ME foreign key (tipo_medio_comunicacion_id)
+      references tipos_medios_comunicacion (id)
+go
+
+alter table municipios
+   add constraint FK_MUNICIPI_REFERENCE_ESTADOS foreign key (estado_id)
+      references estados (id)
+go
+
+alter table productos
+   add constraint FK_PRODUCTO_REFERENCE_TIPOS_PR foreign key (tipo_producto_id)
+      references tipos_productos (id)
+go
+
+alter table rutas
+   add constraint FK_RUTAS_REFERENCE_SUCURSAL foreign key (sucursal_id)
+      references sucursales (id)
+go
+
+alter table tipos_productos
+   add constraint FK_TIPOS_PR_REFERENCE_LINEAS_P foreign key (linea_producto_id)
+      references lineas_productos (id)
 go
 
