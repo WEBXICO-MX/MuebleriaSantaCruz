@@ -90,6 +90,11 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Conexion.vb" />
+    <Compile Include="DataSetAsentamientoCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAsentamientoCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetClasificacionCliente.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +114,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDomicilio.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDomicilio.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetEmpleado.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -222,6 +232,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTipoProductoCombo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTipoViviendaCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoViviendaCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetUsuario.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -542,6 +557,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSetAsentamientoCombo.xsc">
+      <DependentUpon>DataSetAsentamientoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAsentamientoCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAsentamientoCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetAsentamientoCombo.xss">
+      <DependentUpon>DataSetAsentamientoCombo.xsd</DependentUpon>
+    </None>
     <None Include="DataSetClasificacionCliente.xsc">
       <DependentUpon>DataSetClasificacionCliente.xsd</DependentUpon>
     </None>
@@ -585,6 +611,17 @@
     </None>
     <None Include="DataSetConceptoPago.xss">
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDomicilio.xsc">
+      <DependentUpon>DataSetDomicilio.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDomicilio.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDomicilio.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetDomicilio.xss">
+      <DependentUpon>DataSetDomicilio.xsd</DependentUpon>
     </None>
     <None Include="DataSetEmpleado.xsc">
       <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
@@ -827,6 +864,17 @@
     </None>
     <None Include="DataSetTipoProductoCombo.xss">
       <DependentUpon>DataSetTipoProductoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoViviendaCombo.xsc">
+      <DependentUpon>DataSetTipoViviendaCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoViviendaCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoViviendaCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoViviendaCombo.xss">
+      <DependentUpon>DataSetTipoViviendaCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetUsuario.xsc">
       <DependentUpon>DataSetUsuario.xsd</DependentUpon>
