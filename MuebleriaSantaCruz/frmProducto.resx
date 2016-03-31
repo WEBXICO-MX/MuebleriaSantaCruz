@@ -181,17 +181,17 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btbuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -212,6 +212,12 @@
   <metadata name="Tipos_productosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>225, 56</value>
   </metadata>
+  <metadata name="Tipos_productosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>225, 56</value>
+  </metadata>
+  <metadata name="DataSetTipoProductoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <metadata name="DataSetTipoProductoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
@@ -227,7 +233,31 @@
   <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>680, 17</value>
   </metadata>
+  <metadata name="descripcion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="tipo_producto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="precio_costo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="precio_contado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="precio_credito.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="precio_enganche.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="precio_pago_semanal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="stock_minimo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="stock_maximo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Tipos_productosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

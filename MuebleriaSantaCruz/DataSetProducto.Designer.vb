@@ -293,6 +293,22 @@ Partial Public Class DataSetProducto
         
         Private columntipo_producto As Global.System.Data.DataColumn
 
+        Private columndescripcion As Global.System.Data.DataColumn
+
+        Private columnprecio_costo As Global.System.Data.DataColumn
+
+        Private columnprecio_contado As Global.System.Data.DataColumn
+
+        Private columnprecio_credito As Global.System.Data.DataColumn
+
+        Private columnprecio_enganche As Global.System.Data.DataColumn
+
+        Private columnprecio_pago_semanal As Global.System.Data.DataColumn
+
+        Private columnstock_minimo As Global.System.Data.DataColumn
+
+        Private columnstock_maximo As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -369,6 +385,70 @@ Partial Public Class DataSetProducto
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property descripcionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndescripcion
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property precio_costoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprecio_costo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property precio_contadoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprecio_contado
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property precio_creditoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprecio_credito
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property precio_engancheColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprecio_enganche
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property precio_pago_semanalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprecio_pago_semanal
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property stock_minimoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstock_minimo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property stock_maximoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstock_maximo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -405,9 +485,9 @@ Partial Public Class DataSetProducto
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddproductosRow(ByVal id As Integer, ByVal tipo_producto_id As Integer, ByVal nombre As String, ByVal activo As Boolean, ByVal tipo_producto As String) As productosRow
+        Public Overloads Function AddproductosRow(ByVal id As Integer, ByVal tipo_producto_id As Integer, ByVal nombre As String, ByVal activo As Boolean, ByVal tipo_producto As String, ByVal descripcion As String, ByVal precio_costo As Double, ByVal precio_contado As Double, ByVal precio_credito As Double, ByVal precio_enganche As Double, ByVal precio_pago_semanal As Double, ByVal stock_minimo As Integer, ByVal stock_maximo As Integer) As productosRow
             Dim rowproductosRow As productosRow = CType(Me.NewRow, productosRow)
-            Dim columnValuesArray() As Object = New Object() {id, tipo_producto_id, nombre, activo, tipo_producto}
+            Dim columnValuesArray() As Object = New Object() {id, tipo_producto_id, nombre, activo, tipo_producto, descripcion, precio_costo, precio_contado, precio_credito, precio_enganche, precio_pago_semanal, stock_minimo, stock_maximo}
             rowproductosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowproductosRow)
             Return rowproductosRow
@@ -441,6 +521,14 @@ Partial Public Class DataSetProducto
             Me.columnnombre = MyBase.Columns("nombre")
             Me.columnactivo = MyBase.Columns("activo")
             Me.columntipo_producto = MyBase.Columns("tipo_producto")
+            Me.columndescripcion = MyBase.Columns("descripcion")
+            Me.columnprecio_costo = MyBase.Columns("precio_costo")
+            Me.columnprecio_contado = MyBase.Columns("precio_contado")
+            Me.columnprecio_credito = MyBase.Columns("precio_credito")
+            Me.columnprecio_enganche = MyBase.Columns("precio_enganche")
+            Me.columnprecio_pago_semanal = MyBase.Columns("precio_pago_semanal")
+            Me.columnstock_minimo = MyBase.Columns("stock_minimo")
+            Me.columnstock_maximo = MyBase.Columns("stock_maximo")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -456,11 +544,28 @@ Partial Public Class DataSetProducto
             MyBase.Columns.Add(Me.columnactivo)
             Me.columntipo_producto = New Global.System.Data.DataColumn("tipo_producto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntipo_producto)
+            Me.columndescripcion = New Global.System.Data.DataColumn("descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndescripcion)
+            Me.columnprecio_costo = New Global.System.Data.DataColumn("precio_costo", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprecio_costo)
+            Me.columnprecio_contado = New Global.System.Data.DataColumn("precio_contado", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprecio_contado)
+            Me.columnprecio_credito = New Global.System.Data.DataColumn("precio_credito", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprecio_credito)
+            Me.columnprecio_enganche = New Global.System.Data.DataColumn("precio_enganche", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprecio_enganche)
+            Me.columnprecio_pago_semanal = New Global.System.Data.DataColumn("precio_pago_semanal", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprecio_pago_semanal)
+            Me.columnstock_minimo = New Global.System.Data.DataColumn("stock_minimo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstock_minimo)
+            Me.columnstock_maximo = New Global.System.Data.DataColumn("stock_maximo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstock_maximo)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, True))
             Me.columnid.AllowDBNull = False
             Me.columnid.Unique = True
             Me.columnnombre.MaxLength = 50
             Me.columntipo_producto.MaxLength = 50
+            Me.columndescripcion.MaxLength = 100
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -678,6 +783,126 @@ Partial Public Class DataSetProducto
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property descripcion() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.descripcionColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'descripcion' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableproductos.descripcionColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property precio_costo() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.precio_costoColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'precio_costo' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableproductos.precio_costoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property precio_contado() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.precio_contadoColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'precio_contado' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableproductos.precio_contadoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property precio_credito() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.precio_creditoColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'precio_credito' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableproductos.precio_creditoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property precio_enganche() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.precio_engancheColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'precio_enganche' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableproductos.precio_engancheColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property precio_pago_semanal() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.precio_pago_semanalColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'precio_pago_semanal' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableproductos.precio_pago_semanalColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property stock_minimo() As Integer
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.stock_minimoColumn), Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'stock_minimo' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Integer)
+                Me(Me.tableproductos.stock_minimoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property stock_maximo() As Integer
+            Get
+                Try
+                    Return CType(Me(Me.tableproductos.stock_maximoColumn), Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'stock_maximo' de la tabla 'productos' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Integer)
+                Me(Me.tableproductos.stock_maximoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function Istipo_producto_idNull() As Boolean
             Return Me.IsNull(Me.tableproductos.tipo_producto_idColumn)
         End Function
@@ -722,6 +947,102 @@ Partial Public Class DataSetProducto
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub Settipo_productoNull()
             Me(Me.tableproductos.tipo_productoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsdescripcionNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.descripcionColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetdescripcionNull()
+            Me(Me.tableproductos.descripcionColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isprecio_costoNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.precio_costoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setprecio_costoNull()
+            Me(Me.tableproductos.precio_costoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isprecio_contadoNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.precio_contadoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setprecio_contadoNull()
+            Me(Me.tableproductos.precio_contadoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isprecio_creditoNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.precio_creditoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setprecio_creditoNull()
+            Me(Me.tableproductos.precio_creditoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isprecio_engancheNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.precio_engancheColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setprecio_engancheNull()
+            Me(Me.tableproductos.precio_engancheColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isprecio_pago_semanalNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.precio_pago_semanalColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setprecio_pago_semanalNull()
+            Me(Me.tableproductos.precio_pago_semanalColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isstock_minimoNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.stock_minimoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setstock_minimoNull()
+            Me(Me.tableproductos.stock_minimoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isstock_maximoNull() As Boolean
+            Return Me.IsNull(Me.tableproductos.stock_maximoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setstock_maximoNull()
+            Me(Me.tableproductos.stock_maximoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -896,6 +1217,14 @@ Namespace DataSetProductoTableAdapters
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("activo", "activo")
             tableMapping.ColumnMappings.Add("tipo_producto", "tipo_producto")
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion")
+            tableMapping.ColumnMappings.Add("precio_costo", "precio_costo")
+            tableMapping.ColumnMappings.Add("precio_contado", "precio_contado")
+            tableMapping.ColumnMappings.Add("precio_credito", "precio_credito")
+            tableMapping.ColumnMappings.Add("precio_enganche", "precio_enganche")
+            tableMapping.ColumnMappings.Add("precio_pago_semanal", "precio_pago_semanal")
+            tableMapping.ColumnMappings.Add("stock_minimo", "stock_minimo")
+            tableMapping.ColumnMappings.Add("stock_maximo", "stock_maximo")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
 
@@ -912,8 +1241,10 @@ Namespace DataSetProductoTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT p.id, tp.nombre AS tipo_producto, p.tipo_producto_id, p.nombre, p.activo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM dbo.productos AS p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.tipos_productos AS tp" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON tp.id = p.tip" & _
-                "o_producto_id"
+            Me._commandCollection(0).CommandText = "SELECT p.id, tp.nombre AS tipo_producto, p.tipo_producto_id, p.nombre, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "p.descri" & _
+                "pcion, p.precio_costo, p.precio_contado, p.precio_credito, p.precio_enganche,p.p" & _
+                "recio_pago_semanal," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "p.stock_minimo, p.stock_maximo,p.activo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM dbo.producto" & _
+                "s AS p" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.tipos_productos AS tp" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ON tp.id = p.tipo_producto_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
 

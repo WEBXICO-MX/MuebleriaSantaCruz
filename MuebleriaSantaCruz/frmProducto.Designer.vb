@@ -40,21 +40,47 @@ Partial Class frmProducto
         Me.lbestado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataSetProducto = New MuebleriaCasaCruz.DataSetProducto()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductosTableAdapter = New MuebleriaCasaCruz.DataSetProductoTableAdapters.productosTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProductoTableAdapters.TableAdapterManager()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipo_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Tipos_productosTableAdapter = New MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.tipos_productosTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtPagoSemanal = New System.Windows.Forms.TextBox()
+        Me.txtEnganche = New System.Windows.Forms.TextBox()
+        Me.txtCredito = New System.Windows.Forms.TextBox()
+        Me.txtContado = New System.Windows.Forms.TextBox()
+        Me.txtCosto = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtStockMaximo = New System.Windows.Forms.TextBox()
+        Me.txtStockMinimo = New System.Windows.Forms.TextBox()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_contado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_enganche = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_pago_semanal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock_minimo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock_maximo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tipos_productosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +89,8 @@ Partial Class frmProducto
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'BarraHerramientas
@@ -71,7 +99,7 @@ Partial Class frmProducto
         Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btbuscar})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
-        Me.BarraHerramientas.Size = New System.Drawing.Size(859, 38)
+        Me.BarraHerramientas.Size = New System.Drawing.Size(653, 38)
         Me.BarraHerramientas.TabIndex = 34
         Me.BarraHerramientas.Text = "ToolStrip1"
         '
@@ -135,11 +163,13 @@ Partial Class frmProducto
         Me.GroupBox1.Controls.Add(Me.lbestado)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtID)
+        Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Controls.Add(Me.txtNombre)
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 57)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(432, 260)
+        Me.GroupBox1.Size = New System.Drawing.Size(625, 282)
         Me.GroupBox1.TabIndex = 38
         Me.GroupBox1.TabStop = False
         '
@@ -151,7 +181,7 @@ Partial Class frmProducto
         Me.Tipos_productosComboBox.Location = New System.Drawing.Point(103, 81)
         Me.Tipos_productosComboBox.Name = "Tipos_productosComboBox"
         Me.Tipos_productosComboBox.Size = New System.Drawing.Size(234, 21)
-        Me.Tipos_productosComboBox.TabIndex = 8
+        Me.Tipos_productosComboBox.TabIndex = 2
         Me.Tipos_productosComboBox.ValueMember = "id"
         '
         'Tipos_productosBindingSource
@@ -179,10 +209,10 @@ Partial Class frmProducto
         Me.cbxActivo.AutoSize = True
         Me.cbxActivo.Checked = True
         Me.cbxActivo.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbxActivo.Location = New System.Drawing.Point(11, 159)
+        Me.cbxActivo.Location = New System.Drawing.Point(11, 259)
         Me.cbxActivo.Name = "cbxActivo"
         Me.cbxActivo.Size = New System.Drawing.Size(56, 17)
-        Me.cbxActivo.TabIndex = 7
+        Me.cbxActivo.TabIndex = 5
         Me.cbxActivo.Text = "Activo"
         Me.cbxActivo.UseVisualStyleBackColor = True
         '
@@ -228,25 +258,46 @@ Partial Class frmProducto
         Me.txtID.TabIndex = 1
         Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.BackColor = System.Drawing.Color.White
+        Me.txtDescripcion.Enabled = False
+        Me.txtDescripcion.Location = New System.Drawing.Point(103, 153)
+        Me.txtDescripcion.MaxLength = 100
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(369, 90)
+        Me.txtDescripcion.TabIndex = 4
+        '
         'txtNombre
         '
         Me.txtNombre.BackColor = System.Drawing.Color.White
         Me.txtNombre.Enabled = False
         Me.txtNombre.Location = New System.Drawing.Point(103, 118)
-        Me.txtNombre.MaxLength = 50
+        Me.txtNombre.MaxLength = 100
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(234, 20)
-        Me.txtNombre.TabIndex = 0
+        Me.txtNombre.Size = New System.Drawing.Size(496, 20)
+        Me.txtNombre.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(8, 160)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(66, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Descripción:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 118)
+        Me.Label2.Location = New System.Drawing.Point(6, 125)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 13)
+        Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Nombre:"
+        Me.Label2.Text = "Producto:"
         '
         'DataSetProducto
         '
@@ -274,49 +325,13 @@ Partial Class frmProducto
         Me.ProductosDataGridView.AllowUserToDeleteRows = False
         Me.ProductosDataGridView.AutoGenerateColumns = False
         Me.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProductosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.tipo_producto, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
+        Me.ProductosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.descripcion, Me.tipo_producto, Me.precio_costo, Me.precio_contado, Me.precio_credito, Me.precio_enganche, Me.precio_pago_semanal, Me.stock_minimo, Me.stock_maximo, Me.DataGridViewTextBoxColumn2, Me.DataGridViewCheckBoxColumn1})
         Me.ProductosDataGridView.DataSource = Me.ProductosBindingSource
-        Me.ProductosDataGridView.Location = New System.Drawing.Point(375, 66)
+        Me.ProductosDataGridView.Location = New System.Drawing.Point(21, 558)
         Me.ProductosDataGridView.Name = "ProductosDataGridView"
         Me.ProductosDataGridView.ReadOnly = True
-        Me.ProductosDataGridView.Size = New System.Drawing.Size(472, 251)
+        Me.ProductosDataGridView.Size = New System.Drawing.Size(616, 251)
         Me.ProductosDataGridView.TabIndex = 39
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'tipo_producto
-        '
-        Me.tipo_producto.DataPropertyName = "tipo_producto"
-        Me.tipo_producto.HeaderText = "tipo_producto"
-        Me.tipo_producto.Name = "tipo_producto"
-        Me.tipo_producto.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "tipo_producto_id"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "tipo_producto_id"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "nombre"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "nombre"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewCheckBoxColumn1
-        '
-        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
-        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         '
         'Tipos_productosTableAdapter
         '
@@ -332,11 +347,263 @@ Partial Class frmProducto
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtPagoSemanal)
+        Me.GroupBox2.Controls.Add(Me.txtEnganche)
+        Me.GroupBox2.Controls.Add(Me.txtCredito)
+        Me.GroupBox2.Controls.Add(Me.txtContado)
+        Me.GroupBox2.Controls.Add(Me.txtCosto)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 345)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(625, 86)
+        Me.GroupBox2.TabIndex = 40
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Precios"
+        '
+        'txtPagoSemanal
+        '
+        Me.txtPagoSemanal.Location = New System.Drawing.Point(490, 48)
+        Me.txtPagoSemanal.MaxLength = 10
+        Me.txtPagoSemanal.Name = "txtPagoSemanal"
+        Me.txtPagoSemanal.Size = New System.Drawing.Size(100, 20)
+        Me.txtPagoSemanal.TabIndex = 10
+        '
+        'txtEnganche
+        '
+        Me.txtEnganche.Location = New System.Drawing.Point(372, 48)
+        Me.txtEnganche.MaxLength = 10
+        Me.txtEnganche.Name = "txtEnganche"
+        Me.txtEnganche.Size = New System.Drawing.Size(100, 20)
+        Me.txtEnganche.TabIndex = 9
+        '
+        'txtCredito
+        '
+        Me.txtCredito.Location = New System.Drawing.Point(251, 48)
+        Me.txtCredito.MaxLength = 10
+        Me.txtCredito.Name = "txtCredito"
+        Me.txtCredito.Size = New System.Drawing.Size(100, 20)
+        Me.txtCredito.TabIndex = 8
+        '
+        'txtContado
+        '
+        Me.txtContado.Location = New System.Drawing.Point(135, 48)
+        Me.txtContado.MaxLength = 10
+        Me.txtContado.Name = "txtContado"
+        Me.txtContado.Size = New System.Drawing.Size(100, 20)
+        Me.txtContado.TabIndex = 7
+        '
+        'txtCosto
+        '
+        Me.txtCosto.Location = New System.Drawing.Point(26, 48)
+        Me.txtCosto.MaxLength = 10
+        Me.txtCosto.Name = "txtCosto"
+        Me.txtCosto.Size = New System.Drawing.Size(100, 20)
+        Me.txtCosto.TabIndex = 6
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(510, 32)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(74, 13)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Pago semanal"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(403, 32)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(56, 13)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Enganche"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(276, 32)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(40, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Crédito"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(162, 32)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(47, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Contado"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(45, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(34, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Costo"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.txtStockMaximo)
+        Me.GroupBox3.Controls.Add(Me.txtStockMinimo)
+        Me.GroupBox3.Location = New System.Drawing.Point(21, 465)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(616, 70)
+        Me.GroupBox3.TabIndex = 41
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Datos de inventario"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(315, 34)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(76, 13)
+        Me.Label11.TabIndex = 5
+        Me.Label11.Text = "Stock máximo:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(105, 34)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(75, 13)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Stock mínimo:"
+        '
+        'txtStockMaximo
+        '
+        Me.txtStockMaximo.Location = New System.Drawing.Point(397, 34)
+        Me.txtStockMaximo.MaxLength = 5
+        Me.txtStockMaximo.Name = "txtStockMaximo"
+        Me.txtStockMaximo.Size = New System.Drawing.Size(100, 20)
+        Me.txtStockMaximo.TabIndex = 12
+        '
+        'txtStockMinimo
+        '
+        Me.txtStockMinimo.Location = New System.Drawing.Point(186, 31)
+        Me.txtStockMinimo.MaxLength = 5
+        Me.txtStockMinimo.Name = "txtStockMinimo"
+        Me.txtStockMinimo.Size = New System.Drawing.Size(100, 20)
+        Me.txtStockMinimo.TabIndex = 11
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "nombre"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "nombre"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "descripcion"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        '
+        'tipo_producto
+        '
+        Me.tipo_producto.DataPropertyName = "tipo_producto"
+        Me.tipo_producto.HeaderText = "tipo_producto"
+        Me.tipo_producto.Name = "tipo_producto"
+        Me.tipo_producto.ReadOnly = True
+        '
+        'precio_costo
+        '
+        Me.precio_costo.DataPropertyName = "precio_costo"
+        Me.precio_costo.HeaderText = "precio_costo"
+        Me.precio_costo.Name = "precio_costo"
+        Me.precio_costo.ReadOnly = True
+        '
+        'precio_contado
+        '
+        Me.precio_contado.DataPropertyName = "precio_contado"
+        Me.precio_contado.HeaderText = "precio_contado"
+        Me.precio_contado.Name = "precio_contado"
+        Me.precio_contado.ReadOnly = True
+        '
+        'precio_credito
+        '
+        Me.precio_credito.DataPropertyName = "precio_credito"
+        Me.precio_credito.HeaderText = "precio_credito"
+        Me.precio_credito.Name = "precio_credito"
+        Me.precio_credito.ReadOnly = True
+        '
+        'precio_enganche
+        '
+        Me.precio_enganche.DataPropertyName = "precio_enganche"
+        Me.precio_enganche.HeaderText = "precio_enganche"
+        Me.precio_enganche.Name = "precio_enganche"
+        Me.precio_enganche.ReadOnly = True
+        '
+        'precio_pago_semanal
+        '
+        Me.precio_pago_semanal.DataPropertyName = "precio_pago_semanal"
+        Me.precio_pago_semanal.HeaderText = "precio_pago_semanal"
+        Me.precio_pago_semanal.Name = "precio_pago_semanal"
+        Me.precio_pago_semanal.ReadOnly = True
+        '
+        'stock_minimo
+        '
+        Me.stock_minimo.DataPropertyName = "stock_minimo"
+        Me.stock_minimo.HeaderText = "stock_minimo"
+        Me.stock_minimo.Name = "stock_minimo"
+        Me.stock_minimo.ReadOnly = True
+        '
+        'stock_maximo
+        '
+        Me.stock_maximo.DataPropertyName = "stock_maximo"
+        Me.stock_maximo.HeaderText = "stock_maximo"
+        Me.stock_maximo.Name = "stock_maximo"
+        Me.stock_maximo.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "tipo_producto_id"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "tipo_producto_id"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        '
         'frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(859, 349)
+        Me.ClientSize = New System.Drawing.Size(653, 824)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.ProductosDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
@@ -355,6 +622,10 @@ Partial Class frmProducto
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -385,9 +656,35 @@ Partial Class frmProducto
     Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager
     Friend WithEvents Tipos_productosComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtPagoSemanal As System.Windows.Forms.TextBox
+    Friend WithEvents txtEnganche As System.Windows.Forms.TextBox
+    Friend WithEvents txtCredito As System.Windows.Forms.TextBox
+    Friend WithEvents txtContado As System.Windows.Forms.TextBox
+    Friend WithEvents txtCosto As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txtStockMaximo As System.Windows.Forms.TextBox
+    Friend WithEvents txtStockMinimo As System.Windows.Forms.TextBox
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tipo_producto As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tipo_producto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio_costo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio_contado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio_credito As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio_enganche As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio_pago_semanal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents stock_minimo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents stock_maximo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
 End Class

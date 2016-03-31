@@ -676,4 +676,15 @@ select * from EMPLEADOS
 select * from clientes
 
 
+SELECT p.id, tp.nombre AS tipo_producto, p.tipo_producto_id, p.nombre, 
+p.descripcion, p.precio_costo, p.precio_contado, p.precio_credito, p.precio_enganche,p.precio_pago_semanal,
+p.stock_minimo, p.stock_maximo,p.activo 
+FROM dbo.productos AS p
+INNER JOIN dbo.tipos_productos AS tp
+ON tp.id = p.tipo_producto_id
 
+
+
+select * from productos
+
+delete from productos

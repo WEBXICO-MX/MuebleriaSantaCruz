@@ -39,11 +39,19 @@ Public Class frmProducto
 
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO productos (id, tipo_producto_id, nombre,fecha_registro,fecha_modificacion,activo) VALUES (" & txtID.Text & "," & (Tipos_productosComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO productos (id, tipo_producto_id, nombre,fecha_registro,fecha_modificacion,activo) VALUES (@id,@tipo_producto_id,@nombre,GETDATE(),NULL,@activo)"
+        Dim Consulta As String = "INSERT INTO productos (id, tipo_producto_id, nombre,descripcion, precio_costo, precio_contado, precio_credito, precio_enganche, precio_pago_semanal, stock_minimo, stock_maximo,fecha_registro,fecha_modificacion,activo) VALUES (@id,@tipo_producto_id,@nombre,@descripcion, @precio_costo, @precio_contado, @precio_credito, @precio_enganche, @precio_pago_semanal, @stock_minimo, @stock_maximo,GETDATE(),NULL,@activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@tipo_producto_id", SqlDbType.Int).Value = Tipos_productosComboBox.SelectedValue
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
+        Orden.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text
+        Orden.Parameters.Add("@precio_costo", SqlDbType.Decimal).Value = txtCosto.Text
+        Orden.Parameters.Add("@precio_contado", SqlDbType.Decimal).Value = txtContado.Text
+        Orden.Parameters.Add("@precio_credito", SqlDbType.Decimal).Value = txtCredito.Text
+        Orden.Parameters.Add("@precio_enganche", SqlDbType.Decimal).Value = txtEnganche.Text
+        Orden.Parameters.Add("@precio_pago_semanal", SqlDbType.Decimal).Value = txtPagoSemanal.Text
+        Orden.Parameters.Add("@stock_minimo", SqlDbType.Int).Value = txtStockMinimo.Text
+        Orden.Parameters.Add("@stock_maximo", SqlDbType.Int).Value = txtStockMaximo.Text
         Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
 
 
@@ -58,8 +66,8 @@ Public Class frmProducto
             EstadoCajasdeTexto(False)
 
             For Fila = 0 To productosDataGridView.Rows.Count - 1
-                If (productosDataGridView.Item(3, Fila).Value = txtNombre.Text) Then
-                    productosDataGridView.Item(0, Fila).Selected = True
+                If (ProductosDataGridView.Item(1, Fila).Value = txtNombre.Text) Then
+                    ProductosDataGridView.Item(0, Fila).Selected = True
                     Exit For
                 End If
             Next Fila
@@ -91,10 +99,18 @@ Public Class frmProducto
 
         'Crear una consulta
         'Dim Consulta As String = "UPDATE productos SET tipo_producto_id = " & (Tipos_productosComboBox.SelectedValue) & ", nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
-        Dim Consulta As String = "UPDATE productos SET tipo_producto_id = @tipo_producto_id, nombre = @nombre, fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
+        Dim Consulta As String = "UPDATE productos SET tipo_producto_id = @tipo_producto_id, nombre = @nombre, descripcion = @descripcion, precio_costo = @precio_costo, @precio_contado = precio_contado, precio_credito = @precio_credito, precio_enganche = @precio_enganche, precio_pago_semanal = @precio_pago_semanal, stock_minimo = @stock_minimo, stock_maximo = @stock_maximo,fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@tipo_producto_id", SqlDbType.Int).Value = Tipos_productosComboBox.SelectedValue
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
+        Orden.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text
+        Orden.Parameters.Add("@precio_costo", SqlDbType.Decimal).Value = txtCosto.Text
+        Orden.Parameters.Add("@precio_contado", SqlDbType.Decimal).Value = txtContado.Text
+        Orden.Parameters.Add("@precio_credito", SqlDbType.Decimal).Value = txtCredito.Text
+        Orden.Parameters.Add("@precio_enganche", SqlDbType.Decimal).Value = txtEnganche.Text
+        Orden.Parameters.Add("@precio_pago_semanal", SqlDbType.Decimal).Value = txtPagoSemanal.Text
+        Orden.Parameters.Add("@stock_minimo", SqlDbType.Int).Value = txtStockMinimo.Text
+        Orden.Parameters.Add("@stock_maximo", SqlDbType.Int).Value = txtStockMaximo.Text
         Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
 
@@ -139,8 +155,16 @@ Public Class frmProducto
     End Sub
 
     Private Sub LimpiarCajasdeTexto()
-        txtID.Text = ""
-        txtNombre.Text = ""
+        txtID.Clear()
+        txtNombre.Clear()
+        txtDescripcion.Clear()
+        txtCosto.Clear()
+        txtContado.Clear()
+        txtCredito.Clear()
+        txtEnganche.Clear()
+        txtPagoSemanal.Clear()
+        txtStockMinimo.Clear()
+        txtStockMaximo.Clear()
         cbxActivo.Checked = True
     End Sub
 
@@ -155,14 +179,30 @@ Public Class frmProducto
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
         Tipos_productosComboBox.Enabled = nombre_status
         txtNombre.Enabled = nombre_status
+        txtDescripcion.Enabled = nombre_status
+        txtCosto.Enabled = nombre_status
+        txtContado.Enabled = nombre_status
+        txtCredito.Enabled = nombre_status
+        txtEnganche.Enabled = nombre_status
+        txtPagoSemanal.Enabled = nombre_status
+        txtStockMinimo.Enabled = nombre_status
+        txtStockMaximo.Enabled = nombre_status
         cbxActivo.Enabled = nombre_status
     End Sub
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = productosDataGridView.Rows(F).Cells(0).Value
-        Tipos_productosComboBox.SelectedValue = ProductosDataGridView.Rows(F).Cells(2).Value
-        txtNombre.Text = productosDataGridView.Rows(F).Cells(3).Value
-        cbxActivo.Checked = productosDataGridView.Rows(F).Cells(4).Value
+        Tipos_productosComboBox.SelectedValue = ProductosDataGridView.Rows(F).Cells(11).Value
+        txtNombre.Text = ProductosDataGridView.Rows(F).Cells(1).Value
+        txtDescripcion.Text = ProductosDataGridView.Rows(F).Cells(2).Value
+        txtCosto.Text = ProductosDataGridView.Rows(F).Cells(4).Value
+        txtContado.Text = ProductosDataGridView.Rows(F).Cells(5).Value
+        txtCredito.Text = ProductosDataGridView.Rows(F).Cells(6).Value
+        txtEnganche.Text = ProductosDataGridView.Rows(F).Cells(7).Value
+        txtPagoSemanal.Text = ProductosDataGridView.Rows(F).Cells(8).Value
+        txtStockMinimo.Text = ProductosDataGridView.Rows(F).Cells(9).Value
+        txtStockMaximo.Text = ProductosDataGridView.Rows(F).Cells(10).Value
+        cbxActivo.Checked = ProductosDataGridView.Rows(F).Cells(12).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
@@ -201,8 +241,56 @@ Public Class frmProducto
     Private Sub btguardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btguardar.Click
 
         If (txtNombre.Text.Length = 0) Then
-            ErrorProvider1.SetError(txtNombre, "Capture el nombre del tipo de producto")
+            ErrorProvider1.SetError(txtNombre, "Capture el nombre del producto")
             txtNombre.Focus()
+            Exit Sub
+        End If
+
+        If (txtDescripcion.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtDescripcion, "Capture la descripcion del producto")
+            txtDescripcion.Focus()
+            Exit Sub
+        End If
+
+        If (txtCosto.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtCosto, "Capture el precio de costo del producto")
+            txtCosto.Focus()
+            Exit Sub
+        End If
+
+        If (txtContado.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtContado, "Capture el precio de contado del producto")
+            txtContado.Focus()
+            Exit Sub
+        End If
+
+        If (txtCredito.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtCredito, "Capture el precio de crédito del producto")
+            txtCredito.Focus()
+            Exit Sub
+        End If
+
+        If (txtEnganche.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtEnganche, "Capture el precio de enganche del producto")
+            txtEnganche.Focus()
+            Exit Sub
+        End If
+
+        If (txtPagoSemanal.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtPagoSemanal, "Capture el precio del pago semanal del producto")
+            txtPagoSemanal.Focus()
+            Exit Sub
+        End If
+
+        If (txtStockMinimo.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtStockMinimo, "Capture el stock mínimo del producto")
+            txtStockMinimo.Focus()
+            Exit Sub
+        End If
+
+        If (txtStockMaximo.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtStockMaximo, "Capture el stock máximo del producto")
+            txtStockMaximo.Focus()
             Exit Sub
         End If
 
@@ -243,13 +331,13 @@ Public Class frmProducto
         End If
     End Sub
 
-    Private Sub txtNombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.TextChanged
+    Private Sub txtNombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.TextChanged, txtDescripcion.TextChanged
         If (txtNombre.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
         End If
     End Sub
 
-    Private Sub txtNombre_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNombre.KeyPress
+    Private Sub txtNombre_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNombre.KeyPress, txtDescripcion.KeyPress
         If (e.KeyChar = "'") Then
             e.KeyChar = ""
         End If

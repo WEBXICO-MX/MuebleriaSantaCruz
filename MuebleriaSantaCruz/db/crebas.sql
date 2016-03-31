@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     31/03/2016 15:29:30                          */
+/* Created on:     31/03/2016 15:45:32                          */
 /*==============================================================*/
 
 
@@ -1171,7 +1171,15 @@ go
 create table productos (
    id                   int                  not null,
    tipo_producto_id     int                  null,
-   nombre               varchar(50)          null,
+   nombre               varchar(100)         null,
+   descripcion          varchar(100)         null,
+   precio_costo         float                null,
+   precio_contado       float                null,
+   precio_credito       float                null,
+   precio_enganche      float                null,
+   precio_pago_semanal  float                null,
+   stock_minimo         int                  null,
+   stock_maximo         int                  null,
    fecha_registro       datetime             null,
    fecha_modificacion   datetime             null,
    activo               bit                  null,
