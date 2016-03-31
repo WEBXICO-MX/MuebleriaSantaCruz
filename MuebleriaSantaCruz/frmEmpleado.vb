@@ -37,7 +37,7 @@ Public Class frmEmpleado
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO empleados (id, linea_producto_id, nombre,activo) VALUES (" & txtID.Text & "," & (PuestosComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo,estado_civil_id) VALUES (@id,@nombre,@ap_paterno,@ap_materno,@fecha_nacimiento,@sexo,@estado_civil_id)"
+        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo,estado_civil_id,fecha_registro,fecha_modificacion,activo) VALUES (@id,@nombre,@ap_paterno,@ap_materno,@fecha_nacimiento,@sexo,@estado_civil_id,GETDATE(),NULL,@activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
@@ -46,13 +46,14 @@ Public Class frmEmpleado
         Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
         Orden.Parameters.Add("@sexo", SqlDbType.VarChar).Value = If(rbMasculino.Checked, "M", If(rbFemenino.Checked, "F", "X"))
         Orden.Parameters.Add("@estado_civil_id", SqlDbType.Int).Value = Estados_civilesComboBox.SelectedValue
+        Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
 
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery() <> -1) Then
 
-                Consulta = "INSERT INTO empleados (persona_id,puesto_id,fecha_registro,activo) VALUES (@persona_id,@puesto_id,GETDATE(),@activo)"
+                Consulta = "INSERT INTO empleados (persona_id,puesto_id,fecha_registro,fecha_modificacion,activo) VALUES (@persona_id,@puesto_id,GETDATE(),NULL,@activo)"
                 Orden = New SqlCommand(Consulta, objcon.con)
                 Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = txtID.Text
                 Orden.Parameters.Add("@puesto_id", SqlDbType.Int).Value = PuestosComboBox.SelectedValue
@@ -101,7 +102,7 @@ Public Class frmEmpleado
 
         'Crear una consulta
         'Dim Consulta As String = "UPDATE empleados SET linea_producto_id = " & (PuestosComboBox.SelectedValue) & ", nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
-        Dim Consulta As String = "UPDATE personas SET nombre = @nombre, ap_paterno = @ap_paterno, ap_materno = @ap_materno, fecha_nacimiento = @fecha_nacimiento, sexo = @sexo, estado_civil_id = @estado_civil_id WHERE id = @id"
+        Dim Consulta As String = "UPDATE personas SET nombre = @nombre, ap_paterno = @ap_paterno, ap_materno = @ap_materno, fecha_nacimiento = @fecha_nacimiento, sexo = @sexo, estado_civil_id = @estado_civil_id, fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
         Orden.Parameters.Add("@ap_paterno", SqlDbType.VarChar).Value = txtApPaterno.Text
@@ -109,13 +110,14 @@ Public Class frmEmpleado
         Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
         Orden.Parameters.Add("@sexo", SqlDbType.VarChar).Value = If(rbMasculino.Checked, "M", If(rbFemenino.Checked, "F", "X"))
         Orden.Parameters.Add("@estado_civil_id", SqlDbType.Int).Value = Estados_civilesComboBox.SelectedValue
+        Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery <> -1) Then
 
-                Consulta = "UPDATE empleados SET puesto_id = @puesto_id, activo = @activo WHERE persona_id = @persona_id"
+                Consulta = "UPDATE empleados SET puesto_id = @puesto_id, fecha_modificacion = GETDATE(),activo = @activo WHERE persona_id = @persona_id"
                 Orden = New SqlCommand(Consulta, objcon.con)
                 Orden.Parameters.Add("@puesto_id", SqlDbType.VarChar).Value = PuestosComboBox.SelectedValue
                 Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)

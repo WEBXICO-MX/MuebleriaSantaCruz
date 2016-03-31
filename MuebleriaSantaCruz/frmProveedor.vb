@@ -39,7 +39,7 @@ Public Class frmProveedor
 
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO proveedores (id, nombre_comercial,razon_social,activo) VALUES (" & txtID.Text & ",'" & txtNombreComercial.Text & "','" & (txtRazonSocial.Text) & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO proveedores (id, nombre_comercial,razon_social,activo) VALUES (@id,@nombre_comercial,@razon_social,@activo)"
+        Dim Consulta As String = "INSERT INTO proveedores (id, nombre_comercial,razon_social,fecha_registro,fecha_modificacion,activo) VALUES (@id,@nombre_comercial,@razon_social,GETDATE(),NULL,@activo)"
 
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
@@ -92,7 +92,7 @@ Public Class frmProveedor
 
         'Crear una consulta
         'Dim Consulta As String = "UPDATE proveedores SET nombre_comercial = '" & txtNombreComercial.Text & "', razon_social = '" & (txtRazonSocial.Text) & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
-        Dim Consulta As String = "UPDATE proveedores SET nombre_comercial = @nombre_comercial , razon_social = @razon_social, activo = @activo  WHERE id = @id "
+        Dim Consulta As String = "UPDATE proveedores SET nombre_comercial = @nombre_comercial , razon_social = @razon_social, fecha_modificacion = GETDATE(), activo = @activo  WHERE id = @id "
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@nombre_comercial", SqlDbType.VarChar).Value = txtNombreComercial.Text
         Orden.Parameters.Add("@razon_social", SqlDbType.VarChar).Value = txtRazonSocial.Text

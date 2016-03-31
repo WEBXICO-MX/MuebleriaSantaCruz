@@ -41,7 +41,7 @@ Public Class frmMedioComunicacion
 
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO medios_comunicacion (id, tipo_medio_comunicacion_id, persona_id, valor, activo) VALUES (" & txtID.Text & "," & (Tipos_medios_comunicacionComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO medios_comunicacion (id, tipo_medio_comunicacion_id, persona_id, valor, activo) VALUES (@id,@tipo_medio_comunicacion_id,@persona_id,@valor,@activo)"
+        Dim Consulta As String = "INSERT INTO medios_comunicacion (id, tipo_medio_comunicacion_id, persona_id, valor, fecha_registro, fecha_modificacion, activo) VALUES (@id,@tipo_medio_comunicacion_id,@persona_id,@valor,GETDATE(),NULL,@activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@tipo_medio_comunicacion_id", SqlDbType.Int).Value = Tipos_medios_comunicacionComboBox.SelectedValue
@@ -91,7 +91,7 @@ Public Class frmMedioComunicacion
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "UPDATE medios_comunicacion SET tipo_medio_comunicacion_id = @tipo_medio_comunicacion_id, persona_id = @persona_id, valor = @valor, activo = @activo WHERE id = @id "
+        Dim Consulta As String = "UPDATE medios_comunicacion SET tipo_medio_comunicacion_id = @tipo_medio_comunicacion_id, persona_id = @persona_id, valor = @valor, fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id "
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@tipo_medio_comunicacion_id", SqlDbType.Int).Value = Tipos_medios_comunicacionComboBox.SelectedValue
         Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = persona_id

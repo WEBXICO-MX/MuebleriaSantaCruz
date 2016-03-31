@@ -38,8 +38,13 @@ Public Class frmProducto
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "INSERT INTO productos (id, tipo_producto_id, nombre,activo) VALUES (" & txtID.Text & "," & (Tipos_productosComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
+        'Dim Consulta As String = "INSERT INTO productos (id, tipo_producto_id, nombre,fecha_registro,fecha_modificacion,activo) VALUES (" & txtID.Text & "," & (Tipos_productosComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
+        Dim Consulta As String = "INSERT INTO productos (id, tipo_producto_id, nombre,fecha_registro,fecha_modificacion,activo) VALUES (@id,@tipo_producto_id,@nombre,GETDATE(),NULL,@activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
+        Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
+        Orden.Parameters.Add("@tipo_producto_id", SqlDbType.Int).Value = Tipos_productosComboBox.SelectedValue
+        Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
+        Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
 
 
         Try
@@ -85,8 +90,13 @@ Public Class frmProducto
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "UPDATE productos SET tipo_producto_id = " & (Tipos_productosComboBox.SelectedValue) & ", nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
+        'Dim Consulta As String = "UPDATE productos SET tipo_producto_id = " & (Tipos_productosComboBox.SelectedValue) & ", nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
+        Dim Consulta As String = "UPDATE productos SET tipo_producto_id = @tipo_producto_id, nombre = @nombre, fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
         Orden = New SqlCommand(Consulta, objcon.con)
+        Orden.Parameters.Add("@tipo_producto_id", SqlDbType.Int).Value = Tipos_productosComboBox.SelectedValue
+        Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
+        Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
+        Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
 
 
         Try
