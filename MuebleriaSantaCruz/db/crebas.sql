@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     30/03/2016 15:03:07                          */
+/* Created on:     31/03/2016 12:45:27                          */
 /*==============================================================*/
 
 
@@ -51,6 +51,13 @@ if exists (select 1
    where r.fkeyid = object_id('domicilios') and o.name = 'FK_DOMICILI_REFERENCE_ASENTAMI')
 alter table domicilios
    drop constraint FK_DOMICILI_REFERENCE_ASENTAMI
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('domicilios') and o.name = 'FK_DOMICILI_REFERENCE_TIPOS_VI')
+alter table domicilios
+   drop constraint FK_DOMICILI_REFERENCE_TIPOS_VI
 go
 
 if exists (select 1
@@ -695,6 +702,22 @@ go
 
 if exists (select 1
             from  sysindexes
+           where  id    = object_id('tipos_viviendas')
+            and   name  = 'index_1'
+            and   indid > 0
+            and   indid < 255)
+   drop index tipos_viviendas.index_1
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('tipos_viviendas')
+            and   type = 'U')
+   drop table tipos_viviendas
+go
+
+if exists (select 1
+            from  sysindexes
            where  id    = object_id('usuarios')
             and   name  = 'index_1'
             and   indid > 0
@@ -794,6 +817,7 @@ create table clientes (
    ocupacion_id         int                  null,
    tipo_identificacion_id int                  null,
    fecha_registro       datetime             null,
+   fecha_modificacion   datetime             null,
    activo               bit                  null,
    constraint PK_CLIENTES primary key (persona_id)
 )
@@ -833,11 +857,13 @@ create table domicilios (
    id                   int                  not null,
    persona_id           int                  null,
    asentamiento_id      int                  null,
+   tipo_vivienda_id     int                  null,
    calle                varchar(100)         null,
    numero_interior      varchar(50)          null,
    numero_exterior      varchar(50)          null,
-   referencias          varchar(100)         null,
+   descripcion          varchar(200)         null,
    fecha_registro       datetime             null,
+   fecha_modificacion   datetime             null,
    activo               bit                  null,
    constraint PK_DOMICILIOS primary key (id)
 )
@@ -874,6 +900,7 @@ create table empleados (
    persona_id           int                  not null,
    puesto_id            int                  null,
    fecha_registro       datetime             null,
+   fecha_modificacion   datetime             null,
    activo               bit                  null,
    constraint PK_EMPLEADOS primary key (persona_id)
 )
@@ -1017,6 +1044,8 @@ create table medios_comunicacion (
    tipo_medio_comunicacion_id int                  null,
    persona_id           int                  null,
    valor                varchar(50)          null,
+   fecha_registro       datetime             null,
+   fecha_modificacion   datetime             null,
    activo               bit                  null,
    constraint PK_MEDIOS_COMUNICACION primary key (id)
 )
@@ -1109,6 +1138,9 @@ create table personas (
    fecha_nacimiento     date                 null,
    sexo                 varchar(1)           null,
    estado_civil_id      int                  null,
+   fecha_registro       datetime             null,
+   fecha_modificacion   datetime             null,
+   activo               bit                  null,
    constraint PK_PERSONAS primary key (id)
 )
 go
@@ -1138,6 +1170,8 @@ create table productos (
    id                   int                  not null,
    tipo_producto_id     int                  null,
    nombre               varchar(50)          null,
+   fecha_registro       datetime             null,
+   fecha_modificacion   datetime             null,
    activo               bit                  null,
    constraint PK_PRODUCTOS primary key (id)
 )
@@ -1174,7 +1208,13 @@ create table proveedores (
    id                   int                  not null,
    nombre_comercial     varchar(100)         null,
    razon_social         varchar(100)         null,
+   nombre_contacto      varchar(50)          null,
+   direccion            varchar(200)         null,
+   telefonos            varchar(100)         null,
+   fecha_registro       datetime             null,
+   fecha_modificacion   datetime             null,
    activo               bit                  null,
+   email                varchar(50)          null,
    constraint PK_PROVEEDORES primary key (id)
 )
 go
@@ -1371,6 +1411,25 @@ id ASC
 go
 
 /*==============================================================*/
+/* Table: tipos_viviendas                                       */
+/*==============================================================*/
+create table tipos_viviendas (
+   id                   int                  not null,
+   nombre               varchar(50)          null,
+   activo               bit                  null,
+   constraint PK_TIPOS_VIVIENDAS primary key (id)
+)
+go
+
+/*==============================================================*/
+/* Index: index_1                                               */
+/*==============================================================*/
+create index index_1 on tipos_viviendas (
+id ASC
+)
+go
+
+/*==============================================================*/
 /* Table: usuarios                                              */
 /*==============================================================*/
 create table usuarios (
@@ -1435,6 +1494,11 @@ go
 alter table domicilios
    add constraint FK_DOMICILI_REFERENCE_ASENTAMI foreign key (asentamiento_id)
       references asentamientos (id)
+go
+
+alter table domicilios
+   add constraint FK_DOMICILI_REFERENCE_TIPOS_VI foreign key (tipo_vivienda_id)
+      references tipos_viviendas (id)
 go
 
 alter table empleados

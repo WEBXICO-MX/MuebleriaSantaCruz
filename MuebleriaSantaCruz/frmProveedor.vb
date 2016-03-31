@@ -39,12 +39,16 @@ Public Class frmProveedor
 
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO proveedores (id, nombre_comercial,razon_social,activo) VALUES (" & txtID.Text & ",'" & txtNombreComercial.Text & "','" & (txtRazonSocial.Text) & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO proveedores (id, nombre_comercial,razon_social,fecha_registro,fecha_modificacion,activo) VALUES (@id,@nombre_comercial,@razon_social,GETDATE(),NULL,@activo)"
+        Dim Consulta As String = "INSERT INTO proveedores (id, nombre_comercial,razon_social,nombre_contacto,direccion,telefonos,email,fecha_registro,fecha_modificacion,activo) VALUES (@id,@nombre_comercial,@razon_social,@nombre_contacto,@direccion,@telefonos,@email,GETDATE(),NULL,@activo)"
 
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@nombre_comercial", SqlDbType.VarChar).Value = txtNombreComercial.Text
         Orden.Parameters.Add("@razon_social", SqlDbType.VarChar).Value = txtRazonSocial.Text
+        Orden.Parameters.Add("@nombre_contacto", SqlDbType.VarChar).Value = txtNombreContacto.Text
+        Orden.Parameters.Add("@direccion", SqlDbType.VarChar).Value = txtDireccion.Text
+        Orden.Parameters.Add("@telefonos", SqlDbType.VarChar).Value = txtTelefonos.Text
+        Orden.Parameters.Add("@email", SqlDbType.VarChar).Value = txtEmail.Text
         Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
 
 
@@ -92,10 +96,14 @@ Public Class frmProveedor
 
         'Crear una consulta
         'Dim Consulta As String = "UPDATE proveedores SET nombre_comercial = '" & txtNombreComercial.Text & "', razon_social = '" & (txtRazonSocial.Text) & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
-        Dim Consulta As String = "UPDATE proveedores SET nombre_comercial = @nombre_comercial , razon_social = @razon_social, fecha_modificacion = GETDATE(), activo = @activo  WHERE id = @id "
+        Dim Consulta As String = "UPDATE proveedores SET nombre_comercial = @nombre_comercial , razon_social = @razon_social, nombre_contacto = @nombre_contacto, direccion = @direccion, telefonos = @telefonos, email = @email, fecha_modificacion = GETDATE(), activo = @activo  WHERE id = @id "
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@nombre_comercial", SqlDbType.VarChar).Value = txtNombreComercial.Text
         Orden.Parameters.Add("@razon_social", SqlDbType.VarChar).Value = txtRazonSocial.Text
+        Orden.Parameters.Add("@nombre_contacto", SqlDbType.VarChar).Value = txtNombreContacto.Text
+        Orden.Parameters.Add("@direccion", SqlDbType.VarChar).Value = txtDireccion.Text
+        Orden.Parameters.Add("@telefonos", SqlDbType.VarChar).Value = txtTelefonos.Text
+        Orden.Parameters.Add("@email", SqlDbType.VarChar).Value = txtEmail.Text
         Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
 
@@ -138,9 +146,13 @@ Public Class frmProveedor
     End Sub
 
     Private Sub LimpiarCajasdeTexto()
-        txtID.Text = ""
-        txtNombreComercial.Text = ""
-        txtRazonSocial.Text = ""
+        txtID.Clear()
+        txtNombreComercial.Clear()
+        txtRazonSocial.Clear()
+        txtNombreContacto.Clear()
+        txtDireccion.Clear()
+        txtTelefonos.Clear()
+        txtEmail.Clear()
         cbxActivo.Checked = True
     End Sub
 
@@ -155,6 +167,10 @@ Public Class frmProveedor
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
         txtNombreComercial.Enabled = nombre_status
         txtRazonSocial.Enabled = nombre_status
+        txtNombreContacto.Enabled = nombre_status
+        txtDireccion.Enabled = nombre_status
+        txtTelefonos.Enabled = nombre_status
+        txtEmail.Enabled = nombre_status
         cbxActivo.Enabled = nombre_status
     End Sub
 
@@ -162,7 +178,11 @@ Public Class frmProveedor
         txtID.Text = proveedoresDataGridView.Rows(F).Cells(0).Value
         txtNombreComercial.Text = ProveedoresDataGridView.Rows(F).Cells(1).Value
         txtRazonSocial.Text = ProveedoresDataGridView.Rows(F).Cells(2).Value
-        cbxActivo.Checked = ProveedoresDataGridView.Rows(F).Cells(3).Value
+        txtNombreContacto.Text = ProveedoresDataGridView.Rows(F).Cells(3).Value
+        txtDireccion.Text = ProveedoresDataGridView.Rows(F).Cells(4).Value
+        txtTelefonos.Text = ProveedoresDataGridView.Rows(F).Cells(5).Value
+        txtEmail.Text = ProveedoresDataGridView.Rows(F).Cells(6).Value
+        cbxActivo.Checked = ProveedoresDataGridView.Rows(F).Cells(9).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
@@ -261,13 +281,13 @@ Public Class frmProveedor
         End If
     End Sub
 
-    Private Sub txtRazonSocial_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRazonSocial.TextChanged
+    Private Sub txtRazonSocial_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRazonSocial.TextChanged, txtTelefonos.TextChanged, txtNombreContacto.TextChanged, txtEmail.TextChanged, txtDireccion.TextChanged
         If (txtRazonSocial.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
         End If
     End Sub
 
-    Private Sub txtRazonSocial_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRazonSocial.KeyPress
+    Private Sub txtRazonSocial_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRazonSocial.KeyPress, txtTelefonos.KeyPress, txtNombreContacto.KeyPress, txtEmail.KeyPress, txtDireccion.KeyPress
         If (e.KeyChar = "'") Then
             e.KeyChar = ""
         End If

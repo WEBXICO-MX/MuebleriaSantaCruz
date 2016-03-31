@@ -40,22 +40,36 @@ Partial Class frmProveedor
         Me.txtNombreComercial = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSetProveedor = New MuebleriaCasaCruz.DataSetProveedor()
+        Me.ProveedoresDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtNombreContacto = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtTelefonos = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetProveedor = New MuebleriaCasaCruz.DataSetProveedor()
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorTableAdapters.proveedoresTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProveedorTableAdapters.TableAdapterManager()
-        Me.ProveedoresDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.telefonos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_registro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_modificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataSetProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarraHerramientas
@@ -126,13 +140,21 @@ Partial Class frmProveedor
         Me.GroupBox1.Controls.Add(Me.lbestado)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtID)
+        Me.GroupBox1.Controls.Add(Me.txtDireccion)
+        Me.GroupBox1.Controls.Add(Me.txtEmail)
+        Me.GroupBox1.Controls.Add(Me.txtTelefonos)
+        Me.GroupBox1.Controls.Add(Me.txtNombreContacto)
         Me.GroupBox1.Controls.Add(Me.txtRazonSocial)
         Me.GroupBox1.Controls.Add(Me.txtNombreComercial)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 55)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(392, 192)
+        Me.GroupBox1.Size = New System.Drawing.Size(398, 348)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
         '
@@ -141,10 +163,10 @@ Partial Class frmProveedor
         Me.cbxActivo.AutoSize = True
         Me.cbxActivo.Checked = True
         Me.cbxActivo.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbxActivo.Location = New System.Drawing.Point(76, 144)
+        Me.cbxActivo.Location = New System.Drawing.Point(9, 322)
         Me.cbxActivo.Name = "cbxActivo"
         Me.cbxActivo.Size = New System.Drawing.Size(56, 17)
-        Me.cbxActivo.TabIndex = 4
+        Me.cbxActivo.TabIndex = 7
         Me.cbxActivo.Text = "Activo"
         Me.cbxActivo.UseVisualStyleBackColor = True
         '
@@ -194,21 +216,21 @@ Partial Class frmProveedor
         '
         Me.txtRazonSocial.BackColor = System.Drawing.Color.White
         Me.txtRazonSocial.Enabled = False
-        Me.txtRazonSocial.Location = New System.Drawing.Point(107, 107)
+        Me.txtRazonSocial.Location = New System.Drawing.Point(120, 107)
         Me.txtRazonSocial.MaxLength = 100
         Me.txtRazonSocial.Name = "txtRazonSocial"
         Me.txtRazonSocial.Size = New System.Drawing.Size(266, 20)
-        Me.txtRazonSocial.TabIndex = 3
+        Me.txtRazonSocial.TabIndex = 2
         '
         'txtNombreComercial
         '
         Me.txtNombreComercial.BackColor = System.Drawing.Color.White
         Me.txtNombreComercial.Enabled = False
-        Me.txtNombreComercial.Location = New System.Drawing.Point(107, 76)
+        Me.txtNombreComercial.Location = New System.Drawing.Point(121, 76)
         Me.txtNombreComercial.MaxLength = 100
         Me.txtNombreComercial.Name = "txtNombreComercial"
         Me.txtNombreComercial.Size = New System.Drawing.Size(266, 20)
-        Me.txtNombreComercial.TabIndex = 2
+        Me.txtNombreComercial.TabIndex = 1
         '
         'Label3
         '
@@ -230,15 +252,114 @@ Partial Class frmProveedor
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Nombre comercial:"
         '
-        'DataSetProveedor
+        'ProveedoresDataGridView
         '
-        Me.DataSetProveedor.DataSetName = "DataSetProveedor"
-        Me.DataSetProveedor.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.ProveedoresDataGridView.AllowUserToAddRows = False
+        Me.ProveedoresDataGridView.AllowUserToDeleteRows = False
+        Me.ProveedoresDataGridView.AutoGenerateColumns = False
+        Me.ProveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProveedoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.nombre_contacto, Me.direccion, Me.telefonos, Me.email, Me.fecha_registro, Me.fecha_modificacion, Me.DataGridViewCheckBoxColumn1})
+        Me.ProveedoresDataGridView.DataSource = Me.ProveedoresBindingSource
+        Me.ProveedoresDataGridView.Location = New System.Drawing.Point(425, 66)
+        Me.ProveedoresDataGridView.Name = "ProveedoresDataGridView"
+        Me.ProveedoresDataGridView.ReadOnly = True
+        Me.ProveedoresDataGridView.Size = New System.Drawing.Size(387, 337)
+        Me.ProveedoresDataGridView.TabIndex = 35
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 142)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(109, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Nombre del contacto:"
+        '
+        'txtNombreContacto
+        '
+        Me.txtNombreContacto.BackColor = System.Drawing.Color.White
+        Me.txtNombreContacto.Enabled = False
+        Me.txtNombreContacto.Location = New System.Drawing.Point(121, 135)
+        Me.txtNombreContacto.MaxLength = 50
+        Me.txtNombreContacto.Name = "txtNombreContacto"
+        Me.txtNombreContacto.Size = New System.Drawing.Size(266, 20)
+        Me.txtNombreContacto.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 171)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(55, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Dirección:"
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.BackColor = System.Drawing.Color.White
+        Me.txtDireccion.Enabled = False
+        Me.txtDireccion.Location = New System.Drawing.Point(120, 164)
+        Me.txtDireccion.MaxLength = 200
+        Me.txtDireccion.Multiline = True
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(266, 84)
+        Me.txtDireccion.TabIndex = 4
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(6, 267)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(57, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Telefonos:"
+        '
+        'txtTelefonos
+        '
+        Me.txtTelefonos.BackColor = System.Drawing.Color.White
+        Me.txtTelefonos.Enabled = False
+        Me.txtTelefonos.Location = New System.Drawing.Point(120, 260)
+        Me.txtTelefonos.MaxLength = 100
+        Me.txtTelefonos.Name = "txtTelefonos"
+        Me.txtTelefonos.Size = New System.Drawing.Size(266, 20)
+        Me.txtTelefonos.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(6, 293)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(35, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Email:"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.BackColor = System.Drawing.Color.White
+        Me.txtEmail.Enabled = False
+        Me.txtEmail.Location = New System.Drawing.Point(120, 287)
+        Me.txtEmail.MaxLength = 50
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(266, 20)
+        Me.txtEmail.TabIndex = 6
         '
         'ProveedoresBindingSource
         '
         Me.ProveedoresBindingSource.DataMember = "proveedores"
         Me.ProveedoresBindingSource.DataSource = Me.DataSetProveedor
+        '
+        'DataSetProveedor
+        '
+        Me.DataSetProveedor.DataSetName = "DataSetProveedor"
+        Me.DataSetProveedor.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ProveedoresTableAdapter
         '
@@ -249,20 +370,6 @@ Partial Class frmProveedor
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetProveedorTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'ProveedoresDataGridView
-        '
-        Me.ProveedoresDataGridView.AllowUserToAddRows = False
-        Me.ProveedoresDataGridView.AllowUserToDeleteRows = False
-        Me.ProveedoresDataGridView.AutoGenerateColumns = False
-        Me.ProveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProveedoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
-        Me.ProveedoresDataGridView.DataSource = Me.ProveedoresBindingSource
-        Me.ProveedoresDataGridView.Location = New System.Drawing.Point(425, 66)
-        Me.ProveedoresDataGridView.Name = "ProveedoresDataGridView"
-        Me.ProveedoresDataGridView.ReadOnly = True
-        Me.ProveedoresDataGridView.Size = New System.Drawing.Size(387, 220)
-        Me.ProveedoresDataGridView.TabIndex = 35
         '
         'DataGridViewTextBoxColumn1
         '
@@ -285,6 +392,48 @@ Partial Class frmProveedor
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
+        'nombre_contacto
+        '
+        Me.nombre_contacto.DataPropertyName = "nombre_contacto"
+        Me.nombre_contacto.HeaderText = "nombre_contacto"
+        Me.nombre_contacto.Name = "nombre_contacto"
+        Me.nombre_contacto.ReadOnly = True
+        '
+        'direccion
+        '
+        Me.direccion.DataPropertyName = "direccion"
+        Me.direccion.HeaderText = "direccion"
+        Me.direccion.Name = "direccion"
+        Me.direccion.ReadOnly = True
+        '
+        'telefonos
+        '
+        Me.telefonos.DataPropertyName = "telefonos"
+        Me.telefonos.HeaderText = "telefonos"
+        Me.telefonos.Name = "telefonos"
+        Me.telefonos.ReadOnly = True
+        '
+        'email
+        '
+        Me.email.DataPropertyName = "email"
+        Me.email.HeaderText = "email"
+        Me.email.Name = "email"
+        Me.email.ReadOnly = True
+        '
+        'fecha_registro
+        '
+        Me.fecha_registro.DataPropertyName = "fecha_registro"
+        Me.fecha_registro.HeaderText = "fecha_registro"
+        Me.fecha_registro.Name = "fecha_registro"
+        Me.fecha_registro.ReadOnly = True
+        '
+        'fecha_modificacion
+        '
+        Me.fecha_modificacion.DataPropertyName = "fecha_modificacion"
+        Me.fecha_modificacion.HeaderText = "fecha_modificacion"
+        Me.fecha_modificacion.Name = "fecha_modificacion"
+        Me.fecha_modificacion.ReadOnly = True
+        '
         'DataGridViewCheckBoxColumn1
         '
         Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
@@ -292,15 +441,11 @@ Partial Class frmProveedor
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
         'frmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 356)
+        Me.ClientSize = New System.Drawing.Size(824, 419)
         Me.Controls.Add(Me.ProveedoresDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
@@ -313,10 +458,10 @@ Partial Class frmProveedor
         Me.BarraHerramientas.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataSetProveedor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -342,9 +487,23 @@ Partial Class frmProveedor
     Friend WithEvents ProveedoresTableAdapter As MuebleriaCasaCruz.DataSetProveedorTableAdapters.proveedoresTableAdapter
     Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetProveedorTableAdapters.TableAdapterManager
     Friend WithEvents ProveedoresDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents txtDireccion As System.Windows.Forms.TextBox
+    Friend WithEvents txtEmail As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefonos As System.Windows.Forms.TextBox
+    Friend WithEvents txtNombreContacto As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nombre_contacto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents direccion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents telefonos As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents email As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fecha_registro As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fecha_modificacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class
