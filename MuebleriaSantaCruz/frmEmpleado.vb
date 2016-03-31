@@ -53,10 +53,12 @@ Public Class frmEmpleado
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery() <> -1) Then
 
-                Consulta = "INSERT INTO empleados (persona_id,puesto_id,fecha_registro,fecha_modificacion,activo) VALUES (@persona_id,@puesto_id,GETDATE(),NULL,@activo)"
+                Consulta = "INSERT INTO empleados (persona_id,puesto_id,fecha_laboral_inicio, fecha_laboral_fin,fecha_registro,fecha_modificacion,activo) VALUES (@persona_id,@puesto_id,@fecha_laboral_inicio, @fecha_laboral_fin,GETDATE(),NULL,@activo)"
                 Orden = New SqlCommand(Consulta, objcon.con)
                 Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = txtID.Text
                 Orden.Parameters.Add("@puesto_id", SqlDbType.Int).Value = PuestosComboBox.SelectedValue
+                Orden.Parameters.Add("@fecha_laboral_inicio", SqlDbType.Date).Value = Format(dtpFechaLaboralInicio.Value, "dd-MM-yyyy")
+                Orden.Parameters.Add("@fecha_laboral_fin", SqlDbType.Date).Value = Format(dtpFechaLaboralFin.Value, "dd-MM-yyyy")
                 Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
 
                 Orden.ExecuteNonQuery()
@@ -117,9 +119,11 @@ Public Class frmEmpleado
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery <> -1) Then
 
-                Consulta = "UPDATE empleados SET puesto_id = @puesto_id, fecha_modificacion = GETDATE(),activo = @activo WHERE persona_id = @persona_id"
+                Consulta = "UPDATE empleados SET puesto_id = @puesto_id,fecha_laboral_inicio = @fecha_laboral_inicio, fecha_laboral_fin = @fecha_laboral_fin, fecha_modificacion = GETDATE(),activo = @activo WHERE persona_id = @persona_id"
                 Orden = New SqlCommand(Consulta, objcon.con)
                 Orden.Parameters.Add("@puesto_id", SqlDbType.VarChar).Value = PuestosComboBox.SelectedValue
+                Orden.Parameters.Add("@fecha_laboral_inicio", SqlDbType.Date).Value = Format(dtpFechaLaboralInicio.Value, "dd-MM-yyyy")
+                Orden.Parameters.Add("@fecha_laboral_fin", SqlDbType.Date).Value = Format(dtpFechaLaboralFin.Value, "dd-MM-yyyy")
                 Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
                 Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = txtID.Text
 
@@ -188,6 +192,8 @@ Public Class frmEmpleado
         txtApPaterno.Enabled = nombre_status
         txtApMaterno.Enabled = nombre_status
         dtpFechaNacimiento.Enabled = nombre_status
+        dtpFechaLaboralInicio.Enabled = nombre_status
+        dtpFechaLaboralFin.Enabled = nombre_status
         rbMasculino.Enabled = nombre_status
         rbFemenino.Enabled = nombre_status
         cbxActivo.Enabled = nombre_status
@@ -195,8 +201,8 @@ Public Class frmEmpleado
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = EmpleadosDataGridView.Rows(F).Cells(0).Value
-        PuestosComboBox.SelectedValue = EmpleadosDataGridView.Rows(F).Cells(9).Value
-        Estados_civilesComboBox.SelectedValue = EmpleadosDataGridView.Rows(F).Cells(8).Value
+        PuestosComboBox.SelectedValue = EmpleadosDataGridView.Rows(F).Cells(11).Value
+        Estados_civilesComboBox.SelectedValue = EmpleadosDataGridView.Rows(F).Cells(10).Value
         txtNombre.Text = EmpleadosDataGridView.Rows(F).Cells(1).Value
         txtApPaterno.Text = EmpleadosDataGridView.Rows(F).Cells(2).Value
         txtApMaterno.Text = EmpleadosDataGridView.Rows(F).Cells(3).Value
@@ -208,7 +214,9 @@ Public Class frmEmpleado
             rbMasculino.Checked = False
         End If
         dtpFechaNacimiento.Text = EmpleadosDataGridView.Rows(F).Cells(4).Value
-        cbxActivo.Checked = EmpleadosDataGridView.Rows(F).Cells(11).Value
+        dtpFechaLaboralInicio.Text = EmpleadosDataGridView.Rows(F).Cells(8).Value
+        dtpFechaLaboralFin.Text = EmpleadosDataGridView.Rows(F).Cells(9).Value
+        cbxActivo.Checked = EmpleadosDataGridView.Rows(F).Cells(13).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()

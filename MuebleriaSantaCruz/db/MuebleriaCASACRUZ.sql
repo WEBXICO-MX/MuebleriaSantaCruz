@@ -665,5 +665,15 @@ INSERT INTO tipos_viviendas VALUES(2,'Lamina',1)
 INSERT INTO tipos_viviendas VALUES(3,'Madera',1)
 INSERT INTO tipos_viviendas VALUES(4,'Otros',1)
 
+delete from domicilios
+delete from medios_comunicacion
+delete from clientes
+delete from empleados
+delete from personas
+
+select * from PERSONAS
+select * from EMPLEADOS
+select * from clientes
+
 
 

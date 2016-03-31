@@ -13,7 +13,7 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT e.persona_id,pu.nombre AS puesto, p.nombre, p. ap_paterno, p.ap_materno, 
-p.fecha_nacimiento, p.sexo,ec.nombre AS estado_civil,p.estado_civil_id,e.puesto_id, e.fecha_registro, e.activo 
+p.fecha_nacimiento, p.sexo,ec.nombre AS estado_civil,e.fecha_laboral_inicio,e.fecha_laboral_fin,p.estado_civil_id,e.puesto_id, e.fecha_registro, e.activo 
 FROM dbo.empleados AS e
 INNER JOIN dbo.personas AS p ON p.id = e.persona_id
 INNER JOIN dbo.estados_civiles AS ec ON ec.id = p.estado_civil_id
@@ -36,6 +36,8 @@ INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id</CommandText>
               <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
               <Mapping SourceColumn="estado_civil" DataSetColumn="estado_civil" />
               <Mapping SourceColumn="estado_civil_id" DataSetColumn="estado_civil_id" />
+              <Mapping SourceColumn="fecha_laboral_inicio" DataSetColumn="fecha_laboral_inicio" />
+              <Mapping SourceColumn="fecha_laboral_fin" DataSetColumn="fecha_laboral_fin" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -47,7 +49,7 @@ INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id</CommandText>
   <xs:element name="DataSetEmpleado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetEmpleado" msprop:Generator_UserDSName="DataSetEmpleado">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="empleados" msprop:Generator_TableClassName="empleadosDataTable" msprop:Generator_TableVarName="tableempleados" msprop:Generator_RowChangedName="empleadosRowChanged" msprop:Generator_TablePropName="empleados" msprop:Generator_RowDeletingName="empleadosRowDeleting" msprop:Generator_RowChangingName="empleadosRowChanging" msprop:Generator_RowEvHandlerName="empleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="empleadosRowDeleted" msprop:Generator_RowClassName="empleadosRow" msprop:Generator_UserTableName="empleados" msprop:Generator_RowEvArgName="empleadosRowChangeEvent">
+        <xs:element name="empleados" msprop:Generator_TableClassName="empleadosDataTable" msprop:Generator_TableVarName="tableempleados" msprop:Generator_TablePropName="empleados" msprop:Generator_RowDeletingName="empleadosRowDeleting" msprop:Generator_RowChangingName="empleadosRowChanging" msprop:Generator_RowEvHandlerName="empleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="empleadosRowDeleted" msprop:Generator_UserTableName="empleados" msprop:Generator_RowChangedName="empleadosRowChanged" msprop:Generator_RowEvArgName="empleadosRowChangeEvent" msprop:Generator_RowClassName="empleadosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="persona_id" msprop:Generator_ColumnVarNameInTable="columnpersona_id" msprop:Generator_ColumnPropNameInRow="persona_id" msprop:Generator_ColumnPropNameInTable="persona_idColumn" msprop:Generator_UserColumnName="persona_id" type="xs:int" />
@@ -98,6 +100,8 @@ INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="estado_civil_id" msprop:Generator_ColumnVarNameInTable="columnestado_civil_id" msprop:Generator_ColumnPropNameInRow="estado_civil_id" msprop:Generator_ColumnPropNameInTable="estado_civil_idColumn" msprop:Generator_UserColumnName="estado_civil_id" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_laboral_inicio" msprop:Generator_ColumnVarNameInTable="columnfecha_laboral_inicio" msprop:Generator_ColumnPropNameInRow="fecha_laboral_inicio" msprop:Generator_ColumnPropNameInTable="fecha_laboral_inicioColumn" msprop:Generator_UserColumnName="fecha_laboral_inicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_laboral_fin" msprop:Generator_ColumnVarNameInTable="columnfecha_laboral_fin" msprop:Generator_ColumnPropNameInRow="fecha_laboral_fin" msprop:Generator_ColumnPropNameInTable="fecha_laboral_finColumn" msprop:Generator_UserColumnName="fecha_laboral_fin" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

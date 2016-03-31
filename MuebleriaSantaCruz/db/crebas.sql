@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     31/03/2016 12:45:27                          */
+/* Created on:     31/03/2016 15:29:30                          */
 /*==============================================================*/
 
 
@@ -899,6 +899,8 @@ go
 create table empleados (
    persona_id           int                  not null,
    puesto_id            int                  null,
+   fecha_laboral_inicio date                 null,
+   fecha_laboral_fin    date                 null,
    fecha_registro       datetime             null,
    fecha_modificacion   datetime             null,
    activo               bit                  null,

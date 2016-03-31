@@ -307,6 +307,10 @@ Partial Public Class DataSetEmpleado
 
         Private columnestado_civil_id As Global.System.Data.DataColumn
 
+        Private columnfecha_laboral_inicio As Global.System.Data.DataColumn
+
+        Private columnfecha_laboral_fin As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -439,6 +443,22 @@ Partial Public Class DataSetEmpleado
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property fecha_laboral_inicioColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfecha_laboral_inicio
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property fecha_laboral_finColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfecha_laboral_fin
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -475,9 +495,9 @@ Partial Public Class DataSetEmpleado
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddempleadosRow(ByVal persona_id As Integer, ByVal puesto_id As Integer, ByVal fecha_registro As Date, ByVal activo As Boolean, ByVal puesto As String, ByVal nombre As String, ByVal ap_paterno As String, ByVal ap_materno As String, ByVal fecha_nacimiento As Date, ByVal sexo As String, ByVal estado_civil As String, ByVal estado_civil_id As Integer) As empleadosRow
+        Public Overloads Function AddempleadosRow(ByVal persona_id As Integer, ByVal puesto_id As Integer, ByVal fecha_registro As Date, ByVal activo As Boolean, ByVal puesto As String, ByVal nombre As String, ByVal ap_paterno As String, ByVal ap_materno As String, ByVal fecha_nacimiento As Date, ByVal sexo As String, ByVal estado_civil As String, ByVal estado_civil_id As Integer, ByVal fecha_laboral_inicio As Date, ByVal fecha_laboral_fin As Date) As empleadosRow
             Dim rowempleadosRow As empleadosRow = CType(Me.NewRow, empleadosRow)
-            Dim columnValuesArray() As Object = New Object() {persona_id, puesto_id, fecha_registro, activo, puesto, nombre, ap_paterno, ap_materno, fecha_nacimiento, sexo, estado_civil, estado_civil_id}
+            Dim columnValuesArray() As Object = New Object() {persona_id, puesto_id, fecha_registro, activo, puesto, nombre, ap_paterno, ap_materno, fecha_nacimiento, sexo, estado_civil, estado_civil_id, fecha_laboral_inicio, fecha_laboral_fin}
             rowempleadosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowempleadosRow)
             Return rowempleadosRow
@@ -518,6 +538,8 @@ Partial Public Class DataSetEmpleado
             Me.columnsexo = MyBase.Columns("sexo")
             Me.columnestado_civil = MyBase.Columns("estado_civil")
             Me.columnestado_civil_id = MyBase.Columns("estado_civil_id")
+            Me.columnfecha_laboral_inicio = MyBase.Columns("fecha_laboral_inicio")
+            Me.columnfecha_laboral_fin = MyBase.Columns("fecha_laboral_fin")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -547,6 +569,10 @@ Partial Public Class DataSetEmpleado
             MyBase.Columns.Add(Me.columnestado_civil)
             Me.columnestado_civil_id = New Global.System.Data.DataColumn("estado_civil_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnestado_civil_id)
+            Me.columnfecha_laboral_inicio = New Global.System.Data.DataColumn("fecha_laboral_inicio", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfecha_laboral_inicio)
+            Me.columnfecha_laboral_fin = New Global.System.Data.DataColumn("fecha_laboral_fin", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfecha_laboral_fin)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpersona_id}, True))
             Me.columnpersona_id.AllowDBNull = False
             Me.columnpersona_id.Unique = True
@@ -878,6 +904,36 @@ Partial Public Class DataSetEmpleado
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property fecha_laboral_inicio() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableempleados.fecha_laboral_inicioColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha_laboral_inicio' de la tabla 'empleados' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableempleados.fecha_laboral_inicioColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property fecha_laboral_fin() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableempleados.fecha_laboral_finColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha_laboral_fin' de la tabla 'empleados' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableempleados.fecha_laboral_finColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function Ispuesto_idNull() As Boolean
             Return Me.IsNull(Me.tableempleados.puesto_idColumn)
         End Function
@@ -1006,6 +1062,30 @@ Partial Public Class DataSetEmpleado
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub Setestado_civil_idNull()
             Me(Me.tableempleados.estado_civil_idColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isfecha_laboral_inicioNull() As Boolean
+            Return Me.IsNull(Me.tableempleados.fecha_laboral_inicioColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setfecha_laboral_inicioNull()
+            Me(Me.tableempleados.fecha_laboral_inicioColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isfecha_laboral_finNull() As Boolean
+            Return Me.IsNull(Me.tableempleados.fecha_laboral_finColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setfecha_laboral_finNull()
+            Me(Me.tableempleados.fecha_laboral_finColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -1187,6 +1267,8 @@ Namespace DataSetEmpleadoTableAdapters
             tableMapping.ColumnMappings.Add("sexo", "sexo")
             tableMapping.ColumnMappings.Add("estado_civil", "estado_civil")
             tableMapping.ColumnMappings.Add("estado_civil_id", "estado_civil_id")
+            tableMapping.ColumnMappings.Add("fecha_laboral_inicio", "fecha_laboral_inicio")
+            tableMapping.ColumnMappings.Add("fecha_laboral_fin", "fecha_laboral_fin")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
 
@@ -1203,10 +1285,11 @@ Namespace DataSetEmpleadoTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT e.persona_id,pu.nombre AS puesto, p.nombre, p. ap_paterno, p.ap_materno, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "p.fecha_nacimiento, p.sexo,ec.nombre AS estado_civil,p.estado_civil_id,e.puesto" & _
-                "_id, e.fecha_registro, e.activo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM dbo.empleados AS e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.person" & _
-                "as AS p ON p.id = e.persona_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.estados_civiles AS ec ON ec.id = " & _
-                "p.estado_civil_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.puestos AS pu ON pu.id = e.puesto_id"
+            Me._commandCollection(0).CommandText = "SELECT e.persona_id,pu.nombre AS puesto, p.nombre, p. ap_paterno, p.ap_materno, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "p.fecha_nacimiento, p.sexo,ec.nombre AS estado_civil,e.fecha_laboral_inicio,e.f" & _
+                "echa_laboral_fin,p.estado_civil_id,e.puesto_id, e.fecha_registro, e.activo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FRO" & _
+                "M dbo.empleados AS e" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.personas AS p ON p.id = e.persona_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER" & _
+                " JOIN dbo.estados_civiles AS ec ON ec.id = p.estado_civil_id" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN dbo.pue" & _
+                "stos AS pu ON pu.id = e.puesto_id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
 
