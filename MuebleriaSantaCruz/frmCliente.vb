@@ -409,4 +409,16 @@ Public Class frmCliente
             MsgBox("Debe cargar previamente a un cliente para entrar a esta opción")
         End If
     End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        If (txtID.Text <> "") Then
+
+            frmReferencia.persona_id = Convert.ToInt32(txtID.Text)
+            frmReferencia.nombre_completo = (txtNombre.Text & " " & txtApPaterno.Text & " " & txtApMaterno.Text)
+            frmReferencia.Show()
+
+        Else
+            MsgBox("Debe cargar previamente a un cliente para entrar a esta opción")
+        End If
+    End Sub
 End Class

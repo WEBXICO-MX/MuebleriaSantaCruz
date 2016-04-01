@@ -31,6 +31,7 @@ Partial Class frmCliente
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -164,6 +165,7 @@ Partial Class frmCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LinkLabel3)
         Me.GroupBox1.Controls.Add(Me.LinkLabel2)
         Me.GroupBox1.Controls.Add(Me.LinkLabel1)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -193,6 +195,16 @@ Partial Class frmCliente
         Me.GroupBox1.Size = New System.Drawing.Size(384, 373)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Location = New System.Drawing.Point(280, 347)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(64, 13)
+        Me.LinkLabel3.TabIndex = 22
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "Referencias"
         '
         'LinkLabel2
         '
@@ -733,4 +745,5 @@ Partial Class frmCliente
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents LinkLabel3 As LinkLabel
 End Class

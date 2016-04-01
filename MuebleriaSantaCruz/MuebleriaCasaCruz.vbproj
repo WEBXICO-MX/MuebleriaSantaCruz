@@ -188,6 +188,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPuestoCombo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetReferencia.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReferencia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetReferencia.vb">
+      <DependentUpon>DataSetReferencia.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetRuta.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +267,12 @@
       <DependentUpon>frmCambio.vb</DependentUpon>
     </Compile>
     <Compile Include="frmCambio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReferencia.Designer.vb">
+      <DependentUpon>frmReferencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReferencia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTipoProducto.Designer.vb">
@@ -461,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambio.resx">
       <DependentUpon>frmCambio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReferencia.resx">
+      <DependentUpon>frmReferencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTipoProducto.resx">
       <DependentUpon>frmTipoProducto.vb</DependentUpon>
@@ -765,6 +782,17 @@
     </None>
     <None Include="DataSetPuestoCombo.xss">
       <DependentUpon>DataSetPuestoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetReferencia.xsc">
+      <DependentUpon>DataSetReferencia.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetReferencia.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReferencia.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetReferencia.xss">
+      <DependentUpon>DataSetReferencia.xsd</DependentUpon>
     </None>
     <None Include="DataSetRuta.xsc">
       <DependentUpon>DataSetRuta.xsd</DependentUpon>
