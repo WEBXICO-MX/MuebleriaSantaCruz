@@ -191,7 +191,8 @@ Partial Class frmReferencia
         'AsentamientosComboBox
         '
         Me.AsentamientosComboBox.DataSource = Me.AsentamientosBindingSource
-        Me.AsentamientosComboBox.DisplayMember = "nombre"
+        Me.AsentamientosComboBox.DisplayMember = "asentamiento"
+        Me.AsentamientosComboBox.Enabled = False
         Me.AsentamientosComboBox.FormattingEnabled = True
         Me.AsentamientosComboBox.Location = New System.Drawing.Point(105, 218)
         Me.AsentamientosComboBox.Name = "AsentamientosComboBox"

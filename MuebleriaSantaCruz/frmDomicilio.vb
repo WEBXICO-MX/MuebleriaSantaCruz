@@ -328,6 +328,7 @@ Public Class frmDomicilio
         Me.DomiciliosTableAdapter.FillByPersonaId(Me.DataSetDomicilio.domicilios, persona_id)
         'TODO: esta línea de código carga datos en la tabla 'DataSetTipoViviendaCombo.tipos_viviendas' Puede moverla o quitarla según sea necesario.
         Me.Tipos_viviendasTableAdapter.Fill(Me.DataSetTipoViviendaCombo.tipos_viviendas)
+        Me.AsentamientosTableAdapter.Fill(Me.DataSetAsentamientoCombo.asentamientos)
         txtNombreCompleto.Text = nombre_completo
     End Sub
 
