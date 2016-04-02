@@ -52,11 +52,15 @@ Public Class frmCliente
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery() <> -1) Then
 
-                Consulta = "INSERT INTO clientes (persona_id,ocupacion_id,tipo_identificacion_id,fecha_registro,fecha_modificacion,activo) VALUES (@persona_id,@ocupacion_id,@tipo_identificacion_id,GETDATE(),NULL,@activo)"
+                Consulta = "INSERT INTO clientes (persona_id,ocupacion_id,tipo_identificacion_id,numero_identificacion, empresa, nombre_conyuge, ocupacion_conyuge, fecha_registro,fecha_modificacion,activo) VALUES (@persona_id,@ocupacion_id,@tipo_identificacion_id, @numero_identificacion, @empresa, @nombre_conyuge, @ocupacion_conyuge, GETDATE(),NULL,@activo)"
                 Orden = New SqlCommand(Consulta, objcon.con)
                 Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = txtID.Text
                 Orden.Parameters.Add("@ocupacion_id", SqlDbType.Int).Value = OcupacionesComboBox.SelectedValue
                 Orden.Parameters.Add("@tipo_identificacion_id", SqlDbType.Int).Value = Tipos_identificacionComboBox.SelectedValue
+                Orden.Parameters.Add("@numero_identificacion", SqlDbType.VarChar).Value = txtNumIdentificacion.Text
+                Orden.Parameters.Add("@empresa", SqlDbType.VarChar).Value = txtEmpresa.Text
+                Orden.Parameters.Add("@nombre_conyuge", SqlDbType.VarChar).Value = txtNombreConyuge.Text
+                Orden.Parameters.Add("@ocupacion_conyuge", SqlDbType.Int).Value = OcupacionesComboBox2.SelectedValue
                 Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
 
                 Orden.ExecuteNonQuery()
@@ -117,13 +121,16 @@ Public Class frmCliente
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery <> -1) Then
 
-                Consulta = "UPDATE clientes SET ocupacion_id = @ocupacion_id, tipo_identificacion_id = @tipo_identificacion_id, fecha_modificacion = GETDATE(), activo = @activo WHERE persona_id = @persona_id"
+                Consulta = "UPDATE clientes SET ocupacion_id = @ocupacion_id, tipo_identificacion_id = @tipo_identificacion_id, numero_identificacion = @numero_identificacion, empresa = @empresa, nombre_conyuge = @nombre_conyuge, ocupacion_conyuge = @ocupacion_conyuge,fecha_modificacion = GETDATE(), activo = @activo WHERE persona_id = @persona_id"
                 Orden = New SqlCommand(Consulta, objcon.con)
-                Orden.Parameters.Add("@ocupacion_id", SqlDbType.VarChar).Value = OcupacionesComboBox.SelectedValue
-                Orden.Parameters.Add("@tipo_identificacion_id", SqlDbType.VarChar).Value = Tipos_identificacionComboBox.SelectedValue
+                Orden.Parameters.Add("@ocupacion_id", SqlDbType.Int).Value = OcupacionesComboBox.SelectedValue
+                Orden.Parameters.Add("@tipo_identificacion_id", SqlDbType.Int).Value = Tipos_identificacionComboBox.SelectedValue
+                Orden.Parameters.Add("@numero_identificacion", SqlDbType.VarChar).Value = txtNumIdentificacion.Text
+                Orden.Parameters.Add("@empresa", SqlDbType.VarChar).Value = txtEmpresa.Text
+                Orden.Parameters.Add("@nombre_conyuge", SqlDbType.VarChar).Value = txtNombreConyuge.Text
+                Orden.Parameters.Add("@ocupacion_conyuge", SqlDbType.Int).Value = OcupacionesComboBox2.SelectedValue
                 Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
                 Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = txtID.Text
-
                 Orden.ExecuteNonQuery()
 
 
@@ -171,6 +178,9 @@ Public Class frmCliente
         dtpFechaNacimiento.ResetText()
         rbMasculino.Checked = False
         rbFemenino.Checked = False
+        txtNumIdentificacion.Clear()
+        txtEmpresa.Clear()
+        txtNombreConyuge.Clear()
         cbxActivo.Checked = True
     End Sub
 
@@ -192,16 +202,19 @@ Public Class frmCliente
         dtpFechaNacimiento.Enabled = nombre_status
         rbMasculino.Enabled = nombre_status
         rbFemenino.Enabled = nombre_status
+        txtNumIdentificacion.Enabled = nombre_status
+        txtEmpresa.Enabled = nombre_status
+        txtNombreConyuge.Enabled = nombre_status
+        OcupacionesComboBox2.Enabled = nombre_status
         cbxActivo.Enabled = nombre_status
     End Sub
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = ClientesDataGridView.Rows(F).Cells(0).Value
-        OcupacionesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(10).Value
-        Tipos_identificacionComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(11).Value
         txtNombre.Text = ClientesDataGridView.Rows(F).Cells(1).Value
         txtApPaterno.Text = ClientesDataGridView.Rows(F).Cells(2).Value
         txtApMaterno.Text = ClientesDataGridView.Rows(F).Cells(3).Value
+        dtpFechaNacimiento.Text = ClientesDataGridView.Rows(F).Cells(4).Value
         If (ClientesDataGridView.Rows(F).Cells(5).Value = "M") Then
             rbMasculino.Checked = True
             rbFemenino.Checked = False
@@ -209,9 +222,14 @@ Public Class frmCliente
             rbFemenino.Checked = True
             rbMasculino.Checked = False
         End If
-        Estados_civilesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(9).Value
-        dtpFechaNacimiento.Text = ClientesDataGridView.Rows(F).Cells(4).Value
-        cbxActivo.Checked = ClientesDataGridView.Rows(F).Cells(13).Value
+        Estados_civilesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(13).Value
+        OcupacionesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(14).Value
+        Tipos_identificacionComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(15).Value
+        txtNumIdentificacion.Text = ClientesDataGridView.Rows(F).Cells(10).Value
+        txtEmpresa.Text = ClientesDataGridView.Rows(F).Cells(8).Value
+        txtNombreConyuge.Text = ClientesDataGridView.Rows(F).Cells(11).Value
+        OcupacionesComboBox2.SelectedValue = ClientesDataGridView.Rows(F).Cells(16).Value
+        cbxActivo.Checked = ClientesDataGridView.Rows(F).Cells(18).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
@@ -306,7 +324,7 @@ Public Class frmCliente
             EstadoBotones(False, True, True, False, False)
             ClientesDataGridView.Enabled = False
         Else
-            MessageBox.Show("Seleccione un empleado para editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Seleccione un cliente para editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -374,6 +392,8 @@ Public Class frmCliente
     End Sub
 
     Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSetOcupacionCombo2.ocupaciones' table. You can move, or remove it, as needed.
+        Me.OcupacionesTableAdapter1.Fill(Me.DataSetOcupacionCombo2.ocupaciones)
         'TODO: esta línea de código carga datos en la tabla 'DataSetEstadoCivilCombo.estados_civiles' Puede moverla o quitarla según sea necesario.
         Me.Estados_civilesTableAdapter.Fill(Me.DataSetEstadoCivilCombo.estados_civiles)
         'TODO: esta línea de código carga datos en la tabla 'DataSetCliente.clientes' Puede moverla o quitarla según sea necesario.
@@ -421,4 +441,5 @@ Public Class frmCliente
             MsgBox("Debe cargar previamente a un cliente para entrar a esta opción")
         End If
     End Sub
+
 End Class

@@ -31,6 +31,9 @@ Partial Class frmCliente
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.OcupacionesComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.OcupacionesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetOcupacionCombo2 = New MuebleriaCasaCruz.DataSetOcupacionCombo2()
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
@@ -48,6 +51,10 @@ Partial Class frmCliente
         Me.rbMasculino = New System.Windows.Forms.RadioButton()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbxActivo = New System.Windows.Forms.CheckBox()
         Me.lbtipoestado = New System.Windows.Forms.Label()
@@ -56,6 +63,9 @@ Partial Class frmCliente
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtNumIdentificacion = New System.Windows.Forms.TextBox()
+        Me.txtNombreConyuge = New System.Windows.Forms.TextBox()
+        Me.txtEmpresa = New System.Windows.Forms.TextBox()
         Me.txtApMaterno = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtApPaterno = New System.Windows.Forms.TextBox()
@@ -71,6 +81,11 @@ Partial Class frmCliente
         Me.ClientesTableAdapter = New MuebleriaCasaCruz.DataSetClienteTableAdapters.clientesTableAdapter()
         Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetClienteTableAdapters.TableAdapterManager()
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
+        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
+        Me.OcupacionesTableAdapter1 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.ocupacionesTableAdapter()
+        Me.TableAdapterManager4 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -79,17 +94,21 @@ Partial Class frmCliente
         Me.sexo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.estado_civil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ocupacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo_identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numero_identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_conyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ocupacion_conyuge = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.estado_civil_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ocupacion_conyuge_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
-        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.OcupacionesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetOcupacionCombo2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Estados_civilesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetEstadoCivilCombo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tipos_identificacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +184,7 @@ Partial Class frmCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.OcupacionesComboBox2)
         Me.GroupBox1.Controls.Add(Me.LinkLabel3)
         Me.GroupBox1.Controls.Add(Me.LinkLabel2)
         Me.GroupBox1.Controls.Add(Me.LinkLabel1)
@@ -176,6 +196,10 @@ Partial Class frmCliente
         Me.GroupBox1.Controls.Add(Me.rbMasculino)
         Me.GroupBox1.Controls.Add(Me.dtpFechaNacimiento)
         Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.cbxActivo)
         Me.GroupBox1.Controls.Add(Me.lbtipoestado)
@@ -184,6 +208,9 @@ Partial Class frmCliente
         Me.GroupBox1.Controls.Add(Me.txtID)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtNumIdentificacion)
+        Me.GroupBox1.Controls.Add(Me.txtNombreConyuge)
+        Me.GroupBox1.Controls.Add(Me.txtEmpresa)
         Me.GroupBox1.Controls.Add(Me.txtApMaterno)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtApPaterno)
@@ -192,37 +219,58 @@ Partial Class frmCliente
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 50)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(384, 373)
+        Me.GroupBox1.Size = New System.Drawing.Size(385, 479)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
+        '
+        'OcupacionesComboBox2
+        '
+        Me.OcupacionesComboBox2.DataSource = Me.OcupacionesBindingSource1
+        Me.OcupacionesComboBox2.DisplayMember = "nombre"
+        Me.OcupacionesComboBox2.FormattingEnabled = True
+        Me.OcupacionesComboBox2.Location = New System.Drawing.Point(123, 395)
+        Me.OcupacionesComboBox2.Name = "OcupacionesComboBox2"
+        Me.OcupacionesComboBox2.Size = New System.Drawing.Size(211, 21)
+        Me.OcupacionesComboBox2.TabIndex = 14
+        Me.OcupacionesComboBox2.ValueMember = "id"
+        '
+        'OcupacionesBindingSource1
+        '
+        Me.OcupacionesBindingSource1.DataMember = "ocupaciones"
+        Me.OcupacionesBindingSource1.DataSource = Me.DataSetOcupacionCombo2
+        '
+        'DataSetOcupacionCombo2
+        '
+        Me.DataSetOcupacionCombo2.DataSetName = "DataSetOcupacionCombo2"
+        Me.DataSetOcupacionCombo2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'LinkLabel3
         '
         Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Location = New System.Drawing.Point(280, 347)
+        Me.LinkLabel3.Location = New System.Drawing.Point(280, 447)
         Me.LinkLabel3.Name = "LinkLabel3"
         Me.LinkLabel3.Size = New System.Drawing.Size(64, 13)
-        Me.LinkLabel3.TabIndex = 22
+        Me.LinkLabel3.TabIndex = 18
         Me.LinkLabel3.TabStop = True
         Me.LinkLabel3.Text = "Referencias"
         '
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(161, 347)
+        Me.LinkLabel2.Location = New System.Drawing.Point(183, 447)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(54, 13)
-        Me.LinkLabel2.TabIndex = 21
+        Me.LinkLabel2.TabIndex = 17
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "Domicilios"
         '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(8, 347)
+        Me.LinkLabel1.Location = New System.Drawing.Point(8, 447)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(125, 13)
-        Me.LinkLabel1.TabIndex = 20
+        Me.LinkLabel1.TabIndex = 16
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Medios de comunicación"
         '
@@ -230,7 +278,7 @@ Partial Class frmCliente
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(8, 261)
+        Me.Label9.Location = New System.Drawing.Point(8, 200)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 19
@@ -241,10 +289,10 @@ Partial Class frmCliente
         Me.Estados_civilesComboBox.DataSource = Me.Estados_civilesBindingSource
         Me.Estados_civilesComboBox.DisplayMember = "nombre"
         Me.Estados_civilesComboBox.FormattingEnabled = True
-        Me.Estados_civilesComboBox.Location = New System.Drawing.Point(123, 286)
+        Me.Estados_civilesComboBox.Location = New System.Drawing.Point(123, 225)
         Me.Estados_civilesComboBox.Name = "Estados_civilesComboBox"
-        Me.Estados_civilesComboBox.Size = New System.Drawing.Size(245, 21)
-        Me.Estados_civilesComboBox.TabIndex = 9
+        Me.Estados_civilesComboBox.Size = New System.Drawing.Size(211, 21)
+        Me.Estados_civilesComboBox.TabIndex = 8
         Me.Estados_civilesComboBox.ValueMember = "id"
         '
         'Estados_civilesBindingSource
@@ -262,10 +310,10 @@ Partial Class frmCliente
         Me.Tipos_identificacionComboBox.DataSource = Me.Tipos_identificacionBindingSource
         Me.Tipos_identificacionComboBox.DisplayMember = "nombre"
         Me.Tipos_identificacionComboBox.FormattingEnabled = True
-        Me.Tipos_identificacionComboBox.Location = New System.Drawing.Point(123, 118)
+        Me.Tipos_identificacionComboBox.Location = New System.Drawing.Point(123, 308)
         Me.Tipos_identificacionComboBox.Name = "Tipos_identificacionComboBox"
-        Me.Tipos_identificacionComboBox.Size = New System.Drawing.Size(245, 21)
-        Me.Tipos_identificacionComboBox.TabIndex = 18
+        Me.Tipos_identificacionComboBox.Size = New System.Drawing.Size(211, 21)
+        Me.Tipos_identificacionComboBox.TabIndex = 11
         Me.Tipos_identificacionComboBox.ValueMember = "id"
         '
         'Tipos_identificacionBindingSource
@@ -283,10 +331,10 @@ Partial Class frmCliente
         Me.OcupacionesComboBox.DataSource = Me.OcupacionesBindingSource
         Me.OcupacionesComboBox.DisplayMember = "nombre"
         Me.OcupacionesComboBox.FormattingEnabled = True
-        Me.OcupacionesComboBox.Location = New System.Drawing.Point(123, 91)
+        Me.OcupacionesComboBox.Location = New System.Drawing.Point(123, 252)
         Me.OcupacionesComboBox.Name = "OcupacionesComboBox"
-        Me.OcupacionesComboBox.Size = New System.Drawing.Size(245, 21)
-        Me.OcupacionesComboBox.TabIndex = 17
+        Me.OcupacionesComboBox.Size = New System.Drawing.Size(211, 21)
+        Me.OcupacionesComboBox.TabIndex = 9
         Me.OcupacionesComboBox.ValueMember = "id"
         '
         'OcupacionesBindingSource
@@ -302,10 +350,10 @@ Partial Class frmCliente
         'rbFemenino
         '
         Me.rbFemenino.AutoSize = True
-        Me.rbFemenino.Location = New System.Drawing.Point(238, 261)
+        Me.rbFemenino.Location = New System.Drawing.Point(202, 202)
         Me.rbFemenino.Name = "rbFemenino"
         Me.rbFemenino.Size = New System.Drawing.Size(71, 17)
-        Me.rbFemenino.TabIndex = 8
+        Me.rbFemenino.TabIndex = 7
         Me.rbFemenino.TabStop = True
         Me.rbFemenino.Text = "Femenino"
         Me.rbFemenino.UseVisualStyleBackColor = True
@@ -313,36 +361,76 @@ Partial Class frmCliente
         'rbMasculino
         '
         Me.rbMasculino.AutoSize = True
-        Me.rbMasculino.Location = New System.Drawing.Point(123, 261)
+        Me.rbMasculino.Location = New System.Drawing.Point(123, 200)
         Me.rbMasculino.Name = "rbMasculino"
         Me.rbMasculino.Size = New System.Drawing.Size(73, 17)
-        Me.rbMasculino.TabIndex = 7
+        Me.rbMasculino.TabIndex = 6
         Me.rbMasculino.TabStop = True
         Me.rbMasculino.Text = "Masculino"
         Me.rbMasculino.UseVisualStyleBackColor = True
         '
         'dtpFechaNacimiento
         '
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(123, 223)
+        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(123, 162)
         Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
         Me.dtpFechaNacimiento.Size = New System.Drawing.Size(211, 20)
-        Me.dtpFechaNacimiento.TabIndex = 6
+        Me.dtpFechaNacimiento.TabIndex = 5
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(8, 117)
+        Me.Label7.Location = New System.Drawing.Point(8, 316)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(111, 13)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Tipo de identificación:"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(8, 343)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(127, 13)
+        Me.Label12.TabIndex = 8
+        Me.Label12.Text = "Numero de identificación:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(8, 373)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(108, 13)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "Nombre del conyuge:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(8, 286)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(51, 13)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Empresa:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(8, 395)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(106, 13)
+        Me.Label13.TabIndex = 8
+        Me.Label13.Text = "Ocupación conyuge:"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(8, 94)
+        Me.Label3.Location = New System.Drawing.Point(8, 255)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(62, 13)
         Me.Label3.TabIndex = 8
@@ -353,10 +441,10 @@ Partial Class frmCliente
         Me.cbxActivo.AutoSize = True
         Me.cbxActivo.Checked = True
         Me.cbxActivo.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbxActivo.Location = New System.Drawing.Point(11, 313)
+        Me.cbxActivo.Location = New System.Drawing.Point(11, 423)
         Me.cbxActivo.Name = "cbxActivo"
         Me.cbxActivo.Size = New System.Drawing.Size(56, 17)
-        Me.cbxActivo.TabIndex = 10
+        Me.cbxActivo.TabIndex = 15
         Me.cbxActivo.Text = "Activo"
         Me.cbxActivo.UseVisualStyleBackColor = True
         '
@@ -406,7 +494,7 @@ Partial Class frmCliente
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(8, 286)
+        Me.Label8.Location = New System.Drawing.Point(8, 225)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(64, 13)
         Me.Label8.TabIndex = 5
@@ -416,27 +504,57 @@ Partial Class frmCliente
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(8, 229)
+        Me.Label6.Location = New System.Drawing.Point(8, 168)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(109, 13)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Fecha de nacimiento:"
         '
+        'txtNumIdentificacion
+        '
+        Me.txtNumIdentificacion.BackColor = System.Drawing.Color.White
+        Me.txtNumIdentificacion.Enabled = False
+        Me.txtNumIdentificacion.Location = New System.Drawing.Point(141, 336)
+        Me.txtNumIdentificacion.MaxLength = 30
+        Me.txtNumIdentificacion.Name = "txtNumIdentificacion"
+        Me.txtNumIdentificacion.Size = New System.Drawing.Size(193, 20)
+        Me.txtNumIdentificacion.TabIndex = 12
+        '
+        'txtNombreConyuge
+        '
+        Me.txtNombreConyuge.BackColor = System.Drawing.Color.White
+        Me.txtNombreConyuge.Enabled = False
+        Me.txtNombreConyuge.Location = New System.Drawing.Point(123, 366)
+        Me.txtNombreConyuge.MaxLength = 100
+        Me.txtNombreConyuge.Name = "txtNombreConyuge"
+        Me.txtNombreConyuge.Size = New System.Drawing.Size(211, 20)
+        Me.txtNombreConyuge.TabIndex = 13
+        '
+        'txtEmpresa
+        '
+        Me.txtEmpresa.BackColor = System.Drawing.Color.White
+        Me.txtEmpresa.Enabled = False
+        Me.txtEmpresa.Location = New System.Drawing.Point(123, 279)
+        Me.txtEmpresa.MaxLength = 100
+        Me.txtEmpresa.Name = "txtEmpresa"
+        Me.txtEmpresa.Size = New System.Drawing.Size(211, 20)
+        Me.txtEmpresa.TabIndex = 10
+        '
         'txtApMaterno
         '
         Me.txtApMaterno.BackColor = System.Drawing.Color.White
         Me.txtApMaterno.Enabled = False
-        Me.txtApMaterno.Location = New System.Drawing.Point(123, 197)
+        Me.txtApMaterno.Location = New System.Drawing.Point(123, 136)
         Me.txtApMaterno.MaxLength = 50
         Me.txtApMaterno.Name = "txtApMaterno"
         Me.txtApMaterno.Size = New System.Drawing.Size(211, 20)
-        Me.txtApMaterno.TabIndex = 5
+        Me.txtApMaterno.TabIndex = 4
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(8, 197)
+        Me.Label5.Location = New System.Drawing.Point(8, 136)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(88, 13)
         Me.Label5.TabIndex = 5
@@ -446,17 +564,17 @@ Partial Class frmCliente
         '
         Me.txtApPaterno.BackColor = System.Drawing.Color.White
         Me.txtApPaterno.Enabled = False
-        Me.txtApPaterno.Location = New System.Drawing.Point(123, 171)
+        Me.txtApPaterno.Location = New System.Drawing.Point(123, 110)
         Me.txtApPaterno.MaxLength = 50
         Me.txtApPaterno.Name = "txtApPaterno"
         Me.txtApPaterno.Size = New System.Drawing.Size(211, 20)
-        Me.txtApPaterno.TabIndex = 4
+        Me.txtApPaterno.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 171)
+        Me.Label4.Location = New System.Drawing.Point(8, 110)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 13)
         Me.Label4.TabIndex = 5
@@ -466,17 +584,17 @@ Partial Class frmCliente
         '
         Me.txtNombre.BackColor = System.Drawing.Color.White
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(123, 145)
+        Me.txtNombre.Location = New System.Drawing.Point(123, 84)
         Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(211, 20)
-        Me.txtNombre.TabIndex = 3
+        Me.txtNombre.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 145)
+        Me.Label2.Location = New System.Drawing.Point(8, 84)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 5
@@ -528,13 +646,37 @@ Partial Class frmCliente
         Me.ClientesDataGridView.AllowUserToDeleteRows = False
         Me.ClientesDataGridView.AutoGenerateColumns = False
         Me.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.nombre, Me.ap_paterno, Me.ap_materno, Me.fecha_nacimiento, Me.sexo, Me.estado_civil, Me.ocupacion, Me.tipo_identificacion, Me.estado_civil_id, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewCheckBoxColumn1})
+        Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.nombre, Me.ap_paterno, Me.ap_materno, Me.fecha_nacimiento, Me.sexo, Me.estado_civil, Me.ocupacion, Me.empresa, Me.tipo_identificacion, Me.numero_identificacion, Me.nombre_conyuge, Me.ocupacion_conyuge, Me.estado_civil_id, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.ocupacion_conyuge_id, Me.DataGridViewTextBoxColumn4, Me.DataGridViewCheckBoxColumn1})
         Me.ClientesDataGridView.DataSource = Me.ClientesBindingSource
         Me.ClientesDataGridView.Location = New System.Drawing.Point(417, 59)
         Me.ClientesDataGridView.Name = "ClientesDataGridView"
         Me.ClientesDataGridView.ReadOnly = True
-        Me.ClientesDataGridView.Size = New System.Drawing.Size(430, 364)
+        Me.ClientesDataGridView.Size = New System.Drawing.Size(430, 470)
         Me.ClientesDataGridView.TabIndex = 39
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'Estados_civilesTableAdapter
+        '
+        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager3
+        '
+        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager3.Connection = Nothing
+        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'OcupacionesTableAdapter1
+        '
+        Me.OcupacionesTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager4
+        '
+        Me.TableAdapterManager4.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager4.Connection = Nothing
+        Me.TableAdapterManager4.UpdateOrder = MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'DataGridViewTextBoxColumn1
         '
@@ -592,12 +734,40 @@ Partial Class frmCliente
         Me.ocupacion.Name = "ocupacion"
         Me.ocupacion.ReadOnly = True
         '
+        'empresa
+        '
+        Me.empresa.DataPropertyName = "empresa"
+        Me.empresa.HeaderText = "empresa"
+        Me.empresa.Name = "empresa"
+        Me.empresa.ReadOnly = True
+        '
         'tipo_identificacion
         '
         Me.tipo_identificacion.DataPropertyName = "tipo_identificacion"
         Me.tipo_identificacion.HeaderText = "tipo_identificacion"
         Me.tipo_identificacion.Name = "tipo_identificacion"
         Me.tipo_identificacion.ReadOnly = True
+        '
+        'numero_identificacion
+        '
+        Me.numero_identificacion.DataPropertyName = "numero_identificacion"
+        Me.numero_identificacion.HeaderText = "numero_identificacion"
+        Me.numero_identificacion.Name = "numero_identificacion"
+        Me.numero_identificacion.ReadOnly = True
+        '
+        'nombre_conyuge
+        '
+        Me.nombre_conyuge.DataPropertyName = "nombre_conyuge"
+        Me.nombre_conyuge.HeaderText = "nombre_conyuge"
+        Me.nombre_conyuge.Name = "nombre_conyuge"
+        Me.nombre_conyuge.ReadOnly = True
+        '
+        'ocupacion_conyuge
+        '
+        Me.ocupacion_conyuge.DataPropertyName = "ocupacion_conyuge"
+        Me.ocupacion_conyuge.HeaderText = "ocupacion_conyuge"
+        Me.ocupacion_conyuge.Name = "ocupacion_conyuge"
+        Me.ocupacion_conyuge.ReadOnly = True
         '
         'estado_civil_id
         '
@@ -623,6 +793,14 @@ Partial Class frmCliente
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         Me.DataGridViewTextBoxColumn3.Visible = False
         '
+        'ocupacion_conyuge_id
+        '
+        Me.ocupacion_conyuge_id.DataPropertyName = "ocupacion_conyuge_id"
+        Me.ocupacion_conyuge_id.HeaderText = "ocupacion_conyuge_id"
+        Me.ocupacion_conyuge_id.Name = "ocupacion_conyuge_id"
+        Me.ocupacion_conyuge_id.ReadOnly = True
+        Me.ocupacion_conyuge_id.Visible = False
+        '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "fecha_registro"
@@ -637,25 +815,11 @@ Partial Class frmCliente
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'Estados_civilesTableAdapter
-        '
-        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager3
-        '
-        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager3.Connection = Nothing
-        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(859, 435)
+        Me.ClientSize = New System.Drawing.Size(859, 541)
         Me.Controls.Add(Me.ClientesDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
@@ -668,6 +832,8 @@ Partial Class frmCliente
         Me.BarraHerramientas.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.OcupacionesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetOcupacionCombo2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Estados_civilesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetEstadoCivilCombo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tipos_identificacionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -728,22 +894,39 @@ Partial Class frmCliente
     Friend WithEvents Estados_civilesTableAdapter As MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter
     Friend WithEvents TableAdapterManager3 As MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager
     Friend WithEvents Estados_civilesComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ap_paterno As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ap_materno As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents fecha_nacimiento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents sexo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents estado_civil As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ocupacion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tipo_identificacion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents estado_civil_id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txtNumIdentificacion As TextBox
+    Friend WithEvents txtNombreConyuge As TextBox
+    Friend WithEvents txtEmpresa As TextBox
+    Friend WithEvents DataSetOcupacionCombo2 As DataSetOcupacionCombo2
+    Friend WithEvents OcupacionesBindingSource1 As BindingSource
+    Friend WithEvents OcupacionesTableAdapter1 As DataSetOcupacionCombo2TableAdapters.ocupacionesTableAdapter
+    Friend WithEvents TableAdapterManager4 As DataSetOcupacionCombo2TableAdapters.TableAdapterManager
+    Friend WithEvents OcupacionesComboBox2 As ComboBox
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents ap_paterno As DataGridViewTextBoxColumn
+    Friend WithEvents ap_materno As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_nacimiento As DataGridViewTextBoxColumn
+    Friend WithEvents sexo As DataGridViewTextBoxColumn
+    Friend WithEvents estado_civil As DataGridViewTextBoxColumn
+    Friend WithEvents ocupacion As DataGridViewTextBoxColumn
+    Friend WithEvents empresa As DataGridViewTextBoxColumn
+    Friend WithEvents tipo_identificacion As DataGridViewTextBoxColumn
+    Friend WithEvents numero_identificacion As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_conyuge As DataGridViewTextBoxColumn
+    Friend WithEvents ocupacion_conyuge As DataGridViewTextBoxColumn
+    Friend WithEvents estado_civil_id As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents ocupacion_conyuge_id As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
 End Class

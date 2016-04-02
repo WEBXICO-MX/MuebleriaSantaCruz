@@ -168,6 +168,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetOcupacionCombo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetOcupacionCombo2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOcupacionCombo2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetProducto.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -738,6 +743,17 @@
     </None>
     <None Include="DataSetOcupacionCombo.xss">
       <DependentUpon>DataSetOcupacionCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOcupacionCombo2.xsc">
+      <DependentUpon>DataSetOcupacionCombo2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOcupacionCombo2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOcupacionCombo2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetOcupacionCombo2.xss">
+      <DependentUpon>DataSetOcupacionCombo2.xsd</DependentUpon>
     </None>
     <None Include="DataSetProducto.xsc">
       <DependentUpon>DataSetProducto.xsd</DependentUpon>

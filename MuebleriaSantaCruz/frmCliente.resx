@@ -181,17 +181,17 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btbuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -209,8 +209,26 @@
         RK5CYII=
 </value>
   </data>
+  <metadata name="OcupacionesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
+  <metadata name="OcupacionesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
+  <metadata name="DataSetOcupacionCombo2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>611, 134</value>
+  </metadata>
+  <metadata name="DataSetOcupacionCombo2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>611, 134</value>
+  </metadata>
   <metadata name="Estados_civilesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 134</value>
+  </metadata>
+  <metadata name="Estados_civilesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="DataSetEstadoCivilCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>800, 95</value>
   </metadata>
   <metadata name="DataSetEstadoCivilCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>800, 95</value>
@@ -218,11 +236,23 @@
   <metadata name="Tipos_identificacionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>248, 56</value>
   </metadata>
+  <metadata name="Tipos_identificacionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>248, 56</value>
+  </metadata>
+  <metadata name="DataSetTipoIdentificacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <metadata name="DataSetTipoIdentificacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
   <metadata name="OcupacionesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>363, 17</value>
+  </metadata>
+  <metadata name="OcupacionesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>363, 17</value>
+  </metadata>
+  <metadata name="DataSetOcupacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>170, 17</value>
   </metadata>
   <metadata name="DataSetOcupacionCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>170, 17</value>
@@ -272,10 +302,25 @@
   <metadata name="ocupacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="empresa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="tipo_identificacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="numero_identificacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="nombre_conyuge.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ocupacion_conyuge.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="estado_civil_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ocupacion_conyuge_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -362,5 +407,11 @@
   </metadata>
   <metadata name="TableAdapterManager3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>431, 134</value>
+  </metadata>
+  <metadata name="OcupacionesTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>224, 173</value>
+  </metadata>
+  <metadata name="TableAdapterManager4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>426, 173</value>
   </metadata>
 </root>

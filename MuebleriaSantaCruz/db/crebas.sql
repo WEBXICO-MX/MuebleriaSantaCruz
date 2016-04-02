@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     01/04/2016 8:50:49                           */
+/* Created on:     02/04/2016 15:13:29                          */
 /*==============================================================*/
 
 
@@ -37,6 +37,13 @@ if exists (select 1
    where r.fkeyid = object_id('clientes') and o.name = 'FK_CLIENTES_REFERENCE_TIPOS_ID')
 alter table clientes
    drop constraint FK_CLIENTES_REFERENCE_TIPOS_ID
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('clientes') and o.name = 'FK_CLIENTES_REFERENCE_OCUPACIO2')
+alter table clientes
+   drop constraint FK_CLIENTES_REFERENCE_OCUPACIO2
 go
 
 if exists (select 1
@@ -135,20 +142,6 @@ if exists (select 1
    where r.fkeyid = object_id('productos') and o.name = 'FK_PRODUCTO_REFERENCE_TIPOS_PR')
 alter table productos
    drop constraint FK_PRODUCTO_REFERENCE_TIPOS_PR
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('referencias') and o.name = 'FK_REFERENC_REFERENCE_ASENTAMI')
-alter table referencias
-   drop constraint FK_REFERENC_REFERENCE_ASENTAMI
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('referencias') and o.name = 'FK_REFERENC_REFERENCE_PERSONAS')
-alter table referencias
-   drop constraint FK_REFERENC_REFERENCE_PERSONAS
 go
 
 if exists (select 1
@@ -584,31 +577,6 @@ go
 
 if exists (select 1
             from  sysindexes
-           where  id    = object_id('referencias')
-            and   name  = 'index_1'
-            and   indid > 0
-            and   indid < 255)
-   drop index referencias.index_1
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('referencias')
-            and   name  = 'index_2'
-            and   indid > 0
-            and   indid < 255)
-   drop index referencias.index_2
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('referencias')
-            and   type = 'U')
-   drop table referencias
-go
-
-if exists (select 1
-            from  sysindexes
            where  id    = object_id('rutas')
             and   name  = 'index_1'
             and   indid > 0
@@ -855,6 +823,10 @@ create table clientes (
    persona_id           int                  not null,
    ocupacion_id         int                  null,
    tipo_identificacion_id int                  null,
+   numero_identificacion varchar(30)          null,
+   empresa              varchar(100)         null,
+   nombre_conyuge       varchar(100)         null,
+   ocupacion_conyuge    int                  null,
    fecha_registro       datetime             null,
    fecha_modificacion   datetime             null,
    activo               bit                  null,
@@ -1312,43 +1284,6 @@ id ASC
 go
 
 /*==============================================================*/
-/* Table: referencias                                           */
-/*==============================================================*/
-create table referencias (
-   id                   int                  not null,
-   persona_id           int                  null,
-   nombre_completo      varchar(100)         null,
-   asentamiento_id      int                  null,
-   calle                varchar(100)         null,
-   numero_interior      varchar(50)          null,
-   numero_exterior      varchar(50)          null,
-   telefono             varchar(50)          null,
-   anios_conocerlo      int                  null,
-   parentesto           varchar(30)          null,
-   fecha_registro       datetime             null,
-   fecha_modificacion   datetime             null,
-   activo               bit                  null,
-   constraint PK_REFERENCIAS primary key (id)
-)
-go
-
-/*==============================================================*/
-/* Index: index_2                                               */
-/*==============================================================*/
-create index index_2 on referencias (
-persona_id ASC
-)
-go
-
-/*==============================================================*/
-/* Index: index_1                                               */
-/*==============================================================*/
-create index index_1 on referencias (
-id ASC
-)
-go
-
-/*==============================================================*/
 /* Table: rutas                                                 */
 /*==============================================================*/
 create table rutas (
@@ -1572,6 +1507,11 @@ alter table clientes
       references tipos_identificacion (id)
 go
 
+alter table clientes
+   add constraint FK_CLIENTES_REFERENCE_OCUPACIO2 foreign key (ocupacion_conyuge)
+      references ocupaciones (id)
+go
+
 alter table domicilios
    add constraint FK_DOMICILI_REFERENCE_PERSONAS foreign key (persona_id)
       references personas (id)
@@ -1640,16 +1580,6 @@ go
 alter table productos
    add constraint FK_PRODUCTO_REFERENCE_TIPOS_PR foreign key (tipo_producto_id)
       references tipos_productos (id)
-go
-
-alter table referencias
-   add constraint FK_REFERENC_REFERENCE_ASENTAMI foreign key (asentamiento_id)
-      references asentamientos (id)
-go
-
-alter table referencias
-   add constraint FK_REFERENC_REFERENCE_PERSONAS foreign key (persona_id)
-      references personas (id)
 go
 
 alter table rutas
