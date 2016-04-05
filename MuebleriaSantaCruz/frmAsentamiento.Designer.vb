@@ -438,8 +438,10 @@ Partial Class frmAsentamiento
         Me.Controls.Add(Me.AsentamientosDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmAsentamiento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asentamiento(s) | Mueblería Casa Cruz"
         Me.BarraHerramientas.ResumeLayout(False)
         Me.BarraHerramientas.PerformLayout()
