@@ -41,9 +41,7 @@ Public Class frmReferencia
 
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO referencias (id, tipo_medio_comunicacion_id, persona_id, valor, activo) VALUES (" & txtID.Text & "," & (Tipos_referenciasComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO referencias (id, persona_id, nombre_completo,asentamiento_id, calle, numero_interior, numero_exterior, 
-        telefono, anios_conocerlo, parentesco, fecha_registro, fecha_modificacion, activo) 
-        VALUES (@id, @persona_id, @nombre_completo, @asentamiento_id, @calle, @numero_interior, @numero_exterior, @telefono, @anios_conocerlo, @parentesco,  GETDATE(), NULL, @activo)"
+        Dim Consulta As String = "INSERT INTO referencias (id, persona_id, nombre_completo,asentamiento_id, calle, numero_interior, numero_exterior, telefono, anios_conocerlo, parentesco, fecha_registro, fecha_modificacion, activo)  VALUES (@id, @persona_id, @nombre_completo, @asentamiento_id, @calle, @numero_interior, @numero_exterior, @telefono, @anios_conocerlo, @parentesco,  GETDATE(), NULL, @activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = persona_id
