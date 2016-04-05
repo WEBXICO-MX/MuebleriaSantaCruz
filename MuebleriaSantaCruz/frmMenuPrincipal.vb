@@ -116,4 +116,8 @@
     Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
         frmProveedor.Show()
     End Sub
+
+    Private Sub AsentamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsentamientosToolStripMenuItem.Click
+        frmAsentamiento.Show()
+    End Sub
 End Class

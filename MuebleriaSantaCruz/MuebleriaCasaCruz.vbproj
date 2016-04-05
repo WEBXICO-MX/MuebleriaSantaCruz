@@ -90,6 +90,11 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Conexion.vb" />
+    <Compile Include="DataSetAsentamiento.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAsentamiento.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetAsentamientoCombo.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,6 +163,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetModulo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetMunicipioCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMunicipioCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetOcupacion.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -216,6 +226,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSucursalCombo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetTipoAsentamientoCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoAsentamientoCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetTipoIdentificacion.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -255,6 +270,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsentamiento.Designer.vb">
+      <DependentUpon>frmAsentamiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsentamiento.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDomicilio.Designer.vb">
       <DependentUpon>frmDomicilio.vb</DependentUpon>
@@ -472,6 +493,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAsentamiento.resx">
+      <DependentUpon>frmAsentamiento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDomicilio.resx">
       <DependentUpon>frmDomicilio.vb</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +603,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSetAsentamiento.xsc">
+      <DependentUpon>DataSetAsentamiento.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAsentamiento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAsentamiento.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetAsentamiento.xss">
+      <DependentUpon>DataSetAsentamiento.xsd</DependentUpon>
+    </None>
     <None Include="DataSetAsentamientoCombo.xsc">
       <DependentUpon>DataSetAsentamientoCombo.xsd</DependentUpon>
     </None>
@@ -722,6 +757,17 @@
     <None Include="DataSetModulo.xss">
       <DependentUpon>DataSetModulo.xsd</DependentUpon>
     </None>
+    <None Include="DataSetMunicipioCombo.xsc">
+      <DependentUpon>DataSetMunicipioCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMunicipioCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMunicipioCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetMunicipioCombo.xss">
+      <DependentUpon>DataSetMunicipioCombo.xsd</DependentUpon>
+    </None>
     <None Include="DataSetOcupacion.xsc">
       <DependentUpon>DataSetOcupacion.xsd</DependentUpon>
     </None>
@@ -842,6 +888,17 @@
     </None>
     <None Include="DataSetSucursalCombo.xss">
       <DependentUpon>DataSetSucursalCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoAsentamientoCombo.xsc">
+      <DependentUpon>DataSetTipoAsentamientoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoAsentamientoCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoAsentamientoCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoAsentamientoCombo.xss">
+      <DependentUpon>DataSetTipoAsentamientoCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetTipoIdentificacion.xsc">
       <DependentUpon>DataSetTipoIdentificacion.xsd</DependentUpon>

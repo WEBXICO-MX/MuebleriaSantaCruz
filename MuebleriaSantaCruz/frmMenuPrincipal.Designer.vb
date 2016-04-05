@@ -33,6 +33,7 @@ Partial Class frmMenuPrincipal
         Me.LineasDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TiposDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClasificacionesDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,7 +66,7 @@ Partial Class frmMenuPrincipal
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsentamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -153,6 +154,12 @@ Partial Class frmMenuPrincipal
         Me.ProductosMenuItem2.Name = "ProductosMenuItem2"
         Me.ProductosMenuItem2.Size = New System.Drawing.Size(255, 70)
         Me.ProductosMenuItem2.Text = "Productos"
+        '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(255, 70)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'ClientesMenuItem
         '
@@ -244,7 +251,7 @@ Partial Class frmMenuPrincipal
         '
         'OtrosMenuItem
         '
-        Me.OtrosMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SucursalesToolStripMenuItem, Me.RutasMenuItem})
+        Me.OtrosMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsentamientosToolStripMenuItem, Me.RutasMenuItem, Me.SucursalesToolStripMenuItem})
         Me.OtrosMenuItem.Name = "OtrosMenuItem"
         Me.OtrosMenuItem.Size = New System.Drawing.Size(200, 70)
         Me.OtrosMenuItem.Text = "Otros"
@@ -254,13 +261,13 @@ Partial Class frmMenuPrincipal
         Me.SucursalesToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456964377_companies
         Me.SucursalesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SucursalesToolStripMenuItem.Name = "SucursalesToolStripMenuItem"
-        Me.SucursalesToolStripMenuItem.Size = New System.Drawing.Size(184, 54)
+        Me.SucursalesToolStripMenuItem.Size = New System.Drawing.Size(203, 54)
         Me.SucursalesToolStripMenuItem.Text = "Sucursales"
         '
         'RutasMenuItem
         '
         Me.RutasMenuItem.Name = "RutasMenuItem"
-        Me.RutasMenuItem.Size = New System.Drawing.Size(184, 54)
+        Me.RutasMenuItem.Size = New System.Drawing.Size(203, 54)
         Me.RutasMenuItem.Text = "Rutas"
         '
         'InventariosToolStripMenuItem
@@ -396,11 +403,11 @@ Partial Class frmMenuPrincipal
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'ProveedoresToolStripMenuItem
+        'AsentamientosToolStripMenuItem
         '
-        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(255, 70)
-        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        Me.AsentamientosToolStripMenuItem.Name = "AsentamientosToolStripMenuItem"
+        Me.AsentamientosToolStripMenuItem.Size = New System.Drawing.Size(203, 54)
+        Me.AsentamientosToolStripMenuItem.Text = "Asentamientos"
         '
         'frmMenuPrincipal
         '
@@ -466,4 +473,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents TiposDeIdentificaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RutasMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AsentamientosToolStripMenuItem As ToolStripMenuItem
 End Class
