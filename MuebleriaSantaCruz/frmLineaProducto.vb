@@ -246,7 +246,7 @@ Public Class frmLineaProducto
     Private Sub frmLineaProducto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetLineaProducto.lineas_productos' Puede moverla o quitarla según sea necesario.
         Me.Lineas_productosTableAdapter.Fill(Me.DataSetLineaProducto.lineas_productos)
-        Me.Top = 85
+        Me.Top = 100
 
     End Sub
 
