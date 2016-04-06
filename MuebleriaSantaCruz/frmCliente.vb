@@ -37,13 +37,13 @@ Public Class frmCliente
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO clientes (id, linea_producto_id, nombre,activo) VALUES (" & txtID.Text & "," & (OcupacionesComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo,estado_civil_id,fecha_registro,fecha_modificacion,activo) VALUES (@id,@nombre,@ap_paterno,@ap_materno,@fecha_nacimiento,@sexo,@estado_civil_id,GETDATE(),NULL,@activo)"
+        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo,estado_civil_id,fecha_registro,fecha_modificacion,activo) VALUES (@id,@nombre,@ap_paterno,@ap_materno,NULL,@sexo,@estado_civil_id,GETDATE(),NULL,@activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
         Orden.Parameters.Add("@ap_paterno", SqlDbType.VarChar).Value = txtApPaterno.Text
         Orden.Parameters.Add("@ap_materno", SqlDbType.VarChar).Value = txtApMaterno.Text
-        Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
+        'Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
         Orden.Parameters.Add("@sexo", SqlDbType.VarChar).Value = If(rbMasculino.Checked, "M", If(rbFemenino.Checked, "F", "X"))
         Orden.Parameters.Add("@estado_civil_id", SqlDbType.Int).Value = Estados_civilesComboBox.SelectedValue
         Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
@@ -106,12 +106,12 @@ Public Class frmCliente
 
         'Crear una consulta
         'Dim Consulta As String = "UPDATE clientes SET linea_producto_id = " & (OcupacionesComboBox.SelectedValue) & ", nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
-        Dim Consulta As String = "UPDATE personas SET nombre = @nombre, ap_paterno = @ap_paterno, ap_materno = @ap_materno, fecha_nacimiento = @fecha_nacimiento, sexo = @sexo, estado_civil_id = @estado_civil_id, fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
+        Dim Consulta As String = "UPDATE personas SET nombre = @nombre, ap_paterno = @ap_paterno, ap_materno = @ap_materno, fecha_nacimiento = NULL, sexo = @sexo, estado_civil_id = @estado_civil_id, fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
         Orden.Parameters.Add("@ap_paterno", SqlDbType.VarChar).Value = txtApPaterno.Text
         Orden.Parameters.Add("@ap_materno", SqlDbType.VarChar).Value = txtApMaterno.Text
-        Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
+        'Orden.Parameters.Add("@fecha_nacimiento", SqlDbType.Date).Value = Format(dtpFechaNacimiento.Value, "dd-MM-yyyy")
         Orden.Parameters.Add("@sexo", SqlDbType.VarChar).Value = If(rbMasculino.Checked, "M", If(rbFemenino.Checked, "F", "X"))
         Orden.Parameters.Add("@estado_civil_id", SqlDbType.Int).Value = Estados_civilesComboBox.SelectedValue
         Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
@@ -175,7 +175,7 @@ Public Class frmCliente
         txtNombre.Clear()
         txtApPaterno.Clear()
         txtApMaterno.Clear()
-        dtpFechaNacimiento.ResetText()
+        'dtpFechaNacimiento.ResetText()
         rbMasculino.Checked = False
         rbFemenino.Checked = False
         txtNumIdentificacion.Clear()
@@ -199,7 +199,7 @@ Public Class frmCliente
         txtNombre.Enabled = nombre_status
         txtApPaterno.Enabled = nombre_status
         txtApMaterno.Enabled = nombre_status
-        dtpFechaNacimiento.Enabled = nombre_status
+        'dtpFechaNacimiento.Enabled = nombre_status
         rbMasculino.Enabled = nombre_status
         rbFemenino.Enabled = nombre_status
         txtNumIdentificacion.Enabled = nombre_status
@@ -214,7 +214,7 @@ Public Class frmCliente
         txtNombre.Text = ClientesDataGridView.Rows(F).Cells(1).Value
         txtApPaterno.Text = ClientesDataGridView.Rows(F).Cells(2).Value
         txtApMaterno.Text = ClientesDataGridView.Rows(F).Cells(3).Value
-        dtpFechaNacimiento.Text = ClientesDataGridView.Rows(F).Cells(4).Value
+        'dtpFechaNacimiento.Text = ClientesDataGridView.Rows(F).Cells(4).Value
         If (ClientesDataGridView.Rows(F).Cells(5).Value = "M") Then
             rbMasculino.Checked = True
             rbFemenino.Checked = False
