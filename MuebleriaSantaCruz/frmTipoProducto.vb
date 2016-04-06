@@ -264,7 +264,7 @@ Public Class frmTipoProducto
         'TODO: esta línea de código carga datos en la tabla 'DataSetTipoProducto.tipos_productos' Puede moverla o quitarla según sea necesario.
         Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProducto.tipos_productos)
 
-        Me.Top = 85
+        Me.Top = 100
 
     End Sub
 End Class

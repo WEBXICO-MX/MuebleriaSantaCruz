@@ -24,6 +24,9 @@ Partial Class frmTipoProducto
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTipoProducto))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -47,15 +50,15 @@ Partial Class frmTipoProducto
         Me.Tipos_productosTableAdapter = New MuebleriaCasaCruz.DataSetTipoProductoTableAdapters.tipos_productosTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetTipoProductoTableAdapters.TableAdapterManager()
         Me.Tipos_productosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Lineas_productosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Lineas_productosTableAdapter = New MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.lineas_productosTableAdapter()
+        Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.linea_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Lineas_productosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Lineas_productosTableAdapter = New MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.lineas_productosTableAdapter()
-        Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Lineas_productosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,51 +277,31 @@ Partial Class frmTipoProducto
         '
         Me.Tipos_productosDataGridView.AllowUserToAddRows = False
         Me.Tipos_productosDataGridView.AllowUserToDeleteRows = False
+        Me.Tipos_productosDataGridView.AllowUserToResizeRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue
+        Me.Tipos_productosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.Tipos_productosDataGridView.AutoGenerateColumns = False
+        Me.Tipos_productosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Tipos_productosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.Tipos_productosDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tipos_productosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.Tipos_productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Tipos_productosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.linea_producto, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
         Me.Tipos_productosDataGridView.DataSource = Me.Tipos_productosBindingSource
         Me.Tipos_productosDataGridView.Location = New System.Drawing.Point(356, 57)
+        Me.Tipos_productosDataGridView.MultiSelect = False
         Me.Tipos_productosDataGridView.Name = "Tipos_productosDataGridView"
         Me.Tipos_productosDataGridView.ReadOnly = True
+        Me.Tipos_productosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Tipos_productosDataGridView.Size = New System.Drawing.Size(487, 260)
         Me.Tipos_productosDataGridView.TabIndex = 38
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'linea_producto
-        '
-        Me.linea_producto.DataPropertyName = "linea_producto"
-        Me.linea_producto.HeaderText = "linea_producto"
-        Me.linea_producto.Name = "linea_producto"
-        Me.linea_producto.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "linea_producto_id"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "linea_producto_id"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "nombre"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "nombre"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewCheckBoxColumn1
-        '
-        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
-        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         '
         'ErrorProvider1
         '
@@ -338,6 +321,48 @@ Partial Class frmTipoProducto
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.UpdateOrder = MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 43
+        '
+        'linea_producto
+        '
+        Me.linea_producto.DataPropertyName = "linea_producto"
+        Me.linea_producto.HeaderText = "Línea de producto"
+        Me.linea_producto.Name = "linea_producto"
+        Me.linea_producto.ReadOnly = True
+        Me.linea_producto.Width = 125
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "linea_producto_id"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "linea_producto_id"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "nombre"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 75
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 49
         '
         'frmTipoProducto
         '
