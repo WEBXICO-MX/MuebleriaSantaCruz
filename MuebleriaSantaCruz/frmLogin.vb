@@ -30,9 +30,10 @@ Public Class frmLogin
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim sql As String = "SELECT * FROM usuarios WHERE activo=1 AND login = '" & txtUsuario.Text & "' AND password = '" & txtContrasena.Text & "'"
-
+        Dim sql As String = "SELECT * FROM usuarios WHERE login = @login AND password = @password AND activo=1"
         cmd = New SqlCommand(sql, objcon.con)
+        cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = txtUsuario.Text
+        cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = txtContrasena.Text
 
         'ExecuteReader hace la consulta y devuelve un SqlDataReader
         lector = cmd.ExecuteReader()
