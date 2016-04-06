@@ -108,6 +108,7 @@ Partial Class frmLogin
         '
         'btnCancelar
         '
+        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456964714_Cancel
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -120,9 +121,11 @@ Partial Class frmLogin
         '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(369, 182)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
