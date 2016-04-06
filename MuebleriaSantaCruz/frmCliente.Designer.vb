@@ -24,6 +24,9 @@ Partial Class frmCliente
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCliente))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -79,6 +82,11 @@ Partial Class frmCliente
         Me.ClientesTableAdapter = New MuebleriaCasaCruz.DataSetClienteTableAdapters.clientesTableAdapter()
         Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetClienteTableAdapters.TableAdapterManager()
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
+        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
+        Me.OcupacionesTableAdapter1 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.ocupacionesTableAdapter()
+        Me.TableAdapterManager4 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -98,11 +106,6 @@ Partial Class frmCliente
         Me.ocupacion_conyuge_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
-        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
-        Me.OcupacionesTableAdapter1 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.ocupacionesTableAdapter()
-        Me.TableAdapterManager4 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.OcupacionesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -623,43 +626,89 @@ Partial Class frmCliente
         '
         Me.ClientesDataGridView.AllowUserToAddRows = False
         Me.ClientesDataGridView.AllowUserToDeleteRows = False
+        Me.ClientesDataGridView.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.ClientesDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.ClientesDataGridView.AutoGenerateColumns = False
+        Me.ClientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.ClientesDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.ClientesDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ClientesDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.nombre, Me.ap_paterno, Me.ap_materno, Me.fecha_nacimiento, Me.sexo, Me.estado_civil, Me.ocupacion, Me.empresa, Me.tipo_identificacion, Me.numero_identificacion, Me.nombre_conyuge, Me.ocupacion_conyuge, Me.estado_civil_id, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.ocupacion_conyuge_id, Me.DataGridViewTextBoxColumn4, Me.DataGridViewCheckBoxColumn1})
         Me.ClientesDataGridView.DataSource = Me.ClientesBindingSource
         Me.ClientesDataGridView.Location = New System.Drawing.Point(417, 59)
+        Me.ClientesDataGridView.MultiSelect = False
         Me.ClientesDataGridView.Name = "ClientesDataGridView"
         Me.ClientesDataGridView.ReadOnly = True
+        Me.ClientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ClientesDataGridView.Size = New System.Drawing.Size(430, 445)
         Me.ClientesDataGridView.TabIndex = 39
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'Estados_civilesTableAdapter
+        '
+        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager3
+        '
+        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager3.Connection = Nothing
+        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'OcupacionesTableAdapter1
+        '
+        Me.OcupacionesTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager4
+        '
+        Me.TableAdapterManager4.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager4.Connection = Nothing
+        Me.TableAdapterManager4.UpdateOrder = MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "persona_id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "persona_id"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 43
         '
         'nombre
         '
         Me.nombre.DataPropertyName = "nombre"
-        Me.nombre.HeaderText = "nombre"
+        Me.nombre.HeaderText = "Nombre"
         Me.nombre.Name = "nombre"
         Me.nombre.ReadOnly = True
+        Me.nombre.Width = 75
         '
         'ap_paterno
         '
         Me.ap_paterno.DataPropertyName = "ap_paterno"
-        Me.ap_paterno.HeaderText = "ap_paterno"
+        Me.ap_paterno.HeaderText = "Apellido paterno"
         Me.ap_paterno.Name = "ap_paterno"
         Me.ap_paterno.ReadOnly = True
+        Me.ap_paterno.Width = 114
         '
         'ap_materno
         '
         Me.ap_materno.DataPropertyName = "ap_materno"
-        Me.ap_materno.HeaderText = "ap_materno"
+        Me.ap_materno.HeaderText = "Apellido materno"
         Me.ap_materno.Name = "ap_materno"
         Me.ap_materno.ReadOnly = True
+        Me.ap_materno.Width = 115
         '
         'fecha_nacimiento
         '
@@ -667,62 +716,71 @@ Partial Class frmCliente
         Me.fecha_nacimiento.HeaderText = "fecha_nacimiento"
         Me.fecha_nacimiento.Name = "fecha_nacimiento"
         Me.fecha_nacimiento.ReadOnly = True
+        Me.fecha_nacimiento.Visible = False
         '
         'sexo
         '
         Me.sexo.DataPropertyName = "sexo"
-        Me.sexo.HeaderText = "sexo"
+        Me.sexo.HeaderText = "Sexo"
         Me.sexo.Name = "sexo"
         Me.sexo.ReadOnly = True
+        Me.sexo.Width = 60
         '
         'estado_civil
         '
         Me.estado_civil.DataPropertyName = "estado_civil"
-        Me.estado_civil.HeaderText = "estado_civil"
+        Me.estado_civil.HeaderText = "Estado civil"
         Me.estado_civil.Name = "estado_civil"
         Me.estado_civil.ReadOnly = True
+        Me.estado_civil.Width = 90
         '
         'ocupacion
         '
         Me.ocupacion.DataPropertyName = "ocupacion"
-        Me.ocupacion.HeaderText = "ocupacion"
+        Me.ocupacion.HeaderText = "Ocupación"
         Me.ocupacion.Name = "ocupacion"
         Me.ocupacion.ReadOnly = True
+        Me.ocupacion.Width = 93
         '
         'empresa
         '
         Me.empresa.DataPropertyName = "empresa"
-        Me.empresa.HeaderText = "empresa"
+        Me.empresa.HeaderText = "Empresa"
         Me.empresa.Name = "empresa"
         Me.empresa.ReadOnly = True
+        Me.empresa.Width = 80
         '
         'tipo_identificacion
         '
         Me.tipo_identificacion.DataPropertyName = "tipo_identificacion"
-        Me.tipo_identificacion.HeaderText = "tipo_identificacion"
+        Me.tipo_identificacion.HeaderText = "Tipo de identificación"
         Me.tipo_identificacion.Name = "tipo_identificacion"
         Me.tipo_identificacion.ReadOnly = True
+        Me.tipo_identificacion.Width = 141
         '
         'numero_identificacion
         '
         Me.numero_identificacion.DataPropertyName = "numero_identificacion"
-        Me.numero_identificacion.HeaderText = "numero_identificacion"
+        Me.numero_identificacion.HeaderText = "Número de identificación"
         Me.numero_identificacion.Name = "numero_identificacion"
         Me.numero_identificacion.ReadOnly = True
+        Me.numero_identificacion.Width = 158
         '
         'nombre_conyuge
         '
         Me.nombre_conyuge.DataPropertyName = "nombre_conyuge"
-        Me.nombre_conyuge.HeaderText = "nombre_conyuge"
+        Me.nombre_conyuge.HeaderText = "Nombre de conyuge"
         Me.nombre_conyuge.Name = "nombre_conyuge"
         Me.nombre_conyuge.ReadOnly = True
+        Me.nombre_conyuge.Width = 132
         '
         'ocupacion_conyuge
         '
         Me.ocupacion_conyuge.DataPropertyName = "ocupacion_conyuge"
-        Me.ocupacion_conyuge.HeaderText = "ocupacion_conyuge"
+        Me.ocupacion_conyuge.HeaderText = "Ocupación del conyuge"
         Me.ocupacion_conyuge.Name = "ocupacion_conyuge"
         Me.ocupacion_conyuge.ReadOnly = True
+        Me.ocupacion_conyuge.Width = 108
         '
         'estado_civil_id
         '
@@ -759,40 +817,18 @@ Partial Class frmCliente
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "fecha_registro"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "fecha_registro"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Fecha de registro"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 120
         '
         'DataGridViewCheckBoxColumn1
         '
         Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'Estados_civilesTableAdapter
-        '
-        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager3
-        '
-        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager3.Connection = Nothing
-        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'OcupacionesTableAdapter1
-        '
-        Me.OcupacionesTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager4
-        '
-        Me.TableAdapterManager4.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager4.Connection = Nothing
-        Me.TableAdapterManager4.UpdateOrder = MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.DataGridViewCheckBoxColumn1.Width = 49
         '
         'frmCliente
         '
@@ -887,23 +923,23 @@ Partial Class frmCliente
     Friend WithEvents OcupacionesTableAdapter1 As DataSetOcupacionCombo2TableAdapters.ocupacionesTableAdapter
     Friend WithEvents TableAdapterManager4 As DataSetOcupacionCombo2TableAdapters.TableAdapterManager
     Friend WithEvents OcupacionesComboBox2 As ComboBox
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents ap_paterno As DataGridViewTextBoxColumn
-    Friend WithEvents ap_materno As DataGridViewTextBoxColumn
-    Friend WithEvents fecha_nacimiento As DataGridViewTextBoxColumn
-    Friend WithEvents sexo As DataGridViewTextBoxColumn
-    Friend WithEvents estado_civil As DataGridViewTextBoxColumn
-    Friend WithEvents ocupacion As DataGridViewTextBoxColumn
-    Friend WithEvents empresa As DataGridViewTextBoxColumn
-    Friend WithEvents tipo_identificacion As DataGridViewTextBoxColumn
-    Friend WithEvents numero_identificacion As DataGridViewTextBoxColumn
-    Friend WithEvents nombre_conyuge As DataGridViewTextBoxColumn
-    Friend WithEvents ocupacion_conyuge As DataGridViewTextBoxColumn
-    Friend WithEvents estado_civil_id As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents ocupacion_conyuge_id As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ap_paterno As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ap_materno As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fecha_nacimiento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents sexo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents estado_civil As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ocupacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents empresa As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tipo_identificacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents numero_identificacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nombre_conyuge As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ocupacion_conyuge As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents estado_civil_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ocupacion_conyuge_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
 End Class
