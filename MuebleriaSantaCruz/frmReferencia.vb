@@ -97,10 +97,7 @@ Public Class frmReferencia
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "UPDATE referencias SET persona_id = @persona_id, nombre_completo = @nombre_completo,asentamiento_id = @asentamiento_id,
-        calle = @calle, numero_interior = @numero_interior, numero_exterior = @numero_exterior, telefono = @telefono, 
-        anios_conocerlo = @anios_conocerlo,parentesco = @parentesco,fecha_modificacion = GETDATE(), activo = @activo 
-        WHERE id = @id "
+        Dim Consulta As String = "UPDATE referencias SET persona_id = @persona_id, nombre_completo = @nombre_completo,asentamiento_id = @asentamiento_id, calle = @calle, numero_interior = @numero_interior, numero_exterior = @numero_exterior, telefono = @telefono, anios_conocerlo = @anios_conocerlo,parentesco = @parentesco,fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id "
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = persona_id
         Orden.Parameters.Add("@nombre_completo", SqlDbType.VarChar).Value = txtNombreCompleto.Text
