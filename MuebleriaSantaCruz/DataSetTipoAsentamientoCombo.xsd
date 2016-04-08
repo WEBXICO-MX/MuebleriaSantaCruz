@@ -12,7 +12,9 @@
               <DbSource ConnectionRef="MuebleriaCASACRUZConnectionString (MySettings)" DbObjectName="MuebleriaCASACRUZ.dbo.tipos_asentamientos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id, nombre, activo FROM dbo.tipos_asentamientos</CommandText>
+                    <CommandText>SELECT        id, nombre, activo
+FROM            tipos_asentamientos
+ORDER BY nombre</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -33,7 +35,7 @@
   <xs:element name="DataSetTipoAsentamientoCombo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetTipoAsentamientoCombo" msprop:Generator_UserDSName="DataSetTipoAsentamientoCombo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tipos_asentamientos" msprop:Generator_TableClassName="tipos_asentamientosDataTable" msprop:Generator_TableVarName="tabletipos_asentamientos" msprop:Generator_RowChangedName="tipos_asentamientosRowChanged" msprop:Generator_TablePropName="tipos_asentamientos" msprop:Generator_RowDeletingName="tipos_asentamientosRowDeleting" msprop:Generator_RowChangingName="tipos_asentamientosRowChanging" msprop:Generator_RowEvHandlerName="tipos_asentamientosRowChangeEventHandler" msprop:Generator_RowDeletedName="tipos_asentamientosRowDeleted" msprop:Generator_RowClassName="tipos_asentamientosRow" msprop:Generator_UserTableName="tipos_asentamientos" msprop:Generator_RowEvArgName="tipos_asentamientosRowChangeEvent">
+        <xs:element name="tipos_asentamientos" msprop:Generator_TableClassName="tipos_asentamientosDataTable" msprop:Generator_TableVarName="tabletipos_asentamientos" msprop:Generator_TablePropName="tipos_asentamientos" msprop:Generator_RowDeletingName="tipos_asentamientosRowDeleting" msprop:Generator_RowChangingName="tipos_asentamientosRowChanging" msprop:Generator_RowEvHandlerName="tipos_asentamientosRowChangeEventHandler" msprop:Generator_RowDeletedName="tipos_asentamientosRowDeleted" msprop:Generator_UserTableName="tipos_asentamientos" msprop:Generator_RowChangedName="tipos_asentamientosRowChanged" msprop:Generator_RowEvArgName="tipos_asentamientosRowChangeEvent" msprop:Generator_RowClassName="tipos_asentamientosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
