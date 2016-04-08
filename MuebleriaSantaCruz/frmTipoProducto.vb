@@ -266,5 +266,6 @@ Public Class frmTipoProducto
 
         Me.Top = 100
 
+
     End Sub
 End Class
