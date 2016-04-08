@@ -3,6 +3,7 @@ Public Class frmAsentamiento
     Private objcon As New Conexion
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
+    Public externa As Boolean = False
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -50,8 +51,9 @@ Public Class frmAsentamiento
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
-            Lector = Orden.ExecuteReader()
-            Lector.Read()
+            If (Orden.ExecuteNonQuery() <> 0 And externa) Then
+                frmDomicilio.AsentamientosTableAdapter.Fill(frmDomicilio.DataSetAsentamientoCombo.asentamientos)
+            End If
 
             Me.AsentamientosTableAdapter.Fill(Me.DataSetAsentamiento.asentamientos)
 
@@ -102,8 +104,9 @@ Public Class frmAsentamiento
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
-            Lector = Orden.ExecuteReader()
-            Lector.Read()
+            If (Orden.ExecuteNonQuery() <> 0 And externa) Then
+                frmDomicilio.AsentamientosTableAdapter.Fill(frmDomicilio.DataSetAsentamientoCombo.asentamientos)
+            End If
 
             Me.AsentamientosTableAdapter.Fill(Me.DataSetAsentamiento.asentamientos)
 

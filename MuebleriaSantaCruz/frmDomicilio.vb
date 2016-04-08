@@ -59,7 +59,7 @@ Public Class frmDomicilio
 
             Me.DomiciliosTableAdapter.FillByPersonaId(Me.DataSetDomicilio.domicilios, persona_id)
 
-            EstadoBotones(True, False, False, False, True)
+            EstadoBotones(True, False, False, False, True, False)
             EstadoCajasdeTexto(False)
 
             For Fila = 0 To DomiciliosDataGridView.Rows.Count - 1
@@ -113,7 +113,7 @@ Public Class frmDomicilio
 
             Me.DomiciliosTableAdapter.FillByPersonaId(Me.DataSetDomicilio.domicilios, persona_id)
 
-            EstadoBotones(True, False, False, False, True)
+            EstadoBotones(True, False, False, False, True, False)
             EstadoCajasdeTexto(False)
 
             'Llamar siempre a Close una vez finalizada la lectura
@@ -156,12 +156,13 @@ Public Class frmDomicilio
         cbxActivo.Checked = True
     End Sub
 
-    Private Sub EstadoBotones(ByVal nuevo As Boolean, ByVal guardar As Boolean, ByVal deshacer As Boolean, ByVal editar As Boolean, ByVal buscar As Boolean)
+    Private Sub EstadoBotones(ByVal nuevo As Boolean, ByVal guardar As Boolean, ByVal deshacer As Boolean, ByVal editar As Boolean, ByVal buscar As Boolean, ByVal ocupacion As Boolean)
         btnuevo.Enabled = nuevo
         btguardar.Enabled = guardar
         btdeshacer.Enabled = deshacer
         bteditar.Enabled = editar
         btbuscar.Enabled = buscar
+        btAsentamiento.Enabled = ocupacion
     End Sub
 
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
@@ -195,7 +196,7 @@ Public Class frmDomicilio
         If (DomiciliosDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
-                EstadoBotones(True, False, True, True, True)
+                EstadoBotones(True, False, True, True, True, True)
             End If
         End If
     End Sub
@@ -204,7 +205,7 @@ Public Class frmDomicilio
         If (DomiciliosDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
-                EstadoBotones(True, False, True, True, True)
+                EstadoBotones(True, False, True, True, True, True)
             End If
         End If
     End Sub
@@ -212,7 +213,7 @@ Public Class frmDomicilio
     Private Sub btnuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnuevo.Click
         lbtipoestado.Visible = True
         lbtipoestado.Text = "Nuevo"
-        EstadoBotones(False, True, True, False, False)
+        EstadoBotones(False, True, True, False, False, True)
         LimpiarCajasdeTexto()
         EstadoCajasdeTexto(True)
         DomiciliosDataGridView.Enabled = False
@@ -261,7 +262,7 @@ Public Class frmDomicilio
 
         LimpiarCajasdeTexto()
         EstadoCajasdeTexto(False)
-        EstadoBotones(True, False, False, False, True)
+        EstadoBotones(True, False, False, False, True, False)
         DomiciliosDataGridView.Enabled = True
         DesactivarErroresCajasdeTexto()
     End Sub
@@ -276,7 +277,7 @@ Public Class frmDomicilio
             PegarDatosTabla_CajasdeTexto(F)
             EstadoCajasdeTexto(True)
             txtCalle.Focus()
-            EstadoBotones(False, True, True, False, False)
+            EstadoBotones(False, True, True, False, False, False)
             DomiciliosDataGridView.Enabled = False
         Else
             MessageBox.Show("Seleccione un domicilio para editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -301,9 +302,9 @@ Public Class frmDomicilio
 
         'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
         If (DomiciliosBindingSource.Count = 0) Then
-            EstadoBotones(True, False, False, False, False)
+            EstadoBotones(True, False, False, False, False, False)
         Else
-            EstadoBotones(True, False, False, False, True)
+            EstadoBotones(True, False, False, False, True, False)
         End If
 
         DomiciliosDataGridView.ClearSelection()
@@ -332,4 +333,8 @@ Public Class frmDomicilio
         txtNombreCompleto.Text = nombre_completo
     End Sub
 
+    Private Sub btAsentamiento_Click(sender As Object, e As EventArgs) Handles btAsentamiento.Click
+        frmAsentamiento.externa = True
+        frmAsentamiento.Show()
+    End Sub
 End Class

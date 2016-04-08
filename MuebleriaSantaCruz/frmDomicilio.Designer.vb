@@ -84,6 +84,7 @@ Partial Class frmDomicilio
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btAsentamiento = New System.Windows.Forms.ToolStripButton()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tipos_viviendasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,7 +100,7 @@ Partial Class frmDomicilio
         'BarraHerramientas
         '
         Me.BarraHerramientas.BackColor = System.Drawing.SystemColors.Control
-        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btbuscar})
+        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btbuscar, Me.btAsentamiento})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
         Me.BarraHerramientas.Size = New System.Drawing.Size(840, 38)
@@ -618,6 +619,15 @@ Partial Class frmDomicilio
         Me.id.HeaderText = "id"
         Me.id.Name = "id"
         '
+        'btAsentamiento
+        '
+        Me.btAsentamiento.Enabled = False
+        Me.btAsentamiento.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAsentamiento.Name = "btAsentamiento"
+        Me.btAsentamiento.Size = New System.Drawing.Size(85, 35)
+        Me.btAsentamiento.Text = "&Asentamiento"
+        Me.btAsentamiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmDomicilio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -707,4 +717,5 @@ Partial Class frmDomicilio
     Friend WithEvents FecharegistroDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechamodificacionDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ActivoDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents btAsentamiento As System.Windows.Forms.ToolStripButton
 End Class
