@@ -47,8 +47,9 @@ Partial Class frmMenuPrincipal
         Me.ClasificacionesDeContratoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConceptosDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OtrosMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SucursalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsentamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RutasMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SucursalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasDeAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,10 +66,9 @@ Partial Class frmMenuPrincipal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.AsentamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.logo = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -97,7 +97,7 @@ Partial Class frmMenuPrincipal
         Me.UsuariosToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources.user_group_icon
         Me.UsuariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(200, 70)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(187, 70)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'GruposDeSeguridadToolStripMenuItem
@@ -130,7 +130,7 @@ Partial Class frmMenuPrincipal
         Me.ProductosMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456962719_office_13
         Me.ProductosMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ProductosMenuItem.Name = "ProductosMenuItem"
-        Me.ProductosMenuItem.Size = New System.Drawing.Size(200, 70)
+        Me.ProductosMenuItem.Size = New System.Drawing.Size(187, 70)
         Me.ProductosMenuItem.Text = "Productos"
         '
         'LineasDeProductosToolStripMenuItem
@@ -165,7 +165,7 @@ Partial Class frmMenuPrincipal
         '
         Me.ClientesMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClasificacionesDeClientesToolStripMenuItem, Me.ClientesMenuItem2, Me.OcupacionesToolStripMenuItem, Me.TiposDeMedioDeComunicaciónToolStripMenuItem, Me.TiposDeIdentificaciónToolStripMenuItem})
         Me.ClientesMenuItem.Name = "ClientesMenuItem"
-        Me.ClientesMenuItem.Size = New System.Drawing.Size(200, 70)
+        Me.ClientesMenuItem.Size = New System.Drawing.Size(187, 70)
         Me.ClientesMenuItem.Text = "Clientes"
         '
         'ClasificacionesDeClientesToolStripMenuItem
@@ -208,7 +208,7 @@ Partial Class frmMenuPrincipal
         '
         Me.PersonalMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PuestoToolStripMenuItem, Me.PersonalMenuItem2})
         Me.PersonalMenuItem.Name = "PersonalMenuItem"
-        Me.PersonalMenuItem.Size = New System.Drawing.Size(200, 70)
+        Me.PersonalMenuItem.Size = New System.Drawing.Size(187, 70)
         Me.PersonalMenuItem.Text = "Personal"
         '
         'PuestoToolStripMenuItem
@@ -230,7 +230,7 @@ Partial Class frmMenuPrincipal
         Me.VentasMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClasificacionesDeContratoToolStripMenuItem, Me.ConceptosDePagoToolStripMenuItem})
         Me.VentasMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VentasMenuItem.Name = "VentasMenuItem"
-        Me.VentasMenuItem.Size = New System.Drawing.Size(200, 70)
+        Me.VentasMenuItem.Size = New System.Drawing.Size(187, 70)
         Me.VentasMenuItem.Text = "Ventas"
         '
         'ClasificacionesDeContratoToolStripMenuItem
@@ -253,8 +253,20 @@ Partial Class frmMenuPrincipal
         '
         Me.OtrosMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsentamientosToolStripMenuItem, Me.RutasMenuItem, Me.SucursalesToolStripMenuItem})
         Me.OtrosMenuItem.Name = "OtrosMenuItem"
-        Me.OtrosMenuItem.Size = New System.Drawing.Size(200, 70)
+        Me.OtrosMenuItem.Size = New System.Drawing.Size(187, 70)
         Me.OtrosMenuItem.Text = "Otros"
+        '
+        'AsentamientosToolStripMenuItem
+        '
+        Me.AsentamientosToolStripMenuItem.Name = "AsentamientosToolStripMenuItem"
+        Me.AsentamientosToolStripMenuItem.Size = New System.Drawing.Size(203, 54)
+        Me.AsentamientosToolStripMenuItem.Text = "Asentamientos"
+        '
+        'RutasMenuItem
+        '
+        Me.RutasMenuItem.Name = "RutasMenuItem"
+        Me.RutasMenuItem.Size = New System.Drawing.Size(203, 54)
+        Me.RutasMenuItem.Text = "Rutas"
         '
         'SucursalesToolStripMenuItem
         '
@@ -263,12 +275,6 @@ Partial Class frmMenuPrincipal
         Me.SucursalesToolStripMenuItem.Name = "SucursalesToolStripMenuItem"
         Me.SucursalesToolStripMenuItem.Size = New System.Drawing.Size(203, 54)
         Me.SucursalesToolStripMenuItem.Text = "Sucursales"
-        '
-        'RutasMenuItem
-        '
-        Me.RutasMenuItem.Name = "RutasMenuItem"
-        Me.RutasMenuItem.Size = New System.Drawing.Size(203, 54)
-        Me.RutasMenuItem.Text = "Rutas"
         '
         'InventariosToolStripMenuItem
         '
@@ -393,21 +399,15 @@ Partial Class frmMenuPrincipal
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
-        'PictureBox1
+        'logo
         '
-        Me.PictureBox1.Image = Global.MuebleriaCasaCruz.My.Resources.Resources.logo1
-        Me.PictureBox1.Location = New System.Drawing.Point(344, 279)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(520, 290)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'AsentamientosToolStripMenuItem
-        '
-        Me.AsentamientosToolStripMenuItem.Name = "AsentamientosToolStripMenuItem"
-        Me.AsentamientosToolStripMenuItem.Size = New System.Drawing.Size(203, 54)
-        Me.AsentamientosToolStripMenuItem.Text = "Asentamientos"
+        Me.logo.Image = Global.MuebleriaCasaCruz.My.Resources.Resources.logo1
+        Me.logo.Location = New System.Drawing.Point(415, 279)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(520, 290)
+        Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.logo.TabIndex = 1
+        Me.logo.TabStop = False
         '
         'frmMenuPrincipal
         '
@@ -415,7 +415,7 @@ Partial Class frmMenuPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1350, 730)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.logo)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -425,7 +425,7 @@ Partial Class frmMenuPrincipal
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -449,7 +449,7 @@ Partial Class frmMenuPrincipal
     Friend WithEvents CambiosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DevolucionesDeProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents logo As System.Windows.Forms.PictureBox
     Friend WithEvents ProductosMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LineasDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TiposDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
