@@ -4,6 +4,7 @@ Public Class frmOcupacion
     Private objcon As New Conexion
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
+    Public externa As Boolean = False
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -39,14 +40,20 @@ Public Class frmOcupacion
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "INSERT INTO Ocupaciones (id, nombre,activo) VALUES (" & txtID.Text & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
+        'Dim Consulta As String = "INSERT INTO Ocupaciones (id, nombre,activo) VALUES (" & txtID.Text & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
+        Dim Consulta As String = "INSERT INTO Ocupaciones (id, nombre,activo) VALUES (@id, @nombre,@activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
-
+        Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
+        Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
+        Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
-            Lector = Orden.ExecuteReader()
-            Lector.Read()
+
+            If (Orden.ExecuteNonQuery() <> 0 And externa) Then
+                frmCliente.OcupacionesTableAdapter1.Fill(frmCliente.DataSetOcupacionCombo2.ocupaciones)
+                frmCliente.OcupacionesTableAdapter.Fill(frmCliente.DataSetOcupacionCombo.ocupaciones)
+            End If
 
             Me.OcupacionesTableAdapter.Fill(Me.DataSetOcupacion.ocupaciones)
 
@@ -86,14 +93,19 @@ Public Class frmOcupacion
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "UPDATE Ocupaciones SET nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
+        'Dim Consulta As String = "UPDATE Ocupaciones SET nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
+        Dim Consulta As String = "UPDATE Ocupaciones SET nombre = @nombre, activo = @activo WHERE id = @id"
         Orden = New SqlCommand(Consulta, objcon.con)
-
+        Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
+        Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
+        Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
-            Lector = Orden.ExecuteReader()
-            Lector.Read()
+            If (Orden.ExecuteNonQuery() <> 0 And externa) Then
+                frmCliente.OcupacionesTableAdapter1.Fill(frmCliente.DataSetOcupacionCombo2.ocupaciones)
+                frmCliente.OcupacionesTableAdapter.Fill(frmCliente.DataSetOcupacionCombo.ocupaciones)
+            End If
 
             Me.OcupacionesTableAdapter.Fill(Me.DataSetOcupacion.ocupaciones)
 

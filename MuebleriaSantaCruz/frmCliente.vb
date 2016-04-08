@@ -69,7 +69,7 @@ Public Class frmCliente
 
             Me.ClientesTableAdapter.Fill(Me.DataSetCliente.clientes)
 
-            EstadoBotones(True, False, False, False, True)
+            EstadoBotones(True, False, False, False, True, False)
             EstadoCajasdeTexto(False)
 
             For Fila = 0 To ClientesDataGridView.Rows.Count - 1
@@ -138,7 +138,7 @@ Public Class frmCliente
 
             Me.ClientesTableAdapter.Fill(Me.DataSetCliente.clientes)
 
-            EstadoBotones(True, False, False, False, True)
+            EstadoBotones(True, False, False, False, True, False)
             EstadoCajasdeTexto(False)
 
             'Llamar siempre a Close una vez finalizada la lectura
@@ -184,12 +184,13 @@ Public Class frmCliente
         cbxActivo.Checked = True
     End Sub
 
-    Private Sub EstadoBotones(ByVal nuevo As Boolean, ByVal guardar As Boolean, ByVal deshacer As Boolean, ByVal editar As Boolean, ByVal buscar As Boolean)
+    Private Sub EstadoBotones(ByVal nuevo As Boolean, ByVal guardar As Boolean, ByVal deshacer As Boolean, ByVal editar As Boolean, ByVal buscar As Boolean, ByVal ocupacion As Boolean)
         btnuevo.Enabled = nuevo
         btguardar.Enabled = guardar
         btdeshacer.Enabled = deshacer
         bteditar.Enabled = editar
         btbuscar.Enabled = buscar
+        btOcupacion.Enabled = ocupacion
     End Sub
 
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
@@ -240,7 +241,7 @@ Public Class frmCliente
         If (ClientesDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
-                EstadoBotones(True, False, True, True, True)
+                EstadoBotones(True, False, True, True, True, True)
             End If
         End If
     End Sub
@@ -249,7 +250,7 @@ Public Class frmCliente
         If (ClientesDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
-                EstadoBotones(True, False, True, True, True)
+                EstadoBotones(True, False, True, True, True, True)
             End If
         End If
     End Sub
@@ -257,7 +258,7 @@ Public Class frmCliente
     Private Sub btnuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnuevo.Click
         lbtipoestado.Visible = True
         lbtipoestado.Text = "Nuevo"
-        EstadoBotones(False, True, True, False, False)
+        EstadoBotones(False, True, True, False, False, True)
         LimpiarCajasdeTexto()
         EstadoCajasdeTexto(True)
         ClientesDataGridView.Enabled = False
@@ -306,7 +307,7 @@ Public Class frmCliente
 
         LimpiarCajasdeTexto()
         EstadoCajasdeTexto(False)
-        EstadoBotones(True, False, False, False, True)
+        EstadoBotones(True, False, False, False, True, False)
         ClientesDataGridView.Enabled = True
         DesactivarErroresCajasdeTexto()
     End Sub
@@ -321,7 +322,7 @@ Public Class frmCliente
             PegarDatosTabla_CajasdeTexto(F)
             EstadoCajasdeTexto(True)
             txtNombre.Focus()
-            EstadoBotones(False, True, True, False, False)
+            EstadoBotones(False, True, True, False, False, False)
             ClientesDataGridView.Enabled = False
         Else
             MessageBox.Show("Seleccione un cliente para editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -383,9 +384,9 @@ Public Class frmCliente
 
         'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
         If (ClientesBindingSource.Count = 0) Then
-            EstadoBotones(True, False, False, False, False)
+            EstadoBotones(True, False, False, False, False, False)
         Else
-            EstadoBotones(True, False, False, False, True)
+            EstadoBotones(True, False, False, False, True, False)
         End If
 
         ClientesDataGridView.ClearSelection()
@@ -442,4 +443,8 @@ Public Class frmCliente
         End If
     End Sub
 
+    Private Sub btOcupacion_Click(sender As Object, e As EventArgs) Handles btOcupacion.Click
+        frmOcupacion.externa = True
+        frmOcupacion.Show()
+    End Sub
 End Class

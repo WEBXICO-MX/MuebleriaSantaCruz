@@ -82,11 +82,6 @@ Partial Class frmCliente
         Me.ClientesTableAdapter = New MuebleriaCasaCruz.DataSetClienteTableAdapters.clientesTableAdapter()
         Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetClienteTableAdapters.TableAdapterManager()
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
-        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
-        Me.OcupacionesTableAdapter1 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.ocupacionesTableAdapter()
-        Me.TableAdapterManager4 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -106,6 +101,12 @@ Partial Class frmCliente
         Me.ocupacion_conyuge_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
+        Me.TableAdapterManager3 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
+        Me.OcupacionesTableAdapter1 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.ocupacionesTableAdapter()
+        Me.TableAdapterManager4 = New MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager()
+        Me.btOcupacion = New System.Windows.Forms.ToolStripButton()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.OcupacionesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,7 +126,7 @@ Partial Class frmCliente
         'BarraHerramientas
         '
         Me.BarraHerramientas.BackColor = System.Drawing.SystemColors.Control
-        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btbuscar})
+        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btbuscar, Me.btOcupacion})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
         Me.BarraHerramientas.Size = New System.Drawing.Size(859, 38)
@@ -652,30 +653,6 @@ Partial Class frmCliente
         Me.ClientesDataGridView.Size = New System.Drawing.Size(430, 445)
         Me.ClientesDataGridView.TabIndex = 39
         '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'Estados_civilesTableAdapter
-        '
-        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager3
-        '
-        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager3.Connection = Nothing
-        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'OcupacionesTableAdapter1
-        '
-        Me.OcupacionesTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager4
-        '
-        Me.TableAdapterManager4.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager4.Connection = Nothing
-        Me.TableAdapterManager4.UpdateOrder = MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "persona_id"
@@ -830,6 +807,39 @@ Partial Class frmCliente
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         Me.DataGridViewCheckBoxColumn1.Width = 49
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'Estados_civilesTableAdapter
+        '
+        Me.Estados_civilesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager3
+        '
+        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager3.Connection = Nothing
+        Me.TableAdapterManager3.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'OcupacionesTableAdapter1
+        '
+        Me.OcupacionesTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager4
+        '
+        Me.TableAdapterManager4.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager4.Connection = Nothing
+        Me.TableAdapterManager4.UpdateOrder = MuebleriaCasaCruz.DataSetOcupacionCombo2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'btOcupacion
+        '
+        Me.btOcupacion.Enabled = False
+        Me.btOcupacion.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btOcupacion.Name = "btOcupacion"
+        Me.btOcupacion.Size = New System.Drawing.Size(69, 35)
+        Me.btOcupacion.Text = "&Ocupación"
+        Me.btOcupacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -942,4 +952,5 @@ Partial Class frmCliente
     Friend WithEvents ocupacion_conyuge_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents btOcupacion As System.Windows.Forms.ToolStripButton
 End Class
