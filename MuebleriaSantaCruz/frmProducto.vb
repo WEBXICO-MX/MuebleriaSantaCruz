@@ -99,7 +99,7 @@ Public Class frmProducto
 
         'Crear una consulta
         'Dim Consulta As String = "UPDATE productos SET tipo_producto_id = " & (Tipos_productosComboBox.SelectedValue) & ", nombre = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & " WHERE id = " & txtID.Text
-        Dim Consulta As String = "UPDATE productos SET tipo_producto_id = @tipo_producto_id, nombre = @nombre, descripcion = @descripcion, precio_costo = @precio_costo, @precio_contado = precio_contado, precio_credito = @precio_credito, precio_enganche = @precio_enganche, precio_pago_semanal = @precio_pago_semanal, stock_minimo = @stock_minimo, stock_maximo = @stock_maximo,fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
+        Dim Consulta As String = "UPDATE productos SET tipo_producto_id = @tipo_producto_id, nombre = @nombre, descripcion = @descripcion, precio_costo = @precio_costo, precio_contado = @precio_contado, precio_credito = @precio_credito, precio_enganche = @precio_enganche, precio_pago_semanal = @precio_pago_semanal, stock_minimo = @stock_minimo, stock_maximo = @stock_maximo,fecha_modificacion = GETDATE(), activo = @activo WHERE id = @id"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@tipo_producto_id", SqlDbType.Int).Value = Tipos_productosComboBox.SelectedValue
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
@@ -194,19 +194,52 @@ Public Class frmProducto
         txtID.Text = productosDataGridView.Rows(F).Cells(0).Value
         Tipos_productosComboBox.SelectedValue = ProductosDataGridView.Rows(F).Cells(11).Value
         txtNombre.Text = ProductosDataGridView.Rows(F).Cells(1).Value
-        txtDescripcion.Text = ProductosDataGridView.Rows(F).Cells(2).Value
-        txtCosto.Text = ProductosDataGridView.Rows(F).Cells(4).Value
-        txtContado.Text = ProductosDataGridView.Rows(F).Cells(5).Value
-        txtCredito.Text = ProductosDataGridView.Rows(F).Cells(6).Value
-        txtEnganche.Text = ProductosDataGridView.Rows(F).Cells(7).Value
-        txtPagoSemanal.Text = ProductosDataGridView.Rows(F).Cells(8).Value
-        txtStockMinimo.Text = ProductosDataGridView.Rows(F).Cells(9).Value
-        txtStockMaximo.Text = ProductosDataGridView.Rows(F).Cells(10).Value
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(2).Value)) Then
+            txtDescripcion.Text = ""
+        Else
+            txtDescripcion.Text = ProductosDataGridView.Rows(F).Cells(2).Value
+        End If
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(4).Value)) Then
+            txtCosto.Text = ""
+        Else
+            txtCosto.Text = ProductosDataGridView.Rows(F).Cells(4).Value
+        End If
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(5).Value)) Then
+            txtContado.Text = ""
+        Else
+            txtContado.Text = ProductosDataGridView.Rows(F).Cells(5).Value
+        End If
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(6).Value)) Then
+            txtCredito.Text = ""
+        Else
+            txtCredito.Text = ProductosDataGridView.Rows(F).Cells(6).Value
+        End If
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(7).Value)) Then
+            txtEnganche.Text = ""
+        Else
+            txtEnganche.Text = ProductosDataGridView.Rows(F).Cells(7).Value
+        End If
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(8).Value)) Then
+            txtPagoSemanal.Text = ""
+        Else
+            txtPagoSemanal.Text = ProductosDataGridView.Rows(F).Cells(8).Value
+        End If
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(9).Value)) Then
+            txtStockMinimo.Text = ""
+        Else
+            txtStockMinimo.Text = ProductosDataGridView.Rows(F).Cells(9).Value
+        End If
+        If (IsDBNull(ProductosDataGridView.Rows(F).Cells(10).Value)) Then
+            txtStockMaximo.Text = ""
+        Else
+            txtStockMaximo.Text = ProductosDataGridView.Rows(F).Cells(10).Value
+        End If
         cbxActivo.Checked = ProductosDataGridView.Rows(F).Cells(12).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
         ErrorProvider1.SetError(txtNombre, Nothing)
+
     End Sub
 
     Private Sub productosDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles productosDataGridView.CellClick
