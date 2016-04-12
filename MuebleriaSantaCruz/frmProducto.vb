@@ -239,7 +239,7 @@ Public Class frmProducto
 
     Private Sub DesactivarErroresCajasdeTexto()
         ErrorProvider1.SetError(txtNombre, Nothing)
-
+        ErrorProvider1.SetError(txtDescripcion, Nothing)
     End Sub
 
     Private Sub productosDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles productosDataGridView.CellClick
