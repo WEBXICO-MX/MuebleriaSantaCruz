@@ -24,16 +24,16 @@ Partial Class frmProducto
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProducto))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle81 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle82 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle83 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle84 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle85 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle86 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle87 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle88 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle89 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle90 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -59,6 +59,19 @@ Partial Class frmProducto
         Me.ProductosTableAdapter = New MuebleriaCasaCruz.DataSetProductoTableAdapters.productosTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProductoTableAdapters.TableAdapterManager()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_contado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_enganche = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_pago_semanal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock_minimo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock_maximo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Tipos_productosTableAdapter = New MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.tipos_productosTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetTipoProductoComboTableAdapters.TableAdapterManager()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
@@ -78,19 +91,6 @@ Partial Class frmProducto
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtStockMaximo = New System.Windows.Forms.TextBox()
         Me.txtStockMinimo = New System.Windows.Forms.TextBox()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipo_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_contado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_enganche = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_pago_semanal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stock_minimo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stock_maximo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tipos_productosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -276,7 +276,7 @@ Partial Class frmProducto
         Me.txtDescripcion.MaxLength = 100
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(369, 90)
+        Me.txtDescripcion.Size = New System.Drawing.Size(496, 90)
         Me.txtDescripcion.TabIndex = 4
         '
         'txtNombre
@@ -334,20 +334,20 @@ Partial Class frmProducto
         Me.ProductosDataGridView.AllowUserToAddRows = False
         Me.ProductosDataGridView.AllowUserToDeleteRows = False
         Me.ProductosDataGridView.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
-        Me.ProductosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle81.BackColor = System.Drawing.Color.AliceBlue
+        Me.ProductosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle81
         Me.ProductosDataGridView.AutoGenerateColumns = False
         Me.ProductosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.ProductosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.ProductosDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle82.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle82.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle82.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle82.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle82
         Me.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProductosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.descripcion, Me.tipo_producto, Me.precio_costo, Me.precio_contado, Me.precio_credito, Me.precio_enganche, Me.precio_pago_semanal, Me.stock_minimo, Me.stock_maximo, Me.DataGridViewTextBoxColumn2, Me.DataGridViewCheckBoxColumn1})
         Me.ProductosDataGridView.DataSource = Me.ProductosBindingSource
@@ -358,6 +358,133 @@ Partial Class frmProducto
         Me.ProductosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ProductosDataGridView.Size = New System.Drawing.Size(450, 478)
         Me.ProductosDataGridView.TabIndex = 39
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
+        DataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle83
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 43
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "nombre"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 75
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        Me.descripcion.Width = 99
+        '
+        'tipo_producto
+        '
+        Me.tipo_producto.DataPropertyName = "tipo_producto"
+        Me.tipo_producto.HeaderText = "Tipo producto"
+        Me.tipo_producto.Name = "tipo_producto"
+        Me.tipo_producto.ReadOnly = True
+        Me.tipo_producto.Width = 102
+        '
+        'precio_costo
+        '
+        Me.precio_costo.DataPropertyName = "precio_costo"
+        DataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle84.Format = "C2"
+        DataGridViewCellStyle84.NullValue = Nothing
+        Me.precio_costo.DefaultCellStyle = DataGridViewCellStyle84
+        Me.precio_costo.HeaderText = "Costo"
+        Me.precio_costo.Name = "precio_costo"
+        Me.precio_costo.ReadOnly = True
+        Me.precio_costo.Width = 64
+        '
+        'precio_contado
+        '
+        Me.precio_contado.DataPropertyName = "precio_contado"
+        DataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle85.Format = "C2"
+        Me.precio_contado.DefaultCellStyle = DataGridViewCellStyle85
+        Me.precio_contado.HeaderText = "Contado"
+        Me.precio_contado.Name = "precio_contado"
+        Me.precio_contado.ReadOnly = True
+        Me.precio_contado.Width = 79
+        '
+        'precio_credito
+        '
+        Me.precio_credito.DataPropertyName = "precio_credito"
+        DataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle86.Format = "C2"
+        Me.precio_credito.DefaultCellStyle = DataGridViewCellStyle86
+        Me.precio_credito.HeaderText = "Crédito"
+        Me.precio_credito.Name = "precio_credito"
+        Me.precio_credito.ReadOnly = True
+        Me.precio_credito.Width = 72
+        '
+        'precio_enganche
+        '
+        Me.precio_enganche.DataPropertyName = "precio_enganche"
+        DataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle87.Format = "C2"
+        Me.precio_enganche.DefaultCellStyle = DataGridViewCellStyle87
+        Me.precio_enganche.HeaderText = "Enganche"
+        Me.precio_enganche.Name = "precio_enganche"
+        Me.precio_enganche.ReadOnly = True
+        Me.precio_enganche.Width = 89
+        '
+        'precio_pago_semanal
+        '
+        Me.precio_pago_semanal.DataPropertyName = "precio_pago_semanal"
+        DataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle88.Format = "C2"
+        DataGridViewCellStyle88.NullValue = Nothing
+        Me.precio_pago_semanal.DefaultCellStyle = DataGridViewCellStyle88
+        Me.precio_pago_semanal.HeaderText = "Pago semanal"
+        Me.precio_pago_semanal.Name = "precio_pago_semanal"
+        Me.precio_pago_semanal.ReadOnly = True
+        Me.precio_pago_semanal.Width = 102
+        '
+        'stock_minimo
+        '
+        Me.stock_minimo.DataPropertyName = "stock_minimo"
+        DataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.stock_minimo.DefaultCellStyle = DataGridViewCellStyle89
+        Me.stock_minimo.HeaderText = "Stock mínimo"
+        Me.stock_minimo.Name = "stock_minimo"
+        Me.stock_minimo.ReadOnly = True
+        '
+        'stock_maximo
+        '
+        Me.stock_maximo.DataPropertyName = "stock_maximo"
+        DataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.stock_maximo.DefaultCellStyle = DataGridViewCellStyle90
+        Me.stock_maximo.HeaderText = "Stock máximo"
+        Me.stock_maximo.Name = "stock_maximo"
+        Me.stock_maximo.ReadOnly = True
+        Me.stock_maximo.Width = 101
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "tipo_producto_id"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "tipo_producto_id"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        Me.DataGridViewTextBoxColumn2.Width = 127
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 49
         '
         'Tipos_productosTableAdapter
         '
@@ -394,27 +521,30 @@ Partial Class frmProducto
         '
         'txtPagoSemanal
         '
-        Me.txtPagoSemanal.Location = New System.Drawing.Point(490, 48)
+        Me.txtPagoSemanal.Location = New System.Drawing.Point(502, 48)
         Me.txtPagoSemanal.MaxLength = 10
         Me.txtPagoSemanal.Name = "txtPagoSemanal"
         Me.txtPagoSemanal.Size = New System.Drawing.Size(100, 20)
         Me.txtPagoSemanal.TabIndex = 10
+        Me.txtPagoSemanal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtEnganche
         '
-        Me.txtEnganche.Location = New System.Drawing.Point(372, 48)
+        Me.txtEnganche.Location = New System.Drawing.Point(382, 48)
         Me.txtEnganche.MaxLength = 10
         Me.txtEnganche.Name = "txtEnganche"
         Me.txtEnganche.Size = New System.Drawing.Size(100, 20)
         Me.txtEnganche.TabIndex = 9
+        Me.txtEnganche.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtCredito
         '
-        Me.txtCredito.Location = New System.Drawing.Point(251, 48)
+        Me.txtCredito.Location = New System.Drawing.Point(259, 48)
         Me.txtCredito.MaxLength = 10
         Me.txtCredito.Name = "txtCredito"
         Me.txtCredito.Size = New System.Drawing.Size(100, 20)
         Me.txtCredito.TabIndex = 8
+        Me.txtCredito.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtContado
         '
@@ -423,20 +553,22 @@ Partial Class frmProducto
         Me.txtContado.Name = "txtContado"
         Me.txtContado.Size = New System.Drawing.Size(100, 20)
         Me.txtContado.TabIndex = 7
+        Me.txtContado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtCosto
         '
-        Me.txtCosto.Location = New System.Drawing.Point(26, 48)
+        Me.txtCosto.Location = New System.Drawing.Point(12, 48)
         Me.txtCosto.MaxLength = 10
         Me.txtCosto.Name = "txtCosto"
         Me.txtCosto.Size = New System.Drawing.Size(100, 20)
         Me.txtCosto.TabIndex = 6
+        Me.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(510, 32)
+        Me.Label9.Location = New System.Drawing.Point(514, 32)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(74, 13)
         Me.Label9.TabIndex = 5
@@ -446,7 +578,7 @@ Partial Class frmProducto
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(403, 32)
+        Me.Label8.Location = New System.Drawing.Point(404, 32)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(56, 13)
         Me.Label8.TabIndex = 5
@@ -456,7 +588,7 @@ Partial Class frmProducto
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(276, 32)
+        Me.Label7.Location = New System.Drawing.Point(290, 32)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 5
@@ -476,7 +608,7 @@ Partial Class frmProducto
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(45, 32)
+        Me.Label5.Location = New System.Drawing.Point(40, 32)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(34, 13)
         Me.Label5.TabIndex = 5
@@ -517,11 +649,12 @@ Partial Class frmProducto
         '
         'txtStockMaximo
         '
-        Me.txtStockMaximo.Location = New System.Drawing.Point(397, 34)
+        Me.txtStockMaximo.Location = New System.Drawing.Point(397, 31)
         Me.txtStockMaximo.MaxLength = 5
         Me.txtStockMaximo.Name = "txtStockMaximo"
         Me.txtStockMaximo.Size = New System.Drawing.Size(100, 20)
         Me.txtStockMaximo.TabIndex = 12
+        Me.txtStockMaximo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtStockMinimo
         '
@@ -530,133 +663,7 @@ Partial Class frmProducto
         Me.txtStockMinimo.Name = "txtStockMinimo"
         Me.txtStockMinimo.Size = New System.Drawing.Size(100, 20)
         Me.txtStockMinimo.TabIndex = 11
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 43
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "nombre"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 75
-        '
-        'descripcion
-        '
-        Me.descripcion.DataPropertyName = "descripcion"
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        Me.descripcion.Width = 99
-        '
-        'tipo_producto
-        '
-        Me.tipo_producto.DataPropertyName = "tipo_producto"
-        Me.tipo_producto.HeaderText = "Tipo producto"
-        Me.tipo_producto.Name = "tipo_producto"
-        Me.tipo_producto.ReadOnly = True
-        Me.tipo_producto.Width = 102
-        '
-        'precio_costo
-        '
-        Me.precio_costo.DataPropertyName = "precio_costo"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.precio_costo.DefaultCellStyle = DataGridViewCellStyle4
-        Me.precio_costo.HeaderText = "Costo"
-        Me.precio_costo.Name = "precio_costo"
-        Me.precio_costo.ReadOnly = True
-        Me.precio_costo.Width = 64
-        '
-        'precio_contado
-        '
-        Me.precio_contado.DataPropertyName = "precio_contado"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "C2"
-        Me.precio_contado.DefaultCellStyle = DataGridViewCellStyle5
-        Me.precio_contado.HeaderText = "Contado"
-        Me.precio_contado.Name = "precio_contado"
-        Me.precio_contado.ReadOnly = True
-        Me.precio_contado.Width = 79
-        '
-        'precio_credito
-        '
-        Me.precio_credito.DataPropertyName = "precio_credito"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "C2"
-        Me.precio_credito.DefaultCellStyle = DataGridViewCellStyle6
-        Me.precio_credito.HeaderText = "Crédito"
-        Me.precio_credito.Name = "precio_credito"
-        Me.precio_credito.ReadOnly = True
-        Me.precio_credito.Width = 72
-        '
-        'precio_enganche
-        '
-        Me.precio_enganche.DataPropertyName = "precio_enganche"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Format = "C2"
-        Me.precio_enganche.DefaultCellStyle = DataGridViewCellStyle7
-        Me.precio_enganche.HeaderText = "Enganche"
-        Me.precio_enganche.Name = "precio_enganche"
-        Me.precio_enganche.ReadOnly = True
-        Me.precio_enganche.Width = 89
-        '
-        'precio_pago_semanal
-        '
-        Me.precio_pago_semanal.DataPropertyName = "precio_pago_semanal"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Format = "C2"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.precio_pago_semanal.DefaultCellStyle = DataGridViewCellStyle8
-        Me.precio_pago_semanal.HeaderText = "Pago semanal"
-        Me.precio_pago_semanal.Name = "precio_pago_semanal"
-        Me.precio_pago_semanal.ReadOnly = True
-        Me.precio_pago_semanal.Width = 102
-        '
-        'stock_minimo
-        '
-        Me.stock_minimo.DataPropertyName = "stock_minimo"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.stock_minimo.DefaultCellStyle = DataGridViewCellStyle9
-        Me.stock_minimo.HeaderText = "Stock mínimo"
-        Me.stock_minimo.Name = "stock_minimo"
-        Me.stock_minimo.ReadOnly = True
-        '
-        'stock_maximo
-        '
-        Me.stock_maximo.DataPropertyName = "stock_maximo"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.stock_maximo.DefaultCellStyle = DataGridViewCellStyle10
-        Me.stock_maximo.HeaderText = "Stock máximo"
-        Me.stock_maximo.Name = "stock_maximo"
-        Me.stock_maximo.ReadOnly = True
-        Me.stock_maximo.Width = 101
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "tipo_producto_id"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "tipo_producto_id"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        Me.DataGridViewTextBoxColumn2.Width = 127
-        '
-        'DataGridViewCheckBoxColumn1
-        '
-        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
-        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
-        Me.DataGridViewCheckBoxColumn1.Width = 49
+        Me.txtStockMinimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'frmProducto
         '

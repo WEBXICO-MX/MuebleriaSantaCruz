@@ -240,6 +240,13 @@ Public Class frmProducto
     Private Sub DesactivarErroresCajasdeTexto()
         ErrorProvider1.SetError(txtNombre, Nothing)
         ErrorProvider1.SetError(txtDescripcion, Nothing)
+        ErrorProvider1.SetError(txtCosto, Nothing)
+        ErrorProvider1.SetError(txtContado, Nothing)
+        ErrorProvider1.SetError(txtCredito, Nothing)
+        ErrorProvider1.SetError(txtEnganche, Nothing)
+        ErrorProvider1.SetError(txtPagoSemanal, Nothing)
+        ErrorProvider1.SetError(txtStockMinimo, Nothing)
+        ErrorProvider1.SetError(txtStockMaximo, Nothing)
     End Sub
 
     Private Sub productosDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles productosDataGridView.CellClick
@@ -376,6 +383,48 @@ Public Class frmProducto
         End If
     End Sub
 
+    Private Sub txtCosto_TextChanged(sender As Object, e As EventArgs) Handles txtCosto.TextChanged
+        If (txtCosto.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtContado_TextChanged(sender As Object, e As EventArgs) Handles txtContado.TextChanged
+        If (txtContado.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtCredito_TextChanged(sender As Object, e As EventArgs) Handles txtCredito.TextChanged
+        If (txtCredito.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtEnganche_TextChanged(sender As Object, e As EventArgs) Handles txtEnganche.TextChanged
+        If (txtEnganche.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtPagoSemanal_TextChanged(sender As Object, e As EventArgs) Handles txtPagoSemanal.TextChanged
+        If (txtPagoSemanal.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtStockMinimo_TextChanged(sender As Object, e As EventArgs) Handles txtStockMinimo.TextChanged
+        If (txtStockMinimo.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtStockMaximo_TextChanged(sender As Object, e As EventArgs) Handles txtStockMaximo.TextChanged
+        If (txtStockMaximo.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
     Private Sub frmProducto_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
         LimpiarCajasdeTexto()
@@ -394,6 +443,6 @@ Public Class frmProducto
         Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProductoCombo.tipos_productos)
         'TODO: esta línea de código carga datos en la tabla 'DataSetProducto.productos' Puede moverla o quitarla según sea necesario.
         Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
-        Me.Top = 85
+        Me.Top = 100
     End Sub
 End Class
