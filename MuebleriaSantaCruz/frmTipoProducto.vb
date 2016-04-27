@@ -19,10 +19,10 @@ Public Class frmTipoProducto
 
             If (Lector.HasRows = False) Then
                 txtID.Text = "1"
-                txtNombre.Focus()
+                Lineas_productosComboBox.Focus()
             Else
                 txtID.Text = Lector("id") + 1
-                txtNombre.Focus()
+                Lineas_productosComboBox.Focus()
             End If
 
             'Llamar siempre a Close una vez finalizada la lectura
@@ -64,7 +64,7 @@ Public Class frmTipoProducto
 
             MessageBox.Show("El tipo de producto '" & txtNombre.Text & "' ha sido guardado", "Guardar", MessageBoxButtons.OK)
 
-            LimpiarCajasdeTexto()
+            LimpiarCajasdeTexto(True)
             lbtipoestado.Visible = False
             Tipos_productosDataGridView.Enabled = True
         Catch ex As SqlException
@@ -104,7 +104,7 @@ Public Class frmTipoProducto
 
             MessageBox.Show("El tipo de producto '" & txtNombre.Text & "' ha sido guardado", "Guardar", MessageBoxButtons.OK)
 
-            LimpiarCajasdeTexto()
+            LimpiarCajasdeTexto(True)
             lbtipoestado.Visible = False
             Tipos_productosDataGridView.Enabled = True
         Catch ex As SqlException
@@ -128,7 +128,11 @@ Public Class frmTipoProducto
         If (objcon.con.State = ConnectionState.Open) Then objcon.con.Close()
     End Sub
 
-    Private Sub LimpiarCajasdeTexto()
+    Private Sub LimpiarCajasdeTexto(ByVal Estado As Boolean)
+        If (Estado) Then
+            Lineas_productosComboBox.Text = ""
+        End If
+
         txtID.Text = ""
         txtNombre.Text = ""
         cbxActivo.Checked = True
@@ -181,7 +185,7 @@ Public Class frmTipoProducto
         lbtipoestado.Visible = True
         lbtipoestado.Text = "Nuevo"
         EstadoBotones(False, True, True, False, False)
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
         EstadoCajasdeTexto(True)
         Tipos_productosDataGridView.Enabled = False
         DesactivarErroresCajasdeTexto()
@@ -209,7 +213,7 @@ Public Class frmTipoProducto
         lbtipoestado.Visible = False
         lbtipoestado.Text = ""
 
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
         EstadoCajasdeTexto(False)
         EstadoBotones(True, False, False, False, True)
         Tipos_productosDataGridView.Enabled = True
@@ -245,9 +249,18 @@ Public Class frmTipoProducto
         End If
     End Sub
 
+    Private Sub frmTipoProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetLineaProductoCombo.lineas_productos' Puede moverla o quitarla según sea necesario.
+        Me.Lineas_productosTableAdapter.Fill(Me.DataSetLineaProductoCombo.lineas_productos)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoProducto.tipos_productos' Puede moverla o quitarla según sea necesario.
+        Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProducto.tipos_productos)
+
+        Me.Top = 100
+    End Sub
+
     Private Sub frmTipoProducto_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
 
         'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
         If (Tipos_productosBindingSource.Count = 0) Then
@@ -257,15 +270,5 @@ Public Class frmTipoProducto
         End If
 
         Tipos_productosDataGridView.ClearSelection()
-    End Sub
-    Private Sub frmTipoProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetLineaProductoCombo.lineas_productos' Puede moverla o quitarla según sea necesario.
-        Me.Lineas_productosTableAdapter.Fill(Me.DataSetLineaProductoCombo.lineas_productos)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoProducto.tipos_productos' Puede moverla o quitarla según sea necesario.
-        Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProducto.tipos_productos)
-
-        Me.Top = 100
-
-
     End Sub
 End Class
