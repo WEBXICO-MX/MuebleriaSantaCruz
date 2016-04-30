@@ -181,17 +181,17 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btbuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -211,12 +211,6 @@
   </data>
   <metadata name="Lineas_productosBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>197, 95</value>
-  </metadata>
-  <metadata name="Lineas_productosBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>197, 95</value>
-  </metadata>
-  <metadata name="DataSetLineaProductoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>147, 56</value>
   </metadata>
   <metadata name="DataSetLineaProductoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>147, 56</value>
