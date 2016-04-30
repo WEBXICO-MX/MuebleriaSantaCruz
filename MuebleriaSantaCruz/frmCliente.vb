@@ -170,7 +170,14 @@ Public Class frmCliente
         If (objcon.con.State = ConnectionState.Open) Then objcon.con.Close()
     End Sub
 
-    Private Sub LimpiarCajasdeTexto()
+    Private Sub LimpiarCajasdeTexto(Optional ByVal limpiar As Boolean = False)
+        If (limpiar) Then
+            Estados_civilesComboBox.Text = ""
+            OcupacionesComboBox.Text = ""
+            Tipos_identificacionComboBox.Text = ""
+            OcupacionesComboBox2.Text = ""
+        End If
+
         txtID.Clear()
         txtNombre.Clear()
         txtApPaterno.Clear()
@@ -259,7 +266,7 @@ Public Class frmCliente
         lbtipoestado.Visible = True
         lbtipoestado.Text = "Nuevo"
         EstadoBotones(False, True, True, False, False, True)
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
         EstadoCajasdeTexto(True)
         ClientesDataGridView.Enabled = False
         DesactivarErroresCajasdeTexto()
@@ -305,7 +312,7 @@ Public Class frmCliente
         lbtipoestado.Visible = False
         lbtipoestado.Text = ""
 
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
         EstadoCajasdeTexto(False)
         EstadoBotones(True, False, False, False, True, False)
         ClientesDataGridView.Enabled = True
@@ -380,7 +387,7 @@ Public Class frmCliente
 
     Private Sub frmEmpleado_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
 
         'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
         If (ClientesBindingSource.Count = 0) Then
@@ -404,6 +411,7 @@ Public Class frmCliente
         'TODO: esta línea de código carga datos en la tabla 'DataSetOcupacionCombo.ocupaciones' Puede moverla o quitarla según sea necesario.
         Me.OcupacionesTableAdapter.Fill(Me.DataSetOcupacionCombo.ocupaciones)
 
+        Me.Top = 100
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
