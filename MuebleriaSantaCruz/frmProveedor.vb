@@ -309,6 +309,6 @@ Public Class frmProveedor
     Private Sub frmProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetProveedor.proveedores' Puede moverla o quitarla según sea necesario.
         Me.ProveedoresTableAdapter.Fill(Me.DataSetProveedor.proveedores)
-        Me.Top = 85
+        Me.Top = 100
     End Sub
 End Class
