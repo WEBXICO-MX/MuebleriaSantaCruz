@@ -227,7 +227,7 @@ Partial Class frmTipoProducto
         'txtID
         '
         Me.txtID.Enabled = False
-        Me.txtID.Location = New System.Drawing.Point(78, 47)
+        Me.txtID.Location = New System.Drawing.Point(109, 47)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(54, 20)
