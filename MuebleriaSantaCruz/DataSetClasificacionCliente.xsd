@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="MuebleriaCASACRUZConnectionString (MySettings)" DbObjectName="MuebleriaCASACRUZ.dbo.clasificaciones_clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id, nombre, activo FROM dbo.clasificaciones_clientes</CommandText>
+                    <CommandText>SELECT id, nombre, activo FROM dbo.clasificaciones_clientes ORDER BY nombre</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -33,7 +33,7 @@
   <xs:element name="DataSetClasificacionCliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetClasificacionCliente" msprop:Generator_UserDSName="DataSetClasificacionCliente">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="clasificaciones_clientes" msprop:Generator_TableClassName="clasificaciones_clientesDataTable" msprop:Generator_TableVarName="tableclasificaciones_clientes" msprop:Generator_TablePropName="clasificaciones_clientes" msprop:Generator_RowDeletingName="clasificaciones_clientesRowDeleting" msprop:Generator_RowChangingName="clasificaciones_clientesRowChanging" msprop:Generator_RowEvHandlerName="clasificaciones_clientesRowChangeEventHandler" msprop:Generator_RowDeletedName="clasificaciones_clientesRowDeleted" msprop:Generator_UserTableName="clasificaciones_clientes" msprop:Generator_RowChangedName="clasificaciones_clientesRowChanged" msprop:Generator_RowEvArgName="clasificaciones_clientesRowChangeEvent" msprop:Generator_RowClassName="clasificaciones_clientesRow">
+        <xs:element name="clasificaciones_clientes" msprop:Generator_TableClassName="clasificaciones_clientesDataTable" msprop:Generator_TableVarName="tableclasificaciones_clientes" msprop:Generator_RowChangedName="clasificaciones_clientesRowChanged" msprop:Generator_TablePropName="clasificaciones_clientes" msprop:Generator_RowDeletingName="clasificaciones_clientesRowDeleting" msprop:Generator_RowChangingName="clasificaciones_clientesRowChanging" msprop:Generator_RowEvHandlerName="clasificaciones_clientesRowChangeEventHandler" msprop:Generator_RowDeletedName="clasificaciones_clientesRowDeleted" msprop:Generator_RowClassName="clasificaciones_clientesRow" msprop:Generator_UserTableName="clasificaciones_clientes" msprop:Generator_RowEvArgName="clasificaciones_clientesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
