@@ -244,6 +244,13 @@ Public Class frmClasificacionCliente
         End If
     End Sub
 
+    Private Sub frmClasificacionCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetClasificacionCliente.clasificaciones_clientes' Puede moverla o quitarla según sea necesario.
+        Me.Clasificaciones_clientesTableAdapter.Fill(Me.DataSetClasificacionCliente.clasificaciones_clientes)
+        Me.Top = 100
+
+    End Sub
+
     Private Sub frmClasificacionCliente_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
         LimpiarCajasdeTexto()
@@ -256,11 +263,5 @@ Public Class frmClasificacionCliente
         End If
 
         Clasificaciones_clientesDataGridView.ClearSelection()
-    End Sub
-    Private Sub frmClasificacionCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetClasificacionCliente.clasificaciones_clientes' Puede moverla o quitarla según sea necesario.
-        Me.Clasificaciones_clientesTableAdapter.Fill(Me.DataSetClasificacionCliente.clasificaciones_clientes)
-        Me.Top = 85
-
     End Sub
 End Class
