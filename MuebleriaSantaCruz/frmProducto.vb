@@ -3,6 +3,7 @@ Public Class frmProducto
     Private objcon As New Conexion
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
+    Public externa As Boolean = False
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -59,6 +60,10 @@ Public Class frmProducto
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             Lector = Orden.ExecuteReader()
             Lector.Read()
+
+            If (externa) Then
+                frmCompra.ProductosTableAdapter.Fill(frmCompra.DataSetProductoCombo.productos)
+            End If
 
             Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
 
