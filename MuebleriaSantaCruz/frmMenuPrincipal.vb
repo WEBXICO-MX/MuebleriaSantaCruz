@@ -117,6 +117,10 @@
         frmProveedor.Show()
     End Sub
 
+    Private Sub ComrasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComrasToolStripMenuItem.Click
+        frmCompra.Show()
+    End Sub
+
     Private Sub AsentamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsentamientosToolStripMenuItem.Click
         frmAsentamiento.Show()
     End Sub
