@@ -32,12 +32,24 @@ Partial Class frmCompra
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
         Me.txtfechacompra = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cbxActivo = New System.Windows.Forms.CheckBox()
+        Me.cmbformapago = New System.Windows.Forms.ComboBox()
+        Me.cmbProveedor = New System.Windows.Forms.ComboBox()
+        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetProveedorCombo = New MuebleriaCasaCruz.DataSetProveedorCombo()
+        Me.cmbProducto = New System.Windows.Forms.ComboBox()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetProductoCombo = New MuebleriaCasaCruz.DataSetProductoCombo()
+        Me.cbxPagado = New System.Windows.Forms.CheckBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtcosto = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.lbtipoestado = New System.Windows.Forms.Label()
         Me.lbestado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
-        Me.txtTelefonos = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.txtNumFactura = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -45,29 +57,18 @@ Partial Class frmCompra
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtcosto = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.DataSetProductoCombo = New MuebleriaCasaCruz.DataSetProductoCombo()
-        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductosTableAdapter = New MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager()
-        Me.NombreComboBox = New System.Windows.Forms.ComboBox()
-        Me.DataSetProveedorCombo = New MuebleriaCasaCruz.DataSetProveedorCombo()
-        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
-        Me.Nombre_comercialComboBox = New System.Windows.Forms.ComboBox()
-        Me.cmbformapago = New System.Windows.Forms.ComboBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataSetProductoCombo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetProveedorCombo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetProveedorCombo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetProductoCombo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarraHerramientas
@@ -143,21 +144,20 @@ Partial Class frmCompra
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.cmbformapago)
-        Me.GroupBox1.Controls.Add(Me.Nombre_comercialComboBox)
-        Me.GroupBox1.Controls.Add(Me.NombreComboBox)
-        Me.GroupBox1.Controls.Add(Me.CheckBox1)
+        Me.GroupBox1.Controls.Add(Me.cmbProveedor)
+        Me.GroupBox1.Controls.Add(Me.cmbProducto)
+        Me.GroupBox1.Controls.Add(Me.cbxPagado)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txtcosto)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtCantidad)
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.cbxActivo)
         Me.GroupBox1.Controls.Add(Me.txtfechacompra)
         Me.GroupBox1.Controls.Add(Me.lbtipoestado)
         Me.GroupBox1.Controls.Add(Me.lbestado)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtID)
-        Me.GroupBox1.Controls.Add(Me.txtTelefonos)
+        Me.GroupBox1.Controls.Add(Me.txtTotal)
         Me.GroupBox1.Controls.Add(Me.txtNumFactura)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -171,17 +171,126 @@ Partial Class frmCompra
         Me.GroupBox1.TabIndex = 117
         Me.GroupBox1.TabStop = False
         '
-        'cbxActivo
+        'cmbformapago
         '
-        Me.cbxActivo.AutoSize = True
-        Me.cbxActivo.Checked = True
-        Me.cbxActivo.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbxActivo.Location = New System.Drawing.Point(9, 344)
-        Me.cbxActivo.Name = "cbxActivo"
-        Me.cbxActivo.Size = New System.Drawing.Size(56, 17)
-        Me.cbxActivo.TabIndex = 7
-        Me.cbxActivo.Text = "Activo"
-        Me.cbxActivo.UseVisualStyleBackColor = True
+        Me.cmbformapago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbformapago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbformapago.Enabled = False
+        Me.cmbformapago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbformapago.FormattingEnabled = True
+        Me.cmbformapago.Items.AddRange(New Object() {"Efectivo", "Crédito"})
+        Me.cmbformapago.Location = New System.Drawing.Point(102, 276)
+        Me.cmbformapago.Name = "cmbformapago"
+        Me.cmbformapago.Size = New System.Drawing.Size(161, 21)
+        Me.cmbformapago.TabIndex = 6
+        '
+        'cmbProveedor
+        '
+        Me.cmbProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "nombre_comercial", True))
+        Me.cmbProveedor.DataSource = Me.ProveedoresBindingSource
+        Me.cmbProveedor.DisplayMember = "nombre_comercial"
+        Me.cmbProveedor.Enabled = False
+        Me.cmbProveedor.FormattingEnabled = True
+        Me.cmbProveedor.Location = New System.Drawing.Point(102, 136)
+        Me.cmbProveedor.Name = "cmbProveedor"
+        Me.cmbProveedor.Size = New System.Drawing.Size(284, 21)
+        Me.cmbProveedor.TabIndex = 1
+        Me.cmbProveedor.ValueMember = "id"
+        '
+        'ProveedoresBindingSource
+        '
+        Me.ProveedoresBindingSource.DataMember = "proveedores"
+        Me.ProveedoresBindingSource.DataSource = Me.DataSetProveedorCombo
+        '
+        'DataSetProveedorCombo
+        '
+        Me.DataSetProveedorCombo.DataSetName = "DataSetProveedorCombo"
+        Me.DataSetProveedorCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'cmbProducto
+        '
+        Me.cmbProducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "nombre", True))
+        Me.cmbProducto.DataSource = Me.ProductosBindingSource
+        Me.cmbProducto.DisplayMember = "nombre"
+        Me.cmbProducto.Enabled = False
+        Me.cmbProducto.FormattingEnabled = True
+        Me.cmbProducto.Location = New System.Drawing.Point(102, 163)
+        Me.cmbProducto.Name = "cmbProducto"
+        Me.cmbProducto.Size = New System.Drawing.Size(284, 21)
+        Me.cmbProducto.TabIndex = 2
+        Me.cmbProducto.ValueMember = "id"
+        '
+        'ProductosBindingSource
+        '
+        Me.ProductosBindingSource.DataMember = "productos"
+        Me.ProductosBindingSource.DataSource = Me.DataSetProductoCombo
+        '
+        'DataSetProductoCombo
+        '
+        Me.DataSetProductoCombo.DataSetName = "DataSetProductoCombo"
+        Me.DataSetProductoCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'cbxPagado
+        '
+        Me.cbxPagado.AutoSize = True
+        Me.cbxPagado.Enabled = False
+        Me.cbxPagado.Location = New System.Drawing.Point(102, 313)
+        Me.cbxPagado.Name = "cbxPagado"
+        Me.cbxPagado.Size = New System.Drawing.Size(15, 14)
+        Me.cbxPagado.TabIndex = 7
+        Me.cbxPagado.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(6, 313)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(47, 13)
+        Me.Label10.TabIndex = 121
+        Me.Label10.Text = "Pagado:"
+        '
+        'txtcosto
+        '
+        Me.txtcosto.BackColor = System.Drawing.Color.White
+        Me.txtcosto.Enabled = False
+        Me.txtcosto.Location = New System.Drawing.Point(102, 223)
+        Me.txtcosto.MaxLength = 100
+        Me.txtcosto.Name = "txtcosto"
+        Me.txtcosto.Size = New System.Drawing.Size(132, 20)
+        Me.txtcosto.TabIndex = 4
+        Me.txtcosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(6, 226)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(37, 13)
+        Me.Label9.TabIndex = 119
+        Me.Label9.Text = "Costo:"
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.BackColor = System.Drawing.Color.White
+        Me.txtCantidad.Enabled = False
+        Me.txtCantidad.Location = New System.Drawing.Point(102, 195)
+        Me.txtCantidad.MaxLength = 100
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
+        Me.txtCantidad.TabIndex = 3
+        Me.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(6, 198)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(52, 13)
+        Me.Label8.TabIndex = 117
+        Me.Label8.Text = "Cantidad:"
         '
         'lbtipoestado
         '
@@ -225,15 +334,16 @@ Partial Class frmCompra
         Me.txtID.TabIndex = 1
         Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtTelefonos
+        'txtTotal
         '
-        Me.txtTelefonos.BackColor = System.Drawing.Color.White
-        Me.txtTelefonos.Enabled = False
-        Me.txtTelefonos.Location = New System.Drawing.Point(102, 249)
-        Me.txtTelefonos.MaxLength = 100
-        Me.txtTelefonos.Name = "txtTelefonos"
-        Me.txtTelefonos.Size = New System.Drawing.Size(132, 20)
-        Me.txtTelefonos.TabIndex = 5
+        Me.txtTotal.BackColor = System.Drawing.Color.White
+        Me.txtTotal.Enabled = False
+        Me.txtTotal.Location = New System.Drawing.Point(102, 249)
+        Me.txtTotal.MaxLength = 100
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(132, 20)
+        Me.txtTotal.TabIndex = 5
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtNumFactura
         '
@@ -243,7 +353,7 @@ Partial Class frmCompra
         Me.txtNumFactura.MaxLength = 100
         Me.txtNumFactura.Name = "txtNumFactura"
         Me.txtNumFactura.Size = New System.Drawing.Size(107, 20)
-        Me.txtNumFactura.TabIndex = 2
+        Me.txtNumFactura.TabIndex = 0
         '
         'Label7
         '
@@ -305,77 +415,6 @@ Partial Class frmCompra
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Fecha de compra:"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(6, 198)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 13)
-        Me.Label8.TabIndex = 117
-        Me.Label8.Text = "Cantidad:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(102, 195)
-        Me.TextBox1.MaxLength = 100
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(132, 20)
-        Me.TextBox1.TabIndex = 118
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(6, 226)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(37, 13)
-        Me.Label9.TabIndex = 119
-        Me.Label9.Text = "Costo:"
-        '
-        'txtcosto
-        '
-        Me.txtcosto.BackColor = System.Drawing.Color.White
-        Me.txtcosto.Enabled = False
-        Me.txtcosto.Location = New System.Drawing.Point(102, 223)
-        Me.txtcosto.MaxLength = 100
-        Me.txtcosto.Name = "txtcosto"
-        Me.txtcosto.Size = New System.Drawing.Size(132, 20)
-        Me.txtcosto.TabIndex = 120
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(6, 313)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(47, 13)
-        Me.Label10.TabIndex = 121
-        Me.Label10.Text = "Pagado:"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(102, 313)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
-        Me.CheckBox1.TabIndex = 122
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'DataSetProductoCombo
-        '
-        Me.DataSetProductoCombo.DataSetName = "DataSetProductoCombo"
-        Me.DataSetProductoCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProductosBindingSource
-        '
-        Me.ProductosBindingSource.DataMember = "productos"
-        Me.ProductosBindingSource.DataSource = Me.DataSetProductoCombo
-        '
         'ProductosTableAdapter
         '
         Me.ProductosTableAdapter.ClearBeforeFill = True
@@ -385,28 +424,6 @@ Partial Class frmCompra
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'NombreComboBox
-        '
-        Me.NombreComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "nombre", True))
-        Me.NombreComboBox.DataSource = Me.ProductosBindingSource
-        Me.NombreComboBox.DisplayMember = "nombre"
-        Me.NombreComboBox.FormattingEnabled = True
-        Me.NombreComboBox.Location = New System.Drawing.Point(102, 163)
-        Me.NombreComboBox.Name = "NombreComboBox"
-        Me.NombreComboBox.Size = New System.Drawing.Size(284, 21)
-        Me.NombreComboBox.TabIndex = 123
-        Me.NombreComboBox.ValueMember = "id"
-        '
-        'DataSetProveedorCombo
-        '
-        Me.DataSetProveedorCombo.DataSetName = "DataSetProveedorCombo"
-        Me.DataSetProveedorCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProveedoresBindingSource
-        '
-        Me.ProveedoresBindingSource.DataMember = "proveedores"
-        Me.ProveedoresBindingSource.DataSource = Me.DataSetProveedorCombo
         '
         'ProveedoresTableAdapter
         '
@@ -418,29 +435,9 @@ Partial Class frmCompra
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.UpdateOrder = MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Nombre_comercialComboBox
+        'ErrorProvider1
         '
-        Me.Nombre_comercialComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "nombre_comercial", True))
-        Me.Nombre_comercialComboBox.DataSource = Me.ProveedoresBindingSource
-        Me.Nombre_comercialComboBox.DisplayMember = "nombre_comercial"
-        Me.Nombre_comercialComboBox.FormattingEnabled = True
-        Me.Nombre_comercialComboBox.Location = New System.Drawing.Point(102, 136)
-        Me.Nombre_comercialComboBox.Name = "Nombre_comercialComboBox"
-        Me.Nombre_comercialComboBox.Size = New System.Drawing.Size(284, 21)
-        Me.Nombre_comercialComboBox.TabIndex = 124
-        Me.Nombre_comercialComboBox.ValueMember = "id"
-        '
-        'cmbformapago
-        '
-        Me.cmbformapago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbformapago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cmbformapago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbformapago.FormattingEnabled = True
-        Me.cmbformapago.Items.AddRange(New Object() {"Efectivo", "Crédito"})
-        Me.cmbformapago.Location = New System.Drawing.Point(102, 276)
-        Me.cmbformapago.Name = "cmbformapago"
-        Me.cmbformapago.Size = New System.Drawing.Size(161, 21)
-        Me.cmbformapago.TabIndex = 125
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'frmCompra
         '
@@ -458,10 +455,11 @@ Partial Class frmCompra
         Me.BarraHerramientas.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataSetProductoCombo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetProveedorCombo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetProveedorCombo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetProductoCombo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -474,12 +472,11 @@ Partial Class frmCompra
     Friend WithEvents btbuscar As System.Windows.Forms.ToolStripButton
     Friend WithEvents txtfechacompra As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents cbxActivo As System.Windows.Forms.CheckBox
     Friend WithEvents lbtipoestado As System.Windows.Forms.Label
     Friend WithEvents lbestado As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtID As System.Windows.Forms.TextBox
-    Friend WithEvents txtTelefonos As System.Windows.Forms.TextBox
+    Friend WithEvents txtTotal As System.Windows.Forms.TextBox
     Friend WithEvents txtNumFactura As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -487,21 +484,22 @@ Partial Class frmCompra
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCantidad As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtcosto As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents cbxPagado As System.Windows.Forms.CheckBox
     Friend WithEvents DataSetProductoCombo As MuebleriaCasaCruz.DataSetProductoCombo
     Friend WithEvents ProductosBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ProductosTableAdapter As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter
     Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager
-    Friend WithEvents NombreComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbProducto As System.Windows.Forms.ComboBox
     Friend WithEvents DataSetProveedorCombo As MuebleriaCasaCruz.DataSetProveedorCombo
     Friend WithEvents ProveedoresBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ProveedoresTableAdapter As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter
     Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager
-    Friend WithEvents Nombre_comercialComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbProveedor As System.Windows.Forms.ComboBox
     Friend WithEvents cmbformapago As System.Windows.Forms.ComboBox
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class
