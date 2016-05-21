@@ -29,7 +29,7 @@ Partial Class frmCompra
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
         Me.btdeshacer = New System.Windows.Forms.ToolStripButton()
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
-        Me.btbuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btproducto = New System.Windows.Forms.ToolStripButton()
         Me.txtfechacompra = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cmbformapago = New System.Windows.Forms.ComboBox()
@@ -62,6 +62,7 @@ Partial Class frmCompra
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btproveedor = New System.Windows.Forms.ToolStripButton()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,7 +75,7 @@ Partial Class frmCompra
         'BarraHerramientas
         '
         Me.BarraHerramientas.BackColor = System.Drawing.SystemColors.Control
-        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btbuscar})
+        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproducto, Me.btproveedor})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
         Me.BarraHerramientas.Size = New System.Drawing.Size(950, 38)
@@ -121,16 +122,14 @@ Partial Class frmCompra
         Me.bteditar.Text = "&Editar"
         Me.bteditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'btbuscar
+        'btproducto
         '
-        Me.btbuscar.Enabled = False
-        Me.btbuscar.Image = CType(resources.GetObject("btbuscar.Image"), System.Drawing.Image)
-        Me.btbuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btbuscar.Name = "btbuscar"
-        Me.btbuscar.Size = New System.Drawing.Size(46, 35)
-        Me.btbuscar.Text = "&Buscar"
-        Me.btbuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.btbuscar.Visible = False
+        Me.btproducto.Image = CType(resources.GetObject("btproducto.Image"), System.Drawing.Image)
+        Me.btproducto.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btproducto.Name = "btproducto"
+        Me.btproducto.Size = New System.Drawing.Size(60, 35)
+        Me.btproducto.Text = "&Producto"
+        Me.btproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'txtfechacompra
         '
@@ -439,6 +438,15 @@ Partial Class frmCompra
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'btproveedor
+        '
+        Me.btproveedor.Image = CType(resources.GetObject("btproveedor.Image"), System.Drawing.Image)
+        Me.btproveedor.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btproveedor.Name = "btproveedor"
+        Me.btproveedor.Size = New System.Drawing.Size(65, 35)
+        Me.btproveedor.Text = "Proveedor"
+        Me.btproveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -469,7 +477,7 @@ Partial Class frmCompra
     Friend WithEvents btguardar As System.Windows.Forms.ToolStripButton
     Friend WithEvents btdeshacer As System.Windows.Forms.ToolStripButton
     Friend WithEvents bteditar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents btbuscar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btproducto As System.Windows.Forms.ToolStripButton
     Friend WithEvents txtfechacompra As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents lbtipoestado As System.Windows.Forms.Label
@@ -502,4 +510,5 @@ Partial Class frmCompra
     Friend WithEvents cmbProveedor As System.Windows.Forms.ComboBox
     Friend WithEvents cmbformapago As System.Windows.Forms.ComboBox
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents btproveedor As System.Windows.Forms.ToolStripButton
 End Class

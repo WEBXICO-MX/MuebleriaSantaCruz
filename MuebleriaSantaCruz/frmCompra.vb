@@ -8,6 +8,7 @@ Public Class frmCompra
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
 
+
     Public Sub Nuevo()
         Dim Consulta As String
 
@@ -184,7 +185,7 @@ Public Class frmCompra
         btguardar.Enabled = guardar
         btdeshacer.Enabled = deshacer
         bteditar.Enabled = editar
-        btbuscar.Enabled = buscar
+        'btproducto.Enabled = buscar
     End Sub
 
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
@@ -311,13 +312,21 @@ Public Class frmCompra
             MessageBox.Show("Seleccione una compra para editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+    Private Sub btproducto_Click(sender As Object, e As EventArgs) Handles btproducto.Click
+        frmProducto.externa = True
+        frmProducto.Show()
+    End Sub
+
+    Private Sub btproveedor_Click(sender As Object, e As EventArgs) Handles btproveedor.Click
+        frmProveedor.externa = True
+        frmProveedor.Show()
+    End Sub
 
     Private Sub txtNumFactura_TextChanged(sender As Object, e As EventArgs) Handles txtNumFactura.TextChanged
         If (txtNumFactura.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
         End If
     End Sub
-
 
     Private Sub txtNumFactura_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumFactura.KeyPress
         If (e.KeyChar = "'") Then
