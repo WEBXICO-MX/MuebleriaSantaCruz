@@ -30,8 +30,12 @@ Partial Class frmCompra
         Me.btdeshacer = New System.Windows.Forms.ToolStripButton()
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btproducto = New System.Windows.Forms.ToolStripButton()
+        Me.btproveedor = New System.Windows.Forms.ToolStripButton()
+        Me.btfacturas = New System.Windows.Forms.ToolStripButton()
         Me.txtfechacompra = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtDescuento = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.cmbformapago = New System.Windows.Forms.ComboBox()
         Me.cmbProveedor = New System.Windows.Forms.ComboBox()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -62,7 +66,6 @@ Partial Class frmCompra
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.btproveedor = New System.Windows.Forms.ToolStripButton()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,10 +78,10 @@ Partial Class frmCompra
         'BarraHerramientas
         '
         Me.BarraHerramientas.BackColor = System.Drawing.SystemColors.Control
-        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproducto, Me.btproveedor})
+        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproducto, Me.btproveedor, Me.btfacturas})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
-        Me.BarraHerramientas.Size = New System.Drawing.Size(950, 38)
+        Me.BarraHerramientas.Size = New System.Drawing.Size(427, 38)
         Me.BarraHerramientas.TabIndex = 33
         Me.BarraHerramientas.Text = "ToolStrip1"
         '
@@ -131,6 +134,24 @@ Partial Class frmCompra
         Me.btproducto.Text = "&Producto"
         Me.btproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'btproveedor
+        '
+        Me.btproveedor.Image = CType(resources.GetObject("btproveedor.Image"), System.Drawing.Image)
+        Me.btproveedor.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btproveedor.Name = "btproveedor"
+        Me.btproveedor.Size = New System.Drawing.Size(65, 35)
+        Me.btproveedor.Text = "Proveedor"
+        Me.btproveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btfacturas
+        '
+        Me.btfacturas.Image = CType(resources.GetObject("btfacturas.Image"), System.Drawing.Image)
+        Me.btfacturas.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btfacturas.Name = "btfacturas"
+        Me.btfacturas.Size = New System.Drawing.Size(55, 35)
+        Me.btfacturas.Text = "Facturas"
+        Me.btfacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'txtfechacompra
         '
         Me.txtfechacompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -142,6 +163,8 @@ Partial Class frmCompra
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtDescuento)
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.cmbformapago)
         Me.GroupBox1.Controls.Add(Me.cmbProveedor)
         Me.GroupBox1.Controls.Add(Me.cmbProducto)
@@ -170,6 +193,27 @@ Partial Class frmCompra
         Me.GroupBox1.TabIndex = 117
         Me.GroupBox1.TabStop = False
         '
+        'txtDescuento
+        '
+        Me.txtDescuento.BackColor = System.Drawing.Color.White
+        Me.txtDescuento.Enabled = False
+        Me.txtDescuento.Location = New System.Drawing.Point(102, 248)
+        Me.txtDescuento.MaxLength = 100
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.Size = New System.Drawing.Size(132, 20)
+        Me.txtDescuento.TabIndex = 123
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(6, 255)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(62, 13)
+        Me.Label11.TabIndex = 122
+        Me.Label11.Text = "Descuento:"
+        '
         'cmbformapago
         '
         Me.cmbformapago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
@@ -178,7 +222,7 @@ Partial Class frmCompra
         Me.cmbformapago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbformapago.FormattingEnabled = True
         Me.cmbformapago.Items.AddRange(New Object() {"Efectivo", "Crédito"})
-        Me.cmbformapago.Location = New System.Drawing.Point(102, 276)
+        Me.cmbformapago.Location = New System.Drawing.Point(102, 303)
         Me.cmbformapago.Name = "cmbformapago"
         Me.cmbformapago.Size = New System.Drawing.Size(161, 21)
         Me.cmbformapago.TabIndex = 6
@@ -233,7 +277,7 @@ Partial Class frmCompra
         '
         Me.cbxPagado.AutoSize = True
         Me.cbxPagado.Enabled = False
-        Me.cbxPagado.Location = New System.Drawing.Point(102, 313)
+        Me.cbxPagado.Location = New System.Drawing.Point(102, 340)
         Me.cbxPagado.Name = "cbxPagado"
         Me.cbxPagado.Size = New System.Drawing.Size(15, 14)
         Me.cbxPagado.TabIndex = 7
@@ -243,7 +287,7 @@ Partial Class frmCompra
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(6, 313)
+        Me.Label10.Location = New System.Drawing.Point(6, 340)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(47, 13)
         Me.Label10.TabIndex = 121
@@ -337,7 +381,7 @@ Partial Class frmCompra
         '
         Me.txtTotal.BackColor = System.Drawing.Color.White
         Me.txtTotal.Enabled = False
-        Me.txtTotal.Location = New System.Drawing.Point(102, 249)
+        Me.txtTotal.Location = New System.Drawing.Point(102, 276)
         Me.txtTotal.MaxLength = 100
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(132, 20)
@@ -358,7 +402,7 @@ Partial Class frmCompra
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 284)
+        Me.Label7.Location = New System.Drawing.Point(6, 311)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(81, 13)
         Me.Label7.TabIndex = 5
@@ -368,7 +412,7 @@ Partial Class frmCompra
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(6, 256)
+        Me.Label6.Location = New System.Drawing.Point(6, 283)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(34, 13)
         Me.Label6.TabIndex = 5
@@ -438,20 +482,11 @@ Partial Class frmCompra
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'btproveedor
-        '
-        Me.btproveedor.Image = CType(resources.GetObject("btproveedor.Image"), System.Drawing.Image)
-        Me.btproveedor.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btproveedor.Name = "btproveedor"
-        Me.btproveedor.Size = New System.Drawing.Size(65, 35)
-        Me.btproveedor.Text = "Proveedor"
-        Me.btproveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'frmCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(950, 447)
+        Me.ClientSize = New System.Drawing.Size(427, 447)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -511,4 +546,7 @@ Partial Class frmCompra
     Friend WithEvents cmbformapago As System.Windows.Forms.ComboBox
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents btproveedor As System.Windows.Forms.ToolStripButton
+    Friend WithEvents txtDescuento As System.Windows.Forms.TextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents btfacturas As System.Windows.Forms.ToolStripButton
 End Class

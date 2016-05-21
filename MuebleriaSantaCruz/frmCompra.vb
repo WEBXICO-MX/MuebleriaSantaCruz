@@ -69,9 +69,9 @@ Public Class frmCompra
         'Orden.Parameters.Add("@tipo_pago", SqlDbType.Int).Value = cmbformapago.Text
         'Orden.Parameters.Add("@pagado", SqlDbType.Bit).Value = If(cbxPagado.Checked, 1, 0)
 
-        Consulta = "INSERT INTO compras (id, id_proveedor,id_producto,fecha_compra,folio_factura,cantidad,costo,total,tipo_pago,pagado) VALUES (" & txtID.Text & _
+        Consulta = "INSERT INTO compras (id, id_proveedor,id_producto,fecha_compra,folio_factura,cantidad,costo,descuento,total,tipo_pago,pagado) VALUES (" & txtID.Text & _
                      "," & cmbProveedor.SelectedValue & "," & cmbProducto.SelectedValue & ",'" & txtfechacompra.Text & "','" & txtNumFactura.Text & "'," & txtCantidad.Text & _
-                     "," & CDbl(txtcosto.Text) & "," & CDbl(txtTotal.Text) & "," & cmbformapago.SelectedIndex + 1 & "," & If(cbxPagado.Checked, 1, 0) & ")"
+                     "," & CDbl(txtcosto.Text) & "," & If(txtDescuento.Text = "", 0, CDbl(txtDescuento.Text)) & "," & CDbl(txtTotal.Text) & "," & cmbformapago.SelectedIndex + 1 & "," & If(cbxPagado.Checked, 1, 0) & ")"
 
 
         Orden = New SqlCommand(Consulta, ConexionConBD)
@@ -104,7 +104,8 @@ Public Class frmCompra
 
             MessageBox.Show("La factura '" & txtNumFactura.Text & "' ha sido guardada", "Guardar", MessageBoxButtons.OK)
 
-            LimpiarCajasdeTexto()
+            LimpiarCajasdeTexto2()
+            Nuevo()
             lbtipoestado.Visible = False
             'proveedoresDataGridView.Enabled = True
         Catch ex As SqlException
@@ -180,6 +181,15 @@ Public Class frmCompra
         cbxPagado.Checked = False
     End Sub
 
+    Private Sub LimpiarCajasdeTexto2()
+        cmbProducto.Text = ""
+        txtCantidad.Clear()
+        txtcosto.Clear()
+        txtTotal.Clear()
+        cmbformapago.Text = ""
+        cbxPagado.Checked = False
+    End Sub
+
     Private Sub EstadoBotones(ByVal nuevo As Boolean, ByVal guardar As Boolean, ByVal deshacer As Boolean, ByVal editar As Boolean, ByVal buscar As Boolean)
         btnuevo.Enabled = nuevo
         btguardar.Enabled = guardar
@@ -195,6 +205,7 @@ Public Class frmCompra
         txtNumFactura.Enabled = nombre_status
         txtCantidad.Enabled = nombre_status
         txtcosto.Enabled = nombre_status
+        txtDescuento.Enabled = nombre_status
         txtTotal.Enabled = nombre_status
         cmbformapago.Enabled = nombre_status
         cbxPagado.Enabled = nombre_status
@@ -322,6 +333,9 @@ Public Class frmCompra
         frmProveedor.Show()
     End Sub
 
+    Private Sub btfacturas_Click(sender As Object, e As EventArgs) Handles btfacturas.Click
+        frmfacturascompra.Show()
+    End Sub
     Private Sub txtNumFactura_TextChanged(sender As Object, e As EventArgs) Handles txtNumFactura.TextChanged
         If (txtNumFactura.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
