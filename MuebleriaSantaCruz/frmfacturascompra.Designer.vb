@@ -38,7 +38,6 @@ Partial Class frmfacturascompra
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtNumFactura = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cmbProveedor = New System.Windows.Forms.ComboBox()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProveedorCombo = New MuebleriaCasaCruz.DataSetProveedorCombo()
         Me.Label42 = New System.Windows.Forms.Label()
@@ -47,16 +46,10 @@ Partial Class frmfacturascompra
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btcancelar = New System.Windows.Forms.Button()
-        Me.DetalleFacturas = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtcredito = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtefectivo = New System.Windows.Forms.TextBox()
-        Me.lbtotal = New System.Windows.Forms.Label()
-        Me.txttotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtDescuento = New System.Windows.Forms.TextBox()
+        Me.btcancelar = New System.Windows.Forms.Button()
+        Me.DetalleFacturas = New System.Windows.Forms.DataGridView()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,6 +60,13 @@ Partial Class frmfacturascompra
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.formaPagoEntero = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtcredito = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtefectivo = New System.Windows.Forms.TextBox()
+        Me.lbtotal = New System.Windows.Forms.Label()
+        Me.txttotal = New System.Windows.Forms.TextBox()
+        Me.cmbproveedor = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,9 +88,9 @@ Partial Class frmfacturascompra
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cmbproveedor)
         Me.GroupBox1.Controls.Add(Me.txtNumFactura)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.cmbProveedor)
         Me.GroupBox1.Controls.Add(Me.Label42)
         Me.GroupBox1.Controls.Add(Me.btbuscar)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -121,18 +121,6 @@ Partial Class frmfacturascompra
         Me.Label3.Size = New System.Drawing.Size(81, 13)
         Me.Label3.TabIndex = 80
         Me.Label3.Text = "No. de Factura:"
-        '
-        'cmbProveedor
-        '
-        Me.cmbProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "nombre_comercial", True))
-        Me.cmbProveedor.DataSource = Me.ProveedoresBindingSource
-        Me.cmbProveedor.DisplayMember = "nombre_comercial"
-        Me.cmbProveedor.FormattingEnabled = True
-        Me.cmbProveedor.Location = New System.Drawing.Point(82, 29)
-        Me.cmbProveedor.Name = "cmbProveedor"
-        Me.cmbProveedor.Size = New System.Drawing.Size(303, 21)
-        Me.cmbProveedor.TabIndex = 78
-        Me.cmbProveedor.ValueMember = "id"
         '
         'ProveedoresBindingSource
         '
@@ -209,6 +197,31 @@ Partial Class frmfacturascompra
         Me.GroupBox2.Tag = ""
         Me.GroupBox2.Text = "Detalle de factura"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Maroon
+        Me.Label4.Location = New System.Drawing.Point(561, 348)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 13)
+        Me.Label4.TabIndex = 98
+        Me.Label4.Text = "Descuento:"
+        '
+        'txtDescuento
+        '
+        Me.txtDescuento.BackColor = System.Drawing.Color.White
+        Me.txtDescuento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescuento.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtDescuento.Location = New System.Drawing.Point(635, 341)
+        Me.txtDescuento.MaxLength = 10
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.ReadOnly = True
+        Me.txtDescuento.Size = New System.Drawing.Size(171, 20)
+        Me.txtDescuento.TabIndex = 97
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'btcancelar
         '
         Me.btcancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
@@ -247,106 +260,6 @@ Partial Class frmfacturascompra
         Me.DetalleFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DetalleFacturas.Size = New System.Drawing.Size(1050, 307)
         Me.DetalleFacturas.TabIndex = 96
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Maroon
-        Me.Label1.Location = New System.Drawing.Point(287, 348)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 13)
-        Me.Label1.TabIndex = 95
-        Me.Label1.Text = "Crédito:"
-        '
-        'txtcredito
-        '
-        Me.txtcredito.BackColor = System.Drawing.Color.White
-        Me.txtcredito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcredito.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtcredito.Location = New System.Drawing.Point(351, 341)
-        Me.txtcredito.MaxLength = 10
-        Me.txtcredito.Name = "txtcredito"
-        Me.txtcredito.ReadOnly = True
-        Me.txtcredito.Size = New System.Drawing.Size(171, 20)
-        Me.txtcredito.TabIndex = 94
-        Me.txtcredito.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Maroon
-        Me.Label2.Location = New System.Drawing.Point(20, 348)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 13)
-        Me.Label2.TabIndex = 93
-        Me.Label2.Text = "Efectivo:"
-        '
-        'txtefectivo
-        '
-        Me.txtefectivo.BackColor = System.Drawing.Color.White
-        Me.txtefectivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtefectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtefectivo.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtefectivo.Location = New System.Drawing.Point(84, 341)
-        Me.txtefectivo.MaxLength = 10
-        Me.txtefectivo.Name = "txtefectivo"
-        Me.txtefectivo.ReadOnly = True
-        Me.txtefectivo.Size = New System.Drawing.Size(171, 20)
-        Me.txtefectivo.TabIndex = 92
-        Me.txtefectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'lbtotal
-        '
-        Me.lbtotal.AutoSize = True
-        Me.lbtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbtotal.ForeColor = System.Drawing.Color.Maroon
-        Me.lbtotal.Location = New System.Drawing.Point(829, 348)
-        Me.lbtotal.Name = "lbtotal"
-        Me.lbtotal.Size = New System.Drawing.Size(40, 13)
-        Me.lbtotal.TabIndex = 91
-        Me.lbtotal.Text = "Total:"
-        '
-        'txttotal
-        '
-        Me.txttotal.BackColor = System.Drawing.Color.White
-        Me.txttotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txttotal.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txttotal.Location = New System.Drawing.Point(875, 341)
-        Me.txttotal.MaxLength = 10
-        Me.txttotal.Name = "txttotal"
-        Me.txttotal.ReadOnly = True
-        Me.txttotal.Size = New System.Drawing.Size(171, 20)
-        Me.txttotal.TabIndex = 90
-        Me.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Maroon
-        Me.Label4.Location = New System.Drawing.Point(561, 348)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 13)
-        Me.Label4.TabIndex = 98
-        Me.Label4.Text = "Descuento:"
-        '
-        'txtDescuento
-        '
-        Me.txtDescuento.BackColor = System.Drawing.Color.White
-        Me.txtDescuento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescuento.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtDescuento.Location = New System.Drawing.Point(635, 341)
-        Me.txtDescuento.MaxLength = 10
-        Me.txtDescuento.Name = "txtDescuento"
-        Me.txtDescuento.ReadOnly = True
-        Me.txtDescuento.Size = New System.Drawing.Size(171, 20)
-        Me.txtDescuento.TabIndex = 97
-        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Column8
         '
@@ -444,6 +357,92 @@ Partial Class frmfacturascompra
         Me.descuento.Visible = False
         Me.descuento.Width = 91
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Maroon
+        Me.Label1.Location = New System.Drawing.Point(287, 348)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 13)
+        Me.Label1.TabIndex = 95
+        Me.Label1.Text = "Crédito:"
+        '
+        'txtcredito
+        '
+        Me.txtcredito.BackColor = System.Drawing.Color.White
+        Me.txtcredito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtcredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcredito.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtcredito.Location = New System.Drawing.Point(351, 341)
+        Me.txtcredito.MaxLength = 10
+        Me.txtcredito.Name = "txtcredito"
+        Me.txtcredito.ReadOnly = True
+        Me.txtcredito.Size = New System.Drawing.Size(171, 20)
+        Me.txtcredito.TabIndex = 94
+        Me.txtcredito.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Maroon
+        Me.Label2.Location = New System.Drawing.Point(20, 348)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
+        Me.Label2.TabIndex = 93
+        Me.Label2.Text = "Efectivo:"
+        '
+        'txtefectivo
+        '
+        Me.txtefectivo.BackColor = System.Drawing.Color.White
+        Me.txtefectivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtefectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtefectivo.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtefectivo.Location = New System.Drawing.Point(84, 341)
+        Me.txtefectivo.MaxLength = 10
+        Me.txtefectivo.Name = "txtefectivo"
+        Me.txtefectivo.ReadOnly = True
+        Me.txtefectivo.Size = New System.Drawing.Size(171, 20)
+        Me.txtefectivo.TabIndex = 92
+        Me.txtefectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lbtotal
+        '
+        Me.lbtotal.AutoSize = True
+        Me.lbtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbtotal.ForeColor = System.Drawing.Color.Maroon
+        Me.lbtotal.Location = New System.Drawing.Point(829, 348)
+        Me.lbtotal.Name = "lbtotal"
+        Me.lbtotal.Size = New System.Drawing.Size(40, 13)
+        Me.lbtotal.TabIndex = 91
+        Me.lbtotal.Text = "Total:"
+        '
+        'txttotal
+        '
+        Me.txttotal.BackColor = System.Drawing.Color.White
+        Me.txttotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txttotal.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txttotal.Location = New System.Drawing.Point(875, 341)
+        Me.txttotal.MaxLength = 10
+        Me.txttotal.Name = "txttotal"
+        Me.txttotal.ReadOnly = True
+        Me.txttotal.Size = New System.Drawing.Size(171, 20)
+        Me.txttotal.TabIndex = 90
+        Me.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'cmbproveedor
+        '
+        Me.cmbproveedor.DataSource = Me.ProveedoresBindingSource
+        Me.cmbproveedor.DisplayMember = "nombre_comercial"
+        Me.cmbproveedor.FormattingEnabled = True
+        Me.cmbproveedor.Location = New System.Drawing.Point(73, 28)
+        Me.cmbproveedor.Name = "cmbproveedor"
+        Me.cmbproveedor.Size = New System.Drawing.Size(331, 21)
+        Me.cmbproveedor.TabIndex = 81
+        Me.cmbproveedor.ValueMember = "id"
+        '
         'frmfacturascompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -473,7 +472,6 @@ Partial Class frmfacturascompra
     Friend WithEvents ProveedoresBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ProveedoresTableAdapter As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter
     Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager
-    Friend WithEvents cmbProveedor As System.Windows.Forms.ComboBox
     Friend WithEvents txtNumFactura As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
@@ -498,4 +496,5 @@ Partial Class frmfacturascompra
     Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents formaPagoEntero As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents descuento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cmbproveedor As System.Windows.Forms.ComboBox
 End Class
