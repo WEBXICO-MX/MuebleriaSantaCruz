@@ -37,10 +37,8 @@ Partial Class frmCompra
         Me.txtDescuento = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cmbformapago = New System.Windows.Forms.ComboBox()
-        Me.cmbProveedor = New System.Windows.Forms.ComboBox()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProveedorCombo = New MuebleriaCasaCruz.DataSetProveedorCombo()
-        Me.cmbProducto = New System.Windows.Forms.ComboBox()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProductoCombo = New MuebleriaCasaCruz.DataSetProductoCombo()
         Me.cbxPagado = New System.Windows.Forms.CheckBox()
@@ -66,6 +64,8 @@ Partial Class frmCompra
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.cmbproveedor = New System.Windows.Forms.ComboBox()
+        Me.cmbproducto = New System.Windows.Forms.ComboBox()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,11 +163,11 @@ Partial Class frmCompra
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cmbproducto)
+        Me.GroupBox1.Controls.Add(Me.cmbproveedor)
         Me.GroupBox1.Controls.Add(Me.txtDescuento)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.cmbformapago)
-        Me.GroupBox1.Controls.Add(Me.cmbProveedor)
-        Me.GroupBox1.Controls.Add(Me.cmbProducto)
         Me.GroupBox1.Controls.Add(Me.cbxPagado)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txtcosto)
@@ -201,7 +201,7 @@ Partial Class frmCompra
         Me.txtDescuento.MaxLength = 100
         Me.txtDescuento.Name = "txtDescuento"
         Me.txtDescuento.Size = New System.Drawing.Size(132, 20)
-        Me.txtDescuento.TabIndex = 123
+        Me.txtDescuento.TabIndex = 5
         Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label11
@@ -225,20 +225,7 @@ Partial Class frmCompra
         Me.cmbformapago.Location = New System.Drawing.Point(102, 303)
         Me.cmbformapago.Name = "cmbformapago"
         Me.cmbformapago.Size = New System.Drawing.Size(161, 21)
-        Me.cmbformapago.TabIndex = 6
-        '
-        'cmbProveedor
-        '
-        Me.cmbProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "nombre_comercial", True))
-        Me.cmbProveedor.DataSource = Me.ProveedoresBindingSource
-        Me.cmbProveedor.DisplayMember = "nombre_comercial"
-        Me.cmbProveedor.Enabled = False
-        Me.cmbProveedor.FormattingEnabled = True
-        Me.cmbProveedor.Location = New System.Drawing.Point(102, 136)
-        Me.cmbProveedor.Name = "cmbProveedor"
-        Me.cmbProveedor.Size = New System.Drawing.Size(284, 21)
-        Me.cmbProveedor.TabIndex = 1
-        Me.cmbProveedor.ValueMember = "id"
+        Me.cmbformapago.TabIndex = 7
         '
         'ProveedoresBindingSource
         '
@@ -249,19 +236,6 @@ Partial Class frmCompra
         '
         Me.DataSetProveedorCombo.DataSetName = "DataSetProveedorCombo"
         Me.DataSetProveedorCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'cmbProducto
-        '
-        Me.cmbProducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "nombre", True))
-        Me.cmbProducto.DataSource = Me.ProductosBindingSource
-        Me.cmbProducto.DisplayMember = "nombre"
-        Me.cmbProducto.Enabled = False
-        Me.cmbProducto.FormattingEnabled = True
-        Me.cmbProducto.Location = New System.Drawing.Point(102, 163)
-        Me.cmbProducto.Name = "cmbProducto"
-        Me.cmbProducto.Size = New System.Drawing.Size(284, 21)
-        Me.cmbProducto.TabIndex = 2
-        Me.cmbProducto.ValueMember = "id"
         '
         'ProductosBindingSource
         '
@@ -280,7 +254,7 @@ Partial Class frmCompra
         Me.cbxPagado.Location = New System.Drawing.Point(102, 340)
         Me.cbxPagado.Name = "cbxPagado"
         Me.cbxPagado.Size = New System.Drawing.Size(15, 14)
-        Me.cbxPagado.TabIndex = 7
+        Me.cbxPagado.TabIndex = 8
         Me.cbxPagado.UseVisualStyleBackColor = True
         '
         'Label10
@@ -323,7 +297,7 @@ Partial Class frmCompra
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
         Me.txtCantidad.TabIndex = 3
-        Me.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
         '
@@ -385,7 +359,7 @@ Partial Class frmCompra
         Me.txtTotal.MaxLength = 100
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(132, 20)
-        Me.txtTotal.TabIndex = 5
+        Me.txtTotal.TabIndex = 6
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtNumFactura
@@ -482,6 +456,28 @@ Partial Class frmCompra
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'cmbproveedor
+        '
+        Me.cmbproveedor.DataSource = Me.ProveedoresBindingSource
+        Me.cmbproveedor.DisplayMember = "nombre_comercial"
+        Me.cmbproveedor.FormattingEnabled = True
+        Me.cmbproveedor.Location = New System.Drawing.Point(102, 133)
+        Me.cmbproveedor.Name = "cmbproveedor"
+        Me.cmbproveedor.Size = New System.Drawing.Size(284, 21)
+        Me.cmbproveedor.TabIndex = 1
+        Me.cmbproveedor.ValueMember = "id"
+        '
+        'cmbproducto
+        '
+        Me.cmbproducto.DataSource = Me.ProductosBindingSource
+        Me.cmbproducto.DisplayMember = "nombre"
+        Me.cmbproducto.FormattingEnabled = True
+        Me.cmbproducto.Location = New System.Drawing.Point(102, 162)
+        Me.cmbproducto.Name = "cmbproducto"
+        Me.cmbproducto.Size = New System.Drawing.Size(284, 21)
+        Me.cmbproducto.TabIndex = 2
+        Me.cmbproducto.ValueMember = "id"
+        '
         'frmCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -537,16 +533,16 @@ Partial Class frmCompra
     Friend WithEvents ProductosBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ProductosTableAdapter As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter
     Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager
-    Friend WithEvents cmbProducto As System.Windows.Forms.ComboBox
     Friend WithEvents DataSetProveedorCombo As MuebleriaCasaCruz.DataSetProveedorCombo
     Friend WithEvents ProveedoresBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ProveedoresTableAdapter As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter
     Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager
-    Friend WithEvents cmbProveedor As System.Windows.Forms.ComboBox
     Friend WithEvents cmbformapago As System.Windows.Forms.ComboBox
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents btproveedor As System.Windows.Forms.ToolStripButton
     Friend WithEvents txtDescuento As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents btfacturas As System.Windows.Forms.ToolStripButton
+    Friend WithEvents cmbproducto As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbproveedor As System.Windows.Forms.ComboBox
 End Class

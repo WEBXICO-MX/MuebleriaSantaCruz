@@ -104,8 +104,7 @@ Public Class frmCompra
 
             MessageBox.Show("La factura '" & txtNumFactura.Text & "' ha sido guardada", "Guardar", MessageBoxButtons.OK)
 
-            LimpiarCajasdeTexto2()
-            Nuevo()
+            LimpiarCajasdeTexto()
             lbtipoestado.Visible = False
             'proveedoresDataGridView.Enabled = True
         Catch ex As SqlException
