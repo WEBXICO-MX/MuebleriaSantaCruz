@@ -27,6 +27,7 @@ Partial Class frmCompras
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCompras))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btcancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -66,9 +67,18 @@ Partial Class frmCompras
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
+        Me.btnuevo = New System.Windows.Forms.ToolStripButton()
+        Me.btguardar = New System.Windows.Forms.ToolStripButton()
+        Me.btdeshacer = New System.Windows.Forms.ToolStripButton()
+        Me.bteditar = New System.Windows.Forms.ToolStripButton()
+        Me.btproducto = New System.Windows.Forms.ToolStripButton()
+        Me.btproveedor = New System.Windows.Forms.ToolStripButton()
+        Me.btfacturas = New System.Windows.Forms.ToolStripButton()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BarraHerramientas.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -77,7 +87,7 @@ Partial Class frmCompras
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.btcancelar)
         Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Location = New System.Drawing.Point(6, 27)
+        Me.Panel1.Location = New System.Drawing.Point(6, 46)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(879, 557)
         Me.Panel1.TabIndex = 16
@@ -559,11 +569,89 @@ Partial Class frmCompras
         Me.Column5.ReadOnly = True
         Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
+        'BarraHerramientas
+        '
+        Me.BarraHerramientas.BackColor = System.Drawing.SystemColors.Control
+        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproducto, Me.btproveedor, Me.btfacturas})
+        Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
+        Me.BarraHerramientas.Name = "BarraHerramientas"
+        Me.BarraHerramientas.Size = New System.Drawing.Size(890, 38)
+        Me.BarraHerramientas.TabIndex = 34
+        Me.BarraHerramientas.Text = "ToolStrip1"
+        '
+        'btnuevo
+        '
+        Me.btnuevo.Enabled = False
+        Me.btnuevo.Image = CType(resources.GetObject("btnuevo.Image"), System.Drawing.Image)
+        Me.btnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnuevo.Name = "btnuevo"
+        Me.btnuevo.Size = New System.Drawing.Size(46, 35)
+        Me.btnuevo.Text = "&Nuevo"
+        Me.btnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btguardar
+        '
+        Me.btguardar.Enabled = False
+        Me.btguardar.Image = CType(resources.GetObject("btguardar.Image"), System.Drawing.Image)
+        Me.btguardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btguardar.Name = "btguardar"
+        Me.btguardar.Size = New System.Drawing.Size(53, 35)
+        Me.btguardar.Text = "&Guardar"
+        Me.btguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btdeshacer
+        '
+        Me.btdeshacer.Enabled = False
+        Me.btdeshacer.Image = CType(resources.GetObject("btdeshacer.Image"), System.Drawing.Image)
+        Me.btdeshacer.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btdeshacer.Name = "btdeshacer"
+        Me.btdeshacer.Size = New System.Drawing.Size(59, 35)
+        Me.btdeshacer.Text = "&Deshacer"
+        Me.btdeshacer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bteditar
+        '
+        Me.bteditar.Enabled = False
+        Me.bteditar.Image = CType(resources.GetObject("bteditar.Image"), System.Drawing.Image)
+        Me.bteditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bteditar.Name = "bteditar"
+        Me.bteditar.Size = New System.Drawing.Size(41, 35)
+        Me.bteditar.Text = "&Editar"
+        Me.bteditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btproducto
+        '
+        Me.btproducto.Image = CType(resources.GetObject("btproducto.Image"), System.Drawing.Image)
+        Me.btproducto.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btproducto.Name = "btproducto"
+        Me.btproducto.Size = New System.Drawing.Size(60, 35)
+        Me.btproducto.Text = "&Producto"
+        Me.btproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btproveedor
+        '
+        Me.btproveedor.Image = CType(resources.GetObject("btproveedor.Image"), System.Drawing.Image)
+        Me.btproveedor.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btproveedor.Name = "btproveedor"
+        Me.btproveedor.Size = New System.Drawing.Size(65, 35)
+        Me.btproveedor.Text = "Proveedor"
+        Me.btproveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btfacturas
+        '
+        Me.btfacturas.Image = CType(resources.GetObject("btfacturas.Image"), System.Drawing.Image)
+        Me.btfacturas.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btfacturas.Name = "btfacturas"
+        Me.btfacturas.Size = New System.Drawing.Size(55, 35)
+        Me.btfacturas.Text = "Facturas"
+        Me.btfacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(890, 610)
+        Me.Controls.Add(Me.BarraHerramientas)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmCompras"
         Me.Text = "Compras | Mueblería Casa Cruz"
@@ -571,7 +659,10 @@ Partial Class frmCompras
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BarraHerramientas.ResumeLayout(False)
+        Me.BarraHerramientas.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
@@ -613,4 +704,12 @@ Partial Class frmCompras
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BarraHerramientas As System.Windows.Forms.ToolStrip
+    Friend WithEvents btnuevo As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btguardar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btdeshacer As System.Windows.Forms.ToolStripButton
+    Friend WithEvents bteditar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btproducto As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btproveedor As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btfacturas As System.Windows.Forms.ToolStripButton
 End Class
