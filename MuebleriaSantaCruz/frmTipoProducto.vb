@@ -3,6 +3,7 @@ Public Class frmTipoProducto
     Private objcon As New Conexion
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
+    Private EjecutarProcedimiento As Boolean
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -64,7 +65,7 @@ Public Class frmTipoProducto
 
             MessageBox.Show("El tipo de producto '" & txtNombre.Text & "' ha sido guardado", "Guardar", MessageBoxButtons.OK)
 
-            LimpiarCajasdeTexto(True)
+            LimpiarCajasdeTexto()
             lbtipoestado.Visible = False
             Tipos_productosDataGridView.Enabled = True
         Catch ex As SqlException
@@ -99,12 +100,19 @@ Public Class frmTipoProducto
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To Tipos_productosDataGridView.Rows.Count - 1
+                If (Tipos_productosDataGridView.Item(3, Fila).Value = txtNombre.Text) Then
+                    Tipos_productosDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
             MessageBox.Show("El tipo de producto '" & txtNombre.Text & "' ha sido guardado", "Guardar", MessageBoxButtons.OK)
 
-            LimpiarCajasdeTexto(True)
+            LimpiarCajasdeTexto()
             lbtipoestado.Visible = False
             Tipos_productosDataGridView.Enabled = True
         Catch ex As SqlException
@@ -128,12 +136,9 @@ Public Class frmTipoProducto
         If (objcon.con.State = ConnectionState.Open) Then objcon.con.Close()
     End Sub
 
-    Private Sub LimpiarCajasdeTexto(ByVal Estado As Boolean)
-        If (Estado) Then
-            Lineas_productosComboBox.Text = ""
-        End If
-
+    Private Sub LimpiarCajasdeTexto()
         txtID.Text = ""
+        Lineas_productosComboBox.Text = ""
         txtNombre.Text = ""
         cbxActivo.Checked = True
     End Sub
@@ -153,10 +158,12 @@ Public Class frmTipoProducto
     End Sub
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
-        txtID.Text = Tipos_productosDataGridView.Rows(F).Cells(0).Value
-        Lineas_productosComboBox.SelectedValue = Tipos_productosDataGridView.Rows(F).Cells(2).Value
-        txtNombre.Text = Tipos_productosDataGridView.Rows(F).Cells(3).Value
-        cbxActivo.Checked = Tipos_productosDataGridView.Rows(F).Cells(4).Value
+        If (EjecutarProcedimiento = True) Then
+            txtID.Text = Tipos_productosDataGridView.Rows(F).Cells(0).Value
+            Lineas_productosComboBox.Text = Tipos_productosDataGridView.Rows(F).Cells(1).Value
+            txtNombre.Text = Tipos_productosDataGridView.Rows(F).Cells(3).Value
+            cbxActivo.Checked = Tipos_productosDataGridView.Rows(F).Cells(4).Value
+        End If
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
@@ -185,7 +192,7 @@ Public Class frmTipoProducto
         lbtipoestado.Visible = True
         lbtipoestado.Text = "Nuevo"
         EstadoBotones(False, True, True, False, False)
-        LimpiarCajasdeTexto(True)
+        LimpiarCajasdeTexto()
         EstadoCajasdeTexto(True)
         Tipos_productosDataGridView.Enabled = False
         DesactivarErroresCajasdeTexto()
@@ -193,6 +200,12 @@ Public Class frmTipoProducto
     End Sub
 
     Private Sub btguardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btguardar.Click
+
+        If (Lineas_productosComboBox.FindStringExact(Lineas_productosComboBox.Text) < 0) Then
+            Lineas_productosComboBox.Text = ""
+            ErrorProvider1.SetError(Lineas_productosComboBox, "Seleccione linea de producto")
+            Exit Sub
+        End If
 
         If (txtNombre.Text.Length = 0) Then
             ErrorProvider1.SetError(txtNombre, "Capture el nombre del tipo de producto")
@@ -210,14 +223,16 @@ Public Class frmTipoProducto
     End Sub
 
     Private Sub btdeshacer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btdeshacer.Click
+        EjecutarProcedimiento = False
         lbtipoestado.Visible = False
         lbtipoestado.Text = ""
 
-        LimpiarCajasdeTexto(True)
+        LimpiarCajasdeTexto()
         EstadoCajasdeTexto(False)
         EstadoBotones(True, False, False, False, True)
         Tipos_productosDataGridView.Enabled = True
         DesactivarErroresCajasdeTexto()
+        EjecutarProcedimiento = True
     End Sub
 
     Private Sub bteditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bteditar.Click
@@ -248,19 +263,18 @@ Public Class frmTipoProducto
             e.KeyChar = ""
         End If
     End Sub
-
-    Private Sub frmTipoProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetLineaProductoCombo.lineas_productos' Puede moverla o quitarla según sea necesario.
-        Me.Lineas_productosTableAdapter.Fill(Me.DataSetLineaProductoCombo.lineas_productos)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoProducto.tipos_productos' Puede moverla o quitarla según sea necesario.
-        Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProducto.tipos_productos)
-
-        Me.Top = 100
+    Private Sub Lineas_productosComboBox_TextChanged(sender As Object, e As EventArgs) Handles Lineas_productosComboBox.TextChanged
+        If (EjecutarProcedimiento = True) Then
+            If (Lineas_productosComboBox.FindStringExact(Lineas_productosComboBox.Text) >= 0) Then
+                'Desactivar el icono de error
+                ErrorProvider1.SetError(Lineas_productosComboBox, Nothing)
+            End If
+        End If
     End Sub
 
     Private Sub frmTipoProducto_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
-        LimpiarCajasdeTexto(True)
+        LimpiarCajasdeTexto()
 
         'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
         If (Tipos_productosBindingSource.Count = 0) Then
@@ -270,5 +284,16 @@ Public Class frmTipoProducto
         End If
 
         Tipos_productosDataGridView.ClearSelection()
+        EjecutarProcedimiento = True
+    End Sub
+    Private Sub frmTipoProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetLineaProductoCombo.lineas_productos' Puede moverla o quitarla según sea necesario.
+        Me.Lineas_productosTableAdapter.Fill(Me.DataSetLineaProductoCombo.lineas_productos)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoProducto.tipos_productos' Puede moverla o quitarla según sea necesario.
+        Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProducto.tipos_productos)
+
+        Me.Top = 100
+
+
     End Sub
 End Class

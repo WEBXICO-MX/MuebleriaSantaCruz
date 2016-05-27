@@ -24,6 +24,9 @@ Partial Class frmProveedor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProveedor))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -36,22 +39,22 @@ Partial Class frmProveedor
         Me.lbestado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.txtTelefonos = New System.Windows.Forms.TextBox()
+        Me.txtNombreContacto = New System.Windows.Forms.TextBox()
         Me.txtRazonSocial = New System.Windows.Forms.TextBox()
         Me.txtNombreComercial = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ProveedoresDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtNombreContacto = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtDireccion = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtTelefonos = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProveedor = New MuebleriaCasaCruz.DataSetProveedor()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorTableAdapters.proveedoresTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProveedorTableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,9 +70,9 @@ Partial Class frmProveedor
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarraHerramientas
@@ -78,7 +81,7 @@ Partial Class frmProveedor
         Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btbuscar})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
-        Me.BarraHerramientas.Size = New System.Drawing.Size(824, 38)
+        Me.BarraHerramientas.Size = New System.Drawing.Size(950, 38)
         Me.BarraHerramientas.TabIndex = 32
         Me.BarraHerramientas.Text = "ToolStrip1"
         '
@@ -205,12 +208,53 @@ Partial Class frmProveedor
         'txtID
         '
         Me.txtID.Enabled = False
-        Me.txtID.Location = New System.Drawing.Point(78, 47)
+        Me.txtID.Location = New System.Drawing.Point(120, 47)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(54, 20)
         Me.txtID.TabIndex = 1
         Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.BackColor = System.Drawing.Color.White
+        Me.txtDireccion.Enabled = False
+        Me.txtDireccion.Location = New System.Drawing.Point(120, 164)
+        Me.txtDireccion.MaxLength = 200
+        Me.txtDireccion.Multiline = True
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(266, 84)
+        Me.txtDireccion.TabIndex = 4
+        '
+        'txtEmail
+        '
+        Me.txtEmail.BackColor = System.Drawing.Color.White
+        Me.txtEmail.Enabled = False
+        Me.txtEmail.Location = New System.Drawing.Point(120, 287)
+        Me.txtEmail.MaxLength = 50
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(266, 20)
+        Me.txtEmail.TabIndex = 6
+        '
+        'txtTelefonos
+        '
+        Me.txtTelefonos.BackColor = System.Drawing.Color.White
+        Me.txtTelefonos.Enabled = False
+        Me.txtTelefonos.Location = New System.Drawing.Point(120, 260)
+        Me.txtTelefonos.MaxLength = 100
+        Me.txtTelefonos.Name = "txtTelefonos"
+        Me.txtTelefonos.Size = New System.Drawing.Size(266, 20)
+        Me.txtTelefonos.TabIndex = 5
+        '
+        'txtNombreContacto
+        '
+        Me.txtNombreContacto.BackColor = System.Drawing.Color.White
+        Me.txtNombreContacto.Enabled = False
+        Me.txtNombreContacto.Location = New System.Drawing.Point(121, 135)
+        Me.txtNombreContacto.MaxLength = 50
+        Me.txtNombreContacto.Name = "txtNombreContacto"
+        Me.txtNombreContacto.Size = New System.Drawing.Size(266, 20)
+        Me.txtNombreContacto.TabIndex = 3
         '
         'txtRazonSocial
         '
@@ -231,6 +275,46 @@ Partial Class frmProveedor
         Me.txtNombreComercial.Name = "txtNombreComercial"
         Me.txtNombreComercial.Size = New System.Drawing.Size(266, 20)
         Me.txtNombreComercial.TabIndex = 1
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(6, 293)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(35, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Email:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(6, 267)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(57, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Telefonos:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 171)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(55, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Dirección:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 142)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(109, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Nombre del contacto:"
         '
         'Label3
         '
@@ -256,100 +340,31 @@ Partial Class frmProveedor
         '
         Me.ProveedoresDataGridView.AllowUserToAddRows = False
         Me.ProveedoresDataGridView.AllowUserToDeleteRows = False
+        Me.ProveedoresDataGridView.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.ProveedoresDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.ProveedoresDataGridView.AutoGenerateColumns = False
+        Me.ProveedoresDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.ProveedoresDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.ProveedoresDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProveedoresDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.ProveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProveedoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.nombre_contacto, Me.direccion, Me.telefonos, Me.email, Me.fecha_registro, Me.fecha_modificacion, Me.DataGridViewCheckBoxColumn1})
         Me.ProveedoresDataGridView.DataSource = Me.ProveedoresBindingSource
         Me.ProveedoresDataGridView.Location = New System.Drawing.Point(425, 66)
+        Me.ProveedoresDataGridView.MultiSelect = False
         Me.ProveedoresDataGridView.Name = "ProveedoresDataGridView"
         Me.ProveedoresDataGridView.ReadOnly = True
-        Me.ProveedoresDataGridView.Size = New System.Drawing.Size(387, 337)
+        Me.ProveedoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ProveedoresDataGridView.Size = New System.Drawing.Size(513, 337)
         Me.ProveedoresDataGridView.TabIndex = 35
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 142)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(109, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Nombre del contacto:"
-        '
-        'txtNombreContacto
-        '
-        Me.txtNombreContacto.BackColor = System.Drawing.Color.White
-        Me.txtNombreContacto.Enabled = False
-        Me.txtNombreContacto.Location = New System.Drawing.Point(121, 135)
-        Me.txtNombreContacto.MaxLength = 50
-        Me.txtNombreContacto.Name = "txtNombreContacto"
-        Me.txtNombreContacto.Size = New System.Drawing.Size(266, 20)
-        Me.txtNombreContacto.TabIndex = 3
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 171)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(55, 13)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Dirección:"
-        '
-        'txtDireccion
-        '
-        Me.txtDireccion.BackColor = System.Drawing.Color.White
-        Me.txtDireccion.Enabled = False
-        Me.txtDireccion.Location = New System.Drawing.Point(120, 164)
-        Me.txtDireccion.MaxLength = 200
-        Me.txtDireccion.Multiline = True
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(266, 84)
-        Me.txtDireccion.TabIndex = 4
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(6, 267)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(57, 13)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Telefonos:"
-        '
-        'txtTelefonos
-        '
-        Me.txtTelefonos.BackColor = System.Drawing.Color.White
-        Me.txtTelefonos.Enabled = False
-        Me.txtTelefonos.Location = New System.Drawing.Point(120, 260)
-        Me.txtTelefonos.MaxLength = 100
-        Me.txtTelefonos.Name = "txtTelefonos"
-        Me.txtTelefonos.Size = New System.Drawing.Size(266, 20)
-        Me.txtTelefonos.TabIndex = 5
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 293)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(35, 13)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Email:"
-        '
-        'txtEmail
-        '
-        Me.txtEmail.BackColor = System.Drawing.Color.White
-        Me.txtEmail.Enabled = False
-        Me.txtEmail.Location = New System.Drawing.Point(120, 287)
-        Me.txtEmail.MaxLength = 50
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(266, 20)
-        Me.txtEmail.TabIndex = 6
         '
         'ProveedoresBindingSource
         '
@@ -360,6 +375,10 @@ Partial Class frmProveedor
         '
         Me.DataSetProveedor.DataSetName = "DataSetProveedor"
         Me.DataSetProveedor.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'ProveedoresTableAdapter
         '
@@ -374,78 +393,90 @@ Partial Class frmProveedor
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 43
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "nombre_comercial"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "nombre_comercial"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre comercial"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 122
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "razon_social"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "razon_social"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Razón social"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 96
         '
         'nombre_contacto
         '
         Me.nombre_contacto.DataPropertyName = "nombre_contacto"
-        Me.nombre_contacto.HeaderText = "nombre_contacto"
+        Me.nombre_contacto.HeaderText = "Nombre del contacto"
         Me.nombre_contacto.Name = "nombre_contacto"
         Me.nombre_contacto.ReadOnly = True
+        Me.nombre_contacto.Width = 137
         '
         'direccion
         '
         Me.direccion.DataPropertyName = "direccion"
-        Me.direccion.HeaderText = "direccion"
+        Me.direccion.HeaderText = "Dirección"
         Me.direccion.Name = "direccion"
         Me.direccion.ReadOnly = True
+        Me.direccion.Width = 86
         '
         'telefonos
         '
         Me.telefonos.DataPropertyName = "telefonos"
-        Me.telefonos.HeaderText = "telefonos"
+        Me.telefonos.HeaderText = "Teléfonos"
         Me.telefonos.Name = "telefonos"
         Me.telefonos.ReadOnly = True
+        Me.telefonos.Width = 88
         '
         'email
         '
         Me.email.DataPropertyName = "email"
-        Me.email.HeaderText = "email"
+        Me.email.HeaderText = "Email"
         Me.email.Name = "email"
         Me.email.ReadOnly = True
+        Me.email.Width = 62
         '
         'fecha_registro
         '
         Me.fecha_registro.DataPropertyName = "fecha_registro"
-        Me.fecha_registro.HeaderText = "fecha_registro"
+        Me.fecha_registro.HeaderText = "Fecha de registro"
         Me.fecha_registro.Name = "fecha_registro"
         Me.fecha_registro.ReadOnly = True
+        Me.fecha_registro.Width = 120
         '
         'fecha_modificacion
         '
         Me.fecha_modificacion.DataPropertyName = "fecha_modificacion"
-        Me.fecha_modificacion.HeaderText = "fecha_modificacion"
+        Me.fecha_modificacion.HeaderText = "Fecha de modificación"
         Me.fecha_modificacion.Name = "fecha_modificacion"
         Me.fecha_modificacion.ReadOnly = True
+        Me.fecha_modificacion.Width = 146
         '
         'DataGridViewCheckBoxColumn1
         '
         Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 49
         '
         'frmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 419)
+        Me.ClientSize = New System.Drawing.Size(950, 419)
         Me.Controls.Add(Me.ProveedoresDataGridView)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BarraHerramientas)
@@ -459,9 +490,9 @@ Partial Class frmProveedor
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetProveedor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

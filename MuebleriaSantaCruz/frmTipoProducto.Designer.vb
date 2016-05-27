@@ -24,9 +24,9 @@ Partial Class frmTipoProducto
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTipoProducto))
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -34,10 +34,10 @@ Partial Class frmTipoProducto
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Lineas_productosComboBox = New System.Windows.Forms.ComboBox()
         Me.Lineas_productosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetLineaProductoCombo = New MuebleriaCasaCruz.DataSetLineaProductoCombo()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.cbxActivo = New System.Windows.Forms.CheckBox()
         Me.lbtipoestado = New System.Windows.Forms.Label()
         Me.lbestado = New System.Windows.Forms.Label()
@@ -133,8 +133,8 @@ Partial Class frmTipoProducto
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Lineas_productosComboBox)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.cbxActivo)
         Me.GroupBox1.Controls.Add(Me.lbtipoestado)
         Me.GroupBox1.Controls.Add(Me.lbestado)
@@ -148,23 +148,13 @@ Partial Class frmTipoProducto
         Me.GroupBox1.TabIndex = 37
         Me.GroupBox1.TabStop = False
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(8, 94)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 13)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Linea de producto:"
-        '
         'Lineas_productosComboBox
         '
         Me.Lineas_productosComboBox.DataSource = Me.Lineas_productosBindingSource1
         Me.Lineas_productosComboBox.DisplayMember = "nombre"
         Me.Lineas_productosComboBox.Enabled = False
         Me.Lineas_productosComboBox.FormattingEnabled = True
-        Me.Lineas_productosComboBox.Location = New System.Drawing.Point(109, 91)
+        Me.Lineas_productosComboBox.Location = New System.Drawing.Point(109, 86)
         Me.Lineas_productosComboBox.Name = "Lineas_productosComboBox"
         Me.Lineas_productosComboBox.Size = New System.Drawing.Size(211, 21)
         Me.Lineas_productosComboBox.TabIndex = 0
@@ -179,6 +169,16 @@ Partial Class frmTipoProducto
         '
         Me.DataSetLineaProductoCombo.DataSetName = "DataSetLineaProductoCombo"
         Me.DataSetLineaProductoCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(8, 94)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(96, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Linea de producto:"
         '
         'cbxActivo
         '
@@ -218,7 +218,7 @@ Partial Class frmTipoProducto
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(8, 61)
+        Me.Label1.Location = New System.Drawing.Point(6, 54)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(21, 13)
         Me.Label1.TabIndex = 4
@@ -227,7 +227,7 @@ Partial Class frmTipoProducto
         'txtID
         '
         Me.txtID.Enabled = False
-        Me.txtID.Location = New System.Drawing.Point(109, 54)
+        Me.txtID.Location = New System.Drawing.Point(109, 47)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(54, 20)
@@ -279,20 +279,20 @@ Partial Class frmTipoProducto
         Me.Tipos_productosDataGridView.AllowUserToAddRows = False
         Me.Tipos_productosDataGridView.AllowUserToDeleteRows = False
         Me.Tipos_productosDataGridView.AllowUserToResizeRows = False
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.AliceBlue
-        Me.Tipos_productosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.Tipos_productosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.Tipos_productosDataGridView.AutoGenerateColumns = False
         Me.Tipos_productosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.Tipos_productosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.Tipos_productosDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tipos_productosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tipos_productosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Tipos_productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Tipos_productosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.linea_producto, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
         Me.Tipos_productosDataGridView.DataSource = Me.Tipos_productosBindingSource
@@ -307,8 +307,8 @@ Partial Class frmTipoProducto
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
@@ -418,11 +418,11 @@ Partial Class frmTipoProducto
     Friend WithEvents Lineas_productosTableAdapter As MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.lineas_productosTableAdapter
     Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetLineaProductoComboTableAdapters.TableAdapterManager
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Lineas_productosComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Lineas_productosBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents linea_producto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Lineas_productosComboBox As System.Windows.Forms.ComboBox
 End Class

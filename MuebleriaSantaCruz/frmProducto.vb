@@ -3,6 +3,7 @@ Public Class frmProducto
     Private objcon As New Conexion
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
+    Public externa As Boolean = False
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -19,10 +20,10 @@ Public Class frmProducto
 
             If (Lector.HasRows = False) Then
                 txtID.Text = "1"
-                txtNombre.Focus()
+                Tipos_productosComboBox.Focus()
             Else
                 txtID.Text = Lector("id") + 1
-                txtNombre.Focus()
+                Tipos_productosComboBox.Focus()
             End If
 
             'Llamar siempre a Close una vez finalizada la lectura
@@ -59,6 +60,10 @@ Public Class frmProducto
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             Lector = Orden.ExecuteReader()
             Lector.Read()
+
+            If (externa) Then
+                frmCompra.ProductosTableAdapter.Fill(frmCompra.DataSetProductoCombo.productos)
+            End If
 
             Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
 
@@ -154,7 +159,11 @@ Public Class frmProducto
         If (objcon.con.State = ConnectionState.Open) Then objcon.con.Close()
     End Sub
 
-    Private Sub LimpiarCajasdeTexto()
+    Private Sub LimpiarCajasdeTexto(Optional ByVal limpiar As Boolean = False)
+        If (limpiar) Then
+            Tipos_productosComboBox.Text = ""
+        End If
+
         txtID.Clear()
         txtNombre.Clear()
         txtDescripcion.Clear()
@@ -192,7 +201,7 @@ Public Class frmProducto
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = productosDataGridView.Rows(F).Cells(0).Value
-        Tipos_productosComboBox.SelectedValue = ProductosDataGridView.Rows(F).Cells(11).Value
+        Tipos_productosComboBox.Text = ProductosDataGridView.Rows(F).Cells(3).Value
         txtNombre.Text = ProductosDataGridView.Rows(F).Cells(1).Value
         If (IsDBNull(ProductosDataGridView.Rows(F).Cells(2).Value)) Then
             txtDescripcion.Text = ""
@@ -271,7 +280,7 @@ Public Class frmProducto
         lbtipoestado.Visible = True
         lbtipoestado.Text = "Nuevo"
         EstadoBotones(False, True, True, False, False)
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
         EstadoCajasdeTexto(True)
         productosDataGridView.Enabled = False
         DesactivarErroresCajasdeTexto()
@@ -279,6 +288,11 @@ Public Class frmProducto
     End Sub
 
     Private Sub btguardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btguardar.Click
+        If (Tipos_productosComboBox.FindStringExact(Tipos_productosComboBox.Text) < 0) Then
+            Tipos_productosComboBox.Text = ""
+            ErrorProvider1.SetError(Tipos_productosComboBox, "Seleccione el tipo de producto")
+            Exit Sub
+        End If
 
         If (txtNombre.Text.Length = 0) Then
             ErrorProvider1.SetError(txtNombre, "Capture el nombre del producto")
@@ -347,7 +361,7 @@ Public Class frmProducto
         lbtipoestado.Visible = False
         lbtipoestado.Text = ""
 
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
         EstadoCajasdeTexto(False)
         EstadoBotones(True, False, False, False, True)
         productosDataGridView.Enabled = True
@@ -383,9 +397,37 @@ Public Class frmProducto
         End If
     End Sub
 
+    Private Sub txtCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCosto.KeyPress
+        If (e.KeyChar = "'" Or e.KeyChar = " ") Then
+            e.KeyChar = ""
+        End If
+
+        If (e.KeyChar = Convert.ToChar(8) Or e.KeyChar = " " Or e.KeyChar = "-") Then
+            ' Se pulsó la tecla retroceso
+            e.Handled = False
+        ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
+            'Desechar los caracteres que no son dígitos
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub txtCosto_TextChanged(sender As Object, e As EventArgs) Handles txtCosto.TextChanged
         If (txtCosto.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtContado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContado.KeyPress
+        If (e.KeyChar = "'" Or e.KeyChar = " ") Then
+            e.KeyChar = ""
+        End If
+
+        If (e.KeyChar = Convert.ToChar(8) Or e.KeyChar = " " Or e.KeyChar = "-") Then
+            ' Se pulsó la tecla retroceso
+            e.Handled = False
+        ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
+            'Desechar los caracteres que no son dígitos
+            e.Handled = True
         End If
     End Sub
 
@@ -395,9 +437,37 @@ Public Class frmProducto
         End If
     End Sub
 
+    Private Sub txtCredito_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCredito.KeyPress
+        If (e.KeyChar = "'" Or e.KeyChar = " ") Then
+            e.KeyChar = ""
+        End If
+
+        If (e.KeyChar = Convert.ToChar(8) Or e.KeyChar = " " Or e.KeyChar = "-") Then
+            ' Se pulsó la tecla retroceso
+            e.Handled = False
+        ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
+            'Desechar los caracteres que no son dígitos
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub txtCredito_TextChanged(sender As Object, e As EventArgs) Handles txtCredito.TextChanged
         If (txtCredito.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtEnganche_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEnganche.KeyPress
+        If (e.KeyChar = "'" Or e.KeyChar = " ") Then
+            e.KeyChar = ""
+        End If
+
+        If (e.KeyChar = Convert.ToChar(8) Or e.KeyChar = " " Or e.KeyChar = "-") Then
+            ' Se pulsó la tecla retroceso
+            e.Handled = False
+        ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
+            'Desechar los caracteres que no son dígitos
+            e.Handled = True
         End If
     End Sub
 
@@ -407,9 +477,37 @@ Public Class frmProducto
         End If
     End Sub
 
+    Private Sub txtPagoSemanal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPagoSemanal.KeyPress
+        If (e.KeyChar = "'" Or e.KeyChar = " ") Then
+            e.KeyChar = ""
+        End If
+
+        If (e.KeyChar = Convert.ToChar(8) Or e.KeyChar = " " Or e.KeyChar = "-") Then
+            ' Se pulsó la tecla retroceso
+            e.Handled = False
+        ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
+            'Desechar los caracteres que no son dígitos
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub txtPagoSemanal_TextChanged(sender As Object, e As EventArgs) Handles txtPagoSemanal.TextChanged
         If (txtPagoSemanal.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
+        End If
+    End Sub
+
+    Private Sub txtStockMinimo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStockMinimo.KeyPress
+        If (e.KeyChar = "'" Or e.KeyChar = " ") Then
+            e.KeyChar = ""
+        End If
+
+        If (e.KeyChar = Convert.ToChar(8) Or e.KeyChar = " " Or e.KeyChar = "-") Then
+            ' Se pulsó la tecla retroceso
+            e.Handled = False
+        ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
+            'Desechar los caracteres que no son dígitos
+            e.Handled = True
         End If
     End Sub
 
@@ -419,15 +517,37 @@ Public Class frmProducto
         End If
     End Sub
 
+    Private Sub txtStockMaximo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStockMaximo.KeyPress
+        If (e.KeyChar = "'" Or e.KeyChar = " ") Then
+            e.KeyChar = ""
+        End If
+
+        If (e.KeyChar = Convert.ToChar(8) Or e.KeyChar = " " Or e.KeyChar = "-") Then
+            ' Se pulsó la tecla retroceso
+            e.Handled = False
+        ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
+            'Desechar los caracteres que no son dígitos
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub txtStockMaximo_TextChanged(sender As Object, e As EventArgs) Handles txtStockMaximo.TextChanged
         If (txtStockMaximo.Text.Length <> 0) Then
             DesactivarErroresCajasdeTexto()
         End If
     End Sub
+    Private Sub Tipos_productosComboBox_TextChanged(sender As Object, e As EventArgs) Handles Tipos_productosComboBox.TextChanged
+        ' If (EjecutarProcedimiento = True) Then
+        If (Tipos_productosComboBox.FindStringExact(Tipos_productosComboBox.Text) >= 0) Then
+            'Desactivar el icono de error
+            ErrorProvider1.SetError(Tipos_productosComboBox, Nothing)
+        End If
+        'End If
+    End Sub
 
     Private Sub frmProducto_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
-        LimpiarCajasdeTexto()
+        LimpiarCajasdeTexto(True)
 
         'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
         If (productosBindingSource.Count = 0) Then

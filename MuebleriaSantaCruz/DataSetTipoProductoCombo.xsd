@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="MuebleriaCASACRUZConnectionString (MySettings)" DbObjectName="MuebleriaCASACRUZ.dbo.tipos_productos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id, linea_producto_id, nombre, activo FROM dbo.tipos_productos</CommandText>
+                    <CommandText>SELECT id, linea_producto_id, nombre, activo FROM dbo.tipos_productos ORDER BY nombre</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -34,7 +34,7 @@
   <xs:element name="DataSetTipoProductoCombo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetTipoProductoCombo" msprop:Generator_UserDSName="DataSetTipoProductoCombo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tipos_productos" msprop:Generator_TableClassName="tipos_productosDataTable" msprop:Generator_TableVarName="tabletipos_productos" msprop:Generator_RowChangedName="tipos_productosRowChanged" msprop:Generator_TablePropName="tipos_productos" msprop:Generator_RowDeletingName="tipos_productosRowDeleting" msprop:Generator_RowChangingName="tipos_productosRowChanging" msprop:Generator_RowEvHandlerName="tipos_productosRowChangeEventHandler" msprop:Generator_RowDeletedName="tipos_productosRowDeleted" msprop:Generator_RowClassName="tipos_productosRow" msprop:Generator_UserTableName="tipos_productos" msprop:Generator_RowEvArgName="tipos_productosRowChangeEvent">
+        <xs:element name="tipos_productos" msprop:Generator_TableClassName="tipos_productosDataTable" msprop:Generator_TableVarName="tabletipos_productos" msprop:Generator_TablePropName="tipos_productos" msprop:Generator_RowDeletingName="tipos_productosRowDeleting" msprop:Generator_RowChangingName="tipos_productosRowChanging" msprop:Generator_RowEvHandlerName="tipos_productosRowChangeEventHandler" msprop:Generator_RowDeletedName="tipos_productosRowDeleted" msprop:Generator_UserTableName="tipos_productos" msprop:Generator_RowChangedName="tipos_productosRowChanged" msprop:Generator_RowEvArgName="tipos_productosRowChangeEvent" msprop:Generator_RowClassName="tipos_productosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
