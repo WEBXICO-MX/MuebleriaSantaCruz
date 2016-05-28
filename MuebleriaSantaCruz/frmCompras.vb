@@ -411,6 +411,7 @@ Public Class frmCompras
                 DetalleFactura.Rows(FRepetida).Cells(4).Value = FormatCurrency(txtimporte.Text)
             End If
 
+            Totales()
             LimpiarCajasdeTexto(True)
             cmbproducto.Focus()
         End If
@@ -460,13 +461,6 @@ Public Class frmCompras
         End If
     End Sub
 
-    Private Sub txtdescuento_TextChanged(sender As Object, e As EventArgs) Handles txtdescuento.TextChanged
-        If (txtdescuento.Text.Length <> 0) Then
-            DesactivarErroresCajasdeTexto()
-        End If
-    End Sub
-
-
     Private Sub txtsubtotal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtsubtotal.KeyPress
         If (e.KeyChar = "'" Or e.KeyChar = " ") Then
             e.KeyChar = ""
@@ -476,7 +470,6 @@ Public Class frmCompras
             ' Se pulsó la tecla retroceso
             e.Handled = False
         ElseIf (e.KeyChar = ".") Then
-            e.Handled = True
         ElseIf (e.KeyChar < "0"c Or e.KeyChar > "9"c) Then
             'Desechar los caracteres que no son dígitos
             e.Handled = True
@@ -570,6 +563,45 @@ Public Class frmCompras
     Private Sub DetalleFactura_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles DetalleFactura.RowsRemoved
         If (DetalleFactura.Rows.Count = 0) Then
 
+        End If
+        Totales()
+    End Sub
+    Private Sub Totales()
+        Dim Subtotal As Double
+
+        For Fila = 0 To DetalleFactura.Rows.Count - 1
+            Subtotal = Subtotal + DetalleFactura.Rows(Fila).Cells(4).Value
+        Next
+
+        Subtotal = FormatCurrency(Subtotal, 2)
+        txtsubtotal.Text = FormatCurrency(Subtotal, 2)
+        'IVA = FormatCurrency(Subtotal * IVABD, 2)
+        'txtIVA.Text = FormatCurrency(IVA, 2)
+        txttotalimporte.Text = FormatCurrency(Subtotal, 2)
+
+        If (txtdescuento.Text <> "") Then
+            txtsubtotal.Text = FormatCurrency(Subtotal - CDbl(txtdescuento.Text), 2)
+        End If
+    End Sub
+
+    Private Sub txtdescuento_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdescuento.TextChanged
+        Dim totalImporte As Double
+
+        If (txttotalimporte.Text = "") Then
+            totalImporte = 0
+        Else
+            totalImporte = CDbl(txttotalimporte.Text)
+        End If
+
+        If (txtdescuento.Text <> "") Then
+            txtsubtotal.Text = FormatCurrency(totalImporte - CDbl(txtdescuento.Text), 2)
+        Else
+            txtdescuento.Text = 0
+            txtsubtotal.Text = txttotalimporte.Text
+        End If
+
+        If (txtdescuento.Text.Length <> 0) Then
+            DesactivarErroresCajasdeTexto()
         End If
     End Sub
 

@@ -470,6 +470,7 @@ Partial Class frmCompras
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.Size = New System.Drawing.Size(85, 20)
         Me.txtdescuento.TabIndex = 11
+        Me.txtdescuento.Text = "0"
         Me.txtdescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'cmbformapago
