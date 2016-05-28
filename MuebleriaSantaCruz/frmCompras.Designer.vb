@@ -84,9 +84,8 @@ Partial Class frmCompras
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
         Me.btdeshacer = New System.Windows.Forms.ToolStripButton()
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
-        Me.btproducto = New System.Windows.Forms.ToolStripButton()
         Me.btproveedor = New System.Windows.Forms.ToolStripButton()
-        Me.btfacturas = New System.Windows.Forms.ToolStripButton()
+        Me.btproducto = New System.Windows.Forms.ToolStripButton()
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
         Me.ProductosTableAdapter = New MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter()
@@ -710,7 +709,7 @@ Partial Class frmCompras
         'BarraHerramientas
         '
         Me.BarraHerramientas.BackColor = System.Drawing.SystemColors.Control
-        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproveedor, Me.btproducto, Me.btfacturas})
+        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproveedor, Me.btproducto})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
         Me.BarraHerramientas.Size = New System.Drawing.Size(890, 38)
@@ -758,15 +757,6 @@ Partial Class frmCompras
         Me.bteditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.bteditar.Visible = False
         '
-        'btproducto
-        '
-        Me.btproducto.Image = CType(resources.GetObject("btproducto.Image"), System.Drawing.Image)
-        Me.btproducto.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btproducto.Name = "btproducto"
-        Me.btproducto.Size = New System.Drawing.Size(60, 35)
-        Me.btproducto.Text = "&Producto"
-        Me.btproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'btproveedor
         '
         Me.btproveedor.Image = CType(resources.GetObject("btproveedor.Image"), System.Drawing.Image)
@@ -776,14 +766,14 @@ Partial Class frmCompras
         Me.btproveedor.Text = "Proveedor"
         Me.btproveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'btfacturas
+        'btproducto
         '
-        Me.btfacturas.Image = CType(resources.GetObject("btfacturas.Image"), System.Drawing.Image)
-        Me.btfacturas.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btfacturas.Name = "btfacturas"
-        Me.btfacturas.Size = New System.Drawing.Size(55, 35)
-        Me.btfacturas.Text = "Facturas"
-        Me.btfacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btproducto.Image = CType(resources.GetObject("btproducto.Image"), System.Drawing.Image)
+        Me.btproducto.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btproducto.Name = "btproducto"
+        Me.btproducto.Size = New System.Drawing.Size(60, 35)
+        Me.btproducto.Text = "&Producto"
+        Me.btproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ProveedoresTableAdapter
         '
@@ -875,7 +865,6 @@ Partial Class frmCompras
     Friend WithEvents bteditar As System.Windows.Forms.ToolStripButton
     Friend WithEvents btproducto As System.Windows.Forms.ToolStripButton
     Friend WithEvents btproveedor As System.Windows.Forms.ToolStripButton
-    Friend WithEvents btfacturas As System.Windows.Forms.ToolStripButton
     Friend WithEvents DataSetProveedorCombo As MuebleriaCasaCruz.DataSetProveedorCombo
     Friend WithEvents ProveedoresBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ProveedoresTableAdapter As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter

@@ -293,6 +293,12 @@
     <Compile Include="frmCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmConsultaCompras.Designer.vb">
+      <DependentUpon>frmConsultaCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDomicilio.Designer.vb">
       <DependentUpon>frmDomicilio.vb</DependentUpon>
     </Compile>
@@ -520,6 +526,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaCompras.resx">
+      <DependentUpon>frmConsultaCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDomicilio.resx">
       <DependentUpon>frmDomicilio.vb</DependentUpon>

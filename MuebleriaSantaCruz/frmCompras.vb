@@ -238,7 +238,7 @@ Public Class frmCompras
         frmProveedor.Show()
     End Sub
 
-    Private Sub btfacturas_Click(sender As Object, e As EventArgs) Handles btfacturas.Click
+    Private Sub btfacturas_Click(sender As Object, e As EventArgs)
         frmfacturascompra.Show()
     End Sub
 
