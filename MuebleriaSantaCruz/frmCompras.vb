@@ -229,12 +229,12 @@ Public Class frmCompras
     End Sub
 
     Private Sub btproducto_Click(sender As Object, e As EventArgs) Handles btproducto.Click
-        frmProducto.externa = True
+        frmProducto.externa2 = True
         frmProducto.Show()
     End Sub
 
     Private Sub btproveedor_Click(sender As Object, e As EventArgs) Handles btproveedor.Click
-        frmProveedor.externa = True
+        frmProveedor.externa2 = True
         frmProveedor.Show()
     End Sub
 
@@ -245,6 +245,9 @@ Public Class frmCompras
     Private Sub LimpiarCajasdeTexto(ByVal Estado As Boolean)
         If (Estado) Then
             cmbproducto.Text = ""
+            txtprecio.Text = ""
+            txtcantidad.Text = ""
+            txtimporte.Text = ""
         Else
             txtID.Clear()
             txtfechacompra.Text = ""

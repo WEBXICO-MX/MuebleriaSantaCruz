@@ -4,6 +4,7 @@ Public Class frmProducto
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
     Public externa As Boolean = False
+    Public externa2 As Boolean = False
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -63,6 +64,10 @@ Public Class frmProducto
 
             If (externa) Then
                 frmCompras.ProductosTableAdapter.Fill(frmCompras.DataSetProductoCombo.productos)
+            End If
+
+            If (externa2) Then
+                frmConsultaCompras.ProductosTableAdapter.Fill(frmConsultaCompras.DataSetProductoCombo.productos)
             End If
 
             Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
