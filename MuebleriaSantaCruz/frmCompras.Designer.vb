@@ -23,14 +23,17 @@ Partial Class frmCompras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCompras))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btagregar = New System.Windows.Forms.Button()
+        Me.txtimporte = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.lbtipoestado = New System.Windows.Forms.Label()
         Me.lbestado = New System.Windows.Forms.Label()
         Me.cbxPagado = New System.Windows.Forms.CheckBox()
@@ -62,10 +65,10 @@ Partial Class frmCompras
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtcosto = New System.Windows.Forms.TextBox()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lbsubtotal = New System.Windows.Forms.Label()
-        Me.txtimporte = New System.Windows.Forms.TextBox()
+        Me.txttotalimporte = New System.Windows.Forms.TextBox()
         Me.lbIVA = New System.Windows.Forms.Label()
         Me.txtIVA = New System.Windows.Forms.TextBox()
         Me.DetalleFactura = New System.Windows.Forms.DataGridView()
@@ -113,6 +116,9 @@ Partial Class frmCompras
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.Controls.Add(Me.btagregar)
+        Me.GroupBox1.Controls.Add(Me.txtimporte)
+        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.lbtipoestado)
         Me.GroupBox1.Controls.Add(Me.lbestado)
         Me.GroupBox1.Controls.Add(Me.cbxPagado)
@@ -140,10 +146,10 @@ Partial Class frmCompras
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.txtcosto)
+        Me.GroupBox1.Controls.Add(Me.txtprecio)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.lbsubtotal)
-        Me.GroupBox1.Controls.Add(Me.txtimporte)
+        Me.GroupBox1.Controls.Add(Me.txttotalimporte)
         Me.GroupBox1.Controls.Add(Me.lbIVA)
         Me.GroupBox1.Controls.Add(Me.txtIVA)
         Me.GroupBox1.Controls.Add(Me.DetalleFactura)
@@ -157,6 +163,41 @@ Partial Class frmCompras
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Tag = ""
+        '
+        'btagregar
+        '
+        Me.btagregar.ForeColor = System.Drawing.Color.Black
+        Me.btagregar.Location = New System.Drawing.Point(507, 196)
+        Me.btagregar.Name = "btagregar"
+        Me.btagregar.Size = New System.Drawing.Size(62, 23)
+        Me.btagregar.TabIndex = 9
+        Me.btagregar.Text = "Agregar"
+        Me.btagregar.UseVisualStyleBackColor = True
+        '
+        'txtimporte
+        '
+        Me.txtimporte.BackColor = System.Drawing.Color.White
+        Me.txtimporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtimporte.Enabled = False
+        Me.txtimporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtimporte.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtimporte.Location = New System.Drawing.Point(399, 199)
+        Me.txtimporte.MaxLength = 10
+        Me.txtimporte.Name = "txtimporte"
+        Me.txtimporte.Size = New System.Drawing.Size(93, 20)
+        Me.txtimporte.TabIndex = 8
+        Me.txtimporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(348, 205)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(45, 13)
+        Me.Label9.TabIndex = 145
+        Me.Label9.Text = "Importe:"
         '
         'lbtipoestado
         '
@@ -187,7 +228,7 @@ Partial Class frmCompras
         Me.cbxPagado.Location = New System.Drawing.Point(364, 150)
         Me.cbxPagado.Name = "cbxPagado"
         Me.cbxPagado.Size = New System.Drawing.Size(15, 14)
-        Me.cbxPagado.TabIndex = 140
+        Me.cbxPagado.TabIndex = 4
         Me.cbxPagado.UseVisualStyleBackColor = True
         '
         'Label8
@@ -232,9 +273,8 @@ Partial Class frmCompras
         Me.txtsubtotal.Location = New System.Drawing.Point(433, 488)
         Me.txtsubtotal.MaxLength = 10
         Me.txtsubtotal.Name = "txtsubtotal"
-        Me.txtsubtotal.ReadOnly = True
         Me.txtsubtotal.Size = New System.Drawing.Size(108, 20)
-        Me.txtsubtotal.TabIndex = 138
+        Me.txtsubtotal.TabIndex = 12
         Me.txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label4
@@ -250,6 +290,8 @@ Partial Class frmCompras
         '
         'cmbproducto
         '
+        Me.cmbproducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbproducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbproducto.DataSource = Me.ProductosBindingSource
         Me.cmbproducto.DisplayMember = "nombre"
         Me.cmbproducto.Enabled = False
@@ -258,7 +300,7 @@ Partial Class frmCompras
         Me.cmbproducto.Location = New System.Drawing.Point(105, 171)
         Me.cmbproducto.Name = "cmbproducto"
         Me.cmbproducto.Size = New System.Drawing.Size(464, 21)
-        Me.cmbproducto.TabIndex = 135
+        Me.cmbproducto.TabIndex = 5
         Me.cmbproducto.ValueMember = "id"
         '
         'ProductosBindingSource
@@ -284,6 +326,8 @@ Partial Class frmCompras
         '
         'cmbproveedor
         '
+        Me.cmbproveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbproveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbproveedor.DataSource = Me.ProveedoresBindingSource
         Me.cmbproveedor.DisplayMember = "nombre_comercial"
         Me.cmbproveedor.Enabled = False
@@ -292,7 +336,7 @@ Partial Class frmCompras
         Me.cmbproveedor.Location = New System.Drawing.Point(105, 116)
         Me.cmbproveedor.Name = "cmbproveedor"
         Me.cmbproveedor.Size = New System.Drawing.Size(357, 21)
-        Me.cmbproveedor.TabIndex = 133
+        Me.cmbproveedor.TabIndex = 2
         Me.cmbproveedor.ValueMember = "id"
         '
         'ProveedoresBindingSource
@@ -324,7 +368,7 @@ Partial Class frmCompras
         Me.txtNumFactura.MaxLength = 100
         Me.txtNumFactura.Name = "txtNumFactura"
         Me.txtNumFactura.Size = New System.Drawing.Size(107, 20)
-        Me.txtNumFactura.TabIndex = 132
+        Me.txtNumFactura.TabIndex = 1
         '
         'Label1
         '
@@ -345,7 +389,7 @@ Partial Class frmCompras
         Me.txtfechacompra.Location = New System.Drawing.Point(105, 60)
         Me.txtfechacompra.Name = "txtfechacompra"
         Me.txtfechacompra.Size = New System.Drawing.Size(107, 20)
-        Me.txtfechacompra.TabIndex = 130
+        Me.txtfechacompra.TabIndex = 0
         '
         'Label3
         '
@@ -400,9 +444,8 @@ Partial Class frmCompras
         Me.txtTotal.Location = New System.Drawing.Point(727, 488)
         Me.txtTotal.MaxLength = 10
         Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(111, 20)
-        Me.txtTotal.TabIndex = 123
+        Me.txtTotal.TabIndex = 14
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label21
@@ -426,9 +469,8 @@ Partial Class frmCompras
         Me.txtdescuento.Location = New System.Drawing.Point(273, 488)
         Me.txtdescuento.MaxLength = 10
         Me.txtdescuento.Name = "txtdescuento"
-        Me.txtdescuento.ReadOnly = True
         Me.txtdescuento.Size = New System.Drawing.Size(85, 20)
-        Me.txtdescuento.TabIndex = 121
+        Me.txtdescuento.TabIndex = 11
         Me.txtdescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'cmbformapago
@@ -438,11 +480,11 @@ Partial Class frmCompras
         Me.cmbformapago.Enabled = False
         Me.cmbformapago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbformapago.FormattingEnabled = True
-        Me.cmbformapago.Items.AddRange(New Object() {"Efectivo", "Cheques", "Tranferencia Electrónica", "Tarjeta de Débito", "Tarjeta de Crédito", "Efectivo y Tarjeta de Débito", "Efectivo y Tarjeta de Crédito"})
+        Me.cmbformapago.Items.AddRange(New Object() {"Efectivo", "Crédito"})
         Me.cmbformapago.Location = New System.Drawing.Point(105, 143)
         Me.cmbformapago.Name = "cmbformapago"
         Me.cmbformapago.Size = New System.Drawing.Size(161, 21)
-        Me.cmbformapago.TabIndex = 4
+        Me.cmbformapago.TabIndex = 3
         '
         'txtobservacion
         '
@@ -455,7 +497,7 @@ Partial Class frmCompras
         Me.txtobservacion.Name = "txtobservacion"
         Me.txtobservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtobservacion.Size = New System.Drawing.Size(743, 52)
-        Me.txtobservacion.TabIndex = 1
+        Me.txtobservacion.TabIndex = 8
         '
         'Label14
         '
@@ -475,11 +517,11 @@ Partial Class frmCompras
         Me.txtcantidad.Enabled = False
         Me.txtcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcantidad.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtcantidad.Location = New System.Drawing.Point(787, 172)
+        Me.txtcantidad.Location = New System.Drawing.Point(271, 198)
         Me.txtcantidad.MaxLength = 3
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(49, 20)
-        Me.txtcantidad.TabIndex = 9
+        Me.txtcantidad.TabIndex = 7
         Me.txtcantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label11
@@ -487,37 +529,36 @@ Partial Class frmCompras
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(734, 180)
+        Me.Label11.Location = New System.Drawing.Point(218, 206)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 13)
         Me.Label11.TabIndex = 97
         Me.Label11.Text = "Cantidad:"
         '
-        'txtcosto
+        'txtprecio
         '
-        Me.txtcosto.BackColor = System.Drawing.Color.White
-        Me.txtcosto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcosto.Enabled = False
-        Me.txtcosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcosto.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtcosto.Location = New System.Drawing.Point(635, 172)
-        Me.txtcosto.MaxLength = 10
-        Me.txtcosto.Name = "txtcosto"
-        Me.txtcosto.ReadOnly = True
-        Me.txtcosto.Size = New System.Drawing.Size(93, 20)
-        Me.txtcosto.TabIndex = 92
-        Me.txtcosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtprecio.BackColor = System.Drawing.Color.White
+        Me.txtprecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtprecio.Enabled = False
+        Me.txtprecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtprecio.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtprecio.Location = New System.Drawing.Point(105, 199)
+        Me.txtprecio.MaxLength = 10
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(93, 20)
+        Me.txtprecio.TabIndex = 6
+        Me.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(583, 180)
+        Me.Label10.Location = New System.Drawing.Point(10, 206)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(46, 13)
+        Me.Label10.Size = New System.Drawing.Size(79, 13)
         Me.Label10.TabIndex = 93
-        Me.Label10.Text = "Costo: $"
+        Me.Label10.Text = "Precio Unitario:"
         '
         'lbsubtotal
         '
@@ -530,20 +571,19 @@ Partial Class frmCompras
         Me.lbsubtotal.TabIndex = 87
         Me.lbsubtotal.Text = "Importe:"
         '
-        'txtimporte
+        'txttotalimporte
         '
-        Me.txtimporte.BackColor = System.Drawing.Color.White
-        Me.txtimporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtimporte.Enabled = False
-        Me.txtimporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtimporte.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtimporte.Location = New System.Drawing.Point(73, 488)
-        Me.txtimporte.MaxLength = 10
-        Me.txtimporte.Name = "txtimporte"
-        Me.txtimporte.ReadOnly = True
-        Me.txtimporte.Size = New System.Drawing.Size(107, 20)
-        Me.txtimporte.TabIndex = 86
-        Me.txtimporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txttotalimporte.BackColor = System.Drawing.Color.White
+        Me.txttotalimporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txttotalimporte.Enabled = False
+        Me.txttotalimporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txttotalimporte.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txttotalimporte.Location = New System.Drawing.Point(73, 488)
+        Me.txttotalimporte.MaxLength = 10
+        Me.txttotalimporte.Name = "txttotalimporte"
+        Me.txttotalimporte.Size = New System.Drawing.Size(107, 20)
+        Me.txttotalimporte.TabIndex = 10
+        Me.txttotalimporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lbIVA
         '
@@ -566,9 +606,8 @@ Partial Class frmCompras
         Me.txtIVA.Location = New System.Drawing.Point(586, 488)
         Me.txtIVA.MaxLength = 10
         Me.txtIVA.Name = "txtIVA"
-        Me.txtIVA.ReadOnly = True
         Me.txtIVA.Size = New System.Drawing.Size(91, 20)
-        Me.txtIVA.TabIndex = 82
+        Me.txtIVA.TabIndex = 13
         Me.txtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'DetalleFactura
@@ -576,27 +615,27 @@ Partial Class frmCompras
         Me.DetalleFactura.AllowUserToAddRows = False
         Me.DetalleFactura.AllowUserToResizeColumns = False
         Me.DetalleFactura.AllowUserToResizeRows = False
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.AliceBlue
-        Me.DetalleFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.DetalleFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DetalleFactura.BackgroundColor = System.Drawing.Color.AliceBlue
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DetalleFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DetalleFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.DetalleFactura.Enabled = False
-        Me.DetalleFactura.Location = New System.Drawing.Point(13, 199)
+        Me.DetalleFactura.Location = New System.Drawing.Point(13, 235)
         Me.DetalleFactura.MultiSelect = False
         Me.DetalleFactura.Name = "DetalleFactura"
         Me.DetalleFactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DetalleFactura.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DetalleFactura.Size = New System.Drawing.Size(825, 209)
+        Me.DetalleFactura.Size = New System.Drawing.Size(825, 186)
         Me.DetalleFactura.TabIndex = 79
         '
         'Column1
@@ -616,21 +655,21 @@ Partial Class frmCompras
         '
         'Column3
         '
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle18.Format = "C2"
-        DataGridViewCellStyle18.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle18
-        Me.Column3.HeaderText = "Costo"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column3.HeaderText = "Precio U."
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'Column4
         '
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle19.Format = "N0"
-        DataGridViewCellStyle19.NullValue = Nothing
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Format = "N0"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column4.HeaderText = "Cantidad"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -638,10 +677,10 @@ Partial Class frmCompras
         '
         'Column5
         '
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle20.Format = "C2"
-        DataGridViewCellStyle20.NullValue = Nothing
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "C2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle5
         Me.Column5.HeaderText = "Importe"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
@@ -717,6 +756,7 @@ Partial Class frmCompras
         Me.bteditar.Size = New System.Drawing.Size(41, 35)
         Me.bteditar.Text = "&Editar"
         Me.bteditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.bteditar.Visible = False
         '
         'btproducto
         '
@@ -776,6 +816,7 @@ Partial Class frmCompras
         Me.ClientSize = New System.Drawing.Size(890, 582)
         Me.Controls.Add(Me.BarraHerramientas)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximizeBox = False
         Me.Name = "frmCompras"
         Me.Text = "Compras | Mueblería Casa Cruz"
         Me.Panel1.ResumeLayout(False)
@@ -805,10 +846,10 @@ Partial Class frmCompras
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents txtcosto As System.Windows.Forms.TextBox
+    Friend WithEvents txtprecio As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents lbsubtotal As System.Windows.Forms.Label
-    Friend WithEvents txtimporte As System.Windows.Forms.TextBox
+    Friend WithEvents txttotalimporte As System.Windows.Forms.TextBox
     Friend WithEvents lbIVA As System.Windows.Forms.Label
     Friend WithEvents txtIVA As System.Windows.Forms.TextBox
     Friend WithEvents DetalleFactura As System.Windows.Forms.DataGridView
@@ -827,11 +868,6 @@ Partial Class frmCompras
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtsubtotal As System.Windows.Forms.TextBox
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BarraHerramientas As System.Windows.Forms.ToolStrip
     Friend WithEvents btnuevo As System.Windows.Forms.ToolStripButton
     Friend WithEvents btguardar As System.Windows.Forms.ToolStripButton
@@ -853,4 +889,12 @@ Partial Class frmCompras
     Friend WithEvents lbtipoestado As System.Windows.Forms.Label
     Friend WithEvents lbestado As System.Windows.Forms.Label
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txtimporte As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents btagregar As System.Windows.Forms.Button
 End Class
