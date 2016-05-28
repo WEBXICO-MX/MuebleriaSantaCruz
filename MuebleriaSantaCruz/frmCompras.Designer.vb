@@ -22,15 +22,37 @@ Partial Class frmCompras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCompras))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btcancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lbtipoestado = New System.Windows.Forms.Label()
+        Me.lbestado = New System.Windows.Forms.Label()
+        Me.cbxPagado = New System.Windows.Forms.CheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btcancelar = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtsubtotal = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cmbproducto = New System.Windows.Forms.ComboBox()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetProductoCombo = New MuebleriaCasaCruz.DataSetProductoCombo()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cmbproveedor = New System.Windows.Forms.ComboBox()
+        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetProveedorCombo = New MuebleriaCasaCruz.DataSetProveedorCombo()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtNumFactura = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtfechacompra = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -40,33 +62,20 @@ Partial Class frmCompras
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtprecio = New System.Windows.Forms.TextBox()
+        Me.txtcosto = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lbsubtotal = New System.Windows.Forms.Label()
-        Me.txtsubtotal = New System.Windows.Forms.TextBox()
+        Me.txtimporte = New System.Windows.Forms.TextBox()
         Me.lbIVA = New System.Windows.Forms.Label()
         Me.txtIVA = New System.Windows.Forms.TextBox()
         Me.DetalleFactura = New System.Windows.Forms.DataGridView()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.TextBox()
-        Me.txtfechacompra = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtNumFactura = New System.Windows.Forms.TextBox()
-        Me.cmbproveedor = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.cmbproducto = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtimporte = New System.Windows.Forms.TextBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -75,38 +84,42 @@ Partial Class frmCompras
         Me.btproducto = New System.Windows.Forms.ToolStripButton()
         Me.btproveedor = New System.Windows.Forms.ToolStripButton()
         Me.btfacturas = New System.Windows.Forms.ToolStripButton()
+        Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter()
+        Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
+        Me.ProductosTableAdapter = New MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter()
+        Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetProductoCombo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetProveedorCombo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BarraHerramientas.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Control
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.btcancelar)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Location = New System.Drawing.Point(6, 46)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(879, 557)
+        Me.Panel1.Size = New System.Drawing.Size(879, 532)
         Me.Panel1.TabIndex = 16
-        '
-        'btcancelar
-        '
-        Me.btcancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btcancelar.Location = New System.Drawing.Point(727, 573)
-        Me.btcancelar.Name = "btcancelar"
-        Me.btcancelar.Size = New System.Drawing.Size(75, 24)
-        Me.btcancelar.TabIndex = 68
-        Me.btcancelar.Text = "&Cancelar"
-        Me.btcancelar.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.Controls.Add(Me.lbtipoestado)
+        Me.GroupBox1.Controls.Add(Me.lbestado)
+        Me.GroupBox1.Controls.Add(Me.cbxPagado)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.btcancelar)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.txtimporte)
+        Me.GroupBox1.Controls.Add(Me.txtsubtotal)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.cmbproducto)
         Me.GroupBox1.Controls.Add(Me.Label5)
@@ -127,10 +140,10 @@ Partial Class frmCompras
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.txtprecio)
+        Me.GroupBox1.Controls.Add(Me.txtcosto)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.lbsubtotal)
-        Me.GroupBox1.Controls.Add(Me.txtsubtotal)
+        Me.GroupBox1.Controls.Add(Me.txtimporte)
         Me.GroupBox1.Controls.Add(Me.lbIVA)
         Me.GroupBox1.Controls.Add(Me.txtIVA)
         Me.GroupBox1.Controls.Add(Me.DetalleFactura)
@@ -140,17 +153,238 @@ Partial Class frmCompras
         Me.GroupBox1.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.GroupBox1.Location = New System.Drawing.Point(8, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(862, 540)
+        Me.GroupBox1.Size = New System.Drawing.Size(862, 518)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Tag = ""
+        '
+        'lbtipoestado
+        '
+        Me.lbtipoestado.AutoSize = True
+        Me.lbtipoestado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbtipoestado.ForeColor = System.Drawing.Color.Blue
+        Me.lbtipoestado.Location = New System.Drawing.Point(291, 16)
+        Me.lbtipoestado.Name = "lbtipoestado"
+        Me.lbtipoestado.Size = New System.Drawing.Size(0, 13)
+        Me.lbtipoestado.TabIndex = 142
+        Me.lbtipoestado.Visible = False
+        '
+        'lbestado
+        '
+        Me.lbestado.AutoSize = True
+        Me.lbestado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbestado.ForeColor = System.Drawing.Color.Black
+        Me.lbestado.Location = New System.Drawing.Point(240, 16)
+        Me.lbestado.Name = "lbestado"
+        Me.lbestado.Size = New System.Drawing.Size(50, 13)
+        Me.lbestado.TabIndex = 143
+        Me.lbestado.Text = "Estado:"
+        '
+        'cbxPagado
+        '
+        Me.cbxPagado.AutoSize = True
+        Me.cbxPagado.Enabled = False
+        Me.cbxPagado.Location = New System.Drawing.Point(364, 150)
+        Me.cbxPagado.Name = "cbxPagado"
+        Me.cbxPagado.Size = New System.Drawing.Size(15, 14)
+        Me.cbxPagado.TabIndex = 140
+        Me.cbxPagado.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(311, 151)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(47, 13)
+        Me.Label8.TabIndex = 141
+        Me.Label8.Text = "Pagado:"
+        '
+        'btcancelar
+        '
+        Me.btcancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btcancelar.Location = New System.Drawing.Point(669, 587)
+        Me.btcancelar.Name = "btcancelar"
+        Me.btcancelar.Size = New System.Drawing.Size(75, 24)
+        Me.btcancelar.TabIndex = 68
+        Me.btcancelar.Text = "&Cancelar"
+        Me.btcancelar.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(369, 495)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(58, 13)
+        Me.Label6.TabIndex = 139
+        Me.Label6.Text = "Subtotal:"
+        '
+        'txtsubtotal
+        '
+        Me.txtsubtotal.BackColor = System.Drawing.Color.White
+        Me.txtsubtotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtsubtotal.Enabled = False
+        Me.txtsubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtsubtotal.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtsubtotal.Location = New System.Drawing.Point(433, 488)
+        Me.txtsubtotal.MaxLength = 10
+        Me.txtsubtotal.Name = "txtsubtotal"
+        Me.txtsubtotal.ReadOnly = True
+        Me.txtsubtotal.Size = New System.Drawing.Size(108, 20)
+        Me.txtsubtotal.TabIndex = 138
+        Me.txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(10, 151)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(81, 13)
+        Me.Label4.TabIndex = 137
+        Me.Label4.Text = "Forma de pago:"
+        '
+        'cmbproducto
+        '
+        Me.cmbproducto.DataSource = Me.ProductosBindingSource
+        Me.cmbproducto.DisplayMember = "nombre"
+        Me.cmbproducto.Enabled = False
+        Me.cmbproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbproducto.FormattingEnabled = True
+        Me.cmbproducto.Location = New System.Drawing.Point(105, 171)
+        Me.cmbproducto.Name = "cmbproducto"
+        Me.cmbproducto.Size = New System.Drawing.Size(464, 21)
+        Me.cmbproducto.TabIndex = 135
+        Me.cmbproducto.ValueMember = "id"
+        '
+        'ProductosBindingSource
+        '
+        Me.ProductosBindingSource.DataMember = "productos"
+        Me.ProductosBindingSource.DataSource = Me.DataSetProductoCombo
+        '
+        'DataSetProductoCombo
+        '
+        Me.DataSetProductoCombo.DataSetName = "DataSetProductoCombo"
+        Me.DataSetProductoCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(11, 179)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(53, 13)
+        Me.Label5.TabIndex = 136
+        Me.Label5.Text = "Producto:"
+        '
+        'cmbproveedor
+        '
+        Me.cmbproveedor.DataSource = Me.ProveedoresBindingSource
+        Me.cmbproveedor.DisplayMember = "nombre_comercial"
+        Me.cmbproveedor.Enabled = False
+        Me.cmbproveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbproveedor.FormattingEnabled = True
+        Me.cmbproveedor.Location = New System.Drawing.Point(105, 116)
+        Me.cmbproveedor.Name = "cmbproveedor"
+        Me.cmbproveedor.Size = New System.Drawing.Size(357, 21)
+        Me.cmbproveedor.TabIndex = 133
+        Me.cmbproveedor.ValueMember = "id"
+        '
+        'ProveedoresBindingSource
+        '
+        Me.ProveedoresBindingSource.DataMember = "proveedores"
+        Me.ProveedoresBindingSource.DataSource = Me.DataSetProveedorCombo
+        '
+        'DataSetProveedorCombo
+        '
+        Me.DataSetProveedorCombo.DataSetName = "DataSetProveedorCombo"
+        Me.DataSetProveedorCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(9, 124)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 13)
+        Me.Label2.TabIndex = 134
+        Me.Label2.Text = "Proveedor:"
+        '
+        'txtNumFactura
+        '
+        Me.txtNumFactura.BackColor = System.Drawing.Color.White
+        Me.txtNumFactura.Enabled = False
+        Me.txtNumFactura.Location = New System.Drawing.Point(105, 86)
+        Me.txtNumFactura.MaxLength = 100
+        Me.txtNumFactura.Name = "txtNumFactura"
+        Me.txtNumFactura.Size = New System.Drawing.Size(107, 20)
+        Me.txtNumFactura.TabIndex = 132
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(10, 93)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 13)
+        Me.Label1.TabIndex = 131
+        Me.Label1.Text = "No. de Factura:"
+        '
+        'txtfechacompra
+        '
+        Me.txtfechacompra.Enabled = False
+        Me.txtfechacompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtfechacompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txtfechacompra.Location = New System.Drawing.Point(105, 60)
+        Me.txtfechacompra.Name = "txtfechacompra"
+        Me.txtfechacompra.Size = New System.Drawing.Size(107, 20)
+        Me.txtfechacompra.TabIndex = 130
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(9, 67)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 13)
+        Me.Label3.TabIndex = 129
+        Me.Label3.Text = "Fecha de compra:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(9, 36)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(21, 13)
+        Me.Label13.TabIndex = 128
+        Me.Label13.Text = "ID:"
+        '
+        'txtID
+        '
+        Me.txtID.Enabled = False
+        Me.txtID.Location = New System.Drawing.Point(105, 29)
+        Me.txtID.Name = "txtID"
+        Me.txtID.ReadOnly = True
+        Me.txtID.Size = New System.Drawing.Size(54, 20)
+        Me.txtID.TabIndex = 127
+        Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(704, 515)
+        Me.Label22.Location = New System.Drawing.Point(687, 495)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(40, 13)
         Me.Label22.TabIndex = 124
@@ -160,13 +394,14 @@ Partial Class frmCompras
         '
         Me.txtTotal.BackColor = System.Drawing.Color.White
         Me.txtTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTotal.Enabled = False
         Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotal.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtTotal.Location = New System.Drawing.Point(750, 508)
+        Me.txtTotal.Location = New System.Drawing.Point(727, 488)
         Me.txtTotal.MaxLength = 10
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
-        Me.txtTotal.Size = New System.Drawing.Size(85, 20)
+        Me.txtTotal.Size = New System.Drawing.Size(111, 20)
         Me.txtTotal.TabIndex = 123
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -175,7 +410,7 @@ Partial Class frmCompras
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(174, 515)
+        Me.Label21.Location = New System.Drawing.Point(198, 495)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(72, 13)
         Me.Label21.TabIndex = 122
@@ -185,9 +420,10 @@ Partial Class frmCompras
         '
         Me.txtdescuento.BackColor = System.Drawing.Color.White
         Me.txtdescuento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtdescuento.Enabled = False
         Me.txtdescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdescuento.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtdescuento.Location = New System.Drawing.Point(249, 508)
+        Me.txtdescuento.Location = New System.Drawing.Point(273, 488)
         Me.txtdescuento.MaxLength = 10
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.ReadOnly = True
@@ -199,6 +435,7 @@ Partial Class frmCompras
         '
         Me.cmbformapago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cmbformapago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbformapago.Enabled = False
         Me.cmbformapago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbformapago.FormattingEnabled = True
         Me.cmbformapago.Items.AddRange(New Object() {"Efectivo", "Cheques", "Tranferencia Electrónica", "Tarjeta de Débito", "Tarjeta de Crédito", "Efectivo y Tarjeta de Débito", "Efectivo y Tarjeta de Crédito"})
@@ -210,6 +447,7 @@ Partial Class frmCompras
         'txtobservacion
         '
         Me.txtobservacion.BackColor = System.Drawing.Color.White
+        Me.txtobservacion.Enabled = False
         Me.txtobservacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtobservacion.Location = New System.Drawing.Point(95, 424)
         Me.txtobservacion.MaxLength = 80
@@ -255,19 +493,20 @@ Partial Class frmCompras
         Me.Label11.TabIndex = 97
         Me.Label11.Text = "Cantidad:"
         '
-        'txtprecio
+        'txtcosto
         '
-        Me.txtprecio.BackColor = System.Drawing.Color.White
-        Me.txtprecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtprecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtprecio.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtprecio.Location = New System.Drawing.Point(635, 172)
-        Me.txtprecio.MaxLength = 10
-        Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.ReadOnly = True
-        Me.txtprecio.Size = New System.Drawing.Size(93, 20)
-        Me.txtprecio.TabIndex = 92
-        Me.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtcosto.BackColor = System.Drawing.Color.White
+        Me.txtcosto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtcosto.Enabled = False
+        Me.txtcosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcosto.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtcosto.Location = New System.Drawing.Point(635, 172)
+        Me.txtcosto.MaxLength = 10
+        Me.txtcosto.Name = "txtcosto"
+        Me.txtcosto.ReadOnly = True
+        Me.txtcosto.Size = New System.Drawing.Size(93, 20)
+        Me.txtcosto.TabIndex = 92
+        Me.txtcosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '
@@ -285,69 +524,69 @@ Partial Class frmCompras
         Me.lbsubtotal.AutoSize = True
         Me.lbsubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbsubtotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.lbsubtotal.Location = New System.Drawing.Point(14, 515)
+        Me.lbsubtotal.Location = New System.Drawing.Point(14, 495)
         Me.lbsubtotal.Name = "lbsubtotal"
-        Me.lbsubtotal.Size = New System.Drawing.Size(62, 13)
+        Me.lbsubtotal.Size = New System.Drawing.Size(53, 13)
         Me.lbsubtotal.TabIndex = 87
-        Me.lbsubtotal.Text = "SubTotal:"
+        Me.lbsubtotal.Text = "Importe:"
         '
-        'txtsubtotal
+        'txtimporte
         '
-        Me.txtsubtotal.BackColor = System.Drawing.Color.White
-        Me.txtsubtotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtsubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsubtotal.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtsubtotal.Location = New System.Drawing.Point(76, 508)
-        Me.txtsubtotal.MaxLength = 10
-        Me.txtsubtotal.Name = "txtsubtotal"
-        Me.txtsubtotal.ReadOnly = True
-        Me.txtsubtotal.Size = New System.Drawing.Size(85, 20)
-        Me.txtsubtotal.TabIndex = 86
-        Me.txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtimporte.BackColor = System.Drawing.Color.White
+        Me.txtimporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtimporte.Enabled = False
+        Me.txtimporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtimporte.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtimporte.Location = New System.Drawing.Point(73, 488)
+        Me.txtimporte.MaxLength = 10
+        Me.txtimporte.Name = "txtimporte"
+        Me.txtimporte.ReadOnly = True
+        Me.txtimporte.Size = New System.Drawing.Size(107, 20)
+        Me.txtimporte.TabIndex = 86
+        Me.txtimporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lbIVA
         '
         Me.lbIVA.AutoSize = True
         Me.lbIVA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbIVA.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbIVA.Location = New System.Drawing.Point(538, 515)
+        Me.lbIVA.Location = New System.Drawing.Point(547, 495)
         Me.lbIVA.Name = "lbIVA"
         Me.lbIVA.Size = New System.Drawing.Size(31, 13)
         Me.lbIVA.TabIndex = 83
         Me.lbIVA.Text = "IVA:"
-        Me.lbIVA.Visible = False
         '
         'txtIVA
         '
         Me.txtIVA.BackColor = System.Drawing.Color.White
         Me.txtIVA.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtIVA.Enabled = False
         Me.txtIVA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIVA.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtIVA.Location = New System.Drawing.Point(575, 508)
+        Me.txtIVA.Location = New System.Drawing.Point(586, 488)
         Me.txtIVA.MaxLength = 10
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.ReadOnly = True
-        Me.txtIVA.Size = New System.Drawing.Size(102, 20)
+        Me.txtIVA.Size = New System.Drawing.Size(91, 20)
         Me.txtIVA.TabIndex = 82
         Me.txtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.txtIVA.Visible = False
         '
         'DetalleFactura
         '
         Me.DetalleFactura.AllowUserToAddRows = False
         Me.DetalleFactura.AllowUserToResizeColumns = False
         Me.DetalleFactura.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
-        Me.DetalleFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.AliceBlue
+        Me.DetalleFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DetalleFactura.BackgroundColor = System.Drawing.Color.AliceBlue
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DetalleFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DetalleFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.DetalleFactura.Enabled = False
@@ -359,167 +598,6 @@ Partial Class frmCompras
         Me.DetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DetalleFactura.Size = New System.Drawing.Size(825, 209)
         Me.DetalleFactura.TabIndex = 79
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(338, 16)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 20)
-        Me.Label7.TabIndex = 78
-        Me.Label7.Text = "Compras"
-        '
-        'Button1
-        '
-        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button1.Location = New System.Drawing.Point(750, 578)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 24)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "&Salir"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(9, 32)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(21, 13)
-        Me.Label13.TabIndex = 128
-        Me.Label13.Text = "ID:"
-        '
-        'txtID
-        '
-        Me.txtID.Enabled = False
-        Me.txtID.Location = New System.Drawing.Point(105, 29)
-        Me.txtID.Name = "txtID"
-        Me.txtID.ReadOnly = True
-        Me.txtID.Size = New System.Drawing.Size(54, 20)
-        Me.txtID.TabIndex = 127
-        Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtfechacompra
-        '
-        Me.txtfechacompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtfechacompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.txtfechacompra.Location = New System.Drawing.Point(105, 60)
-        Me.txtfechacompra.Name = "txtfechacompra"
-        Me.txtfechacompra.Size = New System.Drawing.Size(107, 20)
-        Me.txtfechacompra.TabIndex = 130
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(9, 66)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 13)
-        Me.Label3.TabIndex = 129
-        Me.Label3.Text = "Fecha de compra:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(10, 92)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 13)
-        Me.Label1.TabIndex = 131
-        Me.Label1.Text = "No. de Factura:"
-        '
-        'txtNumFactura
-        '
-        Me.txtNumFactura.BackColor = System.Drawing.Color.White
-        Me.txtNumFactura.Enabled = False
-        Me.txtNumFactura.Location = New System.Drawing.Point(105, 86)
-        Me.txtNumFactura.MaxLength = 100
-        Me.txtNumFactura.Name = "txtNumFactura"
-        Me.txtNumFactura.Size = New System.Drawing.Size(107, 20)
-        Me.txtNumFactura.TabIndex = 132
-        '
-        'cmbproveedor
-        '
-        Me.cmbproveedor.DisplayMember = "nombre_comercial"
-        Me.cmbproveedor.FormattingEnabled = True
-        Me.cmbproveedor.Location = New System.Drawing.Point(105, 116)
-        Me.cmbproveedor.Name = "cmbproveedor"
-        Me.cmbproveedor.Size = New System.Drawing.Size(284, 21)
-        Me.cmbproveedor.TabIndex = 133
-        Me.cmbproveedor.ValueMember = "id"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(9, 124)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 13)
-        Me.Label2.TabIndex = 134
-        Me.Label2.Text = "Proveedor:"
-        '
-        'cmbproducto
-        '
-        Me.cmbproducto.DisplayMember = "nombre"
-        Me.cmbproducto.FormattingEnabled = True
-        Me.cmbproducto.Location = New System.Drawing.Point(105, 171)
-        Me.cmbproducto.Name = "cmbproducto"
-        Me.cmbproducto.Size = New System.Drawing.Size(464, 21)
-        Me.cmbproducto.TabIndex = 135
-        Me.cmbproducto.ValueMember = "id"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(11, 179)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(53, 13)
-        Me.Label5.TabIndex = 136
-        Me.Label5.Text = "Producto:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(10, 154)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(81, 13)
-        Me.Label4.TabIndex = 137
-        Me.Label4.Text = "Forma de pago:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(362, 515)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 13)
-        Me.Label6.TabIndex = 139
-        Me.Label6.Text = "Importe:"
-        '
-        'txtimporte
-        '
-        Me.txtimporte.BackColor = System.Drawing.Color.White
-        Me.txtimporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtimporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtimporte.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtimporte.Location = New System.Drawing.Point(437, 508)
-        Me.txtimporte.MaxLength = 10
-        Me.txtimporte.Name = "txtimporte"
-        Me.txtimporte.ReadOnly = True
-        Me.txtimporte.Size = New System.Drawing.Size(85, 20)
-        Me.txtimporte.TabIndex = 138
-        Me.txtimporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Column1
         '
@@ -538,10 +616,10 @@ Partial Class frmCompras
         '
         'Column3
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle18.Format = "C2"
+        DataGridViewCellStyle18.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle18
         Me.Column3.HeaderText = "Costo"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -549,10 +627,10 @@ Partial Class frmCompras
         '
         'Column4
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Format = "N0"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.Format = "N0"
+        DataGridViewCellStyle19.NullValue = Nothing
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle19
         Me.Column4.HeaderText = "Cantidad"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -560,14 +638,35 @@ Partial Class frmCompras
         '
         'Column5
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "C2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle20.Format = "C2"
+        DataGridViewCellStyle20.NullValue = Nothing
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle20
         Me.Column5.HeaderText = "Importe"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(391, 16)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(80, 20)
+        Me.Label7.TabIndex = 78
+        Me.Label7.Text = "Compras"
+        '
+        'Button1
+        '
+        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button1.Location = New System.Drawing.Point(750, 578)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 24)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "&Salir"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'BarraHerramientas
         '
@@ -646,11 +745,35 @@ Partial Class frmCompras
         Me.btfacturas.Text = "Facturas"
         Me.btfacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'ProveedoresTableAdapter
+        '
+        Me.ProveedoresTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'ProductosTableAdapter
+        '
+        Me.ProductosTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.UpdateOrder = MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(890, 610)
+        Me.ClientSize = New System.Drawing.Size(890, 582)
         Me.Controls.Add(Me.BarraHerramientas)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmCompras"
@@ -658,9 +781,14 @@ Partial Class frmCompras
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetProductoCombo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetProveedorCombo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BarraHerramientas.ResumeLayout(False)
         Me.BarraHerramientas.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -677,10 +805,10 @@ Partial Class frmCompras
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents txtprecio As System.Windows.Forms.TextBox
+    Friend WithEvents txtcosto As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents lbsubtotal As System.Windows.Forms.Label
-    Friend WithEvents txtsubtotal As System.Windows.Forms.TextBox
+    Friend WithEvents txtimporte As System.Windows.Forms.TextBox
     Friend WithEvents lbIVA As System.Windows.Forms.Label
     Friend WithEvents txtIVA As System.Windows.Forms.TextBox
     Friend WithEvents DetalleFactura As System.Windows.Forms.DataGridView
@@ -698,7 +826,7 @@ Partial Class frmCompras
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txtimporte As System.Windows.Forms.TextBox
+    Friend WithEvents txtsubtotal As System.Windows.Forms.TextBox
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -712,4 +840,17 @@ Partial Class frmCompras
     Friend WithEvents btproducto As System.Windows.Forms.ToolStripButton
     Friend WithEvents btproveedor As System.Windows.Forms.ToolStripButton
     Friend WithEvents btfacturas As System.Windows.Forms.ToolStripButton
+    Friend WithEvents DataSetProveedorCombo As MuebleriaCasaCruz.DataSetProveedorCombo
+    Friend WithEvents ProveedoresBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ProveedoresTableAdapter As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter
+    Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager
+    Friend WithEvents DataSetProductoCombo As MuebleriaCasaCruz.DataSetProductoCombo
+    Friend WithEvents ProductosBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ProductosTableAdapter As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter
+    Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager
+    Friend WithEvents cbxPagado As System.Windows.Forms.CheckBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents lbtipoestado As System.Windows.Forms.Label
+    Friend WithEvents lbestado As System.Windows.Forms.Label
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class
