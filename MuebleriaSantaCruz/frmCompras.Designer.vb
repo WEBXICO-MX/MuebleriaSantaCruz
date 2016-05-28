@@ -710,7 +710,7 @@ Partial Class frmCompras
         'BarraHerramientas
         '
         Me.BarraHerramientas.BackColor = System.Drawing.SystemColors.Control
-        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproducto, Me.btproveedor, Me.btfacturas})
+        Me.BarraHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.btguardar, Me.btdeshacer, Me.bteditar, Me.btproveedor, Me.btproducto, Me.btfacturas})
         Me.BarraHerramientas.Location = New System.Drawing.Point(0, 0)
         Me.BarraHerramientas.Name = "BarraHerramientas"
         Me.BarraHerramientas.Size = New System.Drawing.Size(890, 38)

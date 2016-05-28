@@ -162,7 +162,7 @@ Public Class frmCompras
             CerrarConexion()
 
             For Fila = 0 To DetalleFactura.Rows.Count - 1
-                InsertarDetalleFactura(DetalleFactura.Item(0, Fila).Value, Fila + 1, DetalleFactura.Item(1, Fila).Value, DetalleFactura.Item(3, Fila).Value, DetalleFactura.Item(2, Fila).Value, DetalleFactura.Item(4, Fila).Value)
+                InsertarDetalleFactura(DetalleFactura.Item(0, Fila).Value, Fila + 1, DetalleFactura.Item(3, Fila).Value, DetalleFactura.Item(2, Fila).Value, DetalleFactura.Item(4, Fila).Value)
             Next Fila
 
             MessageBox.Show("La factura '" & txtNumFactura.Text & "' ha sido guardada", "Guardar", MessageBoxButtons.OK)
@@ -170,6 +170,7 @@ Public Class frmCompras
             LimpiarCajasdeTexto(False)
             lbtipoestado.Visible = False
             DetalleFactura.Rows.Clear()
+            Nuevo()
         Catch ex As SqlException
             If (ex.Number = 2601) Then
                 MessageBox.Show("La factura ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -183,15 +184,15 @@ Public Class frmCompras
         End Try
     End Sub
 
-    Public Sub InsertarDetalleFactura(ByVal cveservicio As String, ByVal consecutivo As Integer, ByVal servicio As String, ByVal cantidad As Integer, ByVal precio As Double, ByVal total As Double)
+    Public Sub InsertarDetalleFactura(ByVal cveProducto As String, ByVal consecutivo As Integer, ByVal cantidad As Integer, ByVal costo As Double, ByVal total As Double)
         'Crear la conexión con la base de datos
         Dim strConexión As String = "Data Source=localhost;" & _
-            "Initial Catalog=dulceMerengue; User ID=dulcem; Password=9811977"
+            "Initial Catalog=MuebleriaCASACRUZ; User ID=mccruz; Password=mccruz"
         ConexionConBD = New SqlConnection(strConexión)
 
         'Crear una consulta
-        Dim Consulta As String = "INSERT INTO detalle_facturas (cve_factura, cve_cliente, cve_servicio, consecutivo, servicio, cantidad, precio, total) VALUES (" & txtfactura.Text & _
-                                 "," & txtclavecliente.Text & ",'" & cveservicio & "'," & consecutivo & ",'" & servicio & "'," & cantidad & "," & precio & "," & total & ")"
+        Dim Consulta As String = "INSERT INTO detalle_factura_compra (id, id_producto, consecutivo, cantidad, costo, total) VALUES (" & txtID.Text & _
+                                 "," & cveProducto & "," & consecutivo & "," & cantidad & "," & costo & "," & total & ")"
 
         Orden = New SqlCommand(Consulta, ConexionConBD)
 
@@ -207,7 +208,7 @@ Public Class frmCompras
             CerrarConexion()
         Catch ex As SqlException
             If (ex.Number = 2627) Then
-                MessageBox.Show("La factura No." + txtfactura.Text & " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("La factura No." + txtNumFactura.Text & " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 MsgBox("Error: " + ex.Message)
             End If
@@ -255,6 +256,7 @@ Public Class frmCompras
             txtprecio.Clear()
             txtcantidad.Clear()
             txtimporte.Clear()
+            txtobservacion.Clear()
             txttotalimporte.Clear()
             txtdescuento.Clear()
             txtsubtotal.Clear()

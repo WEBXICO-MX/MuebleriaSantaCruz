@@ -58,7 +58,7 @@ Public Class frmProveedor
             Orden.ExecuteNonQuery()
 
             If (externa) Then
-                frmCompra.ProveedoresTableAdapter.Fill(frmCompra.DataSetProveedorCombo.proveedores)
+                frmCompras.ProveedoresTableAdapter.Fill(frmCompras.DataSetProveedorCombo.proveedores)
             End If
 
 

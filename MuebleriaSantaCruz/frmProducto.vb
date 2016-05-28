@@ -62,7 +62,7 @@ Public Class frmProducto
             Lector.Read()
 
             If (externa) Then
-                frmCompra.ProductosTableAdapter.Fill(frmCompra.DataSetProductoCombo.productos)
+                frmCompras.ProductosTableAdapter.Fill(frmCompras.DataSetProductoCombo.productos)
             End If
 
             Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
