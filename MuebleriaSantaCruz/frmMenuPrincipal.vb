@@ -118,7 +118,7 @@
     End Sub
 
     Private Sub ComrasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComrasToolStripMenuItem.Click
-        frmCompra.Show()
+        frmCompras.Show()
     End Sub
 
     Private Sub AsentamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsentamientosToolStripMenuItem.Click
@@ -126,7 +126,7 @@
     End Sub
 
     Private Sub FacturasDeComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacturasDeComprasToolStripMenuItem.Click
-        frmfacturascompra.Show()
+        frmConsultaCompras.Show()
     End Sub
 
     Private Sub frmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load

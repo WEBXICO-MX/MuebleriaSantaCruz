@@ -188,10 +188,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProducto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetProductoCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProductoCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetProveedor.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProveedor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetProveedorCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProveedorCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetPuesto.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -277,10 +287,28 @@
     <Compile Include="frmAsentamiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCompras.Designer.vb">
+      <DependentUpon>frmCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaCompras.Designer.vb">
+      <DependentUpon>frmConsultaCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDomicilio.Designer.vb">
       <DependentUpon>frmDomicilio.vb</DependentUpon>
     </Compile>
     <Compile Include="frmDomicilio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmfacturascompra.Designer.vb">
+      <DependentUpon>frmfacturascompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmfacturascompra.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProducto.Designer.vb">
@@ -496,8 +524,17 @@
     <EmbeddedResource Include="frmAsentamiento.resx">
       <DependentUpon>frmAsentamiento.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCompras.resx">
+      <DependentUpon>frmCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaCompras.resx">
+      <DependentUpon>frmConsultaCompras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDomicilio.resx">
       <DependentUpon>frmDomicilio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmfacturascompra.resx">
+      <DependentUpon>frmfacturascompra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProducto.resx">
       <DependentUpon>frmProducto.vb</DependentUpon>
@@ -812,6 +849,17 @@
     <None Include="DataSetProducto.xss">
       <DependentUpon>DataSetProducto.xsd</DependentUpon>
     </None>
+    <None Include="DataSetProductoCombo.xsc">
+      <DependentUpon>DataSetProductoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProductoCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProductoCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetProductoCombo.xss">
+      <DependentUpon>DataSetProductoCombo.xsd</DependentUpon>
+    </None>
     <None Include="DataSetProveedor.xsc">
       <DependentUpon>DataSetProveedor.xsd</DependentUpon>
     </None>
@@ -822,6 +870,17 @@
     </None>
     <None Include="DataSetProveedor.xss">
       <DependentUpon>DataSetProveedor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProveedorCombo.xsc">
+      <DependentUpon>DataSetProveedorCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProveedorCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProveedorCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetProveedorCombo.xss">
+      <DependentUpon>DataSetProveedorCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetPuesto.xsc">
       <DependentUpon>DataSetPuesto.xsd</DependentUpon>
@@ -988,6 +1047,7 @@
     <None Include="DataSetUsuario.xss">
       <DependentUpon>DataSetUsuario.xsd</DependentUpon>
     </None>
+    <None Include="db\muebleriacasacruz.pdm" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -1000,9 +1060,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="db\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\logo.bmp" />
   </ItemGroup>
@@ -1124,6 +1182,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db\muebleriacasacruz.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

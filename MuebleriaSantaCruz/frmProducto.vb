@@ -4,6 +4,7 @@ Public Class frmProducto
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
     Public externa As Boolean = False
+    Public externa2 As Boolean = False
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -62,7 +63,11 @@ Public Class frmProducto
             Lector.Read()
 
             If (externa) Then
-                frmCompra.ProductosTableAdapter.Fill(frmCompra.DataSetProductoCombo.productos)
+                frmCompras.ProductosTableAdapter.Fill(frmCompras.DataSetProductoCombo.productos)
+            End If
+
+            If (externa2) Then
+                frmConsultaCompras.ProductosTableAdapter.Fill(frmConsultaCompras.DataSetProductoCombo.productos)
             End If
 
             Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
@@ -258,7 +263,7 @@ Public Class frmProducto
         ErrorProvider1.SetError(txtStockMaximo, Nothing)
     End Sub
 
-    Private Sub productosDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles productosDataGridView.CellClick
+    Private Sub productosDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ProductosDataGridView.CellClick
         If (productosDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
@@ -267,7 +272,7 @@ Public Class frmProducto
         End If
     End Sub
 
-    Private Sub productosDataGridView_RowEnter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles productosDataGridView.RowEnter
+    Private Sub productosDataGridView_RowEnter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ProductosDataGridView.RowEnter
         If (productosDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)

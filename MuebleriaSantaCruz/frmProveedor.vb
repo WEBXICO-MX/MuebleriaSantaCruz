@@ -4,6 +4,7 @@ Public Class frmProveedor
     Private Orden As SqlCommand
     Private Lector As SqlDataReader
     Public externa As Boolean = False
+    Public externa2 As Boolean = False
 
     Public Sub Nuevo()
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
@@ -58,9 +59,12 @@ Public Class frmProveedor
             Orden.ExecuteNonQuery()
 
             If (externa) Then
-                frmCompra.ProveedoresTableAdapter.Fill(frmCompra.DataSetProveedorCombo.proveedores)
+                frmCompras.ProveedoresTableAdapter.Fill(frmCompras.DataSetProveedorCombo.proveedores)
             End If
 
+            If (externa2) Then
+                frmConsultaCompras.ProveedoresTableAdapter.Fill(frmConsultaCompras.DataSetProveedorCombo.proveedores)
+            End If
 
             Me.ProveedoresTableAdapter.Fill(Me.DataSetProveedor.proveedores)
 
