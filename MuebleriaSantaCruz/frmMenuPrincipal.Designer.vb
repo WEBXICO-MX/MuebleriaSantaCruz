@@ -34,6 +34,7 @@ Partial Class frmMenuPrincipal
         Me.TiposDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComrasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacturasDeComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClasificacionesDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -68,7 +69,7 @@ Partial Class frmMenuPrincipal
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logo = New System.Windows.Forms.PictureBox()
-        Me.ComrasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HistorialDeComprasAProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -162,6 +163,12 @@ Partial Class frmMenuPrincipal
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
         Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(261, 70)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
+        'ComrasToolStripMenuItem
+        '
+        Me.ComrasToolStripMenuItem.Name = "ComrasToolStripMenuItem"
+        Me.ComrasToolStripMenuItem.Size = New System.Drawing.Size(261, 70)
+        Me.ComrasToolStripMenuItem.Text = "Compras"
         '
         'FacturasDeComprasToolStripMenuItem
         '
@@ -379,6 +386,7 @@ Partial Class frmMenuPrincipal
         '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HistorialDeComprasAProveedoresToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReportesToolStripMenuItem.Image = Global.MuebleriaCasaCruz.My.Resources.Resources._1456963448_Report
         Me.ReportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -417,11 +425,11 @@ Partial Class frmMenuPrincipal
         Me.logo.TabIndex = 1
         Me.logo.TabStop = False
         '
-        'ComrasToolStripMenuItem
+        'HistorialDeComprasAProveedoresToolStripMenuItem
         '
-        Me.ComrasToolStripMenuItem.Name = "ComrasToolStripMenuItem"
-        Me.ComrasToolStripMenuItem.Size = New System.Drawing.Size(261, 70)
-        Me.ComrasToolStripMenuItem.Text = "Compras"
+        Me.HistorialDeComprasAProveedoresToolStripMenuItem.Name = "HistorialDeComprasAProveedoresToolStripMenuItem"
+        Me.HistorialDeComprasAProveedoresToolStripMenuItem.Size = New System.Drawing.Size(309, 22)
+        Me.HistorialDeComprasAProveedoresToolStripMenuItem.Text = "Historial de compras a proveedores"
         '
         'frmMenuPrincipal
         '
@@ -490,4 +498,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents AsentamientosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FacturasDeComprasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComrasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HistorialDeComprasAProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

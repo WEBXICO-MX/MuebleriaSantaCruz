@@ -9,10 +9,14 @@ Public Class frmfacturascompra
     Dim EjecutarProcedimiento As Boolean
     Public cve_proveedor As Integer
 
-    Private Sub BuscarPedidos()
+    Private Sub BuscarFacturas()
         Dim Consulta As String
         Dim F As Integer
         Dim Filtro As String
+
+        If (chkperiodo.Checked) Then
+            Filtro = " AND fecha_compra between '" & txtfechainicio.Text & "' AND '" & txtfechafinal.Text & "'"
+        End If
 
         'Crear la conexión con la base de datos
         Dim strConexión As String = "Data Source=localhost;" & _
@@ -20,12 +24,12 @@ Public Class frmfacturascompra
         ConexionConBD = New SqlConnection(strConexión)
 
         'Crear una consulta
-        Consulta = "SELECT c.folio_factura, pro.nombre_comercial, p.nombre as proveedor, c.cantidad, c.costo, c.total, c.tipo_pago, c.pagado, c.descuento " &
-                   "FROM compras c " &
-                   "INNER JOIN productos p on p.id=c.id_producto " &
-                   "INNER JOIN proveedores pro on pro.id=c.id_proveedor " &
-                   "WHERE c.id_proveedor=" & cmbProveedor.SelectedValue &
-                   " AND c.folio_factura='" & txtNumFactura.Text & "'"
+        Consulta = "SELECT fc.fecha_compra, fc.folio_factura, pro.nombre_comercial, tipo_pago, pagado,fc.total " &
+                   "FROM factura_compra fc " &
+                   "INNER JOIN proveedores pro on pro.id=fc.id_proveedor " &
+                   "WHERE fc.id_proveedor=" & cmbproveedor.SelectedValue & Filtro & _
+                   "ORDER BY fc.fecha_compra DESC"
+
 
         Orden = New SqlCommand(Consulta, ConexionConBD)
 
@@ -40,27 +44,25 @@ Public Class frmfacturascompra
 
             While Lector.Read()
                 DetalleFacturas.Rows.Add()
-                DetalleFacturas.Rows(F).Cells(0).Value = Lector("folio_factura")
-                DetalleFacturas.Rows(F).Cells(1).Value = Lector("nombre_comercial")
-                DetalleFacturas.Rows(F).Cells(2).Value = Lector("proveedor")
-                DetalleFacturas.Rows(F).Cells(3).Value = Lector("cantidad")
-                DetalleFacturas.Rows(F).Cells(4).Value = Lector("costo")
-                DetalleFacturas.Rows(F).Cells(5).Value = Lector("total")
+                DetalleFacturas.Rows(F).Cells(0).Value = F + 1
+
+                DetalleFacturas.Rows(F).Cells(1).Value = Lector("fecha_compra")
+                DetalleFacturas.Rows(F).Cells(2).Value = Lector("folio_factura")
+                DetalleFacturas.Rows(F).Cells(3).Value = Lector("nombre_comercial")
 
                 If (Lector("tipo_pago") = 1) Then
-                    DetalleFacturas.Rows(F).Cells(6).Value = "Efectivo"
+                    DetalleFacturas.Rows(F).Cells(4).Value = "Efectivo"
                 Else
-                    DetalleFacturas.Rows(F).Cells(6).Value = "Crédito"
+                    DetalleFacturas.Rows(F).Cells(4).Value = "Crédito"
                 End If
 
                 If (Lector("pagado")) Then
-                    DetalleFacturas.Rows(F).Cells(7).Value = "Sí"
+                    DetalleFacturas.Rows(F).Cells(5).Value = "Sí"
                 Else
-                    DetalleFacturas.Rows(F).Cells(7).Value = "No"
+                    DetalleFacturas.Rows(F).Cells(5).Value = "No"
                 End If
 
-                DetalleFacturas.Rows(F).Cells(8).Value = Lector("tipo_pago")
-                DetalleFacturas.Rows(F).Cells(9).Value = Lector("descuento")
+                DetalleFacturas.Rows(F).Cells(6).Value = Lector("total")
 
                 F = F + 1
             End While
@@ -89,49 +91,40 @@ Public Class frmfacturascompra
         Dim efectivo As Double, credito As Double, descuento As Double, total As Double
 
         For Fila = 0 To DetalleFacturas.Rows.Count - 1
-            If (DetalleFacturas.Rows(Fila).Cells(8).Value = 1) Then
-                efectivo = efectivo + DetalleFacturas.Rows(Fila).Cells(5).Value
+            If (DetalleFacturas.Rows(Fila).Cells(7).Value = 1) Then
+                efectivo = efectivo + DetalleFacturas.Rows(Fila).Cells(6).Value
             Else
-                credito = credito + DetalleFacturas.Rows(Fila).Cells(5).Value
-            End If
-
-            If (DetalleFacturas.Rows(Fila).Cells(9).Value <> 0) Then
-                descuento = descuento + DetalleFacturas.Rows(Fila).Cells(9).Value
+                credito = credito + DetalleFacturas.Rows(Fila).Cells(6).Value
             End If
         Next
 
-        total = (efectivo / 1.16) + (credito / 1.16)
+        total = efectivo + credito
 
-        If (efectivo <> 0 And descuento <> 0) Then
-            txtefectivo.Text = FormatCurrency((efectivo / 1.16) - descuento, 2)
-        Else
-            txtefectivo.Text = FormatCurrency(efectivo, 2)
-        End If
-
-        If (credito <> 0 And descuento <> 0) Then
-            txtcredito.Text = FormatCurrency((credito / 1.16) - descuento, 2)
-        Else
-            txtcredito.Text = FormatCurrency(credito, 2)
-        End If
-
-
-        txtDescuento.Text = FormatCurrency(descuento, 2)
-        txttotal.Text = FormatCurrency((total - descuento) * 1.16, 2)
+        txtefectivo.Text = FormatCurrency(efectivo, 2)
+        txtcredito.Text = FormatCurrency(credito, 2)
+        txttotal.Text = FormatCurrency(total, 2)
     End Sub
 
     Private Sub LimpiarCajasdeTexto()
         cmbproveedor.Text = ""
     End Sub
 
+    Private Sub cmbproveedor_TextChanged(sender As Object, e As EventArgs) Handles cmbproveedor.TextChanged
+        If (cmbproveedor.FindStringExact(cmbproveedor.Text) >= 0) Then
+            'Desactivar el icono de error
+            ErrorProvider1.SetError(cmbproveedor, Nothing)
+        End If
+    End Sub
+
     Private Sub btbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btbuscar.Click
-        If (cmbproveedor.Text = "") Then
-            MsgBox("Seleccione un cliente")
+        If (cmbproveedor.FindStringExact(cmbproveedor.Text) < 0) Then
+            ErrorProvider1.SetError(cmbproveedor, "Seleccione un proveedor")
             cmbproveedor.Focus()
             Exit Sub
         End If
 
         DetalleFacturas.Rows.Clear()
-        BuscarPedidos()
+        BuscarFacturas()
     End Sub
 
     Private Sub frmfacturascompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
