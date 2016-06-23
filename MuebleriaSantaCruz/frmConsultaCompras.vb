@@ -9,15 +9,15 @@ Public Class frmConsultaCompras
 
 
     Private Sub btguardar_Click(sender As Object, e As EventArgs) Handles btguardar.Click
-        If (txtNumFactura.Text.Length = 0) Then
-            ErrorProvider1.SetError(txtNumFactura, "Capture el folio de la factura")
-            txtNumFactura.Focus()
-            Exit Sub
-        End If
-
         If (cmbproveedor.FindStringExact(cmbproveedor.Text) < 0) Then
             ErrorProvider1.SetError(cmbproveedor, "Seleccione un proveedor")
             cmbproveedor.Focus()
+            Exit Sub
+        End If
+
+        If (cmbFolioFactura.FindStringExact(cmbFolioFactura.Text) < 0) Then
+            ErrorProvider1.SetError(cmbFolioFactura, "Seleccione factura")
+            cmbFolioFactura.Focus()
             Exit Sub
         End If
 
@@ -110,7 +110,6 @@ Public Class frmConsultaCompras
         Else
             txtID.Clear()
             txtfechacompra.Text = ""
-            txtNumFactura.Clear()
             cmbproveedor.Text = ""
             cmbFolioFactura.Text = ""
             cmbformapago.Text = ""
@@ -137,8 +136,8 @@ Public Class frmConsultaCompras
 
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
         txtfechacompra.Enabled = nombre_status
-        txtNumFactura.Enabled = nombre_status
         cmbproveedor.Enabled = nombre_status
+        cmbFolioFactura.Enabled = nombre_status
         cmbformapago.Enabled = nombre_status
         cbxPagado.Enabled = nombre_status
         cmbproducto.Enabled = nombre_status
@@ -154,8 +153,8 @@ Public Class frmConsultaCompras
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
-        ErrorProvider1.SetError(txtNumFactura, Nothing)
         ErrorProvider1.SetError(cmbproveedor, Nothing)
+        ErrorProvider1.SetError(cmbFolioFactura, Nothing)
         ErrorProvider1.SetError(cmbformapago, Nothing)
         ErrorProvider1.SetError(cmbproducto, Nothing)
         ErrorProvider1.SetError(txttotalimporte, Nothing)
@@ -442,16 +441,17 @@ Public Class frmConsultaCompras
         End If
     End Sub
 
-    Private Sub txtNumFactura_TextChanged(sender As Object, e As EventArgs) Handles txtNumFactura.TextChanged
-        If (txtNumFactura.Text.Length <> 0) Then
-            DesactivarErroresCajasdeTexto()
-        End If
-    End Sub
-
     Private Sub cmbproveedor_TextChanged(sender As Object, e As EventArgs) Handles cmbproveedor.TextChanged
         If (cmbproveedor.FindStringExact(cmbproveedor.Text) >= 0) Then
             'Desactivar el icono de error
             ErrorProvider1.SetError(cmbproveedor, Nothing)
+        End If
+    End Sub
+
+    Private Sub cmbFolioFactura_TextChanged(sender As Object, e As EventArgs) Handles cmbFolioFactura.TextChanged
+        If (cmbFolioFactura.FindStringExact(cmbFolioFactura.Text) >= 0) Then
+            'Desactivar el icono de error
+            ErrorProvider1.SetError(cmbFolioFactura, Nothing)
         End If
     End Sub
 
@@ -467,17 +467,6 @@ Public Class frmConsultaCompras
 
         End If
         Totales()
-    End Sub
-
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btbuscar.Click
-        Dim numfactura = txtNumFactura.Text
-        Dim nombreProveedor = cmbproveedor.Text
-
-        LimpiarCajasdeTexto(False)
-        'txtNumFactura.Text = numfactura
-        'cmbproveedor.Text = nombreProveedor
-        DetalleFactura.Rows.Clear()
-        BuscarFactura(cmbFolioFactura.SelectedValue, cmbproveedor.SelectedValue)
     End Sub
 
     Public Sub BuscarFactura(ByVal idFactura As Integer, ByVal idProveedor As Integer)
@@ -509,7 +498,7 @@ Public Class frmConsultaCompras
                 'Llamar siempre a Close una vez finalizada la lectura
                 CerrarConexion()
                 btguardar.Enabled = False
-                MsgBox("No existe la Factura Número: " + txtNumFactura.Text + " con ese proveedor")
+                MsgBox("No existe la Factura Número: " + cmbFolioFactura.Text + " con ese proveedor")
             Else
                 txtID.Text = Lector("id")
                 txtfechacompra.Text = Lector("fecha_compra")
@@ -720,7 +709,7 @@ Public Class frmConsultaCompras
             
         Catch ex As SqlException
             If (ex.Number = 2627) Then
-                MessageBox.Show("La factura No." + txtNumFactura.Text & " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("La factura No." + cmbFolioFactura.Text & " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 MsgBox("Error: " + ex.Message)
             End If
@@ -768,5 +757,6 @@ Public Class frmConsultaCompras
         LimpiarCajasdeTexto(False)
         EstadoBotones(True, False, False, False, False)
         EstadoCajasdeTexto(True)
+        cmbproveedor.Focus()
     End Sub
 End Class

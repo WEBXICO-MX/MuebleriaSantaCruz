@@ -24,11 +24,12 @@ Partial Class frmConsultaCompras
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsultaCompras))
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btproducto = New System.Windows.Forms.ToolStripButton()
         Me.btdeshacer = New System.Windows.Forms.ToolStripButton()
         Me.btagregar = New System.Windows.Forms.Button()
@@ -45,7 +46,6 @@ Partial Class frmConsultaCompras
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btproveedor = New System.Windows.Forms.ToolStripButton()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtsubtotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cmbproducto = New System.Windows.Forms.ComboBox()
@@ -55,16 +55,11 @@ Partial Class frmConsultaCompras
         Me.cmbproveedor = New System.Windows.Forms.ComboBox()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProveedorCombo = New MuebleriaCasaCruz.DataSetProveedorCombo()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ProductosTableAdapter = New MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager()
         Me.ProveedoresTableAdapter = New MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtNumFactura = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtfechacompra = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -77,7 +72,9 @@ Partial Class frmConsultaCompras
         Me.cmbformapago = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btbuscar = New System.Windows.Forms.Button()
+        Me.cmbFolioFactura = New System.Windows.Forms.ComboBox()
+        Me.Factura_compraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetFacturaCompra = New MuebleriaCasaCruz.DataSetFacturaCompra()
         Me.txtobservacion = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
@@ -89,14 +86,16 @@ Partial Class frmConsultaCompras
         Me.lbIVA = New System.Windows.Forms.Label()
         Me.txtIVA = New System.Windows.Forms.TextBox()
         Me.DetalleFactura = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager()
-        Me.DataSetFacturaCompra = New MuebleriaCasaCruz.DataSetFacturaCompra()
-        Me.Factura_compraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Factura_compraTableAdapter = New MuebleriaCasaCruz.DataSetFacturaCompraTableAdapters.factura_compraTableAdapter()
         Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetFacturaCompraTableAdapters.TableAdapterManager()
-        Me.cmbFolioFactura = New System.Windows.Forms.ComboBox()
         Me.BarraHerramientas.SuspendLayout()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetProductoCombo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,9 +104,9 @@ Partial Class frmConsultaCompras
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetFacturaCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Factura_compraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetFacturaCompra, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btproducto
@@ -279,17 +278,6 @@ Partial Class frmConsultaCompras
         Me.btproveedor.Text = "Proveedor"
         Me.btproveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'Column5
-        '
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle16.Format = "C2"
-        DataGridViewCellStyle16.NullValue = Nothing
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle16
-        Me.Column5.HeaderText = "Importe"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
         'txtsubtotal
         '
         Me.txtsubtotal.BackColor = System.Drawing.Color.White
@@ -301,7 +289,7 @@ Partial Class frmConsultaCompras
         Me.txtsubtotal.MaxLength = 10
         Me.txtsubtotal.Name = "txtsubtotal"
         Me.txtsubtotal.Size = New System.Drawing.Size(108, 20)
-        Me.txtsubtotal.TabIndex = 12
+        Me.txtsubtotal.TabIndex = 14
         Me.txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label4
@@ -363,7 +351,7 @@ Partial Class frmConsultaCompras
         Me.cmbproveedor.Location = New System.Drawing.Point(105, 59)
         Me.cmbproveedor.Name = "cmbproveedor"
         Me.cmbproveedor.Size = New System.Drawing.Size(357, 21)
-        Me.cmbproveedor.TabIndex = 2
+        Me.cmbproveedor.TabIndex = 0
         Me.cmbproveedor.ValueMember = "id"
         '
         'ProveedoresBindingSource
@@ -375,35 +363,6 @@ Partial Class frmConsultaCompras
         '
         Me.DataSetProveedorCombo.DataSetName = "DataSetProveedorCombo"
         Me.DataSetProveedorCombo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Column3
-        '
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle17.Format = "C2"
-        DataGridViewCellStyle17.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle17
-        Me.Column3.HeaderText = "Precio U."
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'Column4
-        '
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle18.Format = "N0"
-        DataGridViewCellStyle18.NullValue = Nothing
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle18
-        Me.Column4.HeaderText = "Cantidad"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Clave"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'Label2
         '
@@ -434,24 +393,6 @@ Partial Class frmConsultaCompras
         '
         Me.ProveedoresTableAdapter.ClearBeforeFill = True
         '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Producto"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column2.Width = 320
-        '
-        'txtNumFactura
-        '
-        Me.txtNumFactura.BackColor = System.Drawing.Color.White
-        Me.txtNumFactura.Enabled = False
-        Me.txtNumFactura.Location = New System.Drawing.Point(526, 59)
-        Me.txtNumFactura.MaxLength = 100
-        Me.txtNumFactura.Name = "txtNumFactura"
-        Me.txtNumFactura.Size = New System.Drawing.Size(107, 20)
-        Me.txtNumFactura.TabIndex = 1
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -471,7 +412,7 @@ Partial Class frmConsultaCompras
         Me.txtfechacompra.Location = New System.Drawing.Point(105, 116)
         Me.txtfechacompra.Name = "txtfechacompra"
         Me.txtfechacompra.Size = New System.Drawing.Size(107, 20)
-        Me.txtfechacompra.TabIndex = 0
+        Me.txtfechacompra.TabIndex = 2
         '
         'Label3
         '
@@ -527,7 +468,7 @@ Partial Class frmConsultaCompras
         Me.txtTotal.MaxLength = 10
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(111, 20)
-        Me.txtTotal.TabIndex = 14
+        Me.txtTotal.TabIndex = 16
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label21
@@ -552,7 +493,7 @@ Partial Class frmConsultaCompras
         Me.txtdescuento.MaxLength = 10
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.Size = New System.Drawing.Size(85, 20)
-        Me.txtdescuento.TabIndex = 11
+        Me.txtdescuento.TabIndex = 13
         Me.txtdescuento.Text = "0"
         Me.txtdescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -583,7 +524,6 @@ Partial Class frmConsultaCompras
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
         Me.GroupBox1.Controls.Add(Me.cmbFolioFactura)
-        Me.GroupBox1.Controls.Add(Me.btbuscar)
         Me.GroupBox1.Controls.Add(Me.btagregar)
         Me.GroupBox1.Controls.Add(Me.txtimporte)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -599,7 +539,6 @@ Partial Class frmConsultaCompras
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.cmbproveedor)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtNumFactura)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtfechacompra)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -632,15 +571,27 @@ Partial Class frmConsultaCompras
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Tag = ""
         '
-        'btbuscar
+        'cmbFolioFactura
         '
-        Me.btbuscar.ForeColor = System.Drawing.Color.Black
-        Me.btbuscar.Location = New System.Drawing.Point(634, 19)
-        Me.btbuscar.Name = "btbuscar"
-        Me.btbuscar.Size = New System.Drawing.Size(62, 23)
-        Me.btbuscar.TabIndex = 146
-        Me.btbuscar.Text = "Buscar"
-        Me.btbuscar.UseVisualStyleBackColor = True
+        Me.cmbFolioFactura.DataSource = Me.Factura_compraBindingSource
+        Me.cmbFolioFactura.DisplayMember = "folio_factura"
+        Me.cmbFolioFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbFolioFactura.FormattingEnabled = True
+        Me.cmbFolioFactura.Location = New System.Drawing.Point(105, 85)
+        Me.cmbFolioFactura.Name = "cmbFolioFactura"
+        Me.cmbFolioFactura.Size = New System.Drawing.Size(161, 21)
+        Me.cmbFolioFactura.TabIndex = 1
+        Me.cmbFolioFactura.ValueMember = "id"
+        '
+        'Factura_compraBindingSource
+        '
+        Me.Factura_compraBindingSource.DataMember = "factura_compra"
+        Me.Factura_compraBindingSource.DataSource = Me.DataSetFacturaCompra
+        '
+        'DataSetFacturaCompra
+        '
+        Me.DataSetFacturaCompra.DataSetName = "DataSetFacturaCompra"
+        Me.DataSetFacturaCompra.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtobservacion
         '
@@ -653,7 +604,7 @@ Partial Class frmConsultaCompras
         Me.txtobservacion.Name = "txtobservacion"
         Me.txtobservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtobservacion.Size = New System.Drawing.Size(743, 52)
-        Me.txtobservacion.TabIndex = 8
+        Me.txtobservacion.TabIndex = 11
         '
         'Label14
         '
@@ -738,7 +689,7 @@ Partial Class frmConsultaCompras
         Me.txttotalimporte.MaxLength = 10
         Me.txttotalimporte.Name = "txttotalimporte"
         Me.txttotalimporte.Size = New System.Drawing.Size(107, 20)
-        Me.txttotalimporte.TabIndex = 10
+        Me.txttotalimporte.TabIndex = 12
         Me.txttotalimporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lbIVA
@@ -763,7 +714,7 @@ Partial Class frmConsultaCompras
         Me.txtIVA.MaxLength = 10
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.Size = New System.Drawing.Size(91, 20)
-        Me.txtIVA.TabIndex = 13
+        Me.txtIVA.TabIndex = 15
         Me.txtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'DetalleFactura
@@ -771,17 +722,17 @@ Partial Class frmConsultaCompras
         Me.DetalleFactura.AllowUserToAddRows = False
         Me.DetalleFactura.AllowUserToResizeColumns = False
         Me.DetalleFactura.AllowUserToResizeRows = False
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.AliceBlue
-        Me.DetalleFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.DetalleFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DetalleFactura.BackgroundColor = System.Drawing.Color.AliceBlue
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DetalleFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DetalleFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.DetalleFactura.Enabled = False
@@ -792,7 +743,57 @@ Partial Class frmConsultaCompras
         Me.DetalleFactura.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DetalleFactura.Size = New System.Drawing.Size(825, 186)
-        Me.DetalleFactura.TabIndex = 79
+        Me.DetalleFactura.TabIndex = 10
+        '
+        'Column1
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column1.HeaderText = "Clave"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Producto"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column2.Width = 320
+        '
+        'Column3
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "C2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column3.HeaderText = "Precio U."
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'Column4
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Format = "N0"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column4.HeaderText = "Cantidad"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'Column5
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "C2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Column5.HeaderText = "Importe"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'Label7
         '
@@ -821,16 +822,6 @@ Partial Class frmConsultaCompras
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.UpdateOrder = MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'DataSetFacturaCompra
-        '
-        Me.DataSetFacturaCompra.DataSetName = "DataSetFacturaCompra"
-        Me.DataSetFacturaCompra.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Factura_compraBindingSource
-        '
-        Me.Factura_compraBindingSource.DataMember = "factura_compra"
-        Me.Factura_compraBindingSource.DataSource = Me.DataSetFacturaCompra
-        '
         'Factura_compraTableAdapter
         '
         Me.Factura_compraTableAdapter.ClearBeforeFill = True
@@ -840,19 +831,6 @@ Partial Class frmConsultaCompras
         Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager2.Connection = Nothing
         Me.TableAdapterManager2.UpdateOrder = MuebleriaCasaCruz.DataSetFacturaCompraTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'cmbFolioFactura
-        '
-        Me.cmbFolioFactura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Factura_compraBindingSource, "folio_factura", True))
-        Me.cmbFolioFactura.DataSource = Me.Factura_compraBindingSource
-        Me.cmbFolioFactura.DisplayMember = "folio_factura"
-        Me.cmbFolioFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbFolioFactura.FormattingEnabled = True
-        Me.cmbFolioFactura.Location = New System.Drawing.Point(105, 86)
-        Me.cmbFolioFactura.Name = "cmbFolioFactura"
-        Me.cmbFolioFactura.Size = New System.Drawing.Size(161, 21)
-        Me.cmbFolioFactura.TabIndex = 147
-        Me.cmbFolioFactura.ValueMember = "id"
         '
         'frmConsultaCompras
         '
@@ -874,9 +852,9 @@ Partial Class frmConsultaCompras
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetFacturaCompra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Factura_compraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetFacturaCompra, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DetalleFactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -897,7 +875,6 @@ Partial Class frmConsultaCompras
     Friend WithEvents BarraHerramientas As System.Windows.Forms.ToolStrip
     Friend WithEvents bteditar As System.Windows.Forms.ToolStripButton
     Friend WithEvents btproveedor As System.Windows.Forms.ToolStripButton
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txtsubtotal As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cmbproducto As System.Windows.Forms.ComboBox
@@ -907,14 +884,10 @@ Partial Class frmConsultaCompras
     Friend WithEvents cmbproveedor As System.Windows.Forms.ComboBox
     Friend WithEvents ProveedoresBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataSetProveedorCombo As MuebleriaCasaCruz.DataSetProveedorCombo
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtNumFactura As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtfechacompra As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -936,17 +909,20 @@ Partial Class frmConsultaCompras
     Friend WithEvents lbIVA As System.Windows.Forms.Label
     Friend WithEvents txtIVA As System.Windows.Forms.TextBox
     Friend WithEvents DetalleFactura As System.Windows.Forms.DataGridView
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ProductosTableAdapter As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.productosTableAdapter
     Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.TableAdapterManager
     Friend WithEvents ProveedoresTableAdapter As MuebleriaCasaCruz.DataSetProveedorComboTableAdapters.proveedoresTableAdapter
     Friend WithEvents TableAdapterManager1 As MuebleriaCasaCruz.DataSetProductoComboTableAdapters.TableAdapterManager
-    Friend WithEvents btbuscar As System.Windows.Forms.Button
     Friend WithEvents DataSetFacturaCompra As MuebleriaCasaCruz.DataSetFacturaCompra
     Friend WithEvents Factura_compraBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Factura_compraTableAdapter As MuebleriaCasaCruz.DataSetFacturaCompraTableAdapters.factura_compraTableAdapter
     Friend WithEvents TableAdapterManager2 As MuebleriaCasaCruz.DataSetFacturaCompraTableAdapters.TableAdapterManager
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmbFolioFactura As System.Windows.Forms.ComboBox
 End Class
