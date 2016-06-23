@@ -195,18 +195,18 @@
   <data name="bteditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btproveedor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -230,11 +230,23 @@
   <metadata name="ProductosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>
   </metadata>
+  <metadata name="ProductosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="DataSetProductoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>203, 95</value>
+  </metadata>
   <metadata name="DataSetProductoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>203, 95</value>
   </metadata>
   <metadata name="ProveedoresBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>387, 95</value>
+  </metadata>
+  <metadata name="ProveedoresBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>387, 95</value>
+  </metadata>
+  <metadata name="DataSetProveedorCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>585, 95</value>
   </metadata>
   <metadata name="DataSetProveedorCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>585, 95</value>
@@ -251,9 +263,6 @@
   <metadata name="ErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>775, 95</value>
   </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ProductosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 134</value>
   </metadata>
@@ -263,7 +272,28 @@
   <metadata name="ProveedoresTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>370, 134</value>
   </metadata>
+  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="TableAdapterManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>563, 134</value>
+  </metadata>
+  <metadata name="DataSetFacturaCompra.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>743, 134</value>
+  </metadata>
+  <metadata name="Factura_compraBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
+  <metadata name="DataSetFacturaCompra.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>743, 134</value>
+  </metadata>
+  <metadata name="Factura_compraTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>234, 173</value>
+  </metadata>
+  <metadata name="TableAdapterManager2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>445, 173</value>
+  </metadata>
+  <metadata name="Factura_compraBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
   </metadata>
 </root>

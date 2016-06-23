@@ -112,6 +112,7 @@ Public Class frmConsultaCompras
             txtfechacompra.Text = ""
             txtNumFactura.Clear()
             cmbproveedor.Text = ""
+            cmbFolioFactura.Text = ""
             cmbformapago.Text = ""
             cbxPagado.Checked = False
             cmbproducto.Text = ""
@@ -473,13 +474,13 @@ Public Class frmConsultaCompras
         Dim nombreProveedor = cmbproveedor.Text
 
         LimpiarCajasdeTexto(False)
-        txtNumFactura.Text = numfactura
-        cmbproveedor.Text = nombreProveedor
+        'txtNumFactura.Text = numfactura
+        'cmbproveedor.Text = nombreProveedor
         DetalleFactura.Rows.Clear()
-        BuscarFactura()
+        BuscarFactura(cmbFolioFactura.SelectedValue, cmbproveedor.SelectedValue)
     End Sub
 
-    Public Sub BuscarFactura()
+    Public Sub BuscarFactura(ByVal idFactura As Integer, ByVal idProveedor As Integer)
         Dim Consulta As String
 
         'Crear la conexión con la base de datos
@@ -491,8 +492,8 @@ Public Class frmConsultaCompras
         Consulta = "SELECT * " &
                    "FROM factura_compra fc " &
                    "INNER JOIN proveedores p on p.id=fc.id_proveedor " &
-                   "WHERE fc.folio_factura='" & txtNumFactura.Text & "'" &
-                   " AND p.id=" & cmbproveedor.SelectedValue
+                   "WHERE fc.id=" & idFactura &
+                   " AND p.id=" & idProveedor
 
         Orden = New SqlCommand(Consulta, ConexionConBD)
 
@@ -728,6 +729,28 @@ Public Class frmConsultaCompras
         End Try
     End Sub
 
+    Private Sub cmbproveedor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbproveedor.SelectedIndexChanged
+        Me.Factura_compraTableAdapter.FillByIdProveedor(Me.DataSetFacturaCompra.factura_compra, cmbproveedor.SelectedValue)
+        cmbFolioFactura.Text = ""
+    End Sub
+
+    Private Sub cmbFolioFactura_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbFolioFactura.SelectedIndexChanged
+        If (cmbFolioFactura.FindStringExact(cmbFolioFactura.Text) < 0) Then
+            ErrorProvider1.SetError(cmbFolioFactura, "Seleccione un factura")
+            cmbFolioFactura.Focus()
+            Exit Sub
+        Else
+            Dim nombreProveedor = cmbproveedor.Text
+            Dim numfactura = cmbFolioFactura.Text
+
+            LimpiarCajasdeTexto(False)
+            cmbproveedor.Text = nombreProveedor
+            cmbFolioFactura.Text = numfactura
+            DetalleFactura.Rows.Clear()
+            BuscarFactura(cmbFolioFactura.SelectedValue, cmbproveedor.SelectedValue)
+        End If
+    End Sub
+
     Private Sub frmConsultaCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim fuente As Font = New Font("Microsoft Sans Serif", 8.25)
 
@@ -735,7 +758,6 @@ Public Class frmConsultaCompras
 
         Me.ProductosTableAdapter.Fill(Me.DataSetProductoCombo.productos)
         Me.ProveedoresTableAdapter.Fill(Me.DataSetProveedorCombo.proveedores)
-
 
         DetalleFactura.DefaultCellStyle.ForeColor = Color.Black
         DetalleFactura.DefaultCellStyle.Font = fuente

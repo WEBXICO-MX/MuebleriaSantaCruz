@@ -135,6 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEstadoCivilCombo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetFacturaCompra.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFacturaCompra.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetGrupoSeguridad.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -738,6 +743,17 @@
     </None>
     <None Include="DataSetEstadoCivilCombo.xss">
       <DependentUpon>DataSetEstadoCivilCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFacturaCompra.xsc">
+      <DependentUpon>DataSetFacturaCompra.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFacturaCompra.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFacturaCompra.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetFacturaCompra.xss">
+      <DependentUpon>DataSetFacturaCompra.xsd</DependentUpon>
     </None>
     <None Include="DataSetGrupoSeguridad.xsc">
       <DependentUpon>DataSetGrupoSeguridad.xsd</DependentUpon>
