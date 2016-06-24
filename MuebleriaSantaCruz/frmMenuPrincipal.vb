@@ -132,6 +132,9 @@
     Private Sub HistorialDeComprasAProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistorialDeComprasAProveedoresToolStripMenuItem.Click
         frmfacturascompra.Show()
     End Sub
+    Private Sub HistorialDeComprasAProveedoresPorProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistorialDeComprasAProveedoresPorProductoToolStripMenuItem.Click
+        frmFacturasCompraProducto.Show()
+    End Sub
 
     Private Sub frmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim posicionX As Integer = (Me.Width - logo.Width) \ 2
