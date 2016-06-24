@@ -182,7 +182,7 @@ Public Class frmProducto
         cbxActivo.Checked = True
     End Sub
 
-    Private Sub EstadoBotones(ByVal nuevo As Boolean, ByVal guardar As Boolean, ByVal deshacer As Boolean, ByVal editar As Boolean, ByVal buscar As Boolean)
+    Public Sub EstadoBotones(ByVal nuevo As Boolean, ByVal guardar As Boolean, ByVal deshacer As Boolean, ByVal editar As Boolean, ByVal buscar As Boolean)
         btnuevo.Enabled = nuevo
         btguardar.Enabled = guardar
         btdeshacer.Enabled = deshacer
@@ -204,7 +204,7 @@ Public Class frmProducto
         cbxActivo.Enabled = nombre_status
     End Sub
 
-    Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
+    Public Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = productosDataGridView.Rows(F).Cells(0).Value
         Tipos_productosComboBox.Text = ProductosDataGridView.Rows(F).Cells(3).Value
         txtNombre.Text = ProductosDataGridView.Rows(F).Cells(1).Value
@@ -264,7 +264,7 @@ Public Class frmProducto
     End Sub
 
     Private Sub productosDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ProductosDataGridView.CellClick
-        If (productosDataGridView.Enabled = True) Then
+        If (ProductosDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
                 EstadoBotones(True, False, True, True, True)
@@ -273,7 +273,7 @@ Public Class frmProducto
     End Sub
 
     Private Sub productosDataGridView_RowEnter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ProductosDataGridView.RowEnter
-        If (productosDataGridView.Enabled = True) Then
+        If (ProductosDataGridView.Enabled = True) Then
             If (e.RowIndex >= 0) Then
                 PegarDatosTabla_CajasdeTexto(e.RowIndex)
                 EstadoBotones(True, False, True, True, True)
@@ -388,6 +388,32 @@ Public Class frmProducto
         Else
             MessageBox.Show("Seleccione una producto para editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btbuscar.Click
+        My.Forms.frmBuscarNombreProducto.ShowDialog()
+        If (My.Forms.frmBuscarNombreProducto.DialogResult = DialogResult.Cancel) Then
+            My.Forms.frmBuscarNombreProducto.Dispose()
+        End If
+    End Sub
+
+    Private Sub btactualizar_Click(sender As Object, e As EventArgs) Handles btactualizar.Click
+
+        Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
+
+        'Desactivar para no se active el foco de la tabla de Modelosautobus
+        LimpiarCajasdeTexto()
+
+        'Si la tabla modelos autobus esta vacia, deshabilitar el boton de buscar
+        If (ProductosBindingSource.Count = 0) Then
+            EstadoBotones(True, False, False, False, False)
+        Else
+            EstadoBotones(True, False, False, False, True)
+        End If
+
+        ProductosDataGridView.ClearSelection()
+        Tipos_productosComboBox.Text = ""
+        MsgBox("Actualización completada")
     End Sub
 
     Private Sub txtNombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.TextChanged, txtDescripcion.TextChanged
@@ -550,6 +576,12 @@ Public Class frmProducto
         'End If
     End Sub
 
+    Private Sub frmProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProductoCombo.tipos_productos)
+        Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
+        Me.Top = 100
+    End Sub
+
     Private Sub frmProducto_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Desactivar para no se active el foco de la tabla de sectores
         LimpiarCajasdeTexto(True)
@@ -562,12 +594,5 @@ Public Class frmProducto
         End If
 
         productosDataGridView.ClearSelection()
-    End Sub
-    Private Sub frmProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoProductoCombo.productos' Puede moverla o quitarla según sea necesario.
-        Me.Tipos_productosTableAdapter.Fill(Me.DataSetTipoProductoCombo.tipos_productos)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetProducto.productos' Puede moverla o quitarla según sea necesario.
-        Me.ProductosTableAdapter.Fill(Me.DataSetProducto.productos)
-        Me.Top = 100
     End Sub
 End Class

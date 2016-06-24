@@ -292,6 +292,12 @@
     <Compile Include="frmAsentamiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmBuscarNombreProducto.Designer.vb">
+      <DependentUpon>frmBuscarNombreProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarNombreProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCompras.Designer.vb">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </Compile>
@@ -522,6 +528,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAsentamiento.resx">
       <DependentUpon>frmAsentamiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarNombreProducto.resx">
+      <DependentUpon>frmBuscarNombreProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>

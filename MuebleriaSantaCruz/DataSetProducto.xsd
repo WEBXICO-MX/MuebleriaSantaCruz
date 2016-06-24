@@ -14,11 +14,9 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT p.id, tp.nombre AS tipo_producto, p.tipo_producto_id, p.nombre, 
 p.descripcion, p.precio_costo, p.precio_contado, p.precio_credito, p.precio_enganche,p.precio_pago_semanal,
-p.stock_minimo, p.stock_maximo,p.activo 
-FROM dbo.productos AS p
-INNER JOIN dbo.tipos_productos AS tp
-ON tp.id = p.tipo_producto_id
-</CommandText>
+p.stock_minimo, p.stock_maximo,p.activo
+FROM dbo.productos  p
+INNER JOIN dbo.tipos_productos  tp ON tp.id = p.tipo_producto_id</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -28,8 +26,6 @@ ON tp.id = p.tipo_producto_id
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="tipo_producto_id" DataSetColumn="tipo_producto_id" />
               <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
-              <Mapping SourceColumn="activo" DataSetColumn="activo" />
-              <Mapping SourceColumn="tipo_producto" DataSetColumn="tipo_producto" />
               <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
               <Mapping SourceColumn="precio_costo" DataSetColumn="precio_costo" />
               <Mapping SourceColumn="precio_contado" DataSetColumn="precio_contado" />
@@ -38,6 +34,8 @@ ON tp.id = p.tipo_producto_id
               <Mapping SourceColumn="precio_pago_semanal" DataSetColumn="precio_pago_semanal" />
               <Mapping SourceColumn="stock_minimo" DataSetColumn="stock_minimo" />
               <Mapping SourceColumn="stock_maximo" DataSetColumn="stock_maximo" />
+              <Mapping SourceColumn="activo" DataSetColumn="activo" />
+              <Mapping SourceColumn="tipo_producto" DataSetColumn="tipo_producto" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -49,7 +47,7 @@ ON tp.id = p.tipo_producto_id
   <xs:element name="DataSetProducto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetProducto" msprop:Generator_UserDSName="DataSetProducto">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="productos" msprop:Generator_TableClassName="productosDataTable" msprop:Generator_TableVarName="tableproductos" msprop:Generator_TablePropName="productos" msprop:Generator_RowDeletingName="productosRowDeleting" msprop:Generator_RowChangingName="productosRowChanging" msprop:Generator_RowEvHandlerName="productosRowChangeEventHandler" msprop:Generator_RowDeletedName="productosRowDeleted" msprop:Generator_UserTableName="productos" msprop:Generator_RowChangedName="productosRowChanged" msprop:Generator_RowEvArgName="productosRowChangeEvent" msprop:Generator_RowClassName="productosRow">
+        <xs:element name="productos" msprop:Generator_TableClassName="productosDataTable" msprop:Generator_TableVarName="tableproductos" msprop:Generator_RowChangedName="productosRowChanged" msprop:Generator_TablePropName="productos" msprop:Generator_RowDeletingName="productosRowDeleting" msprop:Generator_RowChangingName="productosRowChanging" msprop:Generator_RowEvHandlerName="productosRowChangeEventHandler" msprop:Generator_RowDeletedName="productosRowDeleted" msprop:Generator_RowClassName="productosRow" msprop:Generator_UserTableName="productos" msprop:Generator_RowEvArgName="productosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -57,15 +55,7 @@ ON tp.id = p.tipo_producto_id
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="activo" msprop:Generator_ColumnVarNameInTable="columnactivo" msprop:Generator_ColumnPropNameInRow="activo" msprop:Generator_ColumnPropNameInTable="activoColumn" msprop:Generator_UserColumnName="activo" type="xs:boolean" minOccurs="0" />
-              <xs:element name="tipo_producto" msprop:Generator_ColumnVarNameInTable="columntipo_producto" msprop:Generator_ColumnPropNameInRow="tipo_producto" msprop:Generator_ColumnPropNameInTable="tipo_productoColumn" msprop:Generator_UserColumnName="tipo_producto" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -83,6 +73,14 @@ ON tp.id = p.tipo_producto_id
               <xs:element name="precio_pago_semanal" msprop:Generator_ColumnVarNameInTable="columnprecio_pago_semanal" msprop:Generator_ColumnPropNameInRow="precio_pago_semanal" msprop:Generator_ColumnPropNameInTable="precio_pago_semanalColumn" msprop:Generator_UserColumnName="precio_pago_semanal" type="xs:double" minOccurs="0" />
               <xs:element name="stock_minimo" msprop:Generator_ColumnVarNameInTable="columnstock_minimo" msprop:Generator_ColumnPropNameInRow="stock_minimo" msprop:Generator_ColumnPropNameInTable="stock_minimoColumn" msprop:Generator_UserColumnName="stock_minimo" type="xs:int" minOccurs="0" />
               <xs:element name="stock_maximo" msprop:Generator_ColumnVarNameInTable="columnstock_maximo" msprop:Generator_ColumnPropNameInRow="stock_maximo" msprop:Generator_ColumnPropNameInTable="stock_maximoColumn" msprop:Generator_UserColumnName="stock_maximo" type="xs:int" minOccurs="0" />
+              <xs:element name="activo" msprop:Generator_ColumnVarNameInTable="columnactivo" msprop:Generator_ColumnPropNameInRow="activo" msprop:Generator_ColumnPropNameInTable="activoColumn" msprop:Generator_UserColumnName="activo" type="xs:boolean" minOccurs="0" />
+              <xs:element name="tipo_producto" msprop:Generator_ColumnVarNameInTable="columntipo_producto" msprop:Generator_ColumnPropNameInRow="tipo_producto" msprop:Generator_ColumnPropNameInTable="tipo_productoColumn" msprop:Generator_UserColumnName="tipo_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
