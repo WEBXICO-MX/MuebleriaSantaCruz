@@ -15,13 +15,14 @@
                     <CommandText>SELECT 
 c.persona_id, o.nombre AS ocupacion, ti.nombre AS tipo_identificacion,p.nombre, p. ap_paterno, p.ap_materno, 
 p.fecha_nacimiento, p.sexo, ec.nombre AS estado_civil,p.estado_civil_id,c.ocupacion_id, c.tipo_identificacion_id, c.fecha_registro, c.activo,
-c.numero_identificacion,c.empresa,c.nombre_conyuge,o2.nombre AS ocupacion_conyuge,c.ocupacion_conyuge AS ocupacion_conyuge_id
+c.numero_identificacion,c.empresa,c.nombre_conyuge,o2.nombre AS ocupacion_conyuge,c.ocupacion_conyuge AS ocupacion_conyuge_id,r.nombre as ruta, c.id_ruta
 FROM dbo.clientes AS c
 INNER JOIN dbo.personas AS p ON p.id = c.persona_id
 INNER JOIN dbo.estados_civiles AS ec ON ec.id = p.estado_civil_id
 INNER JOIN dbo.ocupaciones AS o ON o.id = c.ocupacion_id
 INNER JOIN dbo.ocupaciones AS o2 ON o2.id = c.ocupacion_conyuge
-INNER JOIN dbo.tipos_identificacion AS ti ON ti.id = c.tipo_identificacion_id</CommandText>
+INNER JOIN dbo.tipos_identificacion AS ti ON ti.id = c.tipo_identificacion_id
+INNER JOIN dbo.rutas AS r ON r.id = c.id_ruta</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -47,6 +48,8 @@ INNER JOIN dbo.tipos_identificacion AS ti ON ti.id = c.tipo_identificacion_id</C
               <Mapping SourceColumn="nombre_conyuge" DataSetColumn="nombre_conyuge" />
               <Mapping SourceColumn="ocupacion_conyuge" DataSetColumn="ocupacion_conyuge" />
               <Mapping SourceColumn="ocupacion_conyuge_id" DataSetColumn="ocupacion_conyuge_id" />
+              <Mapping SourceColumn="ruta" DataSetColumn="ruta" />
+              <Mapping SourceColumn="id_ruta" DataSetColumn="id_ruta" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -58,7 +61,7 @@ INNER JOIN dbo.tipos_identificacion AS ti ON ti.id = c.tipo_identificacion_id</C
   <xs:element name="DataSetCliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetCliente" msprop:Generator_UserDSName="DataSetCliente">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="clientes" msprop:Generator_TableClassName="clientesDataTable" msprop:Generator_TableVarName="tableclientes" msprop:Generator_TablePropName="clientes" msprop:Generator_RowDeletingName="clientesRowDeleting" msprop:Generator_RowChangingName="clientesRowChanging" msprop:Generator_RowEvHandlerName="clientesRowChangeEventHandler" msprop:Generator_RowDeletedName="clientesRowDeleted" msprop:Generator_UserTableName="clientes" msprop:Generator_RowChangedName="clientesRowChanged" msprop:Generator_RowEvArgName="clientesRowChangeEvent" msprop:Generator_RowClassName="clientesRow">
+        <xs:element name="clientes" msprop:Generator_TableClassName="clientesDataTable" msprop:Generator_TableVarName="tableclientes" msprop:Generator_RowChangedName="clientesRowChanged" msprop:Generator_TablePropName="clientes" msprop:Generator_RowDeletingName="clientesRowDeleting" msprop:Generator_RowChangingName="clientesRowChanging" msprop:Generator_RowEvHandlerName="clientesRowChangeEventHandler" msprop:Generator_RowDeletedName="clientesRowDeleted" msprop:Generator_RowClassName="clientesRow" msprop:Generator_UserTableName="clientes" msprop:Generator_RowEvArgName="clientesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="persona_id" msprop:Generator_ColumnVarNameInTable="columnpersona_id" msprop:Generator_ColumnPropNameInRow="persona_id" msprop:Generator_ColumnPropNameInTable="persona_idColumn" msprop:Generator_UserColumnName="persona_id" type="xs:int" />
@@ -146,6 +149,14 @@ INNER JOIN dbo.tipos_identificacion AS ti ON ti.id = c.tipo_identificacion_id</C
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ocupacion_conyuge_id" msprop:Generator_ColumnVarNameInTable="columnocupacion_conyuge_id" msprop:Generator_ColumnPropNameInRow="ocupacion_conyuge_id" msprop:Generator_ColumnPropNameInTable="ocupacion_conyuge_idColumn" msprop:Generator_UserColumnName="ocupacion_conyuge_id" type="xs:int" minOccurs="0" />
+              <xs:element name="ruta" msprop:Generator_ColumnVarNameInTable="columnruta" msprop:Generator_ColumnPropNameInRow="ruta" msprop:Generator_ColumnPropNameInTable="rutaColumn" msprop:Generator_UserColumnName="ruta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_ruta" msprop:Generator_ColumnVarNameInTable="columnid_ruta" msprop:Generator_ColumnPropNameInRow="id_ruta" msprop:Generator_ColumnPropNameInTable="id_rutaColumn" msprop:Generator_UserColumnName="id_ruta" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -132,6 +132,7 @@ Public Class frmRuta
     Private Sub LimpiarCajasdeTexto()
         txtID.Text = ""
         txtNombre.Text = ""
+        SucursalesComboBox.Text = ""
         cbxActivo.Checked = True
     End Sub
 
@@ -151,7 +152,7 @@ Public Class frmRuta
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = rutasDataGridView.Rows(F).Cells(0).Value
-        SucursalesComboBox.SelectedValue = rutasDataGridView.Rows(F).Cells(2).Value
+        SucursalesComboBox.Text = RutasDataGridView.Rows(F).Cells(1).Value
         txtNombre.Text = rutasDataGridView.Rows(F).Cells(3).Value
         cbxActivo.Checked = rutasDataGridView.Rows(F).Cells(4).Value
     End Sub

@@ -231,6 +231,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetRuta.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetRutaCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRutaCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetSucursal.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -950,6 +955,17 @@
     </None>
     <None Include="DataSetRuta.xss">
       <DependentUpon>DataSetRuta.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRutaCombo.xsc">
+      <DependentUpon>DataSetRutaCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRutaCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRutaCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRutaCombo.xss">
+      <DependentUpon>DataSetRutaCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetSucursal.xsc">
       <DependentUpon>DataSetSucursal.xsd</DependentUpon>

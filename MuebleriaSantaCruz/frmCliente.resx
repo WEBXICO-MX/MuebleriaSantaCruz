@@ -180,18 +180,18 @@
   <data name="bteditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btbuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -209,6 +209,12 @@
         RK5CYII=
 </value>
   </data>
+  <metadata name="RutasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>176, 212</value>
+  </metadata>
+  <metadata name="DataSetRutaCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 212</value>
+  </metadata>
   <metadata name="OcupacionesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 173</value>
   </metadata>
@@ -297,6 +303,12 @@
     <value>True</value>
   </metadata>
   <metadata name="ocupacion_conyuge_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ruta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="id_ruta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -389,5 +401,11 @@
   </metadata>
   <metadata name="TableAdapterManager4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>426, 173</value>
+  </metadata>
+  <metadata name="RutasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>337, 212</value>
+  </metadata>
+  <metadata name="TableAdapterManager5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>492, 212</value>
   </metadata>
 </root>

@@ -24,6 +24,8 @@ Partial Class frmRuta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRuta))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -282,13 +284,29 @@ Partial Class frmRuta
         '
         Me.RutasDataGridView.AllowUserToAddRows = False
         Me.RutasDataGridView.AllowUserToDeleteRows = False
+        Me.RutasDataGridView.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.RutasDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.RutasDataGridView.AutoGenerateColumns = False
+        Me.RutasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.RutasDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.RutasDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.RutasDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.RutasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RutasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.sucursal, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
         Me.RutasDataGridView.DataSource = Me.RutasBindingSource
         Me.RutasDataGridView.Location = New System.Drawing.Point(463, 63)
+        Me.RutasDataGridView.MultiSelect = False
         Me.RutasDataGridView.Name = "RutasDataGridView"
         Me.RutasDataGridView.ReadOnly = True
+        Me.RutasDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.RutasDataGridView.Size = New System.Drawing.Size(396, 249)
         Me.RutasDataGridView.TabIndex = 38
         '
@@ -299,16 +317,18 @@ Partial Class frmRuta
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 43
         '
         'sucursal
         '
         Me.sucursal.DataPropertyName = "sucursal"
-        Me.sucursal.HeaderText = "sucursal"
+        Me.sucursal.HeaderText = "Sucursal"
         Me.sucursal.Name = "sucursal"
         Me.sucursal.ReadOnly = True
+        Me.sucursal.Width = 81
         '
         'DataGridViewTextBoxColumn2
         '
@@ -321,16 +341,18 @@ Partial Class frmRuta
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "nombre"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "nombre"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 75
         '
         'DataGridViewCheckBoxColumn1
         '
         Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 49
         '
         'frmRuta
         '

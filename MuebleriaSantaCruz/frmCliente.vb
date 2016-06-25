@@ -37,7 +37,7 @@ Public Class frmCliente
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
         'Crear una consulta
         'Dim Consulta As String = "INSERT INTO clientes (id, linea_producto_id, nombre,activo) VALUES (" & txtID.Text & "," & (OcupacionesComboBox.SelectedValue) & ",'" & txtNombre.Text & "'," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo,estado_civil_id,fecha_registro,fecha_modificacion,activo) VALUES (@id,@nombre,@ap_paterno,@ap_materno,NULL,@sexo,@estado_civil_id,GETDATE(),NULL,@activo)"
+        Dim Consulta As String = "INSERT INTO personas (id,nombre,ap_paterno,ap_materno,fecha_nacimiento,sexo,estado_civil_id,fecha_registro,fecha_modificacion,activo, id_factura) VALUES (@id,@nombre,@ap_paterno,@ap_materno,NULL,@sexo,@estado_civil_id,GETDATE(),NULL,@activo)"
         Orden = New SqlCommand(Consulta, objcon.con)
         Orden.Parameters.Add("@id", SqlDbType.Int).Value = txtID.Text
         Orden.Parameters.Add("@nombre", SqlDbType.VarChar).Value = txtNombre.Text
@@ -47,12 +47,12 @@ Public Class frmCliente
         Orden.Parameters.Add("@sexo", SqlDbType.VarChar).Value = If(rbMasculino.Checked, "M", If(rbFemenino.Checked, "F", "X"))
         Orden.Parameters.Add("@estado_civil_id", SqlDbType.Int).Value = Estados_civilesComboBox.SelectedValue
         Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
-
+        
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery() <> -1) Then
 
-                Consulta = "INSERT INTO clientes (persona_id,ocupacion_id,tipo_identificacion_id,numero_identificacion, empresa, nombre_conyuge, ocupacion_conyuge, fecha_registro,fecha_modificacion,activo) VALUES (@persona_id,@ocupacion_id,@tipo_identificacion_id, @numero_identificacion, @empresa, @nombre_conyuge, @ocupacion_conyuge, GETDATE(),NULL,@activo)"
+                Consulta = "INSERT INTO clientes (persona_id,ocupacion_id,tipo_identificacion_id,numero_identificacion, empresa, nombre_conyuge, ocupacion_conyuge, fecha_registro,fecha_modificacion,activo) VALUES (@persona_id,@ocupacion_id,@tipo_identificacion_id, @numero_identificacion, @empresa, @nombre_conyuge, @ocupacion_conyuge, GETDATE(),NULL,@activo,@id_ruta)"
                 Orden = New SqlCommand(Consulta, objcon.con)
                 Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = txtID.Text
                 Orden.Parameters.Add("@ocupacion_id", SqlDbType.Int).Value = OcupacionesComboBox.SelectedValue
@@ -62,6 +62,7 @@ Public Class frmCliente
                 Orden.Parameters.Add("@nombre_conyuge", SqlDbType.VarChar).Value = txtNombreConyuge.Text
                 Orden.Parameters.Add("@ocupacion_conyuge", SqlDbType.Int).Value = OcupacionesComboBox2.SelectedValue
                 Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
+                Orden.Parameters.Add("@id_ruta", SqlDbType.Int).Value = cmbRuta.SelectedValue
 
                 Orden.ExecuteNonQuery()
 
@@ -121,7 +122,7 @@ Public Class frmCliente
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
             If (Orden.ExecuteNonQuery <> -1) Then
 
-                Consulta = "UPDATE clientes SET ocupacion_id = @ocupacion_id, tipo_identificacion_id = @tipo_identificacion_id, numero_identificacion = @numero_identificacion, empresa = @empresa, nombre_conyuge = @nombre_conyuge, ocupacion_conyuge = @ocupacion_conyuge,fecha_modificacion = GETDATE(), activo = @activo WHERE persona_id = @persona_id"
+                Consulta = "UPDATE clientes SET ocupacion_id = @ocupacion_id, tipo_identificacion_id = @tipo_identificacion_id, numero_identificacion = @numero_identificacion, empresa = @empresa, nombre_conyuge = @nombre_conyuge, ocupacion_conyuge = @ocupacion_conyuge,fecha_modificacion = GETDATE(), activo = @activo, id_ruta = @id_ruta  WHERE persona_id = @persona_id"
                 Orden = New SqlCommand(Consulta, objcon.con)
                 Orden.Parameters.Add("@ocupacion_id", SqlDbType.Int).Value = OcupacionesComboBox.SelectedValue
                 Orden.Parameters.Add("@tipo_identificacion_id", SqlDbType.Int).Value = Tipos_identificacionComboBox.SelectedValue
@@ -130,6 +131,7 @@ Public Class frmCliente
                 Orden.Parameters.Add("@nombre_conyuge", SqlDbType.VarChar).Value = txtNombreConyuge.Text
                 Orden.Parameters.Add("@ocupacion_conyuge", SqlDbType.Int).Value = OcupacionesComboBox2.SelectedValue
                 Orden.Parameters.Add("@activo", SqlDbType.Bit).Value = If(cbxActivo.Checked, 1, 0)
+                Orden.Parameters.Add("@id_ruta", SqlDbType.Int).Value = cmbRuta.SelectedValue
                 Orden.Parameters.Add("@persona_id", SqlDbType.Int).Value = txtID.Text
                 Orden.ExecuteNonQuery()
 
@@ -176,6 +178,7 @@ Public Class frmCliente
             OcupacionesComboBox.Text = ""
             Tipos_identificacionComboBox.Text = ""
             OcupacionesComboBox2.Text = ""
+            cmbRuta.Text = ""
         End If
 
         txtID.Clear()
@@ -214,6 +217,7 @@ Public Class frmCliente
         txtEmpresa.Enabled = nombre_status
         txtNombreConyuge.Enabled = nombre_status
         OcupacionesComboBox2.Enabled = nombre_status
+        cmbRuta.Enabled = nombre_status
         cbxActivo.Enabled = nombre_status
     End Sub
 
@@ -230,14 +234,15 @@ Public Class frmCliente
             rbFemenino.Checked = True
             rbMasculino.Checked = False
         End If
-        Estados_civilesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(13).Value
-        OcupacionesComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(14).Value
-        Tipos_identificacionComboBox.SelectedValue = ClientesDataGridView.Rows(F).Cells(15).Value
+        Estados_civilesComboBox.Text = ClientesDataGridView.Rows(F).Cells(6).Value
+        OcupacionesComboBox.Text = ClientesDataGridView.Rows(F).Cells(7).Value
+        Tipos_identificacionComboBox.Text = ClientesDataGridView.Rows(F).Cells(9).Value
         txtNumIdentificacion.Text = ClientesDataGridView.Rows(F).Cells(10).Value
         txtEmpresa.Text = ClientesDataGridView.Rows(F).Cells(8).Value
         txtNombreConyuge.Text = ClientesDataGridView.Rows(F).Cells(11).Value
-        OcupacionesComboBox2.SelectedValue = ClientesDataGridView.Rows(F).Cells(16).Value
-        cbxActivo.Checked = ClientesDataGridView.Rows(F).Cells(18).Value
+        OcupacionesComboBox2.Text = ClientesDataGridView.Rows(F).Cells(12).Value
+        cmbRuta.Text = ClientesDataGridView.Rows(F).Cells(17).Value
+        cbxActivo.Checked = ClientesDataGridView.Rows(F).Cells(19).Value
     End Sub
 
     Private Sub DesactivarErroresCajasdeTexto()
@@ -296,6 +301,12 @@ Public Class frmCliente
         If (rbMasculino.Checked = False And rbFemenino.Checked = False) Then
             ErrorProvider1.SetError(rbFemenino, "Elija el sexo del empleado")
             rbMasculino.Focus()
+            Exit Sub
+        End If
+
+        If (cmbRuta.FindStringExact(cmbRuta.Text) < 0) Then
+            ErrorProvider1.SetError(cmbRuta, "Seleccione una ruta")
+            cmbRuta.Focus()
             Exit Sub
         End If
 
@@ -384,36 +395,6 @@ Public Class frmCliente
             ErrorProvider1.SetError(rbFemenino, Nothing)
         End If
     End Sub
-
-    Private Sub frmEmpleado_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
-        'Desactivar para no se active el foco de la tabla de sectores
-        LimpiarCajasdeTexto(True)
-
-        'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
-        If (ClientesBindingSource.Count = 0) Then
-            EstadoBotones(True, False, False, False, False, False)
-        Else
-            EstadoBotones(True, False, False, False, True, False)
-        End If
-
-        ClientesDataGridView.ClearSelection()
-    End Sub
-
-    Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DataSetOcupacionCombo2.ocupaciones' table. You can move, or remove it, as needed.
-        Me.OcupacionesTableAdapter1.Fill(Me.DataSetOcupacionCombo2.ocupaciones)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetEstadoCivilCombo.estados_civiles' Puede moverla o quitarla según sea necesario.
-        Me.Estados_civilesTableAdapter.Fill(Me.DataSetEstadoCivilCombo.estados_civiles)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetCliente.clientes' Puede moverla o quitarla según sea necesario.
-        Me.ClientesTableAdapter.Fill(Me.DataSetCliente.clientes)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoIdentificacionCombo.tipos_identificacion' Puede moverla o quitarla según sea necesario.
-        Me.Tipos_identificacionTableAdapter.Fill(Me.DataSetTipoIdentificacionCombo.tipos_identificacion)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetOcupacionCombo.ocupaciones' Puede moverla o quitarla según sea necesario.
-        Me.OcupacionesTableAdapter.Fill(Me.DataSetOcupacionCombo.ocupaciones)
-
-        Me.Top = 100
-    End Sub
-
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         If (txtID.Text <> "") Then
 
@@ -454,5 +435,35 @@ Public Class frmCliente
     Private Sub btOcupacion_Click(sender As Object, e As EventArgs) Handles btOcupacion.Click
         frmOcupacion.externa = True
         frmOcupacion.Show()
+    End Sub
+    Private Sub frmEmpleado_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        'Desactivar para no se active el foco de la tabla de sectores
+        LimpiarCajasdeTexto(True)
+
+        'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
+        If (ClientesBindingSource.Count = 0) Then
+            EstadoBotones(True, False, False, False, False, False)
+        Else
+            EstadoBotones(True, False, False, False, True, False)
+        End If
+
+        ClientesDataGridView.ClearSelection()
+    End Sub
+
+    Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetRutaCombo.rutas' Puede moverla o quitarla según sea necesario.
+        Me.RutasTableAdapter.Fill(Me.DataSetRutaCombo.rutas)
+        'TODO: This line of code loads data into the 'DataSetOcupacionCombo2.ocupaciones' table. You can move, or remove it, as needed.
+        Me.OcupacionesTableAdapter1.Fill(Me.DataSetOcupacionCombo2.ocupaciones)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetEstadoCivilCombo.estados_civiles' Puede moverla o quitarla según sea necesario.
+        Me.Estados_civilesTableAdapter.Fill(Me.DataSetEstadoCivilCombo.estados_civiles)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetCliente.clientes' Puede moverla o quitarla según sea necesario.
+        Me.ClientesTableAdapter.Fill(Me.DataSetCliente.clientes)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoIdentificacionCombo.tipos_identificacion' Puede moverla o quitarla según sea necesario.
+        Me.Tipos_identificacionTableAdapter.Fill(Me.DataSetTipoIdentificacionCombo.tipos_identificacion)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetOcupacionCombo.ocupaciones' Puede moverla o quitarla según sea necesario.
+        Me.OcupacionesTableAdapter.Fill(Me.DataSetOcupacionCombo.ocupaciones)
+
+        Me.Top = 100
     End Sub
 End Class
