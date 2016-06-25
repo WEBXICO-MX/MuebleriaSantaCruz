@@ -136,6 +136,10 @@
         frmFacturasCompraProducto.Show()
     End Sub
 
+    Private Sub ContratosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContratosToolStripMenuItem.Click
+        frmContratos.Show()
+    End Sub
+
     Private Sub frmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim posicionX As Integer = (Me.Width - logo.Width) \ 2
         Dim posicionY As Integer = (Me.Height - logo.Height) \ 2

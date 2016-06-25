@@ -115,10 +115,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetClienteCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClienteCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetConceptoPago.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetConceptoPagoCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConceptoPagoCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetDomicilio.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -129,6 +139,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetEmpleadoCombo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEmpleadoCombo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetEstadoCivilCombo.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -313,6 +328,12 @@
       <DependentUpon>frmConsultaCompras.vb</DependentUpon>
     </Compile>
     <Compile Include="frmConsultaCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContratos.Designer.vb">
+      <DependentUpon>frmContratos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmContratos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDomicilio.Designer.vb">
@@ -549,6 +570,9 @@
     <EmbeddedResource Include="frmConsultaCompras.resx">
       <DependentUpon>frmConsultaCompras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmContratos.resx">
+      <DependentUpon>frmContratos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDomicilio.resx">
       <DependentUpon>frmDomicilio.vb</DependentUpon>
     </EmbeddedResource>
@@ -714,6 +738,17 @@
     <None Include="DataSetCliente.xss">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
+    <None Include="DataSetClienteCombo.xsc">
+      <DependentUpon>DataSetClienteCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetClienteCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClienteCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetClienteCombo.xss">
+      <DependentUpon>DataSetClienteCombo.xsd</DependentUpon>
+    </None>
     <None Include="DataSetConceptoPago.xsc">
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
     </None>
@@ -724,6 +759,17 @@
     </None>
     <None Include="DataSetConceptoPago.xss">
       <DependentUpon>DataSetConceptoPago.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetConceptoPagoCombo.xsc">
+      <DependentUpon>DataSetConceptoPagoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetConceptoPagoCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetConceptoPagoCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetConceptoPagoCombo.xss">
+      <DependentUpon>DataSetConceptoPagoCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetDomicilio.xsc">
       <DependentUpon>DataSetDomicilio.xsd</DependentUpon>
@@ -746,6 +792,17 @@
     </None>
     <None Include="DataSetEmpleado.xss">
       <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetEmpleadoCombo.xsc">
+      <DependentUpon>DataSetEmpleadoCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetEmpleadoCombo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEmpleadoCombo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetEmpleadoCombo.xss">
+      <DependentUpon>DataSetEmpleadoCombo.xsd</DependentUpon>
     </None>
     <None Include="DataSetEstadoCivilCombo.xsc">
       <DependentUpon>DataSetEstadoCivilCombo.xsd</DependentUpon>
