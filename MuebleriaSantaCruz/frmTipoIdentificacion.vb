@@ -98,6 +98,13 @@ Public Class frmTipoIdentificacion
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To Tipos_identificacionDataGridView.Rows.Count - 1
+                If (Tipos_identificacionDataGridView.Item(1, Fila).Value = txtNombre.Text) Then
+                    Tipos_identificacionDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
@@ -259,6 +266,6 @@ Public Class frmTipoIdentificacion
     Private Sub frmTipoIdentificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetTipoIdentificacion.tipos_identificacion' Puede moverla o quitarla según sea necesario.
         Me.Tipos_identificacionTableAdapter.Fill(Me.DataSetTipoIdentificacion.tipos_identificacion)
-        Me.Top = 85
+        Me.Top = 100
     End Sub
 End Class
