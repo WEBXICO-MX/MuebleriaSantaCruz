@@ -100,6 +100,13 @@ Public Class frmTipoMedioComunicacion
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To Tipos_medios_comunicacionDataGridView.Rows.Count - 1
+                If (Tipos_medios_comunicacionDataGridView.Item(1, Fila).Value = txtNombre.Text) Then
+                    Tipos_medios_comunicacionDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
@@ -261,7 +268,7 @@ Public Class frmTipoMedioComunicacion
     Private Sub frmTipoMedioComunicacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetTipoMedioComunicacion.tipos_medios_comunicacion' Puede moverla o quitarla según sea necesario.
         Me.Tipos_medios_comunicacionTableAdapter.Fill(Me.DataSetTipoMedioComunicacion.tipos_medios_comunicacion)
-        Me.Top = 85
+        Me.Top = 100
 
     End Sub
 End Class
