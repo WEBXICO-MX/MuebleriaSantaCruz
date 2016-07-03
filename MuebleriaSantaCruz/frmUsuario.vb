@@ -40,9 +40,7 @@ Public Class frmUsuario
 
         'Crear una consulta
         Dim Consulta As String = "INSERT INTO Usuarios (id, nombre_completo,login,password,fecha_reg,fecha_mod,activo) VALUES (" & txtID.Text & ",'" & txtNombre.Text & "','" & txtLogin.Text & "','" & txtPassword.Text & "'," & "GETDATE()" & ",NULL," & (If(cbxActivo.Checked, 1, 0)) & ")"
-        MsgBox(Consulta)
         Orden = New SqlCommand(Consulta, objcon.con)
-
 
         Try
             'ExecuteReader hace la consulta y devuelve un SqlDataReader
@@ -87,7 +85,10 @@ Public Class frmUsuario
         If (objcon.con.State = ConnectionState.Closed) Then objcon.con.Open()
 
         'Crear una consulta
-        Dim Consulta As String = "UPDATE Usuarios SET nombre_completo = '" & txtNombre.Text & "', activo = " & (If(cbxActivo.Checked, 1, 0)) & ", fecha_mod = GETDATE() WHERE id = " & txtID.Text
+        Dim Consulta As String = "UPDATE Usuarios SET nombre_completo = '" & txtNombre.Text &
+                                 "', login='" & txtLogin.Text &
+                                 "', password='" & txtPassword.Text &
+                                 "', activo = " & (If(cbxActivo.Checked, 1, 0)) & ", fecha_mod = GETDATE() WHERE id = " & txtID.Text
         Orden = New SqlCommand(Consulta, objcon.con)
 
 
@@ -100,6 +101,14 @@ Public Class frmUsuario
 
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
+
+            For Fila = 0 To UsuariosDataGridView.Rows.Count - 1
+                If (UsuariosDataGridView.Item(1, Fila).Value = txtNombre.Text) Then
+                    UsuariosDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
 
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
@@ -148,6 +157,8 @@ Public Class frmUsuario
 
     Private Sub EstadoCajasdeTexto(ByVal nombre_status As Boolean)
         txtNombre.Enabled = nombre_status
+        txtLogin.Enabled = nombre_status
+        txtPassword.Enabled = nombre_status
         cbxActivo.Enabled = nombre_status
     End Sub
 
@@ -161,6 +172,8 @@ Public Class frmUsuario
 
     Private Sub DesactivarErroresCajasdeTexto()
         ErrorProvider1.SetError(txtNombre, Nothing)
+        ErrorProvider1.SetError(txtLogin, Nothing)
+        ErrorProvider1.SetError(txtPassword, Nothing)
     End Sub
 
     Private Sub UsuariosDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles UsuariosDataGridView.CellClick
@@ -197,6 +210,18 @@ Public Class frmUsuario
         If (txtNombre.Text.Length = 0) Then
             ErrorProvider1.SetError(txtNombre, "Capture el nombre de la Usuario")
             txtNombre.Focus()
+            Exit Sub
+        End If
+
+        If (txtLogin.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtLogin, "Capture el login")
+            txtLogin.Focus()
+            Exit Sub
+        End If
+
+        If (txtPassword.Text.Length = 0) Then
+            ErrorProvider1.SetError(txtPassword, "Capture el password")
+            txtPassword.Focus()
             Exit Sub
         End If
 
@@ -265,9 +290,7 @@ Public Class frmUsuario
 
 
     Private Sub frmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetUsuario.usuarios' Puede moverla o quitarla según sea necesario.
         Me.UsuariosTableAdapter.Fill(Me.DataSetUsuario.usuarios)
-        Me.Top = 85
-
+        Me.Top = 100
     End Sub
 End Class
