@@ -100,6 +100,13 @@ Public Class frmClasificacionCliente
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To Clasificaciones_clientesDataGridView.Rows.Count - 1
+                If (Clasificaciones_clientesDataGridView.Item(1, Fila).Value = txtNombre.Text) Then
+                    Clasificaciones_clientesDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
