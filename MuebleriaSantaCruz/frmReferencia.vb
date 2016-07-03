@@ -120,6 +120,13 @@ Public Class frmReferencia
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To ReferenciasDataGridView.Rows.Count - 1
+                If (ReferenciasDataGridView.Item(3, Fila).Value = txtCalle.Text) Then
+                    ReferenciasDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
@@ -154,6 +161,7 @@ Public Class frmReferencia
         txtCP.Clear()
         txtNombreAsentamiento.Clear()
         txtNombreCompleto.Clear()
+        AsentamientosComboBox.Text = ""
         txtCalle.Clear()
         txtNumInt.Clear()
         txtNumExt.Clear()
@@ -188,7 +196,7 @@ Public Class frmReferencia
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = ReferenciasDataGridView.Rows(F).Cells(0).Value
         txtNombreCompleto.Text = ReferenciasDataGridView.Rows(F).Cells(1).Value
-        AsentamientosComboBox.SelectedValue = ReferenciasDataGridView.Rows(F).Cells(12).Value
+        AsentamientosComboBox.Text = ReferenciasDataGridView.Rows(F).Cells(2).Value
         txtCalle.Text = ReferenciasDataGridView.Rows(F).Cells(3).Value
         txtNumInt.Text = ReferenciasDataGridView.Rows(F).Cells(4).Value
         txtNumExt.Text = ReferenciasDataGridView.Rows(F).Cells(5).Value
@@ -349,9 +357,9 @@ Public Class frmReferencia
         'TODO: This line of code loads data into the 'DataSetReferencia.referencias' table. You can move, or remove it, as needed.
         Me.ReferenciasTableAdapter.FillByPersonaId(Me.DataSetReferencia.referencias, persona_id)
         Me.AsentamientosTableAdapter.Fill(Me.DataSetAsentamientoCombo.asentamientos)
-        Me.Top = 85
+        Me.Top = 100
+        LimpiarCajasdeTexto()
         txtCliente.Text = nombre_completo
-
     End Sub
 
 End Class

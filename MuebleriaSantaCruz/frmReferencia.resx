@@ -181,17 +181,17 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btbuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -211,6 +211,12 @@
   </data>
   <metadata name="AsentamientosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>380, 17</value>
+  </metadata>
+  <metadata name="AsentamientosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>380, 17</value>
+  </metadata>
+  <metadata name="DataSetAsentamientoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>170, 17</value>
   </metadata>
   <metadata name="DataSetAsentamientoCombo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>170, 17</value>
@@ -233,8 +239,14 @@
   <metadata name="DataSetReferencia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>190, 56</value>
   </metadata>
+  <metadata name="DataSetReferencia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>190, 56</value>
+  </metadata>
   <metadata name="ErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>721, 56</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>113</value>
   </metadata>
   <metadata name="ReferenciasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>534, 56</value>
