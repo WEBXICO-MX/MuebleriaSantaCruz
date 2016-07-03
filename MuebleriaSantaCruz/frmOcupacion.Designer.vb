@@ -46,10 +46,10 @@ Partial Class frmOcupacion
         Me.OcupacionesTableAdapter = New MuebleriaCasaCruz.DataSetOcupacionTableAdapters.ocupacionesTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetOcupacionTableAdapters.TableAdapterManager()
         Me.OcupacionesDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataSetOcupacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -241,7 +241,7 @@ Partial Class frmOcupacion
         Me.OcupacionesDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -258,10 +258,6 @@ Partial Class frmOcupacion
         Me.OcupacionesDataGridView.Size = New System.Drawing.Size(478, 220)
         Me.OcupacionesDataGridView.TabIndex = 31
         '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
@@ -270,7 +266,7 @@ Partial Class frmOcupacion
         Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 41
+        Me.DataGridViewTextBoxColumn1.Width = 43
         '
         'DataGridViewTextBoxColumn2
         '
@@ -278,7 +274,7 @@ Partial Class frmOcupacion
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 69
+        Me.DataGridViewTextBoxColumn2.Width = 75
         '
         'DataGridViewCheckBoxColumn1
         '
@@ -286,7 +282,11 @@ Partial Class frmOcupacion
         Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
-        Me.DataGridViewCheckBoxColumn1.Width = 43
+        Me.DataGridViewCheckBoxColumn1.Width = 49
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'frmOcupacion
         '

@@ -112,6 +112,13 @@ Public Class frmOcupacion
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To OcupacionesDataGridView.Rows.Count - 1
+                If (OcupacionesDataGridView.Item(1, Fila).Value = txtNombre.Text) Then
+                    OcupacionesDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
@@ -273,7 +280,7 @@ Public Class frmOcupacion
     Private Sub frmOcupacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetOcupacion.ocupaciones' Puede moverla o quitarla según sea necesario.
         Me.OcupacionesTableAdapter.Fill(Me.DataSetOcupacion.ocupaciones)
-        Me.Top = 85
+        Me.Top = 100
 
     End Sub
 End Class
