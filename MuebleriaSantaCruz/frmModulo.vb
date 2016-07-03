@@ -258,9 +258,7 @@ Public Class frmModulo
         ModulosDataGridView.ClearSelection()
     End Sub
     Private Sub frmModulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetModulo.modulos' Puede moverla o quitarla según sea necesario.
         Me.ModulosTableAdapter.Fill(Me.DataSetModulo.modulos)
-        Me.Top = 85
-
+        Me.Top = 100
     End Sub
 End Class

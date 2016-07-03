@@ -24,6 +24,9 @@ Partial Class frmModulo
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModulo))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -43,12 +46,12 @@ Partial Class frmModulo
         Me.ModulosTableAdapter = New MuebleriaCasaCruz.DataSetModuloTableAdapters.modulosTableAdapter()
         Me.TableAdapterManager = New MuebleriaCasaCruz.DataSetModuloTableAdapters.TableAdapterManager()
         Me.ModulosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataSetModulo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -229,48 +232,79 @@ Partial Class frmModulo
         '
         'ModulosDataGridView
         '
+        Me.ModulosDataGridView.AllowUserToAddRows = False
+        Me.ModulosDataGridView.AllowUserToDeleteRows = False
+        Me.ModulosDataGridView.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.ModulosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.ModulosDataGridView.AutoGenerateColumns = False
+        Me.ModulosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.ModulosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.ModulosDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ModulosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.ModulosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ModulosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewCheckBoxColumn1})
         Me.ModulosDataGridView.DataSource = Me.ModulosBindingSource
         Me.ModulosDataGridView.Location = New System.Drawing.Point(339, 67)
+        Me.ModulosDataGridView.MultiSelect = False
         Me.ModulosDataGridView.Name = "ModulosDataGridView"
-        Me.ModulosDataGridView.Size = New System.Drawing.Size(473, 220)
+        Me.ModulosDataGridView.ReadOnly = True
+        Me.ModulosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ModulosDataGridView.Size = New System.Drawing.Size(473, 277)
         Me.ModulosDataGridView.TabIndex = 34
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "nombre"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "nombre"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "fecha_reg"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "fecha_reg"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "fecha_mod"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "fecha_mod"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewCheckBoxColumn1
-        '
-        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         '
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 43
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "nombre"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 75
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "fecha_reg"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Fecha de alta"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 82
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "fecha_mod"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Fecha de modificación"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 146
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 49
         '
         'frmModulo
         '
@@ -316,10 +350,10 @@ Partial Class frmModulo
     Friend WithEvents ModulosTableAdapter As MuebleriaCasaCruz.DataSetModuloTableAdapters.modulosTableAdapter
     Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetModuloTableAdapters.TableAdapterManager
     Friend WithEvents ModulosDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class
