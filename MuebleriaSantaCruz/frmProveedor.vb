@@ -125,6 +125,13 @@ Public Class frmProveedor
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To ProveedoresDataGridView.Rows.Count - 1
+                If (ProveedoresDataGridView.Item(1, Fila).Value = txtNombreComercial.Text) Then
+                    ProveedoresDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
