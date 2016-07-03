@@ -137,6 +137,13 @@ Public Class frmEmpleado
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To EmpleadosDataGridView.Rows.Count - 1
+                If (EmpleadosDataGridView.Item(1, Fila).Value = txtNombre.Text And EmpleadosDataGridView.Item(2, Fila).Value = txtApPaterno.Text And EmpleadosDataGridView.Item(3, Fila).Value = txtApMaterno.Text) Then
+                    EmpleadosDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
@@ -168,10 +175,12 @@ Public Class frmEmpleado
 
     Private Sub LimpiarCajasdeTexto()
         txtID.Clear()
+        PuestosComboBox.Text = ""
         txtNombre.Clear()
         txtApPaterno.Clear()
         txtApMaterno.Clear()
         dtpFechaNacimiento.ResetText()
+        Estados_civilesComboBox.Text = ""
         rbMasculino.Checked = False
         rbFemenino.Checked = False
         cbxActivo.Checked = True
@@ -201,8 +210,8 @@ Public Class frmEmpleado
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = EmpleadosDataGridView.Rows(F).Cells(0).Value
-        PuestosComboBox.SelectedValue = EmpleadosDataGridView.Rows(F).Cells(11).Value
-        Estados_civilesComboBox.SelectedValue = EmpleadosDataGridView.Rows(F).Cells(10).Value
+        PuestosComboBox.Text = EmpleadosDataGridView.Rows(F).Cells(7).Value
+        Estados_civilesComboBox.Text = EmpleadosDataGridView.Rows(F).Cells(6).Value
         txtNombre.Text = EmpleadosDataGridView.Rows(F).Cells(1).Value
         txtApPaterno.Text = EmpleadosDataGridView.Rows(F).Cells(2).Value
         txtApMaterno.Text = EmpleadosDataGridView.Rows(F).Cells(3).Value
@@ -250,6 +259,7 @@ Public Class frmEmpleado
         EmpleadosDataGridView.Enabled = False
         DesactivarErroresCajasdeTexto()
         Nuevo()
+        PuestosComboBox.Focus()
     End Sub
 
     Private Sub btguardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btguardar.Click
@@ -364,31 +374,6 @@ Public Class frmEmpleado
         End If
     End Sub
 
-    Private Sub frmEmpleado_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
-        'Desactivar para no se active el foco de la tabla de sectores
-        LimpiarCajasdeTexto()
-
-        'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
-        If (EmpleadosBindingSource.Count = 0) Then
-            EstadoBotones(True, False, False, False, False)
-        Else
-            EstadoBotones(True, False, False, False, True)
-        End If
-
-        EmpleadosDataGridView.ClearSelection()
-    End Sub
-
-    Private Sub frmEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetEstadoCivilCombo.estados_civiles' Puede moverla o quitarla según sea necesario.
-        Me.Estados_civilesTableAdapter.Fill(Me.DataSetEstadoCivilCombo.estados_civiles)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetEmpleado.empleados' Puede moverla o quitarla según sea necesario.
-        Me.EmpleadosTableAdapter.Fill(Me.DataSetEmpleado.empleados)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetPuestoCombo.puestos' Puede moverla o quitarla según sea necesario.
-        Me.PuestosTableAdapter.Fill(Me.DataSetPuestoCombo.puestos)
-
-    End Sub
-
-
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         If (txtID.Text <> "") Then
 
@@ -423,5 +408,30 @@ Public Class frmEmpleado
         Else
             MsgBox("Debe cargar previamente a un cliente para entrar a esta opción")
         End If
+    End Sub
+
+    Private Sub frmEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetEstadoCivilCombo.estados_civiles' Puede moverla o quitarla según sea necesario.
+        Me.Estados_civilesTableAdapter.Fill(Me.DataSetEstadoCivilCombo.estados_civiles)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetEmpleado.empleados' Puede moverla o quitarla según sea necesario.
+        Me.EmpleadosTableAdapter.Fill(Me.DataSetEmpleado.empleados)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetPuestoCombo.puestos' Puede moverla o quitarla según sea necesario.
+        Me.PuestosTableAdapter.Fill(Me.DataSetPuestoCombo.puestos)
+
+        Me.Top = 100
+    End Sub
+
+    Private Sub frmEmpleado_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        'Si la tabla sectores esta vacia, deshabilitar el boton de buscar
+        If (EmpleadosBindingSource.Count = 0) Then
+            EstadoBotones(True, False, False, False, False)
+        Else
+            EstadoBotones(True, False, False, False, True)
+        End If
+
+        EmpleadosDataGridView.ClearSelection()
+
+        'Desactivar para no se active el foco de la tabla de sectores
+        LimpiarCajasdeTexto()
     End Sub
 End Class

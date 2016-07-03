@@ -24,6 +24,14 @@ Partial Class frmEmpleado
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpleado))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -31,6 +39,7 @@ Partial Class frmEmpleado
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Estados_civilesComboBox = New System.Windows.Forms.ComboBox()
@@ -38,9 +47,6 @@ Partial Class frmEmpleado
         Me.DataSetEstadoCivilCombo = New MuebleriaCasaCruz.DataSetEstadoCivilCombo()
         Me.rbFemenino = New System.Windows.Forms.RadioButton()
         Me.rbMasculino = New System.Windows.Forms.RadioButton()
-        Me.dtpFechaLaboralFin = New System.Windows.Forms.DateTimePicker()
-        Me.dtpFechaLaboralInicio = New System.Windows.Forms.DateTimePicker()
-        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.PuestosComboBox = New System.Windows.Forms.ComboBox()
         Me.PuestosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetPuestoCombo = New MuebleriaCasaCruz.DataSetPuestoCombo()
@@ -69,6 +75,11 @@ Partial Class frmEmpleado
         Me.EmpleadosTableAdapter = New MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.empleadosTableAdapter()
         Me.TableAdapterManager1 = New MuebleriaCasaCruz.DataSetEmpleadoTableAdapters.TableAdapterManager()
         Me.EmpleadosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
+        Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
+        Me.dtpFechaLaboralInicio = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaLaboralFin = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ap_paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -83,9 +94,6 @@ Partial Class frmEmpleado
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Estados_civilesTableAdapter = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.estados_civilesTableAdapter()
-        Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Estados_civilesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,15 +169,15 @@ Partial Class frmEmpleado
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.dtpFechaNacimiento)
+        Me.GroupBox1.Controls.Add(Me.dtpFechaLaboralFin)
+        Me.GroupBox1.Controls.Add(Me.dtpFechaLaboralInicio)
         Me.GroupBox1.Controls.Add(Me.LinkLabel3)
         Me.GroupBox1.Controls.Add(Me.LinkLabel2)
         Me.GroupBox1.Controls.Add(Me.LinkLabel1)
         Me.GroupBox1.Controls.Add(Me.Estados_civilesComboBox)
         Me.GroupBox1.Controls.Add(Me.rbFemenino)
         Me.GroupBox1.Controls.Add(Me.rbMasculino)
-        Me.GroupBox1.Controls.Add(Me.dtpFechaLaboralFin)
-        Me.GroupBox1.Controls.Add(Me.dtpFechaLaboralInicio)
-        Me.GroupBox1.Controls.Add(Me.dtpFechaNacimiento)
         Me.GroupBox1.Controls.Add(Me.PuestosComboBox)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -193,6 +201,16 @@ Partial Class frmEmpleado
         Me.GroupBox1.Size = New System.Drawing.Size(451, 442)
         Me.GroupBox1.TabIndex = 38
         Me.GroupBox1.TabStop = False
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Location = New System.Drawing.Point(271, 411)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(64, 13)
+        Me.LinkLabel3.TabIndex = 15
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "Referencias"
         '
         'LinkLabel2
         '
@@ -218,11 +236,12 @@ Partial Class frmEmpleado
         '
         Me.Estados_civilesComboBox.DataSource = Me.Estados_civilesBindingSource
         Me.Estados_civilesComboBox.DisplayMember = "nombre"
+        Me.Estados_civilesComboBox.Enabled = False
         Me.Estados_civilesComboBox.FormattingEnabled = True
         Me.Estados_civilesComboBox.Location = New System.Drawing.Point(123, 334)
         Me.Estados_civilesComboBox.Name = "Estados_civilesComboBox"
         Me.Estados_civilesComboBox.Size = New System.Drawing.Size(300, 21)
-        Me.Estados_civilesComboBox.TabIndex = 11
+        Me.Estados_civilesComboBox.TabIndex = 9
         Me.Estados_civilesComboBox.ValueMember = "id"
         '
         'Estados_civilesBindingSource
@@ -238,10 +257,11 @@ Partial Class frmEmpleado
         'rbFemenino
         '
         Me.rbFemenino.AutoSize = True
+        Me.rbFemenino.Enabled = False
         Me.rbFemenino.Location = New System.Drawing.Point(238, 304)
         Me.rbFemenino.Name = "rbFemenino"
         Me.rbFemenino.Size = New System.Drawing.Size(71, 17)
-        Me.rbFemenino.TabIndex = 10
+        Me.rbFemenino.TabIndex = 8
         Me.rbFemenino.TabStop = True
         Me.rbFemenino.Text = "Femenino"
         Me.rbFemenino.UseVisualStyleBackColor = True
@@ -249,44 +269,25 @@ Partial Class frmEmpleado
         'rbMasculino
         '
         Me.rbMasculino.AutoSize = True
+        Me.rbMasculino.Enabled = False
         Me.rbMasculino.Location = New System.Drawing.Point(123, 304)
         Me.rbMasculino.Name = "rbMasculino"
         Me.rbMasculino.Size = New System.Drawing.Size(73, 17)
-        Me.rbMasculino.TabIndex = 9
+        Me.rbMasculino.TabIndex = 7
         Me.rbMasculino.TabStop = True
         Me.rbMasculino.Text = "Masculino"
         Me.rbMasculino.UseVisualStyleBackColor = True
-        '
-        'dtpFechaLaboralFin
-        '
-        Me.dtpFechaLaboralFin.Location = New System.Drawing.Point(123, 159)
-        Me.dtpFechaLaboralFin.Name = "dtpFechaLaboralFin"
-        Me.dtpFechaLaboralFin.Size = New System.Drawing.Size(211, 20)
-        Me.dtpFechaLaboralFin.TabIndex = 4
-        '
-        'dtpFechaLaboralInicio
-        '
-        Me.dtpFechaLaboralInicio.Location = New System.Drawing.Point(123, 121)
-        Me.dtpFechaLaboralInicio.Name = "dtpFechaLaboralInicio"
-        Me.dtpFechaLaboralInicio.Size = New System.Drawing.Size(211, 20)
-        Me.dtpFechaLaboralInicio.TabIndex = 3
-        '
-        'dtpFechaNacimiento
-        '
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(123, 272)
-        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
-        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(211, 20)
-        Me.dtpFechaNacimiento.TabIndex = 8
         '
         'PuestosComboBox
         '
         Me.PuestosComboBox.DataSource = Me.PuestosBindingSource
         Me.PuestosComboBox.DisplayMember = "nombre"
+        Me.PuestosComboBox.Enabled = False
         Me.PuestosComboBox.FormattingEnabled = True
         Me.PuestosComboBox.Location = New System.Drawing.Point(123, 91)
         Me.PuestosComboBox.Name = "PuestosComboBox"
         Me.PuestosComboBox.Size = New System.Drawing.Size(300, 21)
-        Me.PuestosComboBox.TabIndex = 2
+        Me.PuestosComboBox.TabIndex = 0
         Me.PuestosComboBox.ValueMember = "id"
         '
         'PuestosBindingSource
@@ -337,7 +338,7 @@ Partial Class frmEmpleado
         Me.cbxActivo.Location = New System.Drawing.Point(11, 376)
         Me.cbxActivo.Name = "cbxActivo"
         Me.cbxActivo.Size = New System.Drawing.Size(56, 17)
-        Me.cbxActivo.TabIndex = 12
+        Me.cbxActivo.TabIndex = 10
         Me.cbxActivo.Text = "Activo"
         Me.cbxActivo.UseVisualStyleBackColor = True
         '
@@ -421,7 +422,7 @@ Partial Class frmEmpleado
         Me.txtApMaterno.MaxLength = 50
         Me.txtApMaterno.Name = "txtApMaterno"
         Me.txtApMaterno.Size = New System.Drawing.Size(211, 20)
-        Me.txtApMaterno.TabIndex = 7
+        Me.txtApMaterno.TabIndex = 5
         '
         'Label5
         '
@@ -441,7 +442,7 @@ Partial Class frmEmpleado
         Me.txtApPaterno.MaxLength = 50
         Me.txtApPaterno.Name = "txtApPaterno"
         Me.txtApPaterno.Size = New System.Drawing.Size(211, 20)
-        Me.txtApPaterno.TabIndex = 6
+        Me.txtApPaterno.TabIndex = 4
         '
         'Label4
         '
@@ -461,7 +462,7 @@ Partial Class frmEmpleado
         Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(211, 20)
-        Me.txtNombre.TabIndex = 5
+        Me.txtNombre.TabIndex = 3
         '
         'Label2
         '
@@ -511,115 +512,31 @@ Partial Class frmEmpleado
         '
         Me.EmpleadosDataGridView.AllowUserToAddRows = False
         Me.EmpleadosDataGridView.AllowUserToDeleteRows = False
+        Me.EmpleadosDataGridView.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.EmpleadosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.EmpleadosDataGridView.AutoGenerateColumns = False
+        Me.EmpleadosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.EmpleadosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.EmpleadosDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.EmpleadosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.EmpleadosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.EmpleadosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.nombre, Me.ap_paterno, Me.ap_materno, Me.fecha_nacimiento, Me.sexo, Me.estado_civil, Me.puesto, Me.fecha_laboral_inicio, Me.fecha_laboral_fin, Me.estado_civil_id, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewCheckBoxColumn1})
         Me.EmpleadosDataGridView.DataSource = Me.EmpleadosBindingSource
         Me.EmpleadosDataGridView.Location = New System.Drawing.Point(469, 58)
+        Me.EmpleadosDataGridView.MultiSelect = False
         Me.EmpleadosDataGridView.Name = "EmpleadosDataGridView"
         Me.EmpleadosDataGridView.ReadOnly = True
+        Me.EmpleadosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.EmpleadosDataGridView.Size = New System.Drawing.Size(372, 438)
         Me.EmpleadosDataGridView.TabIndex = 38
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "persona_id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "persona_id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'nombre
-        '
-        Me.nombre.DataPropertyName = "nombre"
-        Me.nombre.HeaderText = "nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        '
-        'ap_paterno
-        '
-        Me.ap_paterno.DataPropertyName = "ap_paterno"
-        Me.ap_paterno.HeaderText = "ap_paterno"
-        Me.ap_paterno.Name = "ap_paterno"
-        Me.ap_paterno.ReadOnly = True
-        '
-        'ap_materno
-        '
-        Me.ap_materno.DataPropertyName = "ap_materno"
-        Me.ap_materno.HeaderText = "ap_materno"
-        Me.ap_materno.Name = "ap_materno"
-        Me.ap_materno.ReadOnly = True
-        '
-        'fecha_nacimiento
-        '
-        Me.fecha_nacimiento.DataPropertyName = "fecha_nacimiento"
-        Me.fecha_nacimiento.HeaderText = "fecha_nacimiento"
-        Me.fecha_nacimiento.Name = "fecha_nacimiento"
-        Me.fecha_nacimiento.ReadOnly = True
-        '
-        'sexo
-        '
-        Me.sexo.DataPropertyName = "sexo"
-        Me.sexo.HeaderText = "sexo"
-        Me.sexo.Name = "sexo"
-        Me.sexo.ReadOnly = True
-        '
-        'estado_civil
-        '
-        Me.estado_civil.DataPropertyName = "estado_civil"
-        Me.estado_civil.HeaderText = "estado_civil"
-        Me.estado_civil.Name = "estado_civil"
-        Me.estado_civil.ReadOnly = True
-        '
-        'puesto
-        '
-        Me.puesto.DataPropertyName = "puesto"
-        Me.puesto.HeaderText = "puesto"
-        Me.puesto.Name = "puesto"
-        Me.puesto.ReadOnly = True
-        '
-        'fecha_laboral_inicio
-        '
-        Me.fecha_laboral_inicio.DataPropertyName = "fecha_laboral_inicio"
-        Me.fecha_laboral_inicio.HeaderText = "fecha_laboral_inicio"
-        Me.fecha_laboral_inicio.Name = "fecha_laboral_inicio"
-        Me.fecha_laboral_inicio.ReadOnly = True
-        '
-        'fecha_laboral_fin
-        '
-        Me.fecha_laboral_fin.DataPropertyName = "fecha_laboral_fin"
-        Me.fecha_laboral_fin.HeaderText = "fecha_laboral_fin"
-        Me.fecha_laboral_fin.Name = "fecha_laboral_fin"
-        Me.fecha_laboral_fin.ReadOnly = True
-        '
-        'estado_civil_id
-        '
-        Me.estado_civil_id.DataPropertyName = "estado_civil_id"
-        Me.estado_civil_id.HeaderText = "estado_civil_id"
-        Me.estado_civil_id.Name = "estado_civil_id"
-        Me.estado_civil_id.ReadOnly = True
-        Me.estado_civil_id.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "puesto_id"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "puesto_id"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "fecha_registro"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "fecha_registro"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewCheckBoxColumn1
-        '
-        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "activo"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
-        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         '
         'Estados_civilesTableAdapter
         '
@@ -631,15 +548,161 @@ Partial Class frmEmpleado
         Me.TableAdapterManager2.Connection = Nothing
         Me.TableAdapterManager2.UpdateOrder = MuebleriaCasaCruz.DataSetEstadoCivilComboTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'LinkLabel3
+        'dtpFechaLaboralInicio
         '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Location = New System.Drawing.Point(271, 411)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(64, 13)
-        Me.LinkLabel3.TabIndex = 15
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "Referencias"
+        Me.dtpFechaLaboralInicio.Enabled = False
+        Me.dtpFechaLaboralInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaLaboralInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaLaboralInicio.Location = New System.Drawing.Point(123, 121)
+        Me.dtpFechaLaboralInicio.Name = "dtpFechaLaboralInicio"
+        Me.dtpFechaLaboralInicio.Size = New System.Drawing.Size(107, 20)
+        Me.dtpFechaLaboralInicio.TabIndex = 1
+        '
+        'dtpFechaLaboralFin
+        '
+        Me.dtpFechaLaboralFin.Enabled = False
+        Me.dtpFechaLaboralFin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaLaboralFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaLaboralFin.Location = New System.Drawing.Point(123, 159)
+        Me.dtpFechaLaboralFin.Name = "dtpFechaLaboralFin"
+        Me.dtpFechaLaboralFin.Size = New System.Drawing.Size(107, 20)
+        Me.dtpFechaLaboralFin.TabIndex = 2
+        '
+        'dtpFechaNacimiento
+        '
+        Me.dtpFechaNacimiento.Enabled = False
+        Me.dtpFechaNacimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(123, 271)
+        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
+        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(107, 20)
+        Me.dtpFechaNacimiento.TabIndex = 6
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "persona_id"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 43
+        '
+        'nombre
+        '
+        Me.nombre.DataPropertyName = "nombre"
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        Me.nombre.Width = 75
+        '
+        'ap_paterno
+        '
+        Me.ap_paterno.DataPropertyName = "ap_paterno"
+        Me.ap_paterno.HeaderText = "Apellido paterno"
+        Me.ap_paterno.Name = "ap_paterno"
+        Me.ap_paterno.ReadOnly = True
+        Me.ap_paterno.Width = 114
+        '
+        'ap_materno
+        '
+        Me.ap_materno.DataPropertyName = "ap_materno"
+        Me.ap_materno.HeaderText = "Apellido materno"
+        Me.ap_materno.Name = "ap_materno"
+        Me.ap_materno.ReadOnly = True
+        Me.ap_materno.Width = 115
+        '
+        'fecha_nacimiento
+        '
+        Me.fecha_nacimiento.DataPropertyName = "fecha_nacimiento"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.fecha_nacimiento.DefaultCellStyle = DataGridViewCellStyle4
+        Me.fecha_nacimiento.HeaderText = "Fecha de nacimiento"
+        Me.fecha_nacimiento.Name = "fecha_nacimiento"
+        Me.fecha_nacimiento.ReadOnly = True
+        Me.fecha_nacimiento.Width = 137
+        '
+        'sexo
+        '
+        Me.sexo.DataPropertyName = "sexo"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.sexo.DefaultCellStyle = DataGridViewCellStyle5
+        Me.sexo.HeaderText = "Sexo"
+        Me.sexo.Name = "sexo"
+        Me.sexo.ReadOnly = True
+        Me.sexo.Width = 60
+        '
+        'estado_civil
+        '
+        Me.estado_civil.DataPropertyName = "estado_civil"
+        Me.estado_civil.HeaderText = "Estado civil"
+        Me.estado_civil.Name = "estado_civil"
+        Me.estado_civil.ReadOnly = True
+        Me.estado_civil.Width = 90
+        '
+        'puesto
+        '
+        Me.puesto.DataPropertyName = "puesto"
+        Me.puesto.HeaderText = "Puesto"
+        Me.puesto.Name = "puesto"
+        Me.puesto.ReadOnly = True
+        Me.puesto.Width = 71
+        '
+        'fecha_laboral_inicio
+        '
+        Me.fecha_laboral_inicio.DataPropertyName = "fecha_laboral_inicio"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.fecha_laboral_inicio.DefaultCellStyle = DataGridViewCellStyle6
+        Me.fecha_laboral_inicio.HeaderText = "Fecha laboral inicio"
+        Me.fecha_laboral_inicio.Name = "fecha_laboral_inicio"
+        Me.fecha_laboral_inicio.ReadOnly = True
+        Me.fecha_laboral_inicio.Width = 104
+        '
+        'fecha_laboral_fin
+        '
+        Me.fecha_laboral_fin.DataPropertyName = "fecha_laboral_fin"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.fecha_laboral_fin.DefaultCellStyle = DataGridViewCellStyle7
+        Me.fecha_laboral_fin.HeaderText = "Fecha laboral fin"
+        Me.fecha_laboral_fin.Name = "fecha_laboral_fin"
+        Me.fecha_laboral_fin.ReadOnly = True
+        Me.fecha_laboral_fin.Width = 104
+        '
+        'estado_civil_id
+        '
+        Me.estado_civil_id.DataPropertyName = "estado_civil_id"
+        Me.estado_civil_id.HeaderText = "estado_civil_id"
+        Me.estado_civil_id.Name = "estado_civil_id"
+        Me.estado_civil_id.ReadOnly = True
+        Me.estado_civil_id.Visible = False
+        Me.estado_civil_id.Width = 117
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "puesto_id"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "puesto_id"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        Me.DataGridViewTextBoxColumn2.Width = 87
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "fecha_registro"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Fecha de alta"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 82
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "activo"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Activo"
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 49
         '
         'frmEmpleado
         '
@@ -689,7 +752,6 @@ Partial Class frmEmpleado
     Friend WithEvents PuestosBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents PuestosTableAdapter As MuebleriaCasaCruz.DataSetPuestoComboTableAdapters.puestosTableAdapter
     Friend WithEvents TableAdapterManager As MuebleriaCasaCruz.DataSetPuestoComboTableAdapters.TableAdapterManager
-    Friend WithEvents dtpFechaNacimiento As System.Windows.Forms.DateTimePicker
     Friend WithEvents PuestosComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtApMaterno As System.Windows.Forms.TextBox
@@ -713,10 +775,12 @@ Partial Class frmEmpleado
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
-    Friend WithEvents dtpFechaLaboralFin As System.Windows.Forms.DateTimePicker
-    Friend WithEvents dtpFechaLaboralInicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents dtpFechaNacimiento As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpFechaLaboralFin As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpFechaLaboralInicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ap_paterno As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -731,5 +795,4 @@ Partial Class frmEmpleado
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents LinkLabel3 As LinkLabel
 End Class
