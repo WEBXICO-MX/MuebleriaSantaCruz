@@ -24,6 +24,9 @@ Partial Class frmMedioComunicacion
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMedioComunicacion))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
@@ -316,13 +319,35 @@ Partial Class frmMedioComunicacion
         '
         Me.Medios_comunicacionDataGridView.AllowUserToAddRows = False
         Me.Medios_comunicacionDataGridView.AllowUserToDeleteRows = False
+        Me.Medios_comunicacionDataGridView.AllowUserToResizeRows = False
         Me.Medios_comunicacionDataGridView.AutoGenerateColumns = False
+        Me.Medios_comunicacionDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Medios_comunicacionDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.Medios_comunicacionDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Medios_comunicacionDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Medios_comunicacionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Medios_comunicacionDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.MediocomunicacionDataGridViewTextBoxColumn, Me.ValorDataGridViewTextBoxColumn, Me.NombrecompletoDataGridViewTextBoxColumn, Me.TipomediocomunicacionidDataGridViewTextBoxColumn, Me.PersonaidDataGridViewTextBoxColumn, Me.ActivoDataGridViewCheckBoxColumn})
         Me.Medios_comunicacionDataGridView.DataSource = Me.Medios_comunicacionBindingSource
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Medios_comunicacionDataGridView.DefaultCellStyle = DataGridViewCellStyle3
         Me.Medios_comunicacionDataGridView.Location = New System.Drawing.Point(473, 53)
+        Me.Medios_comunicacionDataGridView.MultiSelect = False
         Me.Medios_comunicacionDataGridView.Name = "Medios_comunicacionDataGridView"
         Me.Medios_comunicacionDataGridView.ReadOnly = True
+        Me.Medios_comunicacionDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Medios_comunicacionDataGridView.Size = New System.Drawing.Size(339, 220)
         Me.Medios_comunicacionDataGridView.TabIndex = 34
         '
@@ -375,30 +400,36 @@ Partial Class frmMedioComunicacion
         'IdDataGridViewTextBoxColumn
         '
         Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.IdDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
         Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
         Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdDataGridViewTextBoxColumn.Width = 43
         '
         'MediocomunicacionDataGridViewTextBoxColumn
         '
         Me.MediocomunicacionDataGridViewTextBoxColumn.DataPropertyName = "medio_comunicacion"
-        Me.MediocomunicacionDataGridViewTextBoxColumn.HeaderText = "medio_comunicacion"
+        Me.MediocomunicacionDataGridViewTextBoxColumn.HeaderText = "Medio comunicación"
         Me.MediocomunicacionDataGridViewTextBoxColumn.Name = "MediocomunicacionDataGridViewTextBoxColumn"
         Me.MediocomunicacionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MediocomunicacionDataGridViewTextBoxColumn.Width = 135
         '
         'ValorDataGridViewTextBoxColumn
         '
         Me.ValorDataGridViewTextBoxColumn.DataPropertyName = "valor"
-        Me.ValorDataGridViewTextBoxColumn.HeaderText = "valor"
+        Me.ValorDataGridViewTextBoxColumn.HeaderText = "Dato"
         Me.ValorDataGridViewTextBoxColumn.Name = "ValorDataGridViewTextBoxColumn"
         Me.ValorDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ValorDataGridViewTextBoxColumn.Width = 59
         '
         'NombrecompletoDataGridViewTextBoxColumn
         '
         Me.NombrecompletoDataGridViewTextBoxColumn.DataPropertyName = "nombre_completo"
-        Me.NombrecompletoDataGridViewTextBoxColumn.HeaderText = "nombre_completo"
+        Me.NombrecompletoDataGridViewTextBoxColumn.HeaderText = "Nombre completo"
         Me.NombrecompletoDataGridViewTextBoxColumn.Name = "NombrecompletoDataGridViewTextBoxColumn"
         Me.NombrecompletoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NombrecompletoDataGridViewTextBoxColumn.Width = 119
         '
         'TipomediocomunicacionidDataGridViewTextBoxColumn
         '
@@ -419,9 +450,10 @@ Partial Class frmMedioComunicacion
         'ActivoDataGridViewCheckBoxColumn
         '
         Me.ActivoDataGridViewCheckBoxColumn.DataPropertyName = "activo"
-        Me.ActivoDataGridViewCheckBoxColumn.HeaderText = "activo"
+        Me.ActivoDataGridViewCheckBoxColumn.HeaderText = "Activo"
         Me.ActivoDataGridViewCheckBoxColumn.Name = "ActivoDataGridViewCheckBoxColumn"
         Me.ActivoDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.ActivoDataGridViewCheckBoxColumn.Width = 49
         '
         'frmMedioComunicacion
         '

@@ -108,6 +108,14 @@ Public Class frmMedioComunicacion
             EstadoBotones(True, False, False, False, True)
             EstadoCajasdeTexto(False)
 
+            For Fila = 0 To Medios_comunicacionDataGridView.Rows.Count - 1
+                If (Medios_comunicacionDataGridView.Item(2, Fila).Value = txtDato.Text) Then
+                    Medios_comunicacionDataGridView.Item(0, Fila).Selected = True
+                    Exit For
+                End If
+            Next Fila
+
+
             'Llamar siempre a Close una vez finalizada la lectura
             CerrarConexion()
 
@@ -277,6 +285,7 @@ Public Class frmMedioComunicacion
 
         txtNombre.Text = nombre_completo
 
+        Me.Top = 100
     End Sub
 
 
