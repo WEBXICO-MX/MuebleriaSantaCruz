@@ -259,9 +259,7 @@ Public Class frmGrupoSeguridad
     End Sub
 
     Private Sub frmGrupoSeguridad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetGrupoSeguridad.grupos_seguridad' Puede moverla o quitarla según sea necesario.
         Me.Grupos_seguridadTableAdapter.Fill(Me.DataSetGrupoSeguridad.grupos_seguridad)
-        Me.Top = 85
-
+        Me.Top = 100
     End Sub
 End Class
