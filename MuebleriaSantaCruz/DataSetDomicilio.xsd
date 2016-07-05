@@ -12,11 +12,12 @@
               <DbSource ConnectionRef="MuebleriaCASACRUZConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT d.id, (p.nombre + ' '+ p.ap_paterno + ' ' + p.ap_materno) AS nombre_completo ,d.persona_id, a.nombre AS asentamiento,d.asentamiento_id, tv.nombre AS tipo_vivienda,d.tipo_vivienda_id, d.calle, d.numero_interior, 
+                    <CommandText>SELECT d.id, (p.nombre + ' '+ p.ap_paterno + ' ' + p.ap_materno) AS nombre_completo ,d.persona_id, ta.nombre + ' ' + a.nombre AS asentamiento,d.asentamiento_id, tv.nombre AS tipo_vivienda,d.tipo_vivienda_id, d.calle, d.numero_interior, 
 d.numero_exterior, d.descripcion, d.fecha_registro, d.fecha_modificacion, d.activo 
 FROM dbo.domicilios AS d
 INNER JOIN personas AS p ON p.id = d.persona_id
 INNER JOIN asentamientos AS a ON a.id = d.asentamiento_id
+INNER JOIN tipos_asentamientos AS ta ON ta.id = a.tipo_asentamiento_id
 INNER JOIN tipos_viviendas AS tv ON tv.id = d.tipo_vivienda_id</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -66,7 +67,7 @@ WHERE        (d.persona_id = @persona_id)</CommandText>
   <xs:element name="DataSetDomicilio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetDomicilio" msprop:Generator_UserDSName="DataSetDomicilio">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="domicilios" msprop:Generator_TableClassName="domiciliosDataTable" msprop:Generator_TableVarName="tabledomicilios" msprop:Generator_RowChangedName="domiciliosRowChanged" msprop:Generator_TablePropName="domicilios" msprop:Generator_RowDeletingName="domiciliosRowDeleting" msprop:Generator_RowChangingName="domiciliosRowChanging" msprop:Generator_RowEvHandlerName="domiciliosRowChangeEventHandler" msprop:Generator_RowDeletedName="domiciliosRowDeleted" msprop:Generator_RowClassName="domiciliosRow" msprop:Generator_UserTableName="domicilios" msprop:Generator_RowEvArgName="domiciliosRowChangeEvent">
+        <xs:element name="domicilios" msprop:Generator_TableClassName="domiciliosDataTable" msprop:Generator_TableVarName="tabledomicilios" msprop:Generator_TablePropName="domicilios" msprop:Generator_RowDeletingName="domiciliosRowDeleting" msprop:Generator_RowChangingName="domiciliosRowChanging" msprop:Generator_RowEvHandlerName="domiciliosRowChangeEventHandler" msprop:Generator_RowDeletedName="domiciliosRowDeleted" msprop:Generator_UserTableName="domicilios" msprop:Generator_RowChangedName="domiciliosRowChanged" msprop:Generator_RowEvArgName="domiciliosRowChangeEvent" msprop:Generator_RowClassName="domiciliosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
