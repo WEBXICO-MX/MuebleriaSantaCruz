@@ -149,6 +149,8 @@ Public Class frmDomicilio
         txtID.Clear()
         txtCP.Clear()
         txtNombreAsentamiento.Clear()
+        AsentamientosComboBox.Text = ""
+        Tipos_viviendasComboBox.Text = ""
         txtCalle.Clear()
         txtNumInt.Clear()
         txtNumExt.Clear()
@@ -179,8 +181,8 @@ Public Class frmDomicilio
 
     Private Sub PegarDatosTabla_CajasdeTexto(ByVal F As Integer)
         txtID.Text = DomiciliosDataGridView.Rows(F).Cells(0).Value
-        Tipos_viviendasComboBox.SelectedValue = DomiciliosDataGridView.Rows(F).Cells(10).Value
-        AsentamientosComboBox.SelectedValue = DomiciliosDataGridView.Rows(F).Cells(9).Value
+        Tipos_viviendasComboBox.Text = DomiciliosDataGridView.Rows(F).Cells(1).Value
+        AsentamientosComboBox.Text = DomiciliosDataGridView.Rows(F).Cells(2).Value
         txtCalle.Text = DomiciliosDataGridView.Rows(F).Cells(3).Value
         txtNumInt.Text = DomiciliosDataGridView.Rows(F).Cells(4).Value
         txtNumExt.Text = DomiciliosDataGridView.Rows(F).Cells(5).Value
@@ -316,7 +318,6 @@ Public Class frmDomicilio
         End If
     End Sub
 
-
     Private Sub txtNombreAsentamiento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreAsentamiento.KeyPress
         If e.KeyChar = Convert.ToChar(13) And txtCP.Text <> "" Then
             Me.AsentamientosTableAdapter.FillByNombre(Me.DataSetAsentamientoCombo.asentamientos, txtNombreAsentamiento.Text)
@@ -324,17 +325,34 @@ Public Class frmDomicilio
         End If
     End Sub
 
-    Private Sub frmDomicilio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetDomicilio.domicilios' Puede moverla o quitarla según sea necesario.
-        Me.DomiciliosTableAdapter.FillByPersonaId(Me.DataSetDomicilio.domicilios, persona_id)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetTipoViviendaCombo.tipos_viviendas' Puede moverla o quitarla según sea necesario.
-        Me.Tipos_viviendasTableAdapter.Fill(Me.DataSetTipoViviendaCombo.tipos_viviendas)
-        Me.AsentamientosTableAdapter.Fill(Me.DataSetAsentamientoCombo.asentamientos)
-        txtNombreCompleto.Text = nombre_completo
+    Private Sub txtNumInt_TextChanged(sender As Object, e As EventArgs) Handles txtNumInt.TextChanged
+        If (txtNumInt.Text.Length > 0) Then
+            ErrorProvider1.SetError(txtNumInt, Nothing)
+        End If
+    End Sub
+
+    Private Sub txtNumExt_TextChanged(sender As Object, e As EventArgs) Handles txtNumExt.TextChanged
+        If (txtNumExt.Text.Length > 0) Then
+            ErrorProvider1.SetError(txtNumExt, Nothing)
+        End If
+    End Sub
+
+    Private Sub txtDescripcion_TextChanged(sender As Object, e As EventArgs) Handles txtDescripcion.TextChanged
+        If (txtDescripcion.Text.Length > 0) Then
+            ErrorProvider1.SetError(txtDescripcion, Nothing)
+        End If
     End Sub
 
     Private Sub btAsentamiento_Click(sender As Object, e As EventArgs) Handles btAsentamiento.Click
         frmAsentamiento.externa = True
         frmAsentamiento.Show()
+    End Sub
+
+    Private Sub frmDomicilio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DomiciliosTableAdapter.FillByPersonaId(Me.DataSetDomicilio.domicilios, persona_id)
+        Me.Tipos_viviendasTableAdapter.Fill(Me.DataSetTipoViviendaCombo.tipos_viviendas)
+        Me.AsentamientosTableAdapter.Fill(Me.DataSetAsentamientoCombo.asentamientos)
+        LimpiarCajasdeTexto()
+        txtNombreCompleto.Text = nombre_completo
     End Sub
 End Class

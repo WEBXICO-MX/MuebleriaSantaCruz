@@ -24,12 +24,18 @@ Partial Class frmDomicilio
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDomicilio))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BarraHerramientas = New System.Windows.Forms.ToolStrip()
         Me.btnuevo = New System.Windows.Forms.ToolStripButton()
         Me.btguardar = New System.Windows.Forms.ToolStripButton()
         Me.btdeshacer = New System.Windows.Forms.ToolStripButton()
         Me.bteditar = New System.Windows.Forms.ToolStripButton()
         Me.btbuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btAsentamiento = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Tipos_viviendasComboBox = New System.Windows.Forms.ComboBox()
         Me.Tipos_viviendasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -67,6 +73,9 @@ Partial Class frmDomicilio
         Me.DomiciliosTableAdapter = New MuebleriaCasaCruz.DataSetDomicilioTableAdapters.domiciliosTableAdapter()
         Me.TableAdapterManager2 = New MuebleriaCasaCruz.DataSetDomicilioTableAdapters.TableAdapterManager()
         Me.DomiciliosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipoviviendaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AsentamientoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -81,10 +90,6 @@ Partial Class frmDomicilio
         Me.FecharegistroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechamodificacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ActivoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btAsentamiento = New System.Windows.Forms.ToolStripButton()
         Me.BarraHerramientas.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tipos_viviendasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,6 +163,15 @@ Partial Class frmDomicilio
         Me.btbuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btbuscar.Visible = False
         '
+        'btAsentamiento
+        '
+        Me.btAsentamiento.Enabled = False
+        Me.btAsentamiento.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAsentamiento.Name = "btAsentamiento"
+        Me.btAsentamiento.Size = New System.Drawing.Size(85, 35)
+        Me.btAsentamiento.Text = "&Asentamiento"
+        Me.btAsentamiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Tipos_viviendasComboBox)
@@ -193,6 +207,7 @@ Partial Class frmDomicilio
         '
         Me.Tipos_viviendasComboBox.DataSource = Me.Tipos_viviendasBindingSource
         Me.Tipos_viviendasComboBox.DisplayMember = "nombre"
+        Me.Tipos_viviendasComboBox.Enabled = False
         Me.Tipos_viviendasComboBox.FormattingEnabled = True
         Me.Tipos_viviendasComboBox.Location = New System.Drawing.Point(105, 245)
         Me.Tipos_viviendasComboBox.Name = "Tipos_viviendasComboBox"
@@ -492,116 +507,31 @@ Partial Class frmDomicilio
         '
         Me.DomiciliosDataGridView.AllowUserToAddRows = False
         Me.DomiciliosDataGridView.AllowUserToDeleteRows = False
+        Me.DomiciliosDataGridView.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.DomiciliosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DomiciliosDataGridView.AutoGenerateColumns = False
+        Me.DomiciliosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DomiciliosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DomiciliosDataGridView.BackgroundColor = System.Drawing.Color.AliceBlue
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DomiciliosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DomiciliosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DomiciliosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.TipoviviendaDataGridViewTextBoxColumn, Me.AsentamientoDataGridViewTextBoxColumn, Me.CalleDataGridViewTextBoxColumn, Me.NumerointeriorDataGridViewTextBoxColumn, Me.NumeroexteriorDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.NombrecompletoDataGridViewTextBoxColumn, Me.PersonaidDataGridViewTextBoxColumn, Me.AsentamientoidDataGridViewTextBoxColumn, Me.TipoviviendaidDataGridViewTextBoxColumn, Me.FecharegistroDataGridViewTextBoxColumn, Me.FechamodificacionDataGridViewTextBoxColumn, Me.ActivoDataGridViewCheckBoxColumn})
         Me.DomiciliosDataGridView.DataSource = Me.DomiciliosBindingSource
         Me.DomiciliosDataGridView.Location = New System.Drawing.Point(462, 63)
+        Me.DomiciliosDataGridView.MultiSelect = False
         Me.DomiciliosDataGridView.Name = "DomiciliosDataGridView"
         Me.DomiciliosDataGridView.ReadOnly = True
+        Me.DomiciliosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DomiciliosDataGridView.Size = New System.Drawing.Size(358, 484)
         Me.DomiciliosDataGridView.TabIndex = 35
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TipoviviendaDataGridViewTextBoxColumn
-        '
-        Me.TipoviviendaDataGridViewTextBoxColumn.DataPropertyName = "tipo_vivienda"
-        Me.TipoviviendaDataGridViewTextBoxColumn.HeaderText = "tipo_vivienda"
-        Me.TipoviviendaDataGridViewTextBoxColumn.Name = "TipoviviendaDataGridViewTextBoxColumn"
-        Me.TipoviviendaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AsentamientoDataGridViewTextBoxColumn
-        '
-        Me.AsentamientoDataGridViewTextBoxColumn.DataPropertyName = "asentamiento"
-        Me.AsentamientoDataGridViewTextBoxColumn.HeaderText = "asentamiento"
-        Me.AsentamientoDataGridViewTextBoxColumn.Name = "AsentamientoDataGridViewTextBoxColumn"
-        Me.AsentamientoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CalleDataGridViewTextBoxColumn
-        '
-        Me.CalleDataGridViewTextBoxColumn.DataPropertyName = "calle"
-        Me.CalleDataGridViewTextBoxColumn.HeaderText = "calle"
-        Me.CalleDataGridViewTextBoxColumn.Name = "CalleDataGridViewTextBoxColumn"
-        Me.CalleDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NumerointeriorDataGridViewTextBoxColumn
-        '
-        Me.NumerointeriorDataGridViewTextBoxColumn.DataPropertyName = "numero_interior"
-        Me.NumerointeriorDataGridViewTextBoxColumn.HeaderText = "numero_interior"
-        Me.NumerointeriorDataGridViewTextBoxColumn.Name = "NumerointeriorDataGridViewTextBoxColumn"
-        Me.NumerointeriorDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NumeroexteriorDataGridViewTextBoxColumn
-        '
-        Me.NumeroexteriorDataGridViewTextBoxColumn.DataPropertyName = "numero_exterior"
-        Me.NumeroexteriorDataGridViewTextBoxColumn.HeaderText = "numero_exterior"
-        Me.NumeroexteriorDataGridViewTextBoxColumn.Name = "NumeroexteriorDataGridViewTextBoxColumn"
-        Me.NumeroexteriorDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombrecompletoDataGridViewTextBoxColumn
-        '
-        Me.NombrecompletoDataGridViewTextBoxColumn.DataPropertyName = "nombre_completo"
-        Me.NombrecompletoDataGridViewTextBoxColumn.HeaderText = "nombre_completo"
-        Me.NombrecompletoDataGridViewTextBoxColumn.Name = "NombrecompletoDataGridViewTextBoxColumn"
-        Me.NombrecompletoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PersonaidDataGridViewTextBoxColumn
-        '
-        Me.PersonaidDataGridViewTextBoxColumn.DataPropertyName = "persona_id"
-        Me.PersonaidDataGridViewTextBoxColumn.HeaderText = "persona_id"
-        Me.PersonaidDataGridViewTextBoxColumn.Name = "PersonaidDataGridViewTextBoxColumn"
-        Me.PersonaidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PersonaidDataGridViewTextBoxColumn.Visible = False
-        '
-        'AsentamientoidDataGridViewTextBoxColumn
-        '
-        Me.AsentamientoidDataGridViewTextBoxColumn.DataPropertyName = "asentamiento_id"
-        Me.AsentamientoidDataGridViewTextBoxColumn.HeaderText = "asentamiento_id"
-        Me.AsentamientoidDataGridViewTextBoxColumn.Name = "AsentamientoidDataGridViewTextBoxColumn"
-        Me.AsentamientoidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.AsentamientoidDataGridViewTextBoxColumn.Visible = False
-        '
-        'TipoviviendaidDataGridViewTextBoxColumn
-        '
-        Me.TipoviviendaidDataGridViewTextBoxColumn.DataPropertyName = "tipo_vivienda_id"
-        Me.TipoviviendaidDataGridViewTextBoxColumn.HeaderText = "tipo_vivienda_id"
-        Me.TipoviviendaidDataGridViewTextBoxColumn.Name = "TipoviviendaidDataGridViewTextBoxColumn"
-        Me.TipoviviendaidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TipoviviendaidDataGridViewTextBoxColumn.Visible = False
-        '
-        'FecharegistroDataGridViewTextBoxColumn
-        '
-        Me.FecharegistroDataGridViewTextBoxColumn.DataPropertyName = "fecha_registro"
-        Me.FecharegistroDataGridViewTextBoxColumn.HeaderText = "fecha_registro"
-        Me.FecharegistroDataGridViewTextBoxColumn.Name = "FecharegistroDataGridViewTextBoxColumn"
-        Me.FecharegistroDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FechamodificacionDataGridViewTextBoxColumn
-        '
-        Me.FechamodificacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_modificacion"
-        Me.FechamodificacionDataGridViewTextBoxColumn.HeaderText = "fecha_modificacion"
-        Me.FechamodificacionDataGridViewTextBoxColumn.Name = "FechamodificacionDataGridViewTextBoxColumn"
-        Me.FechamodificacionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ActivoDataGridViewCheckBoxColumn
-        '
-        Me.ActivoDataGridViewCheckBoxColumn.DataPropertyName = "activo"
-        Me.ActivoDataGridViewCheckBoxColumn.HeaderText = "activo"
-        Me.ActivoDataGridViewCheckBoxColumn.Name = "ActivoDataGridViewCheckBoxColumn"
-        Me.ActivoDataGridViewCheckBoxColumn.ReadOnly = True
         '
         'ErrorProvider1
         '
@@ -619,14 +549,126 @@ Partial Class frmDomicilio
         Me.id.HeaderText = "id"
         Me.id.Name = "id"
         '
-        'btAsentamiento
+        'IdDataGridViewTextBoxColumn
         '
-        Me.btAsentamiento.Enabled = False
-        Me.btAsentamiento.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btAsentamiento.Name = "btAsentamiento"
-        Me.btAsentamiento.Size = New System.Drawing.Size(85, 35)
-        Me.btAsentamiento.Text = "&Asentamiento"
-        Me.btAsentamiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.IdDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdDataGridViewTextBoxColumn.Width = 43
+        '
+        'TipoviviendaDataGridViewTextBoxColumn
+        '
+        Me.TipoviviendaDataGridViewTextBoxColumn.DataPropertyName = "tipo_vivienda"
+        Me.TipoviviendaDataGridViewTextBoxColumn.HeaderText = "Tipo de vivienda"
+        Me.TipoviviendaDataGridViewTextBoxColumn.Name = "TipoviviendaDataGridViewTextBoxColumn"
+        Me.TipoviviendaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TipoviviendaDataGridViewTextBoxColumn.Width = 116
+        '
+        'AsentamientoDataGridViewTextBoxColumn
+        '
+        Me.AsentamientoDataGridViewTextBoxColumn.DataPropertyName = "asentamiento"
+        Me.AsentamientoDataGridViewTextBoxColumn.HeaderText = "Asentamiento"
+        Me.AsentamientoDataGridViewTextBoxColumn.Name = "AsentamientoDataGridViewTextBoxColumn"
+        Me.AsentamientoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.AsentamientoDataGridViewTextBoxColumn.Width = 108
+        '
+        'CalleDataGridViewTextBoxColumn
+        '
+        Me.CalleDataGridViewTextBoxColumn.DataPropertyName = "calle"
+        Me.CalleDataGridViewTextBoxColumn.HeaderText = "Calle"
+        Me.CalleDataGridViewTextBoxColumn.Name = "CalleDataGridViewTextBoxColumn"
+        Me.CalleDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CalleDataGridViewTextBoxColumn.Width = 60
+        '
+        'NumerointeriorDataGridViewTextBoxColumn
+        '
+        Me.NumerointeriorDataGridViewTextBoxColumn.DataPropertyName = "numero_interior"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NumerointeriorDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
+        Me.NumerointeriorDataGridViewTextBoxColumn.HeaderText = "Num. Interior"
+        Me.NumerointeriorDataGridViewTextBoxColumn.Name = "NumerointeriorDataGridViewTextBoxColumn"
+        Me.NumerointeriorDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NumerointeriorDataGridViewTextBoxColumn.Width = 96
+        '
+        'NumeroexteriorDataGridViewTextBoxColumn
+        '
+        Me.NumeroexteriorDataGridViewTextBoxColumn.DataPropertyName = "numero_exterior"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.NumeroexteriorDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
+        Me.NumeroexteriorDataGridViewTextBoxColumn.HeaderText = "Num. Exterior"
+        Me.NumeroexteriorDataGridViewTextBoxColumn.Name = "NumeroexteriorDataGridViewTextBoxColumn"
+        Me.NumeroexteriorDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NumeroexteriorDataGridViewTextBoxColumn.Width = 99
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripción"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescripcionDataGridViewTextBoxColumn.Width = 99
+        '
+        'NombrecompletoDataGridViewTextBoxColumn
+        '
+        Me.NombrecompletoDataGridViewTextBoxColumn.DataPropertyName = "nombre_completo"
+        Me.NombrecompletoDataGridViewTextBoxColumn.HeaderText = "Nombre completo"
+        Me.NombrecompletoDataGridViewTextBoxColumn.Name = "NombrecompletoDataGridViewTextBoxColumn"
+        Me.NombrecompletoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NombrecompletoDataGridViewTextBoxColumn.Width = 119
+        '
+        'PersonaidDataGridViewTextBoxColumn
+        '
+        Me.PersonaidDataGridViewTextBoxColumn.DataPropertyName = "persona_id"
+        Me.PersonaidDataGridViewTextBoxColumn.HeaderText = "persona_id"
+        Me.PersonaidDataGridViewTextBoxColumn.Name = "PersonaidDataGridViewTextBoxColumn"
+        Me.PersonaidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PersonaidDataGridViewTextBoxColumn.Visible = False
+        Me.PersonaidDataGridViewTextBoxColumn.Width = 94
+        '
+        'AsentamientoidDataGridViewTextBoxColumn
+        '
+        Me.AsentamientoidDataGridViewTextBoxColumn.DataPropertyName = "asentamiento_id"
+        Me.AsentamientoidDataGridViewTextBoxColumn.HeaderText = "asentamiento_id"
+        Me.AsentamientoidDataGridViewTextBoxColumn.Name = "AsentamientoidDataGridViewTextBoxColumn"
+        Me.AsentamientoidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.AsentamientoidDataGridViewTextBoxColumn.Visible = False
+        Me.AsentamientoidDataGridViewTextBoxColumn.Width = 124
+        '
+        'TipoviviendaidDataGridViewTextBoxColumn
+        '
+        Me.TipoviviendaidDataGridViewTextBoxColumn.DataPropertyName = "tipo_vivienda_id"
+        Me.TipoviviendaidDataGridViewTextBoxColumn.HeaderText = "tipo_vivienda_id"
+        Me.TipoviviendaidDataGridViewTextBoxColumn.Name = "TipoviviendaidDataGridViewTextBoxColumn"
+        Me.TipoviviendaidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TipoviviendaidDataGridViewTextBoxColumn.Visible = False
+        Me.TipoviviendaidDataGridViewTextBoxColumn.Width = 125
+        '
+        'FecharegistroDataGridViewTextBoxColumn
+        '
+        Me.FecharegistroDataGridViewTextBoxColumn.DataPropertyName = "fecha_registro"
+        Me.FecharegistroDataGridViewTextBoxColumn.HeaderText = "Fecha de alta"
+        Me.FecharegistroDataGridViewTextBoxColumn.Name = "FecharegistroDataGridViewTextBoxColumn"
+        Me.FecharegistroDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FecharegistroDataGridViewTextBoxColumn.Width = 82
+        '
+        'FechamodificacionDataGridViewTextBoxColumn
+        '
+        Me.FechamodificacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_modificacion"
+        Me.FechamodificacionDataGridViewTextBoxColumn.HeaderText = "Fecha de modificación"
+        Me.FechamodificacionDataGridViewTextBoxColumn.Name = "FechamodificacionDataGridViewTextBoxColumn"
+        Me.FechamodificacionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FechamodificacionDataGridViewTextBoxColumn.Width = 146
+        '
+        'ActivoDataGridViewCheckBoxColumn
+        '
+        Me.ActivoDataGridViewCheckBoxColumn.DataPropertyName = "activo"
+        Me.ActivoDataGridViewCheckBoxColumn.HeaderText = "Activo"
+        Me.ActivoDataGridViewCheckBoxColumn.Name = "ActivoDataGridViewCheckBoxColumn"
+        Me.ActivoDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.ActivoDataGridViewCheckBoxColumn.Width = 49
         '
         'frmDomicilio
         '
@@ -703,6 +745,7 @@ Partial Class frmDomicilio
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btAsentamiento As System.Windows.Forms.ToolStripButton
     Friend WithEvents IdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TipoviviendaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents AsentamientoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -717,5 +760,4 @@ Partial Class frmDomicilio
     Friend WithEvents FecharegistroDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechamodificacionDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ActivoDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents btAsentamiento As System.Windows.Forms.ToolStripButton
 End Class
